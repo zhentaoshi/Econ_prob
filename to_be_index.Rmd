@@ -1,0 +1,26 @@
+---
+title: "Probability"
+author: "Zhentao Shi"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::pdf_book
+documentclass: book
+bibliography: book.bib
+biblio-style: apalike
+link-citations: yes
+github-repo: rstudio/bookdown-demo
+description: "nothing"
+fontsize: 12pt
+---
+# Preface {-}
+
+For the preparatory class of MSc students at CUHK in 2017.
+
+## Prerequisite {-}
+
+Undergraduate probability and statistics.
+
+## About Book Version {-}
+
+I prepare the lecture notes in Rmarkdown.
+The book version can be built in RStudio. However, I write in Atom, a text editor.

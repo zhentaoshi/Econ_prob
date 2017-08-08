@@ -1,0 +1,143 @@
+---
+title: 'Lecture 2: Expectation'
+author: "Zhentao Shi"
+date: "August 9, 2017"
+output: pdf_document
+urlcolor: blue
+---
+
+
+
+Expected Value {#expectation}
+==============
+
+Integration
+-----------
+
+-   $X$ is called a *simple function* on a measurable space
+    $\left(\Omega,\mathcal{F}\right)$ if
+    $X=\sum_{i}a_{i}1\left\{ A_{i}\right\}$ is a finite sum, where
+    $a_{i}\in\mathbb{R}$ and $A_{i}\in\mathcal{F}$.
+
+-   Let $\left(\Omega,\mathcal{F},\mu\right)$ be a measure space and
+    $a_{i}\geq0$ for all $i$. The integral of $X$ with respect to $\mu$
+    is $$\int X\mathrm{d}\mu=\sum_{i}a_{i}\mu\left(A_{i}\right).$$
+
+-   Let $X$ be a non-negative measurable function. The integral of $X$
+    with respect to $\mu$ is
+    $$\int X\mathrm{d}\mu=\sup\left\{ \int Y\mathrm{d}\mu:0\leq Y\leq X,\text{ }Y\text{ is simple}\right\} .$$
+
+-   Let $X$ be a measurable function. Define
+    $X^{+}=\max\left\{ X,0\right\}$ and
+    $X^{-}=-\min\left\{ X,0\right\}$. Both $X^{+}$ and $X^{-}$ are
+    non-negative functions. The integral of $X$ with respect to $\mu$ is
+    $$\int f\mathrm{d}\mu=\int f^{+}\mathrm{d}\mu-\int f^{-}\mathrm{d}\mu.$$
+
+-   If the measure $\mu$ is a probability measure $P$, then the integral
+    $\int X\mathrm{d}P$ is called the *expected value,* or
+    *expectation,* of $X$. We often use the popular notation
+    $E\left[X\right]$, instead of $\int X\mathrm{d}P$, for convenience.
+
+Properties
+----------
+
+-   Elementary calculation: $E\left[X\right]=\sum_{x}xP\left(X=x\right)$
+    or $E\left[X\right]=\int xf\left(x\right)\mathrm{d}x$.
+
+-   $E\left[1\left\{ A\right\} \right]=P\left(A\right)$.
+
+-   $E\left[X^{r}\right]$ is call the $r$-moment of $X$. Mean
+    $\mu=E\left[X\right]$, variance
+    $\mathrm{var}\left[X\right]=E\left[\left(X-\mu\right)^{2}\right]$,
+    skewness $E\left[\left(X-\mu\right)^{3}\right]$ and kurtosis
+    $E\left[\left(X-\mu\right)^{4}\right]$.
+
+-   Skewness coefficient
+    $E\left[\left(X-\mu\right)^{3}\right]/\sigma^{3}$, degree of excess
+    $E\left[\left(X-\mu\right)^{4}\right]/\sigma^{4}-3$.
+
+    -   Application: [The formula that killed Wall
+        Street](http://archive.wired.com/techbiz/it/magazine/17-03/wp_quant?currentPage=all)
+
+-   Jensen’s inequality. If $\varphi\left(\cdot\right)$ is a convex
+    function, then
+    $\varphi\left(E\left[X\right]\right)\leq E\left[\varphi\left(X\right)\right].$
+
+    -   Application: Kullback-Leibler distance
+        $d\left(p,q\right)=\int\log\left(p/q\right)\mathrm{d}P=E_{P}\left[\log\left(p/q\right)\right]$
+
+-   Markov inequality: if $E\left[\left|X\right|^{r}\right]$ exists,
+    then
+    $P\left(\left|X\right|>\epsilon\right)\leq E\left[\left|X\right|^{r}\right]/\epsilon^{r}$
+    for all $r\geq1$.
+
+    -   Application: Chebyshev inequality:
+        $P\left(\left|X\right|>\epsilon\right)\leq E\left[X^{2}\right]/\epsilon^{2}.$
+
+Multivariate Random Variable
+============================
+
+-   Bivariate random variable: $X:\Omega\mapsto\mathbb{R}^{2}$.
+
+-   Multivariate random variable $X:\Omega\mapsto\mathbb{R}^{n}$.
+
+-   Joint CDF:
+    $F\left(x_{1},\ldots,x_{n}\right)=P\left(X_{1}\leq x_{1},\ldots,X_{n}\leq x_{n}\right)$.
+    Joint PDF is defined similarly.
+
+Elementary Formulas
+-------------------
+
+-   conditional density
+    $f\left(Y|X\right)=f\left(X,Y\right)/f\left(X\right)$
+
+-   marginal density $f\left(Y\right)=\int f\left(X,Y\right)dX$.
+
+-   conditional expectation
+    $E\left[Y|X\right]=\int Yf\left(Y|X\right)dY$
+
+-   proof of law of iterated expectation
+
+-   conditional probability, or Bayes’ Theorem
+    $P\left(A|B\right)=\frac{P\left(A,B\right)}{P\left(B\right)}=\frac{P\left(B|A\right)P\left(A\right)}{P\left(B\right)}.$
+
+Independence
+------------
+
+$X$ and $Y$ are *independent* if
+$P\left(X\in A,Y\in B\right)=P\left(X\in A\right)P\left(Y\in B\right)$
+for all $A$ and $B$.
+
+Application: (Chebyshev law of large numbers) If
+$X_{1},X_{2},\ldots,X_{n}$ are independent, and they have the same mean
+$\mu$ and variance $\sigma^{2}<\infty$. Let
+$Z_{n}=\frac{1}{n}\sum_{i=1}^{n}\left(X_{i}-\mu\right)$. Then the
+probability $P\left(\left|Z_{n}\right|>\epsilon\right)\to0$ as
+$n\to\infty$,
+
+Law of Iterated Expectations
+----------------------------
+
+-   Given a probability space $\left(\Omega,\mathcal{F},P\right)$, a sub
+    $\sigma$-algebra $\mathcal{G}\subset\mathcal{F}$ and a
+    $\mathcal{F}$-measurable function $X$ with $E\left|X\right|<\infty$,
+    the *conditional expectation* $E\left[X|\mathcal{G}\right]$ is
+    defined as a $\mathcal{G}$-measurable function such that
+    $\int_{A}XdP=\int_{A}E\left[X|\mathcal{G}\right]dP$ for all
+    $A\in\mathcal{G}$.
+
+-   Law of iterated expectation
+    $$E\left[E\left[Y|X\right]\right]=E\left[Y\right]$$ is a trivial
+    fact from the definition of the conditional expectation by taking
+    $A=\Omega$.
+
+-   Properties of conditional expectations
+
+    1.  $E\left[E\left[Y|X_{1},X_{2}\right]|X_{1}\right]=E\left[Y|X_{1}\right]$
+
+    2.  $E\left[E\left[Y|X_{1}\right]|X_{1},X_{2}\right]=E\left[Y|X_{1}\right]$
+
+    3.  $E\left[h\left(X\right)Y|X\right]=h\left(X\right)E\left[Y|X\right]$
+
+Application: Regression $Y=E\left[Y|X\right]+\epsilon$, where
+$\epsilon=Y-E\left[Y|X\right]$.
