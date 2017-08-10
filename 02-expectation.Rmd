@@ -77,7 +77,7 @@ symmetry of a random variable, and the fourth centered moment
     $E\left[\left(X-\mu\right)^{3}\right]/\sigma^{3}$ the *skewness coefficient*, and
     $E\left[\left(X-\mu\right)^{4}\right]/\sigma^{4}-3$ *degree of excess*. A normal distribution's  skewness and  degree of excess are both zero.
 
-    -   Application: [The formula that killed Wall
+    -   **Application**: [The formula that killed Wall
         Street](http://archive.wired.com/techbiz/it/magazine/17-03/wp_quant?currentPage=all)
 
 - $E[\cdot]$ is a linear operation. If $\phi(\cdot)$ is a linear function, then $E[\phi(X)] = \phi(E[X])$.
@@ -90,41 +90,33 @@ Jensen's inequality says that if $\varphi\left(\cdot\right)$ is a convex
     function, then
     $\varphi\left(E\left[X\right]\right)\leq E\left[\varphi\left(X\right)\right].$
 
-    -   Application: Jensen's inequality is what works behind the maximum likelihood estimation.
-    We almost always work will the log-likelihood. Maximizing the log-likelihood is
-    equivalent to minimizing the negative log-likelihood. Notice that
-    $-\log(\cdot)$ is a strictly convex function. Define *Kullback-Leibler distance*
-    as         $d\left(p,q\right)=\int\log\left(p/q\right)\mathrm{d}P=E_{p}\left[\log\left(p/q\right)\right]$ for two probability measures $p$ and $q$. The Kullback-Leibler distance $d(p,q)\geq 0$ and the inequality holds if and only if  $p=q$.  
+    -   **Application**: The *Kullback-Leibler distance* is defined as $d\left(p,q\right)=\int\log\left(p/q\right)\mathrm{d}P=E_{P}\left[\log\left(p/q\right)\right]$ for two probability measures $p$ and $q$. The Kullback-Leibler distance $d(p,q)\geq 0$ and the inequality holds if and only if  $p=q$.  
 
--   *Markov inequality* is another simple but important effect. If $E\left[\left|X\right|^{r}\right]$ exists,
+-   *Markov inequality* is another simple but important fact. If $E\left[\left|X\right|^{r}\right]$ exists,
     then
     $P\left(\left|X\right|>\epsilon\right)\leq E\left[\left|X\right|^{r}\right]/\epsilon^{r}$
     for all $r\geq1$. *Chebyshev inequality*
         $P\left(\left|X\right|>\epsilon\right)\leq E\left[X^{2}\right]/\epsilon^{2}$
-        is a special case of the Markov inequality when $r=2$. Using the Chebyshev inequality is the
-        simplest way to prove weak laws of large numbers.
+        is a special case of the Markov inequality when $r=2$.
 
 # Multivariate Random Variable
 
-Up to now we have been talking about univariate random variables.
-We can extend the notion to a vector of random variables. A bivariate random variable is a
+A bivariate random variable is a
 measurable function $X:\Omega\mapsto\mathbb{R}^{2}$, and more generally a multivariate random
 variable is a measurable function $X:\Omega\mapsto\mathbb{R}^{n}$.
 We can define the *joint CDF* as
 $F\left(x_{1},\ldots,x_{n}\right)=P\left(X_{1}\leq x_{1},\ldots,X_{n}\leq x_{n}\right)$.
-Joint PDF is defined similarly. It is often easier to work with the joint PDF
-if it exists.
+Joint PDF is defined similarly.
 
 It is sufficient to introduce the joint distribution, conditional distribution
-and marginal distribution in the simple bivariate random, and these definitions
-can be easily extended to multivariate distributions. Suppose
+and marginal distribution in the simple bivariate case, and these definitions
+can be extended to multivariate distributions. Suppose
 a bivariate random variable $(X,Y)$ has a joint density
-$f(\cdot,\cdot)$. We have these familiar formulae:
-
--   *conditional density* can be roughly written as  $f\left(y|x\right)=f\left(x,y\right)/f\left(x\right)$ if we do not formally deal
+$f(\cdot,\cdot)$.
+The  *conditional density* can be roughly written as  $f\left(y|x\right)=f\left(x,y\right)/f\left(x\right)$ if we do not formally deal
 with the case $f(x)=0$.
-
--   *marginal density* $f\left(y\right)=\int f\left(x,y\right)dx$.
+The *marginal density* $f\left(y\right)=\int f\left(x,y\right)dx$ integrates out
+the coordinate that is not interested.
 
 ## Independence
 
@@ -133,9 +125,10 @@ $$P\left(A_1|A_2\right)=\frac{P\left(A_1 A_2\right)}{P\left(A_2\right)}$$
 if $P(A_2) \neq 0$. If $P(A_2) =0$, the conditional probability can still be valid
 in some cases,
 but we need to introduce the *dominance* between two measures,
-which I choose not to do at this time. The first inequality can be interpreted
-as if we standardize $P(A_1 A_2)$ by the total mass $P(A_2)$; $A_2$ plays
-the role as the outcome space or the universe in the conditional probability.
+which I choose not to do at this time.
+In the definition of conditional probability, $A_2$ plays
+the role of the outcome space  so that
+ $P(A_1 A_2)$ is standardized by the total mass $P(A_2)$.
 
 Since $A_1$ and $A_2$ are symmetric, we also have $P(A_1 A_2) = P(A_2|A_1)P(A_1)$.
 It implies
@@ -143,7 +136,8 @@ $$P(A_1 | A_2)=\frac{P\left(A_2| A_1\right)P\left(A_1\right)}{P\left(A_2\right)}
 This formula is the well-known *Bayes' Theorem*. It is particularly important in
 decision theory.
 
-**Example:** $A_1$ is the event "a student can survive CUHK's MSc program", and $A_2$ is the application profile.
+**Example:** $A_1$ is the event "a student can survive CUHK's MSc program", and $A_2$ is
+his or her application profile.
 
 We say two events $A_1$ and $A_2$ are *independent* if $P(A_1A_2) = P(A_1)P(A_2)$.
 If $P(A_2) \neq 0$, it is equivalent to $P(A_1 | A_2 ) = P(A_1)$.
@@ -172,24 +166,23 @@ Given a probability space $\left(\Omega,\mathcal{F},P\right)$, a sub
     the *conditional expectation* $E\left[X|\mathcal{G}\right]$ is
     defined as a $\mathcal{G}$-measurable function such that
     $\int_{A}XdP=\int_{A}E\left[X|\mathcal{G}\right]dP$ for all
-    $A\in\mathcal{G}$.
+    $A\in\mathcal{G}$. *Law of iterated expectation* is a trivial fact if we take
+    $A=\Omega$.
 
 
-If a conditional density exists, the *conditional expectation* can be computed as
+
+In the bivariate case, if the conditional density exists, the conditional expectation can be computed as
     $E\left[Y|X\right]=\int yf\left(y|X\right)dy$.
+The law of iterated expectation implies $E\left[E\left[Y|X\right]\right]=E\left[Y\right]$.
 
-*Law of iterated expectation*
-$$E\left[E\left[Y|X\right]\right]=E\left[Y\right]$$
-is a trivial fact from the definition of the conditional expectation by taking
-$A=\Omega$.
 
 Below are some properties of conditional expectations
 
-1.  $E\left[E\left[Y|X_{1},X_{2}\right]|X_{1}\right]=E\left[Y|X_{1}\right]$
-2.  $E\left[E\left[Y|X_{1}\right]|X_{1},X_{2}\right]=E\left[Y|X_{1}\right]$
-3.  $E\left[h\left(X\right)Y|X\right]=h\left(X\right)E\left[Y|X\right]$
+1.  $E\left[E\left[Y|X_{1},X_{2}\right]|X_{1}\right]=E\left[Y|X_{1}\right];$
+2.  $E\left[E\left[Y|X_{1}\right]|X_{1},X_{2}\right]=E\left[Y|X_{1}\right];$
+3.  $E\left[h\left(X\right)Y|X\right]=h\left(X\right)E\left[Y|X\right].$
 
-**Application**: Regression is a technique that decompose a random variable $Y$
+**Application**: Regression is a technique that decomposes a random variable $Y$
 into two parts, a conditional mean and a residual. Write
  $Y=E\left[Y|X\right]+\epsilon$, where
 $\epsilon=Y-E\left[Y|X\right]$. Show that $E[\epsilon] = 0$ and  $E[\epsilon E[Y|X] ] = 0$.
