@@ -1,124 +1,172 @@
 ---
 title: 'Lecture 2: Expectation'
 author: "Zhentao Shi"
-date: "August 9, 2017"
+date: "August 10, 2017"
 output: pdf_document
+linestretch: 1.5
+fontsize: 12pt
 urlcolor: blue
 ---
 
 
 
-Expected Value {#expectation}
-==============
+# Expected Value {#expectation}
 
-Integration
------------
 
--   $X$ is called a *simple function* on a measurable space
+## Integration
+
+Integration is one of the most fundamental operations in mathematical analysis.
+We have studied Riemann's integral in the undergraduate calculus.
+Riemann's integral is intuitive, but it encounters difficulty when
+it handles infinite value of the integrand or the region.
+
+Lebesgue integral is a more general way to define integration. It is
+constructed by the following steps. $X$ is called a *simple function* on a measurable space
     $\left(\Omega,\mathcal{F}\right)$ if
-    $X=\sum_{i}a_{i}1\left\{ A_{i}\right\}$ is a finite sum, where
+    $X=\sum_{i}a_{i}\cdot 1\left\{ A_{i}\right\}$ is a finite sum, where
     $a_{i}\in\mathbb{R}$ and $A_{i}\in\mathcal{F}$.
 
--   Let $\left(\Omega,\mathcal{F},\mu\right)$ be a measure space and
-    $a_{i}\geq0$ for all $i$. The integral of $X$ with respect to $\mu$
-    is $$\int X\mathrm{d}\mu=\sum_{i}a_{i}\mu\left(A_{i}\right).$$
 
--   Let $X$ be a non-negative measurable function. The integral of $X$
+1. Let $\left(\Omega,\mathcal{F},\mu\right)$ be a probability space. The integral of the simple function $X$ with respect to $\mu$
+is
+$$\int X\mathrm{d}\mu=\sum_{i}a_{i}\mu\left(A_{i}\right).$$
+2. Let $X$ be a non-negative measurable function. The integral of $X$
     with respect to $\mu$ is
     $$\int X\mathrm{d}\mu=\sup\left\{ \int Y\mathrm{d}\mu:0\leq Y\leq X,\text{ }Y\text{ is simple}\right\} .$$
-
--   Let $X$ be a measurable function. Define
+3. Let $X$ be a measurable function. Define
     $X^{+}=\max\left\{ X,0\right\}$ and
     $X^{-}=-\min\left\{ X,0\right\}$. Both $X^{+}$ and $X^{-}$ are
     non-negative functions. The integral of $X$ with respect to $\mu$ is
-    $$\int f\mathrm{d}\mu=\int f^{+}\mathrm{d}\mu-\int f^{-}\mathrm{d}\mu.$$
+    $$\int X\mathrm{d}\mu=\int X^{+}\mathrm{d}\mu-\int X^{-}\mathrm{d}\mu.$$
 
--   If the measure $\mu$ is a probability measure $P$, then the integral
+Step 1 defines the integral of a simple function.
+Step 2 defines the integral of a non-negative function as the approximation of
+steps functions from below.
+Step 3 defines the integral of a general function as the difference of the
+integral of two non-negative parts.
+
+If the measure $\mu$ is a probability measure $P$, then the integral
     $\int X\mathrm{d}P$ is called the *expected value,* or
-    *expectation,* of $X$. We often use the popular notation
+    *expectation,* of $X$. We often use the notation
     $E\left[X\right]$, instead of $\int X\mathrm{d}P$, for convenience.
+    Expectation is the average of a random variable.
 
-Properties
-----------
+If we know the probability mass function of a discrete random variable, its expectation
+is calculated as $E\left[X\right]=\sum_{x}xP\left(X=x\right)$, which is
+the integral of a simple function.
+If a continuous random variable has a PDF, its expectation
+is computed as  $E\left[X\right]=\int xf\left(x\right)\mathrm{d}x$.
 
--   Elementary calculation: $E\left[X\right]=\sum_{x}xP\left(X=x\right)$
-    or $E\left[X\right]=\int xf\left(x\right)\mathrm{d}x$.
 
--   $E\left[1\left\{ A\right\} \right]=P\left(A\right)$.
+Here are some properties of the expectation.
 
--   $E\left[X^{r}\right]$ is call the $r$-moment of $X$. Mean
-    $\mu=E\left[X\right]$, variance
-    $\mathrm{var}\left[X\right]=E\left[\left(X-\mu\right)^{2}\right]$,
-    skewness $E\left[\left(X-\mu\right)^{3}\right]$ and kurtosis
-    $E\left[\left(X-\mu\right)^{4}\right]$.
 
--   Skewness coefficient
-    $E\left[\left(X-\mu\right)^{3}\right]/\sigma^{3}$, degree of excess
-    $E\left[\left(X-\mu\right)^{4}\right]/\sigma^{4}-3$.
+-  The probability of an event $A$ is the expectation
+of an indicator function. $E\left[1\left\{ A\right\}  \right]= 1\times P(A) + 0 \times P(A^c) =P\left(A\right)$.
+
+-   $E\left[X^{r}\right]$ is call the $r$-moment of $X$. The mean of a random variable is the first moment $\mu=E\left[X\right]$, and
+the second *centered* moment is called the variance
+$\mathrm{var}\left[X\right]=E\left[\left(X-\mu\right)^{2}\right]$.
+The third centered moment $E\left[\left(X-\mu\right)^{3}\right]$,
+called skewness, is a measurement of the
+symmetry of a random variable, and the fourth centered moment
+    $E\left[\left(X-\mu\right)^{4}\right]$, called kurtosis, is
+     a measurement of the tail thickness.
+
+- We call
+    $E\left[\left(X-\mu\right)^{3}\right]/\sigma^{3}$ the *skewness coefficient*, and
+    $E\left[\left(X-\mu\right)^{4}\right]/\sigma^{4}-3$ *degree of excess*. A normal distribution's  skewness and  degree of excess are both zero.
 
     -   Application: [The formula that killed Wall
         Street](http://archive.wired.com/techbiz/it/magazine/17-03/wp_quant?currentPage=all)
 
--   Jensen’s inequality. If $\varphi\left(\cdot\right)$ is a convex
+- $E[\cdot]$ is a linear operation. If $\phi(\cdot)$ is a linear function, then $E[\phi(X)] = \phi(E[X])$.
+
+-   *Jensen's inequality* is an important fact.
+A function $\varphi(\cdot)$ is convex if
+$\varphi( a x_1 + (1-a) x_2 ) \leq a \varphi(x_1) + (1-a) \varphi(x_2)$ for all $x_1,x_2$
+in the domain and $a\in[0,1]$. For instance, $x^2$ is a convex function.
+Jensen's inequality says that if $\varphi\left(\cdot\right)$ is a convex
     function, then
     $\varphi\left(E\left[X\right]\right)\leq E\left[\varphi\left(X\right)\right].$
 
-    -   Application: Kullback-Leibler distance
-        $d\left(p,q\right)=\int\log\left(p/q\right)\mathrm{d}P=E_{P}\left[\log\left(p/q\right)\right]$
+    -   Application: Jensen's inequality is what works behind the maximum likelihood estimation.
+    We almost always work will the log-likelihood. Maximizing the log-likelihood is
+    equivalent to minimizing the negative log-likelihood. Notice that
+    $-\log(\cdot)$ is a strictly convex function. Define *Kullback-Leibler distance*
+    as         $d\left(p,q\right)=\int\log\left(p/q\right)\mathrm{d}P=E_{p}\left[\log\left(p/q\right)\right]$ for two probability measures $p$ and $q$. The Kullback-Leibler distance $d(p,q)\geq 0$ and the inequality holds if and only if  $p=q$.  
 
--   Markov inequality: if $E\left[\left|X\right|^{r}\right]$ exists,
+-   *Markov inequality* is another simple but important effect. If $E\left[\left|X\right|^{r}\right]$ exists,
     then
     $P\left(\left|X\right|>\epsilon\right)\leq E\left[\left|X\right|^{r}\right]/\epsilon^{r}$
-    for all $r\geq1$.
+    for all $r\geq1$. *Chebyshev inequality*
+        $P\left(\left|X\right|>\epsilon\right)\leq E\left[X^{2}\right]/\epsilon^{2}$
+        is a special case of the Markov inequality when $r=2$. Using the Chebyshev inequality is the
+        simplest way to prove weak laws of large numbers.
 
-    -   Application: Chebyshev inequality:
-        $P\left(\left|X\right|>\epsilon\right)\leq E\left[X^{2}\right]/\epsilon^{2}.$
+# Multivariate Random Variable
 
-Multivariate Random Variable
-============================
+Up to now we have been talking about univariate random variables.
+We can extend the notion to a vector of random variables. A bivariate random variable is a
+measurable function $X:\Omega\mapsto\mathbb{R}^{2}$, and more generally a multivariate random
+variable is a measurable function $X:\Omega\mapsto\mathbb{R}^{n}$.
+We can define the *joint CDF* as
+$F\left(x_{1},\ldots,x_{n}\right)=P\left(X_{1}\leq x_{1},\ldots,X_{n}\leq x_{n}\right)$.
+Joint PDF is defined similarly. It is often easier to work with the joint PDF
+if it exists.
 
--   Bivariate random variable: $X:\Omega\mapsto\mathbb{R}^{2}$.
+It is sufficient to introduce the joint distribution, conditional distribution
+and marginal distribution in the simple bivariate random, and these definitions
+can be easily extended to multivariate distributions. Suppose
+a bivariate random variable $(X,Y)$ has a joint density
+$f(\cdot,\cdot)$. We have these familiar formulae:
 
--   Multivariate random variable $X:\Omega\mapsto\mathbb{R}^{n}$.
+-   *conditional density* can be roughly written as  $f\left(y|x\right)=f\left(x,y\right)/f\left(x\right)$ if we do not formally deal
+with the case $f(x)=0$.
 
--   Joint CDF:
-    $F\left(x_{1},\ldots,x_{n}\right)=P\left(X_{1}\leq x_{1},\ldots,X_{n}\leq x_{n}\right)$.
-    Joint PDF is defined similarly.
+-   *marginal density* $f\left(y\right)=\int f\left(x,y\right)dx$.
 
-Elementary Formulas
--------------------
+## Independence
 
--   conditional density
-    $f\left(Y|X\right)=f\left(X,Y\right)/f\left(X\right)$
+In a probability space $(\Omega, \mathcal{F}, P)$, for two events $A_1,A_2\in \mathcal{F}$ the *conditional probability* is
+$$P\left(A_1|A_2\right)=\frac{P\left(A_1 A_2\right)}{P\left(A_2\right)}$$
+if $P(A_2) \neq 0$. If $P(A_2) =0$, the conditional probability can still be valid
+in some cases,
+but we need to introduce the *dominance* between two measures,
+which I choose not to do at this time. The first inequality can be interpreted
+as if we standardize $P(A_1 A_2)$ by the total mass $P(A_2)$; $A_2$ plays
+the role as the outcome space or the universe in the conditional probability.
 
--   marginal density $f\left(Y\right)=\int f\left(X,Y\right)dX$.
+Since $A_1$ and $A_2$ are symmetric, we also have $P(A_1 A_2) = P(A_2|A_1)P(A_1)$.
+It implies
+$$P(A_1 | A_2)=\frac{P\left(A_2| A_1\right)P\left(A_1\right)}{P\left(A_2\right)}$$
+This formula is the well-known *Bayes' Theorem*. It is particularly important in
+decision theory.
 
--   conditional expectation
-    $E\left[Y|X\right]=\int Yf\left(Y|X\right)dY$
+**Example:** $A_1$ is the event "a student can survive CUHK's MSc program", and $A_2$ is the application profile.
 
--   proof of law of iterated expectation
+We say two events $A_1$ and $A_2$ are *independent* if $P(A_1A_2) = P(A_1)P(A_2)$.
+If $P(A_2) \neq 0$, it is equivalent to $P(A_1 | A_2 ) = P(A_1)$.
+In words, knowing $A_2$ does not change the probability of $A_1$.
 
--   conditional probability, or Bayes’ Theorem
-    $P\left(A|B\right)=\frac{P\left(A,B\right)}{P\left(B\right)}=\frac{P\left(B|A\right)P\left(A\right)}{P\left(B\right)}.$
-
-Independence
-------------
-
+Regarding the independence of two random variables,
 $X$ and $Y$ are *independent* if
-$P\left(X\in A,Y\in B\right)=P\left(X\in A\right)P\left(Y\in B\right)$
-for all $A$ and $B$.
+$P\left(X\in B_1,Y\in B_2\right)=P\left(X\in B_1\right)P\left(Y\in B_2\right)$
+for any two Borel sets $B_1$ and $B_2$.
 
-Application: (Chebyshev law of large numbers) If
+If $X$ and $Y$ are independent, $E[XY] = E[X]E[Y]$.
+
+**Application**: (Chebyshev law of large numbers) If
 $X_{1},X_{2},\ldots,X_{n}$ are independent, and they have the same mean
-$\mu$ and variance $\sigma^{2}<\infty$. Let
-$Z_{n}=\frac{1}{n}\sum_{i=1}^{n}\left(X_{i}-\mu\right)$. Then the
+$0$ and variance $\sigma^{2}<\infty$. Let
+$Z_{n}=\frac{1}{n}\sum_{i=1}^{n} X_{i}$. Then the
 probability $P\left(\left|Z_{n}\right|>\epsilon\right)\to0$ as
 $n\to\infty$,
 
-Law of Iterated Expectations
-----------------------------
+## Law of Iterated Expectations
 
--   Given a probability space $\left(\Omega,\mathcal{F},P\right)$, a sub
+
+Given a probability space $\left(\Omega,\mathcal{F},P\right)$, a sub
     $\sigma$-algebra $\mathcal{G}\subset\mathcal{F}$ and a
     $\mathcal{F}$-measurable function $X$ with $E\left|X\right|<\infty$,
     the *conditional expectation* $E\left[X|\mathcal{G}\right]$ is
@@ -126,18 +174,22 @@ Law of Iterated Expectations
     $\int_{A}XdP=\int_{A}E\left[X|\mathcal{G}\right]dP$ for all
     $A\in\mathcal{G}$.
 
--   Law of iterated expectation
-    $$E\left[E\left[Y|X\right]\right]=E\left[Y\right]$$ is a trivial
-    fact from the definition of the conditional expectation by taking
-    $A=\Omega$.
 
--   Properties of conditional expectations
+If a conditional density exists, the *conditional expectation* can be computed as
+    $E\left[Y|X\right]=\int yf\left(y|X\right)dy$.
 
-    1.  $E\left[E\left[Y|X_{1},X_{2}\right]|X_{1}\right]=E\left[Y|X_{1}\right]$
+*Law of iterated expectation*
+$$E\left[E\left[Y|X\right]\right]=E\left[Y\right]$$
+is a trivial fact from the definition of the conditional expectation by taking
+$A=\Omega$.
 
-    2.  $E\left[E\left[Y|X_{1}\right]|X_{1},X_{2}\right]=E\left[Y|X_{1}\right]$
+Below are some properties of conditional expectations
 
-    3.  $E\left[h\left(X\right)Y|X\right]=h\left(X\right)E\left[Y|X\right]$
+1.  $E\left[E\left[Y|X_{1},X_{2}\right]|X_{1}\right]=E\left[Y|X_{1}\right]$
+2.  $E\left[E\left[Y|X_{1}\right]|X_{1},X_{2}\right]=E\left[Y|X_{1}\right]$
+3.  $E\left[h\left(X\right)Y|X\right]=h\left(X\right)E\left[Y|X\right]$
 
-Application: Regression $Y=E\left[Y|X\right]+\epsilon$, where
-$\epsilon=Y-E\left[Y|X\right]$.
+**Application**: Regression is a technique that decompose a random variable $Y$
+into two parts, a conditional mean and a residual. Write
+ $Y=E\left[Y|X\right]+\epsilon$, where
+$\epsilon=Y-E\left[Y|X\right]$. Show that $E[\epsilon] = 0$ and  $E[\epsilon E[Y|X] ] = 0$.
