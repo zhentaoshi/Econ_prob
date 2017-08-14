@@ -1,0 +1,25 @@
+---
+title: "Probability"
+author: "Zhentao Shi"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::pdf_book
+documentclass: book
+bibliography: book.bib
+biblio-style: apalike
+link-citations: yes
+github-repo: rstudio/bookdown-demo
+description: "nothing"
+fontsize: 12pt
+---
+# Preface {-}
+
+For the preparatory class of MSc students at CUHK in 2017.
+
+This course is at the level of [Casella and Berger (2008): Statistical Inference.](https://www.amazon.com/Statistical-Inference-George-Casella/dp/8131503941/ref=sr_1_1?ie=UTF8&qid=1502510243&sr=8-1&keywords=casella+berger) Another textbook for more technical development is
+[Durrent (2010): Probability: Theory and Examples.](https://www.amazon.com/Probability-Cambridge-Statistical-Probabilistic-Mathematics/dp/0521765390/ref=sr_1_1?s=books&ie=UTF8&qid=1502510600&sr=1-1&keywords=Probability%3A+Theory+and+Examples)
+
+## Prerequisite {-}
+Standard Chinese undergraduate programs offer two semesters' calculus, one semester's linear
+algebra and one semester's probability and statistics for students majoring in economics or finance.
+All these are necessary.
