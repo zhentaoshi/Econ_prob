@@ -50,7 +50,12 @@ If the measure $\mu$ is a probability measure $P$, then the integral
     $\int X\mathrm{d}P$ is called the *expected value,* or
     *expectation,* of $X$. We often use the notation
     $E\left[X\right]$, instead of $\int X\mathrm{d}P$, for convenience.
-    Expectation is the average of a random variable.
+
+Expectation provides the average of a random variable,
+despite that we cannot completely foresee the realization of a random variable in a particular trial
+(otherwise the study of uncertainty is trivial). In the frequentist's view,
+the expectation is the average outcome if we carry out a large number of independent
+trials.
 
 If we know the probability mass function of a discrete random variable, its expectation
 is calculated as $E\left[X\right]=\sum_{x}xP\left(X=x\right)$, which is
@@ -59,19 +64,20 @@ If a continuous random variable has a PDF, its expectation
 is computed as  $E\left[X\right]=\int xf\left(x\right)\mathrm{d}x$.
 
 
+
 Here are some properties of the expectation.
 
 
 -  The probability of an event $A$ is the expectation
 of an indicator function. $E\left[1\left\{ A\right\}  \right]= 1\times P(A) + 0 \times P(A^c) =P\left(A\right)$.
 
--   $E\left[X^{r}\right]$ is call the $r$-moment of $X$. The mean of a random variable is the first moment $\mu=E\left[X\right]$, and
-the second *centered* moment is called the variance
+-   $E\left[X^{r}\right]$ is call the $r$-moment of $X$. The *mean* of a random variable is the first moment $\mu=E\left[X\right]$, and
+the second *centered* moment is called the *variance*
 $\mathrm{var}\left[X\right]=E\left[\left(X-\mu\right)^{2}\right]$.
 The third centered moment $E\left[\left(X-\mu\right)^{3}\right]$,
-called skewness, is a measurement of the
+called *skewness*, is a measurement of the
 symmetry of a random variable, and the fourth centered moment
-    $E\left[\left(X-\mu\right)^{4}\right]$, called kurtosis, is
+    $E\left[\left(X-\mu\right)^{4}\right]$, called *kurtosis*, is
      a measurement of the tail thickness.
 
 - We call
@@ -80,6 +86,9 @@ symmetry of a random variable, and the fourth centered moment
 
     -   **Application**: [The formula that killed Wall
         Street](http://archive.wired.com/techbiz/it/magazine/17-03/wp_quant?currentPage=all)
+
+- Moments do not always exist. For example, the mean of the Cauchy distribution does not exist,
+and the variance of the $t(2)$ distribution do not exist.
 
 - $E[\cdot]$ is a linear operation. If $\phi(\cdot)$ is a linear function, then $E[\phi(X)] = \phi(E[X])$.
 
@@ -99,6 +108,10 @@ Jensen's inequality says that if $\varphi\left(\cdot\right)$ is a convex
     for all $r\geq1$. *Chebyshev inequality*
         $P\left(\left|X\right|>\epsilon\right)\leq E\left[X^{2}\right]/\epsilon^{2}$
         is a special case of the Markov inequality when $r=2$.
+
+The moment is a function of the probability function. To back out the underlying distribution
+from moments, we need to know the moment-generating function $M_X(t) = E [ e^{tX}]$ for $t\in \mathbb{R}$
+whenever the expectation exists.
 
 # Multivariate Random Variable
 
@@ -156,7 +169,10 @@ $X_{1},X_{2},\ldots,X_{n}$ are independent, and they have the same mean
 $0$ and variance $\sigma^{2}<\infty$. Let
 $Z_{n}=\frac{1}{n}\sum_{i=1}^{n} X_{i}$. Then the
 probability $P\left(\left|Z_{n}\right|>\epsilon\right)\to0$ as
-$n\to\infty$,
+$n\to\infty$.
+
+The culmination of probability theory is *law of large numbers* and
+*central limit theorem*.
 
 ## Law of Iterated Expectations
 
