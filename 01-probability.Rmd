@@ -199,7 +199,7 @@ Below is a piece of `R` code for demonstration.
 
 1. Plot the density of standard normal distribution over an equally spaced grid system `x_axis = seq(-3, 3, by = 0.01)` (black line).
 2. Generate 1000 observations for $N(0,1)$. Plot the kernel density, a nonparametric estimation of the density (red line).
-3. Calculate the 95-th quantile and the empirical probability of observing a value greater than the 95-th quantile.
+3. Calculate the 95th quantile and the empirical probability of observing a value greater than the 95th quantile.
 In population, this value is 5%. What is the number coming out of this experiment?
 
 ```{r,cache=TRUE}
