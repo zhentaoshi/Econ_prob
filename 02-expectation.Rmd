@@ -20,14 +20,15 @@ We have studied Riemann's integral in the undergraduate calculus.
 Riemann's integral is intuitive, but it encounters difficulty when
 it handles infinite value of the integrand or the region.
 
-Lebesgue integral is a more general way to define integration. It is
+Lebesgue integral is a more general approach to defining integration. It is
 constructed by the following steps. $X$ is called a *simple function* on a measurable space
     $\left(\Omega,\mathcal{F}\right)$ if
-    $X=\sum_{i}a_{i}\cdot 1\left\{ A_{i}\right\}$ is a finite sum, where
-    $a_{i}\in\mathbb{R}$ and $A_{i}\in\mathcal{F}$.
+    $X=\sum_{i}a_{i}\cdot 1\left\{ A_{i}\right\}$ and this summation is finite, where
+    $a_{i}\in\mathbb{R}$ and $\{ A_i\in\mathcal{F} \}_{i\in \mathbb{N}}$ is a partition
+of $\Omega$. A simple function is measurable.
 
 
-1. Let $\left(\Omega,\mathcal{F},\mu\right)$ be a probability space. The integral of the simple function $X$ with respect to $\mu$
+1. Let $\left(\Omega,\mathcal{F},\mu\right)$ be a measure space. The integral of the simple function $X$ with respect to $\mu$
 is
 $$\int X\mathrm{d}\mu=\sum_{i}a_{i}\mu\left(A_{i}\right).$$
 2. Let $X$ be a non-negative measurable function. The integral of $X$
