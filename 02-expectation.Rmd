@@ -67,7 +67,7 @@ the integral of a simple function.
 If a continuous random variable has a PDF $f(x)$, its expectation
 can be computed as  $E\left[X\right]=\int xf\left(x\right)\mathrm{d}x$.
 These two expressions are unified as
-$E[X] = \int X \mathrm{d} P$ by the Lebesgue integral. 
+$E[X] = \int X \mathrm{d} P$ by  the Lebesgue integral.
 
 
 
@@ -106,7 +106,11 @@ Jensen's inequality says that if $\varphi\left(\cdot\right)$ is a convex
     function, then
     $\varphi\left(E\left[X\right]\right)\leq E\left[\varphi\left(X\right)\right].$
 
-    -   **Application**: The *Kullback-Leibler distance* is defined as $d\left(p,q\right)=\int\log\left(p/q\right)\mathrm{d}P=E_{P}\left[\log\left(p/q\right)\right]$ for two probability measures $p$ and $q$. The Kullback-Leibler distance $d(p,q)\geq 0$ and the inequality holds if and only if  $p=q$.  
+    -   **Application**: The *Kullback-Leibler divergence* is defined as
+    \[
+    d\left(P,Q\right)=\int\log\left( \frac{\mathrm{d}P}{\mathrm{d}Q}\right)\mathrm{d}P
+    \]
+    for two probability measures $P$ and $Q$. The divergence $d(P,Q)\geq 0$ and the inequality holds if and only if  $P=Q$ almost everywhere.  
 
 -   *Markov inequality* is another simple but important fact. If $E\left[\left|X\right|^{r}\right]$ exists,
     then
@@ -115,9 +119,13 @@ Jensen's inequality says that if $\varphi\left(\cdot\right)$ is a convex
         $P\left(\left|X\right|>\epsilon\right)\leq E\left[X^{2}\right]/\epsilon^{2}$
         is a special case of the Markov inequality when $r=2$.
 
-The moment is a function of the probability function. To back out the underlying distribution
+- The distribution of a random variable is completely characterized by its
+CDF or PDF. Moment is a function of the distribution. To back out the underlying distribution
 from moments, we need to know the moment-generating function $M_X(t) = E [ e^{tX}]$ for $t\in \mathbb{R}$
 whenever the expectation exists.
+\[
+E[X^r ] = \frac{ \mathrm{d}^r M_X(t) }{ \mathrm{d} t^r } \bigg \vert_{t=0}
+\]
 
 # Multivariate Random Variable
 
