@@ -31,6 +31,10 @@ of $\Omega$. A simple function is measurable.
 1. Let $\left(\Omega,\mathcal{F},\mu\right)$ be a measure space. The integral of the simple function $X$ with respect to $\mu$
 is
 $$\int X\mathrm{d}\mu=\sum_{i}a_{i}\mu\left(A_{i}\right).$$
+Unlike the Rieman integral, this definition of integration does not
+partition the domain into splines of equal length. Instead, it tracks
+the distinctive values of the function and the corresponding measure.
+
 2. Let $X$ be a non-negative measurable function. The integral of $X$
     with respect to $\mu$ is
     $$\int X\mathrm{d}\mu=\sup\left\{ \int Y\mathrm{d}\mu:0\leq Y\leq X,\text{ }Y\text{ is simple}\right\} .$$
@@ -40,7 +44,7 @@ $$\int X\mathrm{d}\mu=\sum_{i}a_{i}\mu\left(A_{i}\right).$$
     non-negative functions. The integral of $X$ with respect to $\mu$ is
     $$\int X\mathrm{d}\mu=\int X^{+}\mathrm{d}\mu-\int X^{-}\mathrm{d}\mu.$$
 
-Step 1 defines the integral of a simple function.
+The Step 1 above defines the integral of a simple function.
 Step 2 defines the integral of a non-negative function as the approximation of
 steps functions from below.
 Step 3 defines the integral of a general function as the difference of the
@@ -52,7 +56,7 @@ If the measure $\mu$ is a probability measure $P$, then the integral
     $E\left[X\right]$, instead of $\int X\mathrm{d}P$, for convenience.
 
 Expectation provides the average of a random variable,
-despite that we cannot completely foresee the realization of a random variable in a particular trial
+despite that we cannot foresee the realization of a random variable in a particular trial
 (otherwise the study of uncertainty is trivial). In the frequentist's view,
 the expectation is the average outcome if we carry out a large number of independent
 trials.
@@ -60,8 +64,10 @@ trials.
 If we know the probability mass function of a discrete random variable, its expectation
 is calculated as $E\left[X\right]=\sum_{x}xP\left(X=x\right)$, which is
 the integral of a simple function.
-If a continuous random variable has a PDF, its expectation
-is computed as  $E\left[X\right]=\int xf\left(x\right)\mathrm{d}x$.
+If a continuous random variable has a PDF $f(x)$, its expectation
+can be computed as  $E\left[X\right]=\int xf\left(x\right)\mathrm{d}x$.
+These two expressions are unified as
+$E[X] = \int X \mathrm{d} P$ by the Lebesgue integral. 
 
 
 
