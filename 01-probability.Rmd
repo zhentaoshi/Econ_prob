@@ -46,7 +46,12 @@ research and exercise of econometric methods, while its very foundation is again
 
 In this preparatory course, we will have a brief introduction of the axiomatic
 probability theory along with familiar results covered in
-undergraduate *probability and statistics*.
+undergraduate *probability and statistics*. The level of this
+lecture note is close to 
+
+* Casella and Berger (2002): Statistical Inference (second edition)
+
+Interested readers may want to read this textbook for more examples.
 
 
 
