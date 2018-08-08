@@ -17,10 +17,9 @@ urlcolor: blue
 
 Integration is one of the most fundamental operations in mathematical analysis.
 We have studied Riemann's integral in the undergraduate calculus.
-Riemann's integral is intuitive, but it encounters difficulty when
-it handles infinite value of the integrand or the region.
+Riemann's integral is intuitive, but Lebesgue integral is a more general approach to defining integration.
 
-Lebesgue integral is a more general approach to defining integration. It is
+Lebesgue integral is
 constructed by the following steps. $X$ is called a *simple function* on a measurable space
     $\left(\Omega,\mathcal{F}\right)$ if
     $X=\sum_{i}a_{i}\cdot 1\left\{ A_{i}\right\}$ and this summation is finite, where
@@ -96,7 +95,7 @@ symmetry of a random variable, and the fourth centered moment
 - Moments do not always exist. For example, the mean of the Cauchy distribution does not exist,
 and the variance of the $t(2)$ distribution do not exist.
 
-- $E[\cdot]$ is a linear operation. If $\phi(\cdot)$ is a linear function, then $E[\phi(X)] = \phi(E[X])$.
+- $E[\cdot]$ is a linear operation. If $\phi(\cdot)$ is a linear function, then $E[\phi(X)] = \phi(E[X]).$
 
 -   *Jensen's inequality* is an important fact.
 A function $\varphi(\cdot)$ is convex if
