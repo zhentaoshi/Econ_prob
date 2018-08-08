@@ -1,7 +1,7 @@
 ---
 title: 'Lecture 2: Expectation'
 author: "Zhentao Shi"
-date: "August 10, 2017"
+date: "August 8, 2018"
 output: pdf_document
 linestretch: 1.5
 fontsize: 12pt
@@ -17,10 +17,9 @@ urlcolor: blue
 
 Integration is one of the most fundamental operations in mathematical analysis.
 We have studied Riemann's integral in the undergraduate calculus.
-Riemann's integral is intuitive, but it encounters difficulty when
-it handles infinite value of the integrand or the region.
+Riemann's integral is intuitive, but Lebesgue integral is a more general approach to defining integration.
 
-Lebesgue integral is a more general approach to defining integration. It is
+Lebesgue integral is
 constructed by the following steps. $X$ is called a *simple function* on a measurable space
     $\left(\Omega,\mathcal{F}\right)$ if
     $X=\sum_{i}a_{i}\cdot 1\left\{ A_{i}\right\}$ and this summation is finite, where
@@ -31,6 +30,10 @@ of $\Omega$. A simple function is measurable.
 1. Let $\left(\Omega,\mathcal{F},\mu\right)$ be a measure space. The integral of the simple function $X$ with respect to $\mu$
 is
 $$\int X\mathrm{d}\mu=\sum_{i}a_{i}\mu\left(A_{i}\right).$$
+Unlike the Rieman integral, this definition of integration does not
+partition the domain into splines of equal length. Instead, it tracks
+the distinctive values of the function and the corresponding measure.
+
 2. Let $X$ be a non-negative measurable function. The integral of $X$
     with respect to $\mu$ is
     $$\int X\mathrm{d}\mu=\sup\left\{ \int Y\mathrm{d}\mu:0\leq Y\leq X,\text{ }Y\text{ is simple}\right\} .$$
@@ -40,7 +43,7 @@ $$\int X\mathrm{d}\mu=\sum_{i}a_{i}\mu\left(A_{i}\right).$$
     non-negative functions. The integral of $X$ with respect to $\mu$ is
     $$\int X\mathrm{d}\mu=\int X^{+}\mathrm{d}\mu-\int X^{-}\mathrm{d}\mu.$$
 
-Step 1 defines the integral of a simple function.
+The Step 1 above defines the integral of a simple function.
 Step 2 defines the integral of a non-negative function as the approximation of
 steps functions from below.
 Step 3 defines the integral of a general function as the difference of the
@@ -50,13 +53,21 @@ If the measure $\mu$ is a probability measure $P$, then the integral
     $\int X\mathrm{d}P$ is called the *expected value,* or
     *expectation,* of $X$. We often use the notation
     $E\left[X\right]$, instead of $\int X\mathrm{d}P$, for convenience.
-    Expectation is the average of a random variable.
+
+Expectation provides the average of a random variable,
+despite that we cannot foresee the realization of a random variable in a particular trial
+(otherwise the study of uncertainty is trivial). In the frequentist's view,
+the expectation is the average outcome if we carry out a large number of independent
+trials.
 
 If we know the probability mass function of a discrete random variable, its expectation
 is calculated as $E\left[X\right]=\sum_{x}xP\left(X=x\right)$, which is
 the integral of a simple function.
-If a continuous random variable has a PDF, its expectation
-is computed as  $E\left[X\right]=\int xf\left(x\right)\mathrm{d}x$.
+If a continuous random variable has a PDF $f(x)$, its expectation
+can be computed as  $E\left[X\right]=\int xf\left(x\right)\mathrm{d}x$.
+These two expressions are unified as
+$E[X] = \int X \mathrm{d} P$ by  the Lebesgue integral.
+
 
 
 Here are some properties of the expectation.
@@ -65,13 +76,13 @@ Here are some properties of the expectation.
 -  The probability of an event $A$ is the expectation
 of an indicator function. $E\left[1\left\{ A\right\}  \right]= 1\times P(A) + 0 \times P(A^c) =P\left(A\right)$.
 
--   $E\left[X^{r}\right]$ is call the $r$-moment of $X$. The mean of a random variable is the first moment $\mu=E\left[X\right]$, and
-the second *centered* moment is called the variance
+-   $E\left[X^{r}\right]$ is call the $r$-moment of $X$. The *mean* of a random variable is the first moment $\mu=E\left[X\right]$, and
+the second *centered* moment is called the *variance*
 $\mathrm{var}\left[X\right]=E\left[\left(X-\mu\right)^{2}\right]$.
 The third centered moment $E\left[\left(X-\mu\right)^{3}\right]$,
-called skewness, is a measurement of the
+called *skewness*, is a measurement of the
 symmetry of a random variable, and the fourth centered moment
-    $E\left[\left(X-\mu\right)^{4}\right]$, called kurtosis, is
+    $E\left[\left(X-\mu\right)^{4}\right]$, called *kurtosis*, is
      a measurement of the tail thickness.
 
 - We call
@@ -81,7 +92,10 @@ symmetry of a random variable, and the fourth centered moment
     -   **Application**: [The formula that killed Wall
         Street](http://archive.wired.com/techbiz/it/magazine/17-03/wp_quant?currentPage=all)
 
-- $E[\cdot]$ is a linear operation. If $\phi(\cdot)$ is a linear function, then $E[\phi(X)] = \phi(E[X])$.
+- Moments do not always exist. For example, the mean of the Cauchy distribution does not exist,
+and the variance of the $t(2)$ distribution do not exist.
+
+- $E[\cdot]$ is a linear operation. If $\phi(\cdot)$ is a linear function, then $E[\phi(X)] = \phi(E[X]).$
 
 -   *Jensen's inequality* is an important fact.
 A function $\varphi(\cdot)$ is convex if
@@ -91,7 +105,11 @@ Jensen's inequality says that if $\varphi\left(\cdot\right)$ is a convex
     function, then
     $\varphi\left(E\left[X\right]\right)\leq E\left[\varphi\left(X\right)\right].$
 
-    -   **Application**: The *Kullback-Leibler distance* is defined as $d\left(p,q\right)=\int\log\left(p/q\right)\mathrm{d}P=E_{P}\left[\log\left(p/q\right)\right]$ for two probability measures $p$ and $q$. The Kullback-Leibler distance $d(p,q)\geq 0$ and the inequality holds if and only if  $p=q$.  
+    -   **Application**: The *Kullback-Leibler divergence* is defined as
+    \[
+    d\left(P,Q\right)=\int\log\left( \frac{\mathrm{d}P}{\mathrm{d}Q}\right)\mathrm{d}P
+    \]
+    for two probability measures $P$ and $Q$. The divergence $d(P,Q)\geq 0$ and the inequality holds if and only if  $P=Q$ almost everywhere.  
 
 -   *Markov inequality* is another simple but important fact. If $E\left[\left|X\right|^{r}\right]$ exists,
     then
@@ -99,6 +117,14 @@ Jensen's inequality says that if $\varphi\left(\cdot\right)$ is a convex
     for all $r\geq1$. *Chebyshev inequality*
         $P\left(\left|X\right|>\epsilon\right)\leq E\left[X^{2}\right]/\epsilon^{2}$
         is a special case of the Markov inequality when $r=2$.
+
+- The distribution of a random variable is completely characterized by its
+CDF or PDF. Moment is a function of the distribution. To back out the underlying distribution
+from moments, we need to know the moment-generating function $M_X(t) = E [ e^{tX}]$ for $t\in \mathbb{R}$
+whenever the expectation exists.
+\[
+E[X^r ] = \frac{ \mathrm{d}^r M_X(t) }{ \mathrm{d} t^r } \bigg \vert_{t=0}
+\]
 
 # Multivariate Random Variable
 
@@ -156,7 +182,10 @@ $X_{1},X_{2},\ldots,X_{n}$ are independent, and they have the same mean
 $0$ and variance $\sigma^{2}<\infty$. Let
 $Z_{n}=\frac{1}{n}\sum_{i=1}^{n} X_{i}$. Then the
 probability $P\left(\left|Z_{n}\right|>\epsilon\right)\to0$ as
-$n\to\infty$,
+$n\to\infty$.
+
+The culmination of probability theory is *law of large numbers* and
+*central limit theorem*.
 
 ## Law of Iterated Expectations
 
