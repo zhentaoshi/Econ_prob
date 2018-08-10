@@ -93,7 +93,7 @@ symmetry of a random variable, and the fourth centered moment
         Street](http://archive.wired.com/techbiz/it/magazine/17-03/wp_quant?currentPage=all)
 
 - Moments do not always exist. For example, the mean of the Cauchy distribution does not exist,
-and the variance of the $t(2)$ distribution do not exist.
+and the variance of the $t(2)$ distribution does not exist.
 
 - $E[\cdot]$ is a linear operation. If $\phi(\cdot)$ is a linear function, then $E[\phi(X)] = \phi(E[X]).$
 
@@ -120,10 +120,10 @@ Jensen's inequality says that if $\varphi\left(\cdot\right)$ is a convex
 
 - The distribution of a random variable is completely characterized by its
 CDF or PDF. Moment is a function of the distribution. To back out the underlying distribution
-from moments, we need to know the moment-generating function $M_X(t) = E [ e^{tX}]$ for $t\in \mathbb{R}$
-whenever the expectation exists.
+from moments, we need to know the moment-generating function (mgf) $M_X(t) = E [ e^{tX}]$ for $t\in \mathbb{R}$
+whenever the expectation exists. The $r$th moment can be computed from mgf as
 \[
-E[X^r ] = \frac{ \mathrm{d}^r M_X(t) }{ \mathrm{d} t^r } \bigg \vert_{t=0}
+E[X^r ] = \frac{ \mathrm{d}^r M_X(t) }{ \mathrm{d} t^r } \big \vert_{t=0}.
 \]
 
 # Multivariate Random Variable
@@ -191,7 +191,7 @@ The culmination of probability theory is *law of large numbers* and
 
 
 Given a probability space $\left(\Omega,\mathcal{F},P\right)$, a sub
-    $\sigma$-algebra $\mathcal{G}\subset\mathcal{F}$ and a
+    $\sigma$-algebra $\mathcal{G}\subseteq \mathcal{F}$ and a
     $\mathcal{F}$-measurable function $X$ with $E\left|X\right|<\infty$,
     the *conditional expectation* $E\left[X|\mathcal{G}\right]$ is
     defined as a $\mathcal{G}$-measurable function such that
