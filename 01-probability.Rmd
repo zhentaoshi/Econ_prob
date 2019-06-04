@@ -185,11 +185,10 @@ It is often abbreviated as CDF, and it has the following properties.
 (iv)  right-continuous $\lim_{y\to x^{+}}F\left(y\right)=F\left(x\right).$
 
 For continuous distribution, if there exists a function $f$ such that for all $x$,
-$$F\left(x\right)=\int_{-\infty}^{x}f\left(y\right)dy,$$
- then $f$ is
-    called the *probability density function* of $X$, often abbreviated as PDF.
+$$F\left(x\right)=\int_{-\infty}^{x}f\left(y\right) \mathrm{d} y,$$
+ then $f$ is called the *probability density function* of $X$, often abbreviated as PDF.
 It is easy to show that $f\left(x\right)\geq0$ and
-    $\int_{a}^{b}f\left(x\right)dx=F\left(b\right)-F\left(a\right)$.
+$\int_{a}^{b}f\left(x\right)dx=F\left(b\right)-F\left(a\right)$.
 
 **Example** We have learned many parametric distributions like the binary distribution, the Poisson distribution,
 the uniform distribution, the normal distribution, $\chi^{2}$, $t$, $F$ and so on.
