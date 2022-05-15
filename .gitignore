@@ -32,7 +32,6 @@ Lec_bootstrap/
 
 ## R
 *.Rhistory
-*.Rdata
 __packages
 *.rdb
 *.rdx
