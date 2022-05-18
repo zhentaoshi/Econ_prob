@@ -6,9 +6,9 @@ Welcome to the 2022 summer short course for MSc.
 ## Contents
 
 Three topics will be covered:
-* Probability
-* Statistic
-* Basic asymptotics
+* [Probability](https://github.com/zhentaoshi/Econ_prob/blob/master/01_prob.ipynb)
+* [Statistic](https://github.com/zhentaoshi/Econ_prob/blob/master/02_stat.ipynb)
+* [Basic asymptotics](https://github.com/zhentaoshi/Econ_prob/blob/master/03_asym.ipynb)
 
 The contents can be found in the Jupyter notebook lecture notes, which can be displayed in a web browser in a static form.
 
@@ -24,6 +24,6 @@ Note: If you modify the code or text, the above approaches 1 and 2 allow you to 
 
 
 
-## Extra reading
+## Extensive reading
 Besides the lecture notes in this Github repository, you will find self-contained lecture notes in the first two chapters of
 Kevin Sheppard's [Financial Economics I](https://www.kevinsheppard.com/teaching/mfe/notes/) for MSc at Oxford University.
