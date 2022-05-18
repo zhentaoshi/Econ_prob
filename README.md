@@ -28,7 +28,7 @@ The following approaches make it possible to interact with the code cells in the
 Note:
 
 * If you modify the code or text, the above approaches 1 and 2 allow you to save your changes.
-* Originally the following is the most convenient option. However, the configuration does not seem to work, due to the capacity that `mybinder` offers.
+* Originally the following is the most convenient option. However, in my experiments this option is unstable due to the memory capacity that `mybinder` offers. You can try if if you wish.
    * Click the online [binder server](https://mybinder.org/v2/gh/zhentaoshi/Econ_prob/HEAD). It may take some time to build the environment. Be patient. Changes cannot be saved by this approach, and thus they will get lost after closing your web browser.
 
 
