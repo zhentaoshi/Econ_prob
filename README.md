@@ -9,6 +9,8 @@ Welcome to the 2022 summer short course for MSc.
 
 ## Contents
 
+The teaching materials will be edited when the dates approach.
+
 Three topics will be covered:
 * [Probability](https://github.com/zhentaoshi/Econ_prob/blob/master/01_prob.ipynb)
 * [Statistic](https://github.com/zhentaoshi/Econ_prob/blob/master/02_stat.ipynb)
