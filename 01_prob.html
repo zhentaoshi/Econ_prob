@@ -1,0 +1,914 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Probability &#8212; Lecture Notes</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Statistics" href="02_stat.html" />
+    <link rel="prev" title="Welcome to your Jupyter Book" href="intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Lecture Notes</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Welcome to your Jupyter Book
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Probability
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02_stat.html">
+   Statistics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_asym.html">
+   Basic Asymptotic Theory
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/01_prob.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/zhentaoshi/Econ_prob"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/zhentaoshi/Econ_prob/issues/new?title=Issue%20on%20page%20%2F01_prob.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/zhentaoshi/Econ_prob/master?urlpath=tree/docs/01_prob.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#probability-space">
+   Probability Space
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#random-variable">
+   Random Variable
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#distribution-function">
+   Distribution Function
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#expected-value">
+   Expected Value
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#integration">
+   Integration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multivariate-random-variable">
+   Multivariate Random Variable
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#independence">
+   Independence
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#law-of-iterated-expectations">
+   Law of Iterated Expectations
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Probability</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#probability-space">
+   Probability Space
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#random-variable">
+   Random Variable
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#distribution-function">
+   Distribution Function
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#expected-value">
+   Expected Value
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#integration">
+   Integration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multivariate-random-variable">
+   Multivariate Random Variable
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#independence">
+   Independence
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#law-of-iterated-expectations">
+   Law of Iterated Expectations
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="probability">
+<h1>Probability<a class="headerlink" href="#probability" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="probability-space">
+<h2>Probability Space<a class="headerlink" href="#probability-space" title="Permalink to this headline">¶</a></h2>
+<p>A <em>sample space</em> <span class="math notranslate nohighlight">\(\Omega\)</span> is a collection of all possible outcomes. It is a set of things.</p>
+<p>An <em>event</em> <span class="math notranslate nohighlight">\(A\)</span> is a subset of <span class="math notranslate nohighlight">\(\Omega\)</span>. It is something of interest on the sample space.</p>
+<p>A <span class="math notranslate nohighlight">\(\sigma\)</span>-<em>field</em> is a complete set of events that includes all countably finite unions, interactions, and differences.
+It is a well-organized structure built on the sample space.</p>
+<p>A <em>probability measure</em> satisfies</p>
+<ul class="simple">
+<li><p>(positiveness) <span class="math notranslate nohighlight">\(P\left(A\right)\geq0\)</span> for all events;</p></li>
+<li><p>(countable additivity) if <span class="math notranslate nohighlight">\(A_{i}\)</span>, <span class="math notranslate nohighlight">\(i\in\mathbb{N}\)</span>, are
+are mutually disjoint, then
+<span class="math notranslate nohighlight">\(P\left(\bigcup_{i\in\mathbb{N}}A_{i}\right)=\sum_{i\in\mathbb{N}}\mu\left(A_{i}\right).\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(P(\Omega) = 1\)</span>.</p></li>
+</ul>
+<p><strong>Example</strong>: (probability measure) Personal wealth management: asset allocation.
+A probability function is not necessarily about uncertainty. Two allocation rules: 1. Equal weight. 2. Optimal weight.</p>
+<p>So far we have answered the question: “What is a well-defined probability?”, but we have not yet
+answered “How to assign the probability?”</p>
+<p>There are two major schools of thinking on probability assignement. One is
+<em>frequentist</em>, who considers probability as the average chance of occurrence if a large number of experiments
+are carried out. The other is <em>Bayesian</em>, who deems probability as a subjective brief.
+The principles of these two schools are largely incompatible, while each school has
+peculiar merit under different context.</p>
+</div>
+<div class="section" id="random-variable">
+<h2>Random Variable<a class="headerlink" href="#random-variable" title="Permalink to this headline">¶</a></h2>
+<p><em>Random variable</em> maps events to a real number. If the outcome is multivariate, we call it a <em>random vector</em>.</p>
+<p><strong>Data example</strong></p>
+<p>Data source: <a class="reference external" href="https://www.kaggle.com/datasets/patriotboy112/hks-top-300-youtubers">HK top 300 Youtubers</a>. We look at the number of uploaded videos in these accounts.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">d0</span> <span class="o">=</span> <span class="n">readr</span><span class="o">::</span><span class="nf">read_csv</span><span class="p">(</span><span class="s">&quot;HKTop300YouTubers.csv&quot;</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">d0</span><span class="p">)</span>
+
+<span class="nf">library</span><span class="p">(</span><span class="n">magrittr</span><span class="p">)</span>
+
+<span class="c1"># remove NA and zeros</span>
+<span class="n">d0</span><span class="p">[</span> <span class="n">d0</span> <span class="o">==</span> <span class="m">0</span> <span class="p">]</span> <span class="o">&lt;-</span> <span class="kc">NA</span>
+<span class="n">sel</span> <span class="o">&lt;-</span> <span class="n">d0</span> <span class="o">%&gt;%</span> <span class="nf">is.na</span><span class="p">(</span> <span class="p">)</span> <span class="o">%&gt;%</span> <span class="nf">apply</span><span class="p">(</span> <span class="m">1</span><span class="p">,</span> <span class="n">any</span><span class="p">)</span>
+<span class="n">d0</span> <span class="o">%&lt;&gt;%</span> <span class="n">dplyr</span><span class="o">::</span><span class="nf">filter</span><span class="p">(</span> <span class="o">!</span><span class="n">sel</span> <span class="p">)</span>
+
+<span class="n">d1</span> <span class="o">&lt;-</span> <span class="n">d0</span> <span class="o">%&gt;%</span> <span class="n">dplyr</span><span class="o">::</span><span class="nf">select</span><span class="p">(</span><span class="m">3</span><span class="o">:</span><span class="m">5</span><span class="p">)</span>
+<span class="nf">names</span><span class="p">(</span><span class="n">d1</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;subs&quot;</span><span class="p">,</span> <span class="s">&quot;view&quot;</span><span class="p">,</span> <span class="s">&quot;count&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">Rows: </span><span class=" -Color -Color-Blue">300</span> <span class=" -Color -Color-Bold">Columns: </span><span class=" -Color -Color-Blue">7</span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Cyan">--</span> <span class=" -Color -Color-Bold">Column specification</span> <span class=" -Color -Color-Cyan">------------------------------------------------------------------------------------------------</span>
+<span class=" -Color -Color-Bold">Delimiter:</span> &quot;,&quot;
+<span class=" -Color -Color-Red">chr</span> (2): Youtuber, category
+<span class=" -Color -Color-Green">dbl</span> (2): rank, started
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Cyan">i</span> Use `spec()` to retrieve the full column specification for this data.
+<span class=" -Color -Color-Cyan">i</span> Specify the column types or set `show_col_types = FALSE` to quiet this message.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span># A tibble: 300 x 7
+    rank Youtuber       subscribers `video views` `video count` category started
+   &lt;dbl&gt; &lt;chr&gt;                &lt;dbl&gt;         &lt;dbl&gt;         &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt;
+ 1     1 Shadow MusicS~     7690000    3665970114          1144 People ~    2017
+ 2     2 Emi WongEmi W~     4870000     607656993           390 People ~    2014
+ 3     3 iQIYI &lt;U+7231&gt;&lt;U+5947&gt;&lt;U+827A&gt;i~     4010000    1744552001          9740 Film &amp; ~    2015
+ 4     4 South China M~     2650000    2612265071         11376 News &amp; ~    2007
+ 5     5 GEM&lt;U+9127&gt;&lt;U+7D2B&gt;&lt;U+68CB&gt;GEM~      2520000    1752111944            77 People ~    2019
+ 6     6 Ani-One&lt;U+52D5&gt;&lt;U+6F2B&gt;&lt;U+5C08&gt;~     2020000     238959467          2026 Film &amp; ~    2016
+ 7     7 &lt;U+860B&gt;&lt;U+679C&gt;&lt;U+52D5&gt;&lt;U+65B0&gt;&lt;U+805E&gt; HK~     1880000    1580438690         70586 News &amp; ~    2007
+ 8     8 Nikmatul Rosi~     1590000     384841124          1697 People ~    2013
+ 9     9 Kento BentoKe~     1580000     137410428            38 Educati~    2015
+10    10 ApronApron         1520000     182803329           346 Howto &amp;~    2012
+# ... with 290 more rows
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message:
+&quot;package &#39;magrittr&#39; was built under R version 4.1.3&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">print</span><span class="p">(</span> <span class="n">d1</span><span class="p">[[</span><span class="s">&quot;count&quot;</span><span class="p">]]</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [1]  1144   390  9740 11376    77  2026 70586  1697    38   346  3370   162
+ [13]  1734   138   843  2799   984  3126 30324   510 31372 15326   898  2035
+ [25]    91    90  2358   174 13507   355   184    43  5014  4733   698  1088
+ [37]  2260  1202   950   255   335    17   156   371   161 34611 10099  8998
+ [49]  1204  1222   295   456  1667 10411    91    96    99   804   224   280
+ [61]   658   316  3023  3734   161  3190  1490  3725  2408  3311   275   138
+ [73]  3376   124   188   466   599  2767   142   635  1516   928   587   246
+ [85]   273   570  2803   578  1456   162  4251     4  1080   754    70   200
+ [97]  7750  4090   312   206   932   171   349    94   629   203  2671  1729
+[109]  5867  2216   297   285   148   988 11673  5119   972   247   532   728
+[121]   354   350   353   630   280   602  2596   205   252    24   286   147
+[133]  7929   182   610   133   143   390  1916   755    54  1426   823   243
+[145]   583    84   380   220   324   216   162   240    29   557   217   124
+[157]   789  1090   103   123   153    15  1494   336   515   146    95    55
+[169]   187  7622    93   670   964  2868   547   472   303   191    47   126
+[181]   283  1374  1158   179  2334   177   564   219  1010   297   210   487
+[193]   365  1192  2379   323    19  3888 12215   365  1577   202    76  1267
+[205]    47   304  8753   309  1107   146   228   184   101   170   149  3888
+[217]   147   338   466  1221  5660   641   301  1178   763   450    31   182
+[229]   333  5056   213  4485   709   384   216  4491    85     7   567  1726
+[241]   598   182   483   159    71    21   340  4796   304   121    87   202
+[253]   545    60    84   109  8801    49    29    60   488   225   332    67
+[265]  2174   311   496  2744   654   150    13   127    54   835   119   395
+[277]   137     2     8   863   148   938  2357  7542   552    80   156   323
+[289]   147
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">hist</span><span class="p">(</span><span class="n">d1</span><span class="p">[[</span><span class="s">&quot;count&quot;</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/01_prob_8_0.png" src="_images/01_prob_8_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">d1.log</span> <span class="o">&lt;-</span> <span class="nf">log</span><span class="p">(</span><span class="n">d1</span><span class="p">)</span>
+<span class="nf">hist</span><span class="p">(</span><span class="n">d1.log</span><span class="p">[[</span><span class="s">&quot;count&quot;</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/01_prob_9_0.png" src="_images/01_prob_9_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="distribution-function">
+<h2>Distribution Function<a class="headerlink" href="#distribution-function" title="Permalink to this headline">¶</a></h2>
+<p>We go back to some terms that we have learned in a undergraduate
+probability course. A <em>(cumulative) distribution function</em>
+<span class="math notranslate nohighlight">\(F:\mathbb{R}\mapsto [0,1]\)</span> is defined as
+$<span class="math notranslate nohighlight">\(F\left(x\right)=P\left(X\leq x\right)=
+P\left(\{X\leq x\}\right).\)</span>$
+It is often abbreviated as CDF, and it has the following properties.</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\lim_{x\to-\infty}F\left(x\right)=0\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\lim_{x\to\infty}F\left(x\right)=1\)</span>,</p></li>
+<li><p>non-decreasing,</p></li>
+<li><p>right-continuous <span class="math notranslate nohighlight">\(\lim_{y\to x^{+}}F\left(y\right)=F\left(x\right).\)</span></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">plot</span><span class="p">(</span><span class="nf">ecdf</span><span class="p">(</span><span class="n">d1.log</span><span class="p">[[</span><span class="s">&quot;count&quot;</span><span class="p">]]),</span> <span class="n">verticals</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="n">do.points</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/01_prob_11_0.png" src="_images/01_prob_11_0.png" />
+</div>
+</div>
+<p>Add the definitions of quantiles</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">quantile</span><span class="p">(</span><span class="n">d1.log</span><span class="p">[[</span><span class="s">&quot;count&quot;</span><span class="p">]],</span> <span class="n">probs</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="o">/</span><span class="m">4</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.dl-inline {width: auto; margin:0; padding: 0}
+.dl-inline>dt, .dl-inline>dd {float: none; width: auto; display: inline-block}
+.dl-inline>dt::after {content: ":\0020"; padding-right: .5ex}
+.dl-inline>dt:not(:first-of-type) {padding-left: .5ex}
+</style><dl class=dl-inline><dt>25%</dt><dd>5.08759633523238</dd><dt>50%</dt><dd>5.89989735358249</dd><dt>75%</dt><dd>7.1074254741107</dd><dt>100%</dt><dd>11.1645871035339</dd></dl>
+</div></div>
+</div>
+<p>For continuous distribution, if there exists a function <span class="math notranslate nohighlight">\(f\)</span> such that for all <span class="math notranslate nohighlight">\(x\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+F\left(x\right)=\int_{-\infty}^{x}f\left(y\right)dy,
+\]</div>
+<p>then <span class="math notranslate nohighlight">\(f\)</span> is
+called the <em>probability density function</em> of <span class="math notranslate nohighlight">\(X\)</span>, often abbreviated as PDF.
+It is easy to show that <span class="math notranslate nohighlight">\(f\left(x\right)\geq0\)</span> and
+<span class="math notranslate nohighlight">\(\int_{a}^{b}f\left(x\right)dx=F\left(b\right)-F\left(a\right)\)</span>.</p>
+<p>We have learned many parametric distributions. A parametric distribution can be completely
+characterized by a few parameters.</p>
+<p>Binomial distribution.</p>
+<p>Poisson distribution.</p>
+<p>Uniform distribution.</p>
+<p>Normal distribution.
+$<span class="math notranslate nohighlight">\(
+f(x; \mu, \sigma^2) = \frac{1}{\sqrt{2\pi} \sigma} \exp\left( - \frac{(x-\mu)^2}{2\sigma^2}\right)
+\)</span>$</p>
+<p><span class="math notranslate nohighlight">\(\chi^{2}\)</span>, <span class="math notranslate nohighlight">\(t\)</span>, and <span class="math notranslate nohighlight">\(F\)</span> distributions.</p>
+<p><strong>Example</strong> <code class="docutils literal notranslate"><span class="pre">R</span></code> has a rich collection of distributions implemented in a unified rule:
+<code class="docutils literal notranslate"><span class="pre">d</span></code> for density, <code class="docutils literal notranslate"><span class="pre">p</span></code> for probability, <code class="docutils literal notranslate"><span class="pre">q</span></code> for quantile, and <code class="docutils literal notranslate"><span class="pre">r</span></code> for random variable generation.
+For instance, <code class="docutils literal notranslate"><span class="pre">dnorm</span></code>, <code class="docutils literal notranslate"><span class="pre">pnorm</span></code>, <code class="docutils literal notranslate"><span class="pre">qnorm</span></code>, and <code class="docutils literal notranslate"><span class="pre">rnorm</span></code> are the corresponding functions of the normal distribution, and the parameters <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span> can be specified in the arguments of the functions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">qnorm</span><span class="p">(</span><span class="m">0.975</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">1.95996398454005</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">pnorm</span><span class="p">(</span><span class="m">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">0.5</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">dnorm</span><span class="p">(</span><span class="m">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">0.398942280401433</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">rnorm</span><span class="p">(</span><span class="m">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>-0.479779948685937</li><li>1.10997979128526</li><li>-0.0284363801904152</li></ol>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">rpois</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>3</li><li>9</li></ol>
+</div></div>
+</div>
+<p>Below is a piece of <code class="docutils literal notranslate"><span class="pre">R</span></code> code for demonstration.</p>
+<ol class="simple">
+<li><p>Plot the density of standard normal distribution over an equally spaced grid system <code class="docutils literal notranslate"><span class="pre">x_axis</span> <span class="pre">=</span> <span class="pre">seq(-3,</span> <span class="pre">3,</span> <span class="pre">by</span> <span class="pre">=</span> <span class="pre">0.01)</span></code> (black line).</p></li>
+<li><p>Generate 1000 observations for <span class="math notranslate nohighlight">\(N(0,1)\)</span>. Plot the kernel density, a nonparametric estimation of the density (red line).</p></li>
+<li><p>Calculate the 95th quantile and the empirical probability of observing a value greater than the 95th quantile.
+In population, this value is 5%. What is the number coming out of this experiment?</p></li>
+</ol>
+<p>(Since we do not fix the random seed in the computer, the outcome is slightly different each time we run the code.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">x_axis</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">-3</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="n">by</span> <span class="o">=</span> <span class="m">0.01</span><span class="p">)</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="nf">dnorm</span><span class="p">(</span><span class="n">x_axis</span><span class="p">)</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">x_axis</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&quot;l&quot;</span><span class="p">,</span> <span class="n">xlab</span> <span class="o">=</span> <span class="s">&quot;value&quot;</span><span class="p">,</span> <span class="n">ylab</span> <span class="o">=</span> <span class="s">&quot;density&quot;</span><span class="p">)</span>
+<span class="n">z</span> <span class="o">=</span> <span class="nf">rnorm</span><span class="p">(</span><span class="m">1000</span><span class="p">)</span>
+<span class="nf">lines</span><span class="p">(</span> <span class="nf">density</span><span class="p">(</span><span class="n">z</span><span class="p">),</span> <span class="n">col</span> <span class="o">=</span> <span class="s">&quot;red&quot;</span><span class="p">)</span>
+<span class="n">crit</span> <span class="o">=</span> <span class="nf">qnorm</span><span class="p">(</span><span class="n">.</span><span class="m">95</span><span class="p">)</span>
+
+<span class="nf">cat</span><span class="p">(</span><span class="s">&quot;the empirical rejection probability is&quot;</span><span class="p">,</span> <span class="nf">mean</span><span class="p">(</span> <span class="n">z</span> <span class="o">&gt;</span> <span class="n">crit</span> <span class="p">),</span> <span class="s">&quot;\n&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>the empirical rejection probability is 0.044 
+</pre></div>
+</div>
+<img alt="_images/01_prob_28_1.png" src="_images/01_prob_28_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="expected-value">
+<h2>Expected Value<a class="headerlink" href="#expected-value" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="integration">
+<h2>Integration<a class="headerlink" href="#integration" title="Permalink to this headline">¶</a></h2>
+<p>An integral
+<span class="math notranslate nohighlight">\(\int X\mathrm{d}P\)</span> is called the <em>expected value,</em> or
+<em>expectation,</em> of <span class="math notranslate nohighlight">\(X\)</span>. We often use the notation
+<span class="math notranslate nohighlight">\(E\left[X\right]\)</span>, instead of <span class="math notranslate nohighlight">\(\int X\mathrm{d}P\)</span>, for convenience.</p>
+<p>Expectation provides the average of a random variable,
+despite that we cannot foresee the realization of a random variable in a particular trial
+(otherwise the study of uncertainty is trivial). In the frequentist’s view,
+the expectation is the average outcome if we carry out a large number of independent
+trials.</p>
+<p>If we know the probability mass function of a discrete random variable, its expectation
+is calculated as <span class="math notranslate nohighlight">\(E\left[X\right]=\sum_{x}xP\left(X=x\right)\)</span>, which is
+the integral of a simple function.
+If a continuous random variable has a PDF <span class="math notranslate nohighlight">\(f(x)\)</span>, its expectation
+can be computed as  <span class="math notranslate nohighlight">\(E\left[X\right]=\int xf\left(x\right)\mathrm{d}x\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">mean</span><span class="p">(</span> <span class="n">d1.log</span><span class="p">[[</span><span class="s">&quot;count&quot;</span><span class="p">]]</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">6.14638913572936</div></div>
+</div>
+<p>Here are some properties of the expectation.</p>
+<ul class="simple">
+<li><p>The probability of an event <span class="math notranslate nohighlight">\(A\)</span> is the expectation
+of an indicator function. <span class="math notranslate nohighlight">\(E\left[1\left\{ A\right\}  \right]= 1\times P(A) + 0 \times P(A^c) =P\left(A\right)\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(E\left[X^{r}\right]\)</span> is call the <span class="math notranslate nohighlight">\(r\)</span>-moment of <span class="math notranslate nohighlight">\(X\)</span>. The <em>mean</em> of a random variable is the first moment <span class="math notranslate nohighlight">\(\mu=E\left[X\right]\)</span>, and
+the second <em>centered</em> moment is called the <em>variance</em>
+<span class="math notranslate nohighlight">\(\mathrm{var}\left[X\right]=E\left[\left(X-\mu\right)^{2}\right]\)</span>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">var</span><span class="p">(</span><span class="n">d1.log</span><span class="p">[[</span><span class="s">&quot;count&quot;</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">2.65077090355928</div></div>
+</div>
+<p>The third centered moment <span class="math notranslate nohighlight">\(E\left[\left(X-\mu\right)^{3}\right]\)</span>,
+called <em>skewness</em>, is a measurement of the
+symmetry of a random variable, and the fourth centered moment
+<span class="math notranslate nohighlight">\(E\left[\left(X-\mu\right)^{4}\right]\)</span>, called <em>kurtosis</em>, is
+a measurement of the tail thickness.</p>
+<ul class="simple">
+<li><p>We call
+<span class="math notranslate nohighlight">\(E\left[\left(X-\mu\right)^{3}\right]/\sigma^{3}\)</span> the <em>skewness coefficient</em>, and
+<span class="math notranslate nohighlight">\(E\left[\left(X-\mu\right)^{4}\right]/\sigma^{4}-3\)</span> <em>degree of excess</em>. A normal distribution’s  skewness and  degree of excess are both zero.</p>
+<ul>
+<li><p><strong>Application</strong>: <a class="reference external" href="http://archive.wired.com/techbiz/it/magazine/17-03/wp_quant?currentPage=all">The formula that killed Wall
+Street</a></p></li>
+</ul>
+</li>
+<li><p>Moments do not always exist. For example, the mean of the Cauchy distribution does not exist,
+and the variance of the <span class="math notranslate nohighlight">\(t(2)\)</span> distribution does not exist.</p></li>
+<li><p><span class="math notranslate nohighlight">\(E[\cdot]\)</span> is a linear operation. If <span class="math notranslate nohighlight">\(\phi(\cdot)\)</span> is a linear function, then <span class="math notranslate nohighlight">\(E[\phi(X)] = \phi(E[X]).\)</span></p></li>
+<li><p><em>Jensen’s inequality</em> is an important fact.
+A function <span class="math notranslate nohighlight">\(\varphi(\cdot)\)</span> is convex if
+<span class="math notranslate nohighlight">\(\varphi( a x_1 + (1-a) x_2 ) \leq a \varphi(x_1) + (1-a) \varphi(x_2)\)</span> for all <span class="math notranslate nohighlight">\(x_1,x_2\)</span>
+in the domain and <span class="math notranslate nohighlight">\(a\in[0,1]\)</span>. For instance, <span class="math notranslate nohighlight">\(x^2\)</span> is a convex function.
+Jensen’s inequality says that if <span class="math notranslate nohighlight">\(\varphi\left(\cdot\right)\)</span> is a convex
+function, then
+<span class="math notranslate nohighlight">\(\varphi\left(E\left[X\right]\right)\leq E\left[\varphi\left(X\right)\right].\)</span></p></li>
+</ul>
+<p><em>Markov inequality</em> is another simple but important fact. If <span class="math notranslate nohighlight">\(E\left[\left|X\right|^{r}\right]\)</span> exists,
+then
+<span class="math notranslate nohighlight">\(P\left(\left|X\right|&gt;\epsilon\right)\leq E\left[\left|X\right|^{r}\right]/\epsilon^{r}\)</span>
+for all <span class="math notranslate nohighlight">\(r\geq1\)</span>. <em>Chebyshev inequality</em> <span class="math notranslate nohighlight">\(P\left(\left|X\right|&gt;\epsilon\right)\leq E\left[X^{2}\right]/\epsilon^{2}\)</span>
+is a special case of the Markov inequality when <span class="math notranslate nohighlight">\(r=2\)</span>.</p>
+</div>
+<div class="section" id="multivariate-random-variable">
+<h2>Multivariate Random Variable<a class="headerlink" href="#multivariate-random-variable" title="Permalink to this headline">¶</a></h2>
+<p>A bivariate random variable is a
+measurable function <span class="math notranslate nohighlight">\(X:\Omega\mapsto\mathbb{R}^{2}\)</span>, and more generally a multivariate random
+variable is a measurable function <span class="math notranslate nohighlight">\(X:\Omega\mapsto\mathbb{R}^{n}\)</span>.
+We can define the <em>joint CDF</em> as
+<span class="math notranslate nohighlight">\(F\left(x_{1},\ldots,x_{n}\right)=P\left(X_{1}\leq x_{1},\ldots,X_{n}\leq x_{n}\right)\)</span>.
+Joint PDF is defined similarly.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">plot</span><span class="p">(</span><span class="n">d1.log</span><span class="o">$</span><span class="n">subs</span><span class="p">,</span> <span class="n">d1.log</span><span class="o">$</span><span class="n">view</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/01_prob_37_0.png" src="_images/01_prob_37_0.png" />
+</div>
+</div>
+<p>It is sufficient to introduce the joint distribution, conditional distribution
+and marginal distribution in the simple bivariate case, and these definitions
+can be extended to multivariate distributions. Suppose
+a bivariate random variable <span class="math notranslate nohighlight">\((X,Y)\)</span> has a joint density
+<span class="math notranslate nohighlight">\(f(\cdot,\cdot)\)</span>.
+The  <em>conditional density</em> can be roughly written as  <span class="math notranslate nohighlight">\(f\left(y|x\right)=f\left(x,y\right)/f\left(x\right)\)</span> if we do not formally deal
+with the case <span class="math notranslate nohighlight">\(f(x)=0\)</span>.
+The <em>marginal density</em> <span class="math notranslate nohighlight">\(f\left(y\right)=\int f\left(x,y\right)dx\)</span> integrates out
+the coordinate that is not interested.</p>
+</div>
+<div class="section" id="independence">
+<h2>Independence<a class="headerlink" href="#independence" title="Permalink to this headline">¶</a></h2>
+<p>In a probability space <span class="math notranslate nohighlight">\((\Omega, \mathcal{F}, P)\)</span>, for two events <span class="math notranslate nohighlight">\(A_1,A_2\in \mathcal{F}\)</span> the <em>conditional probability</em> is</p>
+<div class="math notranslate nohighlight">
+\[P\left(A_1|A_2\right) = \frac{P\left(A_1 A_2\right)}{ P\left(A_2\right) }.\]</div>
+<p>In the definition of conditional probability, <span class="math notranslate nohighlight">\(A_2\)</span> plays
+the role of the outcome space  so that
+<span class="math notranslate nohighlight">\(P(A_1 A_2)\)</span> is standardized by the total mass <span class="math notranslate nohighlight">\(P(A_2)\)</span>.</p>
+<p>Since <span class="math notranslate nohighlight">\(A_1\)</span> and <span class="math notranslate nohighlight">\(A_2\)</span> are symmetric, we also have <span class="math notranslate nohighlight">\(P(A_1 A_2) = P(A_2|A_1)P(A_1)\)</span>.
+It implies
+$<span class="math notranslate nohighlight">\(P(A_1 | A_2)=\frac{P\left(A_2| A_1\right)P\left(A_1\right)}{P\left(A_2\right)}\)</span>$
+This formula is the well-known <em>Bayes’ Theorem</em>. It is particularly important in
+decision theory.</p>
+<p><strong>Example:</strong> <span class="math notranslate nohighlight">\(A_1\)</span> is the event “a student can survive CUHK’s MSc program”, and <span class="math notranslate nohighlight">\(A_2\)</span> is
+his or her application profile.</p>
+<p>We say two events <span class="math notranslate nohighlight">\(A_1\)</span> and <span class="math notranslate nohighlight">\(A_2\)</span> are <em>independent</em> if <span class="math notranslate nohighlight">\(P(A_1A_2) = P(A_1)P(A_2)\)</span>.
+If <span class="math notranslate nohighlight">\(P(A_2) \neq 0\)</span>, it is equivalent to <span class="math notranslate nohighlight">\(P(A_1 | A_2 ) = P(A_1)\)</span>.
+In words, knowing <span class="math notranslate nohighlight">\(A_2\)</span> does not change the probability of <span class="math notranslate nohighlight">\(A_1\)</span>.</p>
+<p>If <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> are independent, <span class="math notranslate nohighlight">\(E[XY] = E[X]E[Y]\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">Y</span> <span class="o">&lt;-</span> <span class="nf">matrix</span><span class="p">(</span><span class="nf">rnorm</span><span class="p">(</span><span class="m">200</span><span class="p">),</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">2</span><span class="p">)</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">Y</span><span class="p">[,</span> <span class="m">1</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">Y</span><span class="p">[,</span> <span class="m">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/01_prob_42_0.png" src="_images/01_prob_42_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">Y</span> <span class="o">&lt;-</span> <span class="nf">matrix</span><span class="p">(</span><span class="nf">rnorm</span><span class="p">(</span><span class="m">200</span><span class="p">),</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">2</span><span class="p">)</span> <span class="o">%*%</span> <span class="nf">matrix</span><span class="p">(</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">0.5</span><span class="p">,</span> <span class="m">0.5</span><span class="p">,</span> <span class="m">1</span><span class="p">),</span> <span class="m">2</span> <span class="p">)</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">Y</span><span class="p">[,</span> <span class="m">1</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">Y</span><span class="p">[,</span> <span class="m">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/01_prob_43_0.png" src="_images/01_prob_43_0.png" />
+</div>
+</div>
+<p><strong>Application</strong>: (Chebyshev law of large numbers) If
+<span class="math notranslate nohighlight">\(X_{1},X_{2},\ldots,X_{n}\)</span> are independent, and they have the same mean
+<span class="math notranslate nohighlight">\(0\)</span> and variance <span class="math notranslate nohighlight">\(\sigma^{2}&lt;\infty\)</span>. Let
+<span class="math notranslate nohighlight">\(Z_{n}=\frac{1}{n}\sum_{i=1}^{n} X_{i}\)</span>. Then the
+probability <span class="math notranslate nohighlight">\(P\left(\left|Z_{n}\right|&gt;\epsilon\right)\to0\)</span> as
+<span class="math notranslate nohighlight">\(n\to\infty\)</span>.</p>
+<p>The culmination of probability theory is <em>law of large numbers</em> and
+<em>central limit theorem</em>.</p>
+</div>
+<div class="section" id="law-of-iterated-expectations">
+<h2>Law of Iterated Expectations<a class="headerlink" href="#law-of-iterated-expectations" title="Permalink to this headline">¶</a></h2>
+<p>In the bivariate case, if the conditional density exists, the conditional expectation can be computed as
+<span class="math notranslate nohighlight">\(E\left[Y|X\right]=\int yf\left(y|X\right)dy\)</span>.
+The law of iterated expectation implies <span class="math notranslate nohighlight">\(E\left[E\left[Y|X\right]\right]=E\left[Y\right]\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">dx</span> <span class="o">&lt;-</span> <span class="n">d1.log</span> <span class="o">%&gt;%</span> 
+  <span class="n">tibble</span><span class="o">::</span><span class="nf">add_column</span><span class="p">(</span><span class="n">category</span> <span class="o">=</span> <span class="n">d0</span><span class="o">$</span><span class="n">category</span><span class="p">)</span> <span class="o">%&gt;%</span>
+  <span class="n">dplyr</span><span class="o">::</span><span class="nf">group_by</span><span class="p">(</span><span class="n">category</span><span class="p">)</span> <span class="o">%&gt;%</span>
+  <span class="n">dplyr</span><span class="o">::</span><span class="nf">summarize</span><span class="p">(</span><span class="n">mean</span> <span class="o">=</span> <span class="nf">mean</span><span class="p">(</span><span class="n">count</span><span class="p">),</span> <span class="n">no</span> <span class="o">=</span> <span class="n">dplyr</span><span class="o">::</span><span class="nf">n</span><span class="p">()</span> <span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">dx</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span> <span class="nf">sum</span><span class="p">(</span> <span class="n">dx</span><span class="o">$</span><span class="n">mean</span> <span class="o">*</span> <span class="p">(</span> <span class="n">dx</span><span class="o">$</span><span class="n">no</span><span class="o">/</span><span class="nf">nrow</span><span class="p">(</span><span class="n">d1.log</span><span class="p">)</span> <span class="p">)</span> <span class="p">)</span> <span class="p">)</span> <span class="c1"># average over categories</span>
+<span class="nf">print</span><span class="p">(</span> <span class="nf">mean</span><span class="p">(</span><span class="n">d1.log</span><span class="p">[[</span><span class="s">&quot;count&quot;</span><span class="p">]]))</span> <span class="c1"># overall average</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span># A tibble: 15 x 3
+   category               mean    no
+   &lt;chr&gt;                 &lt;dbl&gt; &lt;int&gt;
+ 1 Autos &amp; Vehicles       7.52     2
+ 2 Comedy                 5.74     8
+ 3 Education              6.29    10
+ 4 Entertainment          6.34    41
+ 5 Film &amp; Animation       5.98    28
+ 6 Gaming                 6.43    28
+ 7 Howto &amp; Style          5.71    31
+ 8 Music                  5.91    24
+ 9 News &amp; Politics        8.13    22
+10 Nonprofits &amp; Activism  6.45     1
+11 People &amp; Blogs         5.72    68
+12 Pets &amp; Animals         6.19     1
+13 Science &amp; Technology   6.08     8
+14 Sports                 6.14     5
+15 Travel &amp; Events        5.48    12
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] 6.146389
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] 6.146389
+</pre></div>
+</div>
+</div>
+</div>
+<p>Below are some properties of conditional expectations</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(E\left[E\left[Y|X_{1},X_{2}\right]|X_{1}\right]=E\left[Y|X_{1}\right];\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(E\left[E\left[Y|X_{1}\right]|X_{1},X_{2}\right]=E\left[Y|X_{1}\right];\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(E\left[h\left(X\right)Y|X\right]=h\left(X\right)E\left[Y|X\right].\)</span></p></li>
+</ol>
+<p><strong>Application</strong>: Regression is a technique that decomposes a random variable <span class="math notranslate nohighlight">\(Y\)</span>
+into two parts, a conditional mean and a residual. Write
+<span class="math notranslate nohighlight">\(Y=E\left[Y|X\right]+\epsilon\)</span>, where
+<span class="math notranslate nohighlight">\(\epsilon=Y-E\left[Y|X\right]\)</span>. Show that <span class="math notranslate nohighlight">\(E[\epsilon] = 0\)</span> and  <span class="math notranslate nohighlight">\(E[\epsilon E[Y|X] ] = 0\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># readr::write_csv(d1.log, file = &quot;logYoutuber.csv&quot;)</span>
+<span class="nf">save</span><span class="p">(</span><span class="n">d1.log</span><span class="p">,</span> <span class="n">file</span> <span class="o">=</span> <span class="s">&quot;logYoutuber.Rdata&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># save a random subsmaple</span>
+<span class="n">d1.log.sub</span> <span class="o">&lt;-</span> <span class="n">d1.log</span><span class="p">[</span><span class="nf">sample</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="nf">nrow</span><span class="p">(</span><span class="n">d1.log</span><span class="p">),</span> <span class="m">100</span><span class="p">),</span> <span class="p">]</span>
+<span class="nf">save</span><span class="p">(</span><span class="n">d1.log.sub</span><span class="p">,</span> <span class="n">file</span> <span class="o">=</span> <span class="s">&quot;logYoutuber_sample.Rdata&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "conda-env-r-r"
+        },
+        kernelOptions: {
+            kernelName: "conda-env-r-r",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'conda-env-r-r'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Welcome to your Jupyter Book</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="02_stat.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Statistics</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Zhentao Shi<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,684 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basic Asymptotic Theory &#8212; Lecture Notes</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Statistics" href="02_stat.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Lecture Notes</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Welcome to your Jupyter Book
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_prob.html">
+   Probability
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02_stat.html">
+   Statistics
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Basic Asymptotic Theory
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/03_asym.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/zhentaoshi/Econ_prob"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/zhentaoshi/Econ_prob/issues/new?title=Issue%20on%20page%20%2F03_asym.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/zhentaoshi/Econ_prob/master?urlpath=tree/docs/03_asym.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modes-of-convergence">
+   Modes of Convergence
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#law-of-large-numbers">
+   Law of Large Numbers
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cherbyshev-lln">
+     Cherbyshev LLN
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#large-of-large-numbers">
+     Large of Large Numbers
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#central-limit-theorem">
+   Central Limit Theorem
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tools-for-transformations">
+   Tools for Transformations
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Basic Asymptotic Theory</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modes-of-convergence">
+   Modes of Convergence
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#law-of-large-numbers">
+   Law of Large Numbers
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cherbyshev-lln">
+     Cherbyshev LLN
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#large-of-large-numbers">
+     Large of Large Numbers
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#central-limit-theorem">
+   Central Limit Theorem
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tools-for-transformations">
+   Tools for Transformations
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="basic-asymptotic-theory">
+<h1>Basic Asymptotic Theory<a class="headerlink" href="#basic-asymptotic-theory" title="Permalink to this headline">¶</a></h1>
+<!-- Qingliang covers basic asymptotic theory -->
+<div class="section" id="modes-of-convergence">
+<h2>Modes of Convergence<a class="headerlink" href="#modes-of-convergence" title="Permalink to this headline">¶</a></h2>
+<p>Let <span class="math notranslate nohighlight">\(x_{1},x_{2},\ldots\)</span> be an infinite
+sequence of non-random variables.
+Convergence of this non-random sequence means that for any
+<span class="math notranslate nohighlight">\(\varepsilon&gt;0\)</span>, there exists an <span class="math notranslate nohighlight">\(N\left(\varepsilon\right)\)</span> such that
+for all <span class="math notranslate nohighlight">\(n&gt;N\left(\varepsilon\right)\)</span>, we have
+<span class="math notranslate nohighlight">\(\left|x_{n}-x\right|&lt;\varepsilon\)</span>. We say <span class="math notranslate nohighlight">\(x\)</span> is the limit of <span class="math notranslate nohighlight">\(x_{n}\)</span>,
+and write <span class="math notranslate nohighlight">\(x_{n}\to x\)</span> or <span class="math notranslate nohighlight">\(\lim_{n\to\infty}x_{n}=x\)</span>.</p>
+<p>Instead of a deterministic sequence, we are interested in the
+convergence of a sequence of random variables. Since a random variable
+is “random” thanks to the induced probability measure by the measurable
+function, we must be clear what <em>convergence</em> means. Several modes of
+convergence are widely used.</p>
+<p>We say a sequence of random variables <span class="math notranslate nohighlight">\(\left(x_{n}\right)\)</span> converges in
+probability to <span class="math notranslate nohighlight">\(x\)</span>, where <span class="math notranslate nohighlight">\(x\)</span> can be either a random variable or a
+non-random constant, if for any <span class="math notranslate nohighlight">\(\varepsilon&gt;0\)</span>, the probability
+<span class="math notranslate nohighlight">\(P\left\{ \left|x_{n} -x\right|&lt;\varepsilon\right\} \to1\)</span>
+(or equivalently
+<span class="math notranslate nohighlight">\(P\left\{ \left|x_{n} -x\right|\geq\varepsilon\right\} \to0\)</span>)
+as <span class="math notranslate nohighlight">\(n\to\infty\)</span>. We can write <span class="math notranslate nohighlight">\(x_{n}\stackrel{p}{\to}x\)</span> or
+<span class="math notranslate nohighlight">\(\mathrm{plim}_{n\to\infty}x_{n}=x\)</span>.</p>
+<p>A sequence of random variables <span class="math notranslate nohighlight">\(\left(x_{n}\right)\)</span> converges in
+squared-mean to <span class="math notranslate nohighlight">\(x\)</span>, where <span class="math notranslate nohighlight">\(x\)</span> can be either a random variable or a
+non-random constant, if <span class="math notranslate nohighlight">\(E\left[\left(x_{n}-x\right)^{2}\right]\to0.\)</span> It
+is denoted as <span class="math notranslate nohighlight">\(x_{n}\stackrel{m.s.}{\to}x\)</span>.</p>
+<p>In these definitions either
+<span class="math notranslate nohighlight">\(P\left\{ \left|x_{n}-x\right|&gt;\varepsilon\right\}\)</span>
+or <span class="math notranslate nohighlight">\(E\left[\left(x_{n}-x\right)^{2}\right]\)</span> is a non-random quantity,
+and it converges to 0 as a non-random sequence.</p>
+<p>Squared-mean convergence is stronger than convergence in probability.
+That is, <span class="math notranslate nohighlight">\(x_{n}\stackrel{m.s.}{\to}x\)</span> implies <span class="math notranslate nohighlight">\(x_{n}\stackrel{p}{\to}x\)</span>
+but the converse is untrue. Here is an example.</p>
+<p><strong>Example</strong></p>
+<p><span class="math notranslate nohighlight">\((x_{n})\)</span> is a sequence
+of binary random variables: <span class="math notranslate nohighlight">\(x_{n}=\sqrt{n}\)</span> with probability <span class="math notranslate nohighlight">\(1/n\)</span>, and
+<span class="math notranslate nohighlight">\(x_{n}=0\)</span> with probability <span class="math notranslate nohighlight">\(1-1/n\)</span>. Then <span class="math notranslate nohighlight">\(x_{n}\stackrel{p}{\to}0\)</span> but
+<span class="math notranslate nohighlight">\(x_{n}\stackrel{m.s.}{\nrightarrow}0\)</span>. To verify these claims, notice
+that for any <span class="math notranslate nohighlight">\(\varepsilon&gt;0\)</span>, we have
+<span class="math notranslate nohighlight">\(P\left(\left|x_{n}-0\right|&lt;\varepsilon\right)=P\left(x_{n}=0\right)=1-1/n\rightarrow1\)</span>
+and thereby <span class="math notranslate nohighlight">\(x_{n}\stackrel{p}{\to}0\)</span>. On the other hand,
+<span class="math notranslate nohighlight">\(E\left[\left(x_{n}-0\right)^{2}\right]=n\cdot1/n+0\cdot(1-1/n)=1\nrightarrow0,\)</span>
+so <span class="math notranslate nohighlight">\(x_{n}\stackrel{m.s.}{\nrightarrow}0\)</span>.</p>
+<p>This example
+highlights the difference between the two modes of convergence.
+Convergence in probability does not count what happens on a subset in
+the sample space of small probability. Squared-mean convergence deals
+with the average over the entire probability space. If a random variable
+can take a wild value, with small probability though, it may blow away
+the squared-mean convergence. On the contrary, such irregularity does
+not undermine convergence in probability.</p>
+<p>Both convergence in probability and squared-mean convergence are about
+convergence of random variables to a target random variable or constant.
+That is, the distribution of <span class="math notranslate nohighlight">\(x_{n}-x\)</span> is concentrated around 0 as
+<span class="math notranslate nohighlight">\(n\to\infty\)</span>. Instead, <em>convergence in distribution</em> is about the
+convergence of CDF, but not the random variable. Let
+<span class="math notranslate nohighlight">\(F_{x_{n}}\left(\cdot\right)\)</span> be the CDF of <span class="math notranslate nohighlight">\(x_{n}\)</span> and
+<span class="math notranslate nohighlight">\(F_{x}\left(\cdot\right)\)</span> be the CDF of <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>We say a sequence of random variables <span class="math notranslate nohighlight">\(\left(x_{n}\right)\)</span> converges in
+distribution to a random variable <span class="math notranslate nohighlight">\(x\)</span> if
+<span class="math notranslate nohighlight">\(F_{x_{n}}\left(a\right)\to F_{x}\left(a\right)\)</span> as <span class="math notranslate nohighlight">\(n\to\infty\)</span> at each
+point <span class="math notranslate nohighlight">\(a\in\mathbb{R}\)</span> such that where <span class="math notranslate nohighlight">\(F_{x}\left(\cdot\right)\)</span> is
+continuous. We write <span class="math notranslate nohighlight">\(x_{n}\stackrel{d}{\to}x\)</span>.</p>
+<p>Convergence in distribution is the weakest mode. If
+<span class="math notranslate nohighlight">\(x_{n}\stackrel{p}{\to}x\)</span>, then <span class="math notranslate nohighlight">\(x_{n}\stackrel{d}{\to}x\)</span>. The converse
+is not true in general, unless <span class="math notranslate nohighlight">\(x\)</span> is a non-random constant (A constant
+<span class="math notranslate nohighlight">\(x\)</span> can be viewed as a degenerate random variables, with a corresponding
+“CDF” <span class="math notranslate nohighlight">\(F_{x}\left(\cdot\right)=1\left\{ \cdot\geq x\right\}\)</span>.</p>
+<p>Let <span class="math notranslate nohighlight">\(x\sim N\left(0,1\right)\)</span>. If <span class="math notranslate nohighlight">\(x_{n}=x+1/n\)</span>, then
+<span class="math notranslate nohighlight">\(x_{n}\stackrel{p}{\to}x\)</span> and of course <span class="math notranslate nohighlight">\(x_{n}\stackrel{d}{\to}x\)</span>.
+However, if <span class="math notranslate nohighlight">\(x_{n}=-x+1/n\)</span>, or <span class="math notranslate nohighlight">\(x_{n}=y+1/n\)</span> where
+<span class="math notranslate nohighlight">\(y\sim N\left(0,1\right)\)</span> is independent of <span class="math notranslate nohighlight">\(x\)</span>, then
+<span class="math notranslate nohighlight">\(x_{n}\stackrel{d}{\to}x\)</span> but <span class="math notranslate nohighlight">\(x_{n}\stackrel{p}{\nrightarrow}x\)</span>.</p>
+<p><span class="math notranslate nohighlight">\((x_{n})\)</span> is a sequence of binary random variables: <span class="math notranslate nohighlight">\(x_{n}=n\)</span> with
+probability <span class="math notranslate nohighlight">\(1/\sqrt{n}\)</span>, and <span class="math notranslate nohighlight">\(x_{n}=0\)</span> with probability <span class="math notranslate nohighlight">\(1-1/\sqrt{n}\)</span>.
+Then <span class="math notranslate nohighlight">\(x_{n}\stackrel{d}{\to}x=0.\)</span> Because</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}F_{x_{n}}\left(a\right)=\begin{cases}
+0 &amp; a&lt;0\\
+1-1/\sqrt{n} &amp; 0\leq a\leq n\\
+1 &amp; a\geq n
+\end{cases}.\end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(F_{x}\left(a\right)=\begin{cases} 0, &amp; a&lt;0\\ 1 &amp; a\geq0 \end{cases}\)</span>.
+It is easy to verify that <span class="math notranslate nohighlight">\(F_{x_{n}}\left(a\right)\)</span> converges to
+<span class="math notranslate nohighlight">\(F_{x}\left(a\right)\)</span> <em>pointwisely</em> on each point in
+<span class="math notranslate nohighlight">\(\left(-\infty,0\right)\cup\left(0,+\infty\right)\)</span>, where
+<span class="math notranslate nohighlight">\(F_{x}\left(a\right)\)</span> is continuous.</p>
+<p>So far we have talked about convergence of scalar variables. These three
+modes of converges can be easily generalixed to random vectors. In
+particular, the <em>Cramer-Wold device</em> collapses a random vector into a
+random vector via arbitrary linear combination.</p>
+</div>
+<div class="section" id="law-of-large-numbers">
+<h2>Law of Large Numbers<a class="headerlink" href="#law-of-large-numbers" title="Permalink to this headline">¶</a></h2>
+<p>(Weak) law of large numbers (LLN) is a collection of statements about
+convergence in probability of the sample average to its population
+counterpart. The basic form of LLN is:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{n}\sum_{i=1}^{n}(x_{i}-E[x_{i}])\stackrel{p}{\to}0
+\]</div>
+<p>as <span class="math notranslate nohighlight">\(n\to\infty\)</span>. Various versions of LLN work under different assumptions
+about some features and/or dependence of the underlying random
+variables.</p>
+<div class="section" id="cherbyshev-lln">
+<h3>Cherbyshev LLN<a class="headerlink" href="#cherbyshev-lln" title="Permalink to this headline">¶</a></h3>
+<p>We illustrate LLN by the simple example of Chebyshev LLN, which can be
+proved by elementary calculation. It utilizes the <em>Chebyshev
+inequality</em>.</p>
+<ul class="simple">
+<li><p><em>Chebyshev inequality</em>: If a random variable <span class="math notranslate nohighlight">\(x\)</span> has a finite second
+moment <span class="math notranslate nohighlight">\(E\left[x^{2}\right]&lt;\infty\)</span>, then we have
+<span class="math notranslate nohighlight">\(P\left\{ \left|x\right|&gt;\varepsilon\right\} \leq E\left[x^{2}\right]/\varepsilon^{2}\)</span>
+for any constant <span class="math notranslate nohighlight">\(\varepsilon&gt;0\)</span>.</p></li>
+</ul>
+<p>Show that if <span class="math notranslate nohighlight">\(r_{2}\geq r_{1}\geq1\)</span>, then
+<span class="math notranslate nohighlight">\(E\left[\left|x\right|^{r_{2}}\right]&lt;\infty\)</span> implies
+<span class="math notranslate nohighlight">\(E\left[\left|x\right|^{r_{1}}\right]&lt;\infty.\)</span> (Hint: use Holder’s
+inequality.)</p>
+<p>The Chebyshev inequality is a special case of the <em>Markov inequality</em>.</p>
+<ul class="simple">
+<li><p><em>Markov inequality</em>: If a random variable <span class="math notranslate nohighlight">\(x\)</span> has a finite <span class="math notranslate nohighlight">\(r\)</span>-th
+absolute moment <span class="math notranslate nohighlight">\(E\left[\left|x\right|^{r}\right]&lt;\infty\)</span> for some
+<span class="math notranslate nohighlight">\(r\ge1\)</span>, then we have
+<span class="math notranslate nohighlight">\(P\left\{ \left|x\right|&gt;\varepsilon\right\} \leq E\left[\left|x\right|^{r}\right]/\varepsilon^{r}\)</span>
+any constant <span class="math notranslate nohighlight">\(\varepsilon&gt;0\)</span>.</p></li>
+</ul>
+<p>It is easy to verify the Markov inequality.
+$<span class="math notranslate nohighlight">\(
+\begin{aligned}E\left[\left|x\right|^{r}\right] &amp; =\int_{\left|x\right|&gt;\varepsilon}\left|x\right|^{r}dF_{X}+\int_{\left|x\right|\leq\varepsilon}\left|x\right|^{r}dF_{X}\\
+ &amp; \geq\int_{\left|x\right|&gt;\varepsilon}\left|x\right|^{r}dF_{X}\\
+ &amp; \geq\varepsilon^{r}\int_{\left|x\right|&gt;\varepsilon}dF_{X}=\varepsilon^{r}P\left\{ \left|x\right|&gt;\varepsilon\right\} .
+\end{aligned}
+\)</span>$
+Rearrange the above inequality and we obtain the Markov
+inequality.</p>
+<p>Let the <em>partial sum</em> <span class="math notranslate nohighlight">\(S_{n}=\sum_{i=1}^{n}x_{i}\)</span>, where
+<span class="math notranslate nohighlight">\(\mu_{i}=E\left[x_{i}\right]\)</span> and
+<span class="math notranslate nohighlight">\(\sigma_{i}^{2}=\mathrm{var}\left[x_{i}\right]\)</span>. We apply the Chebyshev
+inequality to the sample mean
+<span class="math notranslate nohighlight">\(x_{n}=\overline{x}-\bar{\mu}=n^{-1}\left(S_{n}-E\left[S_{n}\right]\right)\)</span>. Assume the iid data.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+P\left\{ \left|x_{n}\right|\geq\varepsilon\right\}  &amp; =P\left\{ n^{-1}\left|S_{n}-E\left[S_{n}\right]\right|\geq\varepsilon\right\} \\
+ &amp; \leq E\left[\left(n^{-1}\sum_{i=1}^{n}\left(x_{i}-\mu_{i}\right)\right)^{2}\right]/\varepsilon^{2} \\
+ &amp; =\left(n\varepsilon\right)^{-2}  E\left[\sum_{i=1}^{n}\left(x_{i}-\mu_{i}\right)^{2}\right] \\
+ &amp; = \frac{1} {n\varepsilon^{-2}} \mathrm{var}\left(x_{1}\right).
+ \end{aligned}
+ \end{split}\]</div>
+<p>This result gives the Chebyshev LLN:</p>
+<ul class="simple">
+<li><p>Chebyshev LLN: If <span class="math notranslate nohighlight">\(\left(z_{1},\ldots,x_{n}\right)\)</span> is a sample of
+iid observations, <span class="math notranslate nohighlight">\(E\left[x_{1}\right]=\mu\)</span> , and
+<span class="math notranslate nohighlight">\(\sigma^{2}=\mathrm{var}\left[x_{1}\right]&lt;\infty\)</span> exists, then
+<span class="math notranslate nohighlight">\(\frac{1}{n}\sum_{i=1}^{n}x_{i}\stackrel{p}{\to}\mu.\)</span></p></li>
+</ul>
+<p>Another useful LLN is the <em>Kolmogorov LLN</em>. Since its derivation
+requires more advanced knowledge of probability theory, we state the
+result without proof.</p>
+<ul class="simple">
+<li><p>Kolmogorov LLN: If <span class="math notranslate nohighlight">\(\left(x_{1},\ldots,x_{n}\right)\)</span> is a sample of
+iid observations and <span class="math notranslate nohighlight">\(E\left[x_{1}\right]=\mu\)</span> exists, then
+<span class="math notranslate nohighlight">\(\frac{1}{n}\sum_{i=1}^{n}x_{i}\stackrel{p}{\to}\mu\)</span>.</p></li>
+</ul>
+<p>Compared with the Chebyshev LLN, the Kolmogorov LLN only requires the
+existence of the population mean, but not any higher moments. On the
+other hand, iid is essential for the Kolmogorov LLN.</p>
+<p>Consider three distributions: standard normal <span class="math notranslate nohighlight">\(N\left(0,1\right)\)</span>,
+<span class="math notranslate nohighlight">\(t\left(2\right)\)</span> (zero mean, infinite variance), and the Cauchy
+distribution (no moments exist). We plot paths of the sample average
+with <span class="math notranslate nohighlight">\(n=2^{1},2^{2},\ldots,2^{20}\)</span>. We will see that the sample averages
+of <span class="math notranslate nohighlight">\(N\left(0,1\right)\)</span> and <span class="math notranslate nohighlight">\(t\left(2\right)\)</span> converge, but that of the
+Cauchy distribution does not.</p>
+</div>
+<div class="section" id="large-of-large-numbers">
+<h3>Large of Large Numbers<a class="headerlink" href="#large-of-large-numbers" title="Permalink to this headline">¶</a></h3>
+<p>This script demonstrates the law of large numbers (LLN) along with the underlying assumptions.</p>
+<p>Write a function to generate the sample mean given the sample size <span class="math notranslate nohighlight">\(n\)</span> and the distribution.
+We allow three distributions, namely, <span class="math notranslate nohighlight">\(N(0,1)\)</span>, <span class="math notranslate nohighlight">\(t(2)\)</span> and Cauchy.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">sample.mean</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(</span> <span class="n">n</span><span class="p">,</span> <span class="n">distribution</span> <span class="p">){</span>
+  <span class="c1"># get sample mean for a given distribution</span>
+  <span class="nf">if </span><span class="p">(</span><span class="n">distribution</span> <span class="o">==</span> <span class="s">&quot;normal&quot;</span><span class="p">){</span> <span class="n">y</span> <span class="o">=</span> <span class="nf">rnorm</span><span class="p">(</span> <span class="n">n</span> <span class="p">)</span> <span class="p">}</span> 
+  <span class="n">else</span> <span class="nf">if </span><span class="p">(</span><span class="n">distribution</span> <span class="o">==</span> <span class="s">&quot;t2&quot;</span><span class="p">)</span> <span class="p">{</span><span class="n">y</span> <span class="o">=</span> <span class="nf">rt</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="m">2</span><span class="p">)</span> <span class="p">}</span>
+  <span class="n">else</span> <span class="nf">if </span><span class="p">(</span><span class="n">distribution</span> <span class="o">==</span> <span class="s">&quot;cauchy&quot;</span><span class="p">)</span> <span class="p">{</span><span class="n">y</span> <span class="o">=</span> <span class="nf">rcauchy</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="p">}</span>
+  <span class="nf">return</span><span class="p">(</span> <span class="nf">mean</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This function plots the sample mean over the path of geometrically increasing sample size.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">LLN.plot</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(</span><span class="n">distribution</span><span class="p">){</span>
+  <span class="c1"># draw the sample mean graph</span>
+  <span class="n">ybar</span> <span class="o">=</span> <span class="nf">matrix</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="nf">length</span><span class="p">(</span><span class="n">NN</span><span class="p">),</span> <span class="m">3</span> <span class="p">)</span>
+  <span class="nf">for </span><span class="p">(</span><span class="n">rr</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">){</span>
+    <span class="nf">for </span><span class="p">(</span> <span class="n">ii</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="nf">length</span><span class="p">(</span><span class="n">NN</span><span class="p">)){</span>
+      <span class="n">n</span> <span class="o">=</span> <span class="n">NN</span><span class="p">[</span><span class="n">ii</span><span class="p">];</span> <span class="n">ybar</span><span class="p">[</span><span class="n">ii</span><span class="p">,</span> <span class="n">rr</span><span class="p">]</span> <span class="o">=</span> <span class="nf">sample.mean</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">distribution</span><span class="p">)</span>
+    <span class="p">}</span>  
+  <span class="p">}</span>
+  <span class="nf">matplot</span><span class="p">(</span><span class="n">ybar</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&quot;l&quot;</span><span class="p">,</span> <span class="n">ylab</span> <span class="o">=</span> <span class="s">&quot;mean&quot;</span><span class="p">,</span> <span class="n">xlab</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">,</span> 
+       <span class="n">lwd</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">lty</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">main</span> <span class="o">=</span> <span class="n">distribution</span><span class="p">)</span>
+  <span class="nf">abline</span><span class="p">(</span><span class="n">h</span> <span class="o">=</span> <span class="m">0</span><span class="p">,</span> <span class="n">lty</span> <span class="o">=</span> <span class="m">2</span><span class="p">)</span>
+  <span class="nf">return</span><span class="p">(</span><span class="n">ybar</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="c1"># calculation</span>
+<span class="n">NN</span> <span class="o">=</span> <span class="m">2</span><span class="o">^</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">20</span><span class="p">);</span> <span class="nf">set.seed</span><span class="p">(</span><span class="m">2020-10-7</span><span class="p">);</span> <span class="nf">par</span><span class="p">(</span><span class="n">mfrow</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">3</span><span class="p">,</span><span class="m">1</span><span class="p">))</span>
+<span class="n">l1</span> <span class="o">=</span> <span class="nf">LLN.plot</span><span class="p">(</span><span class="s">&quot;normal&quot;</span><span class="p">);</span> <span class="n">l2</span> <span class="o">=</span> <span class="nf">LLN.plot</span><span class="p">(</span><span class="s">&quot;t2&quot;</span><span class="p">);</span> <span class="n">l3</span> <span class="o">=</span> <span class="nf">LLN.plot</span><span class="p">(</span><span class="s">&quot;cauchy&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/03_asym_17_0.png" src="_images/03_asym_17_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="central-limit-theorem">
+<h2>Central Limit Theorem<a class="headerlink" href="#central-limit-theorem" title="Permalink to this headline">¶</a></h2>
+<p>The central limit theorem (CLT) is a collection of probability results
+about the convergence in distribution to a stable distribution. The
+limiting distribution is usually the Gaussian distribution. The basic
+form of the CLT is:</p>
+<ul>
+<li><p><em>Under some conditions to be spelled out</em>, the sample average of
+<em>zero-mean</em> random variables <span class="math notranslate nohighlight">\(\left(x_{1},\ldots,x_{n}\right)\)</span>
+multiplied by <span class="math notranslate nohighlight">\(\sqrt{n}\)</span> satisfies</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{\sqrt{n}}\sum_{i=1}^{n}x_{i}\stackrel{d}{\to}N\left(0,\sigma^{2}\right)\]</div>
+<p>as <span class="math notranslate nohighlight">\(n\to\infty\)</span>.</p>
+</li>
+</ul>
+<p>Various versions of CLT work under different assumptions about the
+random variables. <em>Lindeberg-Levy CLT</em> is the simplest CLT.</p>
+<ul class="simple">
+<li><p>If the sample <span class="math notranslate nohighlight">\(\left(x_{1},\ldots,x_{n}\right)\)</span> is iid,
+<span class="math notranslate nohighlight">\(E\left[x_{1}\right]=0\)</span> and
+<span class="math notranslate nohighlight">\(\mathrm{var}\left[x_{1}\right]=\sigma^{2}&lt;\infty\)</span>, then
+<span class="math notranslate nohighlight">\(\frac{1}{\sqrt{n}}\sum_{i=1}^{n}x_{i}\stackrel{d}{\to}N\left(0,\sigma^{2}\right)\)</span>.</p></li>
+</ul>
+<p>This is a simulated example.</p>
+<p><strong>Example</strong>:
+The sample size is chosen as <span class="math notranslate nohighlight">\(2^x\)</span>, where <span class="math notranslate nohighlight">\(x=1:20\)</span>. We have the following observations.</p>
+<ul class="simple">
+<li><p>When the distribution is <span class="math notranslate nohighlight">\(N(0,1)\)</span>, the Chebyshev LLN works. The sample mean converges fast.</p></li>
+<li><p>When the distribution is <span class="math notranslate nohighlight">\(t(2)\)</span>, which has zero mean but infinite variance, the Kolmogorov LLN works. The sample mean still converges, though more slowly than the <span class="math notranslate nohighlight">\(N(0,1)\)</span> case.</p></li>
+<li><p>The Cauchy distribution has no moment at any order. The sample mean does not converge no matter how large is the sample size.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">Z_fun</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">distribution</span><span class="p">){</span>
+  <span class="nf">if </span><span class="p">(</span><span class="n">distribution</span> <span class="o">==</span> <span class="s">&quot;normal&quot;</span><span class="p">){</span>
+      <span class="n">z</span> <span class="o">=</span> <span class="nf">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">*</span> <span class="nf">mean</span><span class="p">(</span><span class="nf">rnorm</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+	<span class="p">}</span> <span class="n">else</span> <span class="nf">if </span><span class="p">(</span><span class="n">distribution</span> <span class="o">==</span> <span class="s">&quot;chisq2&quot;</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">df</span> <span class="o">=</span> <span class="m">2</span><span class="p">;</span> 
+      <span class="n">x</span> <span class="o">=</span> <span class="nf">rchisq</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="m">2</span><span class="p">)</span>
+      <span class="n">z</span> <span class="o">=</span> <span class="nf">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span> <span class="nf">mean</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">df</span> <span class="p">)</span> <span class="o">/</span> <span class="nf">sqrt</span><span class="p">(</span><span class="m">2</span><span class="o">*</span><span class="n">df</span><span class="p">)</span>
+      <span class="p">}</span>
+  <span class="nf">return </span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="n">CLT_plot</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">distribution</span><span class="p">){</span>
+  <span class="n">Rep</span> <span class="o">=</span> <span class="m">10000</span>
+  <span class="n">ZZ</span> <span class="o">=</span> <span class="nf">rep</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="n">Rep</span><span class="p">)</span>
+  <span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="n">Rep</span><span class="p">)</span> <span class="p">{</span><span class="n">ZZ</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nf">Z_fun</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">distribution</span><span class="p">)}</span>
+
+  <span class="n">xbase</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">-4.0</span><span class="p">,</span> <span class="m">4.0</span><span class="p">,</span> <span class="n">length.out</span> <span class="o">=</span> <span class="m">100</span><span class="p">)</span>
+  <span class="nf">hist</span><span class="p">(</span> <span class="n">ZZ</span><span class="p">,</span> <span class="n">breaks</span> <span class="o">=</span> <span class="m">100</span><span class="p">,</span> <span class="n">freq</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> 
+    <span class="n">xlim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span> <span class="nf">min</span><span class="p">(</span><span class="n">xbase</span><span class="p">),</span> <span class="nf">max</span><span class="p">(</span><span class="n">xbase</span><span class="p">)</span> <span class="p">),</span>
+    <span class="n">main</span> <span class="o">=</span> <span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;hist with sample size &quot;</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="p">)</span>
+  <span class="nf">lines</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">xbase</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="nf">dnorm</span><span class="p">(</span><span class="n">xbase</span><span class="p">),</span> <span class="n">col</span> <span class="o">=</span> <span class="s">&quot;red&quot;</span><span class="p">)</span>
+  <span class="nf">return </span><span class="p">(</span><span class="n">ZZ</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nf">par</span><span class="p">(</span><span class="n">mfrow</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">3</span><span class="p">,</span><span class="m">1</span><span class="p">))</span>
+<span class="n">phist</span> <span class="o">=</span> <span class="nf">CLT_plot</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="s">&quot;chisq2&quot;</span><span class="p">)</span>
+<span class="n">phist</span> <span class="o">=</span> <span class="nf">CLT_plot</span><span class="p">(</span><span class="m">10</span><span class="p">,</span> <span class="s">&quot;chisq2&quot;</span><span class="p">)</span>
+<span class="n">phist</span> <span class="o">=</span> <span class="nf">CLT_plot</span><span class="p">(</span><span class="m">100</span><span class="p">,</span> <span class="s">&quot;chisq2&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/03_asym_21_0.png" src="_images/03_asym_21_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="tools-for-transformations">
+<h2>Tools for Transformations<a class="headerlink" href="#tools-for-transformations" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Continuous mapping theorem 1: If <span class="math notranslate nohighlight">\(x_{n}\stackrel{p}{\to}a\)</span> and
+<span class="math notranslate nohighlight">\(f\left(\cdot\right)\)</span> is continuous at <span class="math notranslate nohighlight">\(a\)</span>, then
+<span class="math notranslate nohighlight">\(f\left(x_{n}\right)\stackrel{p}{\to}f\left(a\right)\)</span>.</p></li>
+<li><p>Continuous mapping theorem 2: If <span class="math notranslate nohighlight">\(x_{n}\stackrel{d}{\to}x\)</span> and
+<span class="math notranslate nohighlight">\(f\left(\cdot\right)\)</span> is continuous almost surely on the support of
+<span class="math notranslate nohighlight">\(x\)</span>, then <span class="math notranslate nohighlight">\(f\left(x_{n}\right)\stackrel{d}{\to}f\left(x\right)\)</span>.</p></li>
+<li><p>Slutsky’s theorem: If <span class="math notranslate nohighlight">\(x_{n}\stackrel{d}{\to}x\)</span> and
+<span class="math notranslate nohighlight">\(y_{n}\stackrel{p}{\to}a\)</span>, then</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(x_{n}+y_{n}\stackrel{d}{\to}x+a\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x_{n}y_{n}\stackrel{d}{\to}ax\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x_{n}/y_{n}\stackrel{d}{\to}x/a\)</span> if <span class="math notranslate nohighlight">\(a\neq0\)</span>.</p></li>
+</ul>
+</li>
+</ul>
+<p>Slutsky’s theorem consists of special cases of the continuous mapping
+theorem 2. Only because the addition, multiplication and division are
+encountered so frequently in practice, we list it as a separate theorem.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "conda-env-r-r"
+        },
+        kernelOptions: {
+            kernelName: "conda-env-r-r",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'conda-env-r-r'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="02_stat.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Statistics</p>
+        </div>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Zhentao Shi<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

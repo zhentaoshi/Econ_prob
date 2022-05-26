@@ -1,0 +1,397 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Statistics &#8212; Lecture Notes</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Lecture Notes</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Welcome to your Jupyter Book
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_prob.html">
+   Probability
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02_stat.html">
+   Statistics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_asym.html">
+   Basic Asymptotic Theory
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/statistics.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/zhentaoshi/Econ_prob"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/zhentaoshi/Econ_prob/issues/new?title=Issue%20on%20page%20%2Fstatistics.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#statistic">
+   Statistic
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hypothesis-space">
+   Hypothesis Space
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#estimation-methods">
+   Estimation Methods
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sampling-distribution">
+   Sampling Distribution
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#regression">
+   Regression
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hypothesis-testing">
+   Hypothesis Testing
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Statistics</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#statistic">
+   Statistic
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hypothesis-space">
+   Hypothesis Space
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#estimation-methods">
+   Estimation Methods
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sampling-distribution">
+   Sampling Distribution
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#regression">
+   Regression
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hypothesis-testing">
+   Hypothesis Testing
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="statistics">
+<h1>Statistics<a class="headerlink" href="#statistics" title="Permalink to this headline">¶</a></h1>
+<p>Probability theory talks about implications of probability models. For example, given a probability distribution, what are the mean and variance? What is the distribution of a transformation of a random variable? In computer simulation, we design the data generating process and probability theory tells us what will happen to the generated realizations, in particular when the experiment can be repeated as many times as the researcher wish. This is a real-world analogue of the frequentist’s interpretation of probability.</p>
+<p>Statistic theory goes the opposite way. In reality what we observe is a sample of data, but we don’t know from what mechanism the data are generated. Statistics asks how can we infer the data generating process from the sample that we observe. For example, if we assume the data are generated from a normal distribution, what is the best way that we learn the population variance? Does the data provide evidence that two samples are drawn from population of the same means? How sure we are about tomorrow’s stock price?</p>
+<p>The beauty of statistics lies in their deep connection with philosophy. A realized sample is a set of given numbers. They are fixed, known, and invariant. But where is uncertainty? Bayesians argue that uncertainty comes from people’s belief about what is interested to learn. The data is a set of information to help us refine or update our belief. In contrast, frequentists contend that uncertainty is present only before the numbers, or realizations, are revealed; once the realizations are revealed, uncertainty is gone.</p>
+<p>The two schools of philosophical thoughts, Bayesian and frequentist, have been contesting over centuries. Nowadays in academic research and in teaching, frequentist remains the mainstream so it is the one that we are more familiar with. However, frequentist interpretation of probability and the resulting implication for statistical inference are not completely natural. In particular, repeated experiments are more easily perceived in physics and other natural science, but may be unrealistic in many economic settings. On the other hand, the difficulty of Bayesian lies in the consensus about the prior distribution, or the belief. Either has pros and cons.</p>
+<div class="section" id="statistic">
+<h2>Statistic<a class="headerlink" href="#statistic" title="Permalink to this headline">¶</a></h2>
+<p>A statistic is a mapping from the sample space to a real number or a real vector. (There are complex-valued statistics but they will not be discussed in this course.) The most familiar statistics include the ample mean <span class="math notranslate nohighlight">\(\bar{X} = n^{-1} \sum_{i=1}^n x_i\)</span> and the sample variance <span class="math notranslate nohighlight">\(\hat{\sigma}^2 =n^{-1} \sum_{i=1}^n (X_i - \bar{X})^2\)</span>. More generally, for <span class="math notranslate nohighlight">\(p&gt;0\)</span> the statistic <span class="math notranslate nohighlight">\(n^{-1} \sum_{i=1}^n x_i^p\)</span> is called the <span class="math notranslate nohighlight">\(p\)</span>-th sample moment, and <span class="math notranslate nohighlight">\(n^{-1} \sum_{i=1}^n (X_i - \bar{X})^p\)</span> is called the <span class="math notranslate nohighlight">\(p\)</span>-th centered moment. For bivariate random variable <span class="math notranslate nohighlight">\((X_i,y_i)\)</span>, we call <span class="math notranslate nohighlight">\(n^{-1} \sum_{i=1}^n (X_i - \bar{X})(Y_i-\bar{Y})\)</span> the sample covariance. All these terminologies can be extended to vector versions.</p>
+<p>There are many other features of the distribution that can be conceived. For example, the density of the distribution at a particular point.</p>
+</div>
+<div class="section" id="hypothesis-space">
+<h2>Hypothesis Space<a class="headerlink" href="#hypothesis-space" title="Permalink to this headline">¶</a></h2>
+<p>Parametric model: the distribution can be completely described by a finite number of parameters. For example, the Gaussian distribution has two parameters, and the Poisson distribution only has one parameter.</p>
+<p>Nonparametric distribution. For example, only restrict the second moment to be finite.</p>
+</div>
+<div class="section" id="estimation-methods">
+<h2>Estimation Methods<a class="headerlink" href="#estimation-methods" title="Permalink to this headline">¶</a></h2>
+<p>Sample analogue principle</p>
+<p>Parametric methods: Maximum likelihood estimation. Looking for the value of the parameter that maximizes the value of the log-likelihood. Why is this a good strategy? Because by the concavity of logarithm, in population the true parameter is the value that maximize the population maximum likelihood. In reality, we maximize its empirical version. By the law of law of large numbers, we have convergence at each point. Uniform convergence at every point can also be established (ULLN for extreme estimator, which is necessary for consistent estimation.) We can also establish the Crame-Rao lower bound, which is the smallest variance for unbiased estimator. MLE in parameter model can often achieve the lower bound, so it is the efficient estimator in the class of all unbiased estimators (at least asymptotically).</p>
+</div>
+<div class="section" id="sampling-distribution">
+<h2>Sampling Distribution<a class="headerlink" href="#sampling-distribution" title="Permalink to this headline">¶</a></h2>
+<p>bias and variance</p>
+</div>
+<div class="section" id="id1">
+<h2><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="regression">
+<h2>Regression<a class="headerlink" href="#regression" title="Permalink to this headline">¶</a></h2>
+<p>Data fitting. Basic learning task. Get the prediction as close as possible.</p>
+<p>ANOVA. The decomposition of sample variance.</p>
+<p>Regression does a very simple task, which in principle has nothing to do with causality. It minimizes the SSR. In other words, it tries to use a linear combination of the X to reduce the variance of Y as much as possible. The any (X,Y), such an algorithm can be implemented. It is a numerical algorithm that has nothing to do with uncertainty.</p>
+<p>Now we superimpose uncertainty on it. If X is still fixed but Y is uncertain, we have conditional inference (discriminative model. These terms are used in classification, not in regression.) If both (X,Y) are uncertain, we have unconditional inference (generative model). It matters only for interpretation. In reality, both (X,Y) are fixed. 从最庸俗到最抽象. The conditional model is not good for extrapolation out of the support of the observed X.</p>
+<p>Perhaps use the bivariate regression and elementary algebra to derive the formula. If both (y,x) have unit variance, then the regression coefficient is simply the correlation coefficient.</p>
+<div class="math notranslate nohighlight">
+\[\frac{\sigma_{xy}}{\sigma_x^2}=\frac{\rho \sigma_x \sigma_y}{\sigma_x^2} = \rho \frac{\sigma_y} {\sigma_x}\]</div>
+<p>The matrix version is a more general analogue.</p>
+<p>The unconditional model can be thought as if it is generated in two steps:</p>
+<p>First draw X, and then draw Y|X. We know P(X,Y) = P(Y|X)P(X) so that the discriminative model and the generative model are linked together.) However, in dynamic model such formulation is insufficient, for example the predictive model.</p>
+<p>Unbiasedness: this is about the uncertainty in beta. At least one component of X and Y must be random. so beta is a random variable and we can discuss its mean and variance. Also the distribution of beta.</p>
+<p>Why OLS? It is also the MLE under the normal distribution. Normal distribution has a simple form that the mean and variance are sufficient statistic to describe the distribution.</p>
+</div>
+<div class="section" id="hypothesis-testing">
+<h2>Hypothesis Testing<a class="headerlink" href="#hypothesis-testing" title="Permalink to this headline">¶</a></h2>
+<p>Simple form.</p>
+<p>Regression form.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Zhentao Shi<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
