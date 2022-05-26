@@ -159,3 +159,4 @@ sympy-plots-for-*.tex/
 
 # xindy
 *.xdy
+_build/
