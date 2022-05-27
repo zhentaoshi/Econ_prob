@@ -7,7 +7,7 @@ FROM rocker/binder:4.2.0
 # RUN R -e "install.packages(c('plyr', 'plm'), dependencies=TRUE, repos='http://cran.rstudio.com/')"
 
 RUN python3 -m pip install --no-cache-dir notebook jupyterlab
-RUN pip install --no-cache-dir jupyterhub
+# RUN pip install --no-cache-dir jupyterhub
 
 ARG NB_USER=jovyan
 ARG NB_UID=1000
