@@ -1,4 +1,4 @@
-FROM docker pull rocker/tidyverse:4.2.0
+FROM rocker/tidyverse:4.2.0
 
 # download the repo to local
 # ADD Econ5121A /home/rstudio/Econ5121A
