@@ -6,6 +6,7 @@ FROM rocker/binder:4.2.0
 # installing packages remotely is very slow
 # RUN R -e "install.packages(c('plyr', 'plm'), dependencies=TRUE, repos='http://cran.rstudio.com/')"
 
+RUN R -e "IRkernel::installspec()" # install R kernel, which is unavailble from rocker/binder
 
 
 #####################
