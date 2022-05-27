@@ -3,13 +3,16 @@
 
 title: Lecture Notes 
 author: Zhentao Shi
-logo: logo.png
+#logo: logo.png
+copyright: "2022"
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
-  execute_notebooks: force
-
+#  execute_notebooks: force
+  execute_notebooks: 'off'
+  allow_errors: true
+  
 # Define the name of the latex output file for PDF builds
 latex:
   latex_documents:
@@ -30,9 +33,3 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
-
-# parse:
-#  myst_enable_extensions:
-    # don't forget to list any other extensions you want enabled,
-    # including those that are enabled by default!
-#    - amsmath
