@@ -77,11 +77,6 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
-        
-      
-      
-      <img src="_static/logo.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Lecture Notes</h1>
@@ -95,7 +90,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="intro.html">
-   Welcome to your Jupyter Book
+   Welcome to CUHK MSc
   </a>
  </li>
 </ul>
@@ -442,14 +437,15 @@ absolute moment <span class="math notranslate nohighlight">\(E\left[\left|x\righ
 <span class="math notranslate nohighlight">\(P\left\{ \left|x\right|&gt;\varepsilon\right\} \leq E\left[\left|x\right|^{r}\right]/\varepsilon^{r}\)</span>
 any constant <span class="math notranslate nohighlight">\(\varepsilon&gt;0\)</span>.</p></li>
 </ul>
-<p>It is easy to verify the Markov inequality.
-$<span class="math notranslate nohighlight">\(
+<p>It is easy to verify the Markov inequality.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{aligned}E\left[\left|x\right|^{r}\right] &amp; =\int_{\left|x\right|&gt;\varepsilon}\left|x\right|^{r}dF_{X}+\int_{\left|x\right|\leq\varepsilon}\left|x\right|^{r}dF_{X}\\
  &amp; \geq\int_{\left|x\right|&gt;\varepsilon}\left|x\right|^{r}dF_{X}\\
  &amp; \geq\varepsilon^{r}\int_{\left|x\right|&gt;\varepsilon}dF_{X}=\varepsilon^{r}P\left\{ \left|x\right|&gt;\varepsilon\right\} .
 \end{aligned}
-\)</span>$
-Rearrange the above inequality and we obtain the Markov
+\end{split}\]</div>
+<p>Rearrange the above inequality and we obtain the Markov
 inequality.</p>
 <p>Let the <em>partial sum</em> <span class="math notranslate nohighlight">\(S_{n}=\sum_{i=1}^{n}x_{i}\)</span>, where
 <span class="math notranslate nohighlight">\(\mu_{i}=E\left[x_{i}\right]\)</span> and
@@ -530,9 +526,6 @@ We allow three distributions, namely, <span class="math notranslate nohighlight"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/03_asym_17_0.png" src="_images/03_asym_17_0.png" />
-</div>
 </div>
 </div>
 </div>
@@ -598,9 +591,6 @@ The sample size is chosen as <span class="math notranslate nohighlight">\(2^x\)<
 <span class="n">phist</span> <span class="o">=</span> <span class="nf">CLT_plot</span><span class="p">(</span><span class="m">100</span><span class="p">,</span> <span class="s">&quot;chisq2&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/03_asym_21_0.png" src="_images/03_asym_21_0.png" />
 </div>
 </div>
 </div>
@@ -669,7 +659,7 @@ encountered so frequently in practice, we list it as a separate theorem.</p>
     
       By Zhentao Shi<br/>
     
-        &copy; Copyright 2021.<br/>
+        &copy; Copyright 2022.<br/>
   </p>
 </footer>
 </main>

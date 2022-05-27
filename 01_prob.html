@@ -56,7 +56,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Statistics" href="02_stat.html" />
-    <link rel="prev" title="Welcome to your Jupyter Book" href="intro.html" />
+    <link rel="prev" title="Welcome to CUHK MSc" href="intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -78,11 +78,6 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
-        
-      
-      
-      <img src="_static/logo.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Lecture Notes</h1>
@@ -96,7 +91,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="intro.html">
-   Welcome to your Jupyter Book
+   Welcome to CUHK MSc
   </a>
  </li>
 </ul>
@@ -377,74 +372,10 @@ peculiar merit under different context.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">Rows: </span><span class=" -Color -Color-Blue">300</span> <span class=" -Color -Color-Bold">Columns: </span><span class=" -Color -Color-Blue">7</span>
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Cyan">--</span> <span class=" -Color -Color-Bold">Column specification</span> <span class=" -Color -Color-Cyan">------------------------------------------------------------------------------------------------</span>
-<span class=" -Color -Color-Bold">Delimiter:</span> &quot;,&quot;
-<span class=" -Color -Color-Red">chr</span> (2): Youtuber, category
-<span class=" -Color -Color-Green">dbl</span> (2): rank, started
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Cyan">i</span> Use `spec()` to retrieve the full column specification for this data.
-<span class=" -Color -Color-Cyan">i</span> Specify the column types or set `show_col_types = FALSE` to quiet this message.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span># A tibble: 300 x 7
-    rank Youtuber       subscribers `video views` `video count` category started
-   &lt;dbl&gt; &lt;chr&gt;                &lt;dbl&gt;         &lt;dbl&gt;         &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt;
- 1     1 Shadow MusicS~     7690000    3665970114          1144 People ~    2017
- 2     2 Emi WongEmi W~     4870000     607656993           390 People ~    2014
- 3     3 iQIYI &lt;U+7231&gt;&lt;U+5947&gt;&lt;U+827A&gt;i~     4010000    1744552001          9740 Film &amp; ~    2015
- 4     4 South China M~     2650000    2612265071         11376 News &amp; ~    2007
- 5     5 GEM&lt;U+9127&gt;&lt;U+7D2B&gt;&lt;U+68CB&gt;GEM~      2520000    1752111944            77 People ~    2019
- 6     6 Ani-One&lt;U+52D5&gt;&lt;U+6F2B&gt;&lt;U+5C08&gt;~     2020000     238959467          2026 Film &amp; ~    2016
- 7     7 &lt;U+860B&gt;&lt;U+679C&gt;&lt;U+52D5&gt;&lt;U+65B0&gt;&lt;U+805E&gt; HK~     1880000    1580438690         70586 News &amp; ~    2007
- 8     8 Nikmatul Rosi~     1590000     384841124          1697 People ~    2013
- 9     9 Kento BentoKe~     1580000     137410428            38 Educati~    2015
-10    10 ApronApron         1520000     182803329           346 Howto &amp;~    2012
-# ... with 290 more rows
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message:
-&quot;package &#39;magrittr&#39; was built under R version 4.1.3&quot;
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">print</span><span class="p">(</span> <span class="n">d1</span><span class="p">[[</span><span class="s">&quot;count&quot;</span><span class="p">]]</span> <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [1]  1144   390  9740 11376    77  2026 70586  1697    38   346  3370   162
- [13]  1734   138   843  2799   984  3126 30324   510 31372 15326   898  2035
- [25]    91    90  2358   174 13507   355   184    43  5014  4733   698  1088
- [37]  2260  1202   950   255   335    17   156   371   161 34611 10099  8998
- [49]  1204  1222   295   456  1667 10411    91    96    99   804   224   280
- [61]   658   316  3023  3734   161  3190  1490  3725  2408  3311   275   138
- [73]  3376   124   188   466   599  2767   142   635  1516   928   587   246
- [85]   273   570  2803   578  1456   162  4251     4  1080   754    70   200
- [97]  7750  4090   312   206   932   171   349    94   629   203  2671  1729
-[109]  5867  2216   297   285   148   988 11673  5119   972   247   532   728
-[121]   354   350   353   630   280   602  2596   205   252    24   286   147
-[133]  7929   182   610   133   143   390  1916   755    54  1426   823   243
-[145]   583    84   380   220   324   216   162   240    29   557   217   124
-[157]   789  1090   103   123   153    15  1494   336   515   146    95    55
-[169]   187  7622    93   670   964  2868   547   472   303   191    47   126
-[181]   283  1374  1158   179  2334   177   564   219  1010   297   210   487
-[193]   365  1192  2379   323    19  3888 12215   365  1577   202    76  1267
-[205]    47   304  8753   309  1107   146   228   184   101   170   149  3888
-[217]   147   338   466  1221  5660   641   301  1178   763   450    31   182
-[229]   333  5056   213  4485   709   384   216  4491    85     7   567  1726
-[241]   598   182   483   159    71    21   340  4796   304   121    87   202
-[253]   545    60    84   109  8801    49    29    60   488   225   332    67
-[265]  2174   311   496  2744   654   150    13   127    54   835   119   395
-[277]   137     2     8   863   148   938  2357  7542   552    80   156   323
-[289]   147
 </pre></div>
 </div>
 </div>
@@ -455,9 +386,6 @@ peculiar merit under different context.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/01_prob_8_0.png" src="_images/01_prob_8_0.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -465,9 +393,6 @@ peculiar merit under different context.</p>
 <span class="nf">hist</span><span class="p">(</span><span class="n">d1.log</span><span class="p">[[</span><span class="s">&quot;count&quot;</span><span class="p">]])</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/01_prob_9_0.png" src="_images/01_prob_9_0.png" />
 </div>
 </div>
 </div>
@@ -491,9 +416,6 @@ It is often abbreviated as CDF, and it has the following properties.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/01_prob_11_0.png" src="_images/01_prob_11_0.png" />
-</div>
 </div>
 <p>Add the definitions of quantiles</p>
 <div class="cell docutils container">
@@ -502,14 +424,6 @@ It is often abbreviated as CDF, and it has the following properties.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><style>
-.dl-inline {width: auto; margin:0; padding: 0}
-.dl-inline>dt, .dl-inline>dd {float: none; width: auto; display: inline-block}
-.dl-inline>dt::after {content: ":\0020"; padding-right: .5ex}
-.dl-inline>dt:not(:first-of-type) {padding-left: .5ex}
-</style><dl class=dl-inline><dt>25%</dt><dd>5.08759633523238</dd><dt>50%</dt><dd>5.89989735358249</dd><dt>75%</dt><dd>7.1074254741107</dd><dt>100%</dt><dd>11.1645871035339</dd></dl>
-</div></div>
 </div>
 <p>For continuous distribution, if there exists a function <span class="math notranslate nohighlight">\(f\)</span> such that for all <span class="math notranslate nohighlight">\(x\)</span>,</p>
 <div class="math notranslate nohighlight">
@@ -539,8 +453,6 @@ For instance, <code class="docutils literal notranslate"><span class="pre">dnorm
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">1.95996398454005</div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -548,8 +460,6 @@ For instance, <code class="docutils literal notranslate"><span class="pre">dnorm
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">0.5</div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -557,8 +467,6 @@ For instance, <code class="docutils literal notranslate"><span class="pre">dnorm
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">0.398942280401433</div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -566,14 +474,6 @@ For instance, <code class="docutils literal notranslate"><span class="pre">dnorm
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-<ol class=list-inline><li>-0.479779948685937</li><li>1.10997979128526</li><li>-0.0284363801904152</li></ol>
-</div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -581,14 +481,6 @@ For instance, <code class="docutils literal notranslate"><span class="pre">dnorm
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-<ol class=list-inline><li>3</li><li>9</li></ol>
-</div></div>
 </div>
 <p>Below is a piece of <code class="docutils literal notranslate"><span class="pre">R</span></code> code for demonstration.</p>
 <ol class="simple">
@@ -611,12 +503,6 @@ In population, this value is 5%. What is the number coming out of this experimen
 <span class="nf">cat</span><span class="p">(</span><span class="s">&quot;the empirical rejection probability is&quot;</span><span class="p">,</span> <span class="nf">mean</span><span class="p">(</span> <span class="n">z</span> <span class="o">&gt;</span> <span class="n">crit</span> <span class="p">),</span> <span class="s">&quot;\n&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>the empirical rejection probability is 0.044 
-</pre></div>
-</div>
-<img alt="_images/01_prob_28_1.png" src="_images/01_prob_28_1.png" />
 </div>
 </div>
 </div>
@@ -645,8 +531,6 @@ can be computed as  <span class="math notranslate nohighlight">\(E\left[X\right]
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">6.14638913572936</div></div>
 </div>
 <p>Here are some properties of the expectation.</p>
 <ul class="simple">
@@ -662,8 +546,6 @@ the second <em>centered</em> moment is called the <em>variance</em>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">2.65077090355928</div></div>
 </div>
 <p>The third centered moment <span class="math notranslate nohighlight">\(E\left[\left(X-\mu\right)^{3}\right]\)</span>,
 called <em>skewness</em>, is a measurement of the
@@ -710,9 +592,6 @@ Joint PDF is defined similarly.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/01_prob_37_0.png" src="_images/01_prob_37_0.png" />
-</div>
 </div>
 <p>It is sufficient to introduce the joint distribution, conditional distribution
 and marginal distribution in the simple bivariate case, and these definitions
@@ -750,9 +629,6 @@ In words, knowing <span class="math notranslate nohighlight">\(A_2\)</span> does
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/01_prob_42_0.png" src="_images/01_prob_42_0.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -760,9 +636,6 @@ In words, knowing <span class="math notranslate nohighlight">\(A_2\)</span> does
 <span class="nf">plot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">Y</span><span class="p">[,</span> <span class="m">1</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">Y</span><span class="p">[,</span> <span class="m">2</span><span class="p">])</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/01_prob_43_0.png" src="_images/01_prob_43_0.png" />
 </div>
 </div>
 <p><strong>Application</strong>: (Chebyshev law of large numbers) If
@@ -789,34 +662,6 @@ The law of iterated expectation implies <span class="math notranslate nohighligh
 
 <span class="nf">print</span><span class="p">(</span> <span class="nf">sum</span><span class="p">(</span> <span class="n">dx</span><span class="o">$</span><span class="n">mean</span> <span class="o">*</span> <span class="p">(</span> <span class="n">dx</span><span class="o">$</span><span class="n">no</span><span class="o">/</span><span class="nf">nrow</span><span class="p">(</span><span class="n">d1.log</span><span class="p">)</span> <span class="p">)</span> <span class="p">)</span> <span class="p">)</span> <span class="c1"># average over categories</span>
 <span class="nf">print</span><span class="p">(</span> <span class="nf">mean</span><span class="p">(</span><span class="n">d1.log</span><span class="p">[[</span><span class="s">&quot;count&quot;</span><span class="p">]]))</span> <span class="c1"># overall average</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span># A tibble: 15 x 3
-   category               mean    no
-   &lt;chr&gt;                 &lt;dbl&gt; &lt;int&gt;
- 1 Autos &amp; Vehicles       7.52     2
- 2 Comedy                 5.74     8
- 3 Education              6.29    10
- 4 Entertainment          6.34    41
- 5 Film &amp; Animation       5.98    28
- 6 Gaming                 6.43    28
- 7 Howto &amp; Style          5.71    31
- 8 Music                  5.91    24
- 9 News &amp; Politics        8.13    22
-10 Nonprofits &amp; Activism  6.45     1
-11 People &amp; Blogs         5.72    68
-12 Pets &amp; Animals         6.19     1
-13 Science &amp; Technology   6.08     8
-14 Sports                 6.14     5
-15 Travel &amp; Events        5.48    12
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] 6.146389
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] 6.146389
 </pre></div>
 </div>
 </div>
@@ -880,7 +725,7 @@ into two parts, a conditional mean and a residual. Write
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Welcome to your Jupyter Book</p>
+            <p class="prev-next-title">Welcome to CUHK MSc</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="02_stat.html" title="next page">
@@ -899,7 +744,7 @@ into two parts, a conditional mean and a residual. Write
     
       By Zhentao Shi<br/>
     
-        &copy; Copyright 2021.<br/>
+        &copy; Copyright 2022.<br/>
   </p>
 </footer>
 </main>

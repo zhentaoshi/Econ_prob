@@ -78,11 +78,6 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
-        
-      
-      
-      <img src="_static/logo.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Lecture Notes</h1>
@@ -96,7 +91,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="intro.html">
-   Welcome to your Jupyter Book
+   Introduction
   </a>
  </li>
 </ul>
@@ -367,21 +362,11 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] 6.271391
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">sigma</span> <span class="o">&lt;-</span> <span class="nf">sd</span><span class="p">(</span><span class="n">d1.log.sub</span><span class="p">[[</span><span class="s">&quot;count&quot;</span><span class="p">]])</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">sigma</span><span class="o">^</span><span class="m">2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] 2.577124
 </pre></div>
 </div>
 </div>
@@ -418,8 +403,6 @@ are the method of moments estimates of the two parameters.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">-0.133634348164639</div><div class="output text_html">1.10707087832727</div></div>
 </div>
 <p><strong>Example</strong>:</p>
 <p><span class="math notranslate nohighlight">\(t\)</span> distribution has one parameter, its degree of freedom <span class="math notranslate nohighlight">\(\nu\)</span>. The variance of <span class="math notranslate nohighlight">\(t(\nu)\)</span>, if <span class="math notranslate nohighlight">\(\nu &gt;2\)</span>,  is  <span class="math notranslate nohighlight">\(\sigma^2 = \nu / (\nu - 2)\)</span>.
@@ -491,14 +474,6 @@ estimator is biased.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><dl>
-	<dt>$lower</dt>
-		<dd>5.95674420569528</dd>
-	<dt>$upper</dt>
-		<dd>6.58603838452315</dd>
-</dl>
-</div></div>
 </div>
 </div>
 <div class="section" id="statistic-inference">
@@ -543,11 +518,6 @@ It characterizes the uncertainty of the statistic.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>the emprical coverage probability =  0
-</pre></div>
-</div>
-</div>
 </div>
 <p>25 replications</p>
 <div class="cell docutils container">
@@ -559,9 +529,6 @@ It characterizes the uncertainty of the statistic.</p>
 <span class="nf">abline</span><span class="p">(</span><span class="n">h</span><span class="o">=</span><span class="m">2</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="s">&quot;red&quot;</span><span class="p">,</span> <span class="n">lty</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">lwd</span> <span class="o">=</span> <span class="m">2</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/02_stat_26_0.png" src="_images/02_stat_26_0.png" />
 </div>
 </div>
 <p><em>Coverage probability</em> is the probability that the estimated confidence interval coverage the true value in repeated sampling.
@@ -635,8 +602,6 @@ or level <span class="math notranslate nohighlight">\(\alpha\)</span>.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">1.69055095791553</div></div>
 </div>
 <p>Another commonly used indicator in hypothesis testing is <span class="math notranslate nohighlight">\(p\)</span>-value:</p>
 <div class="math notranslate nohighlight">
@@ -678,8 +643,6 @@ specified test size <span class="math notranslate nohighlight">\(\alpha\)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">6.14638913572936</div><div class="output text_html">0.633698143719527</div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -706,29 +669,31 @@ specified test size <span class="math notranslate nohighlight">\(\alpha\)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/02_stat_43_0.png" src="_images/02_stat_43_0.png" />
-</div>
 </div>
 </div>
 </div>
 <div class="section" id="multivariate-variables">
 <h2>Multivariate Variables<a class="headerlink" href="#multivariate-variables" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Covariance
-$<span class="math notranslate nohighlight">\(\hat{cov}(X,Y) = \frac{1}{n} \sum_{i=1}^n (X_i - \bar{X}) (Y_i - \bar{Y}) = \frac{1}{n} \sum_{i=1}^n X_i Y_i - bar{X} \bar{Y}.\)</span>$</p></li>
-<li><p>Correlation coefficient
-$<span class="math notranslate nohighlight">\(\hat{\rho}(X,Y ) = \frac{\hat{cov}(X,Y)} { \sqrt{ \hat {\sigma}^2(X) \hat {\sigma}^2(Y) }}\)</span>$</p></li>
+<li><p>Covariance</p></li>
 </ul>
+<div class="math notranslate nohighlight">
+\[
+\hat{cov}(X,Y) = \frac{1}{n} \sum_{i=1}^n (X_i - \bar{X}) (Y_i - \bar{Y}) = \frac{1}{n} \sum_{i=1}^n X_i Y_i - bar{X} \bar{Y}.
+\]</div>
+<ul class="simple">
+<li><p>Correlation coefficient</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\hat{\rho}(X,Y ) = \frac{\hat{cov}(X,Y)} { \sqrt{ \hat {\sigma}^2(X) \hat {\sigma}^2(Y) }}
+\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">cor</span><span class="p">(</span><span class="n">d1.log.sub</span><span class="o">$</span><span class="n">subs</span><span class="p">,</span>  <span class="n">d1.log.sub</span><span class="o">$</span><span class="n">view</span><span class="p">)</span>
 <span class="nf">plot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">d1.log.sub</span><span class="o">$</span><span class="n">subs</span><span class="p">,</span>  <span class="n">y</span> <span class="o">=</span> <span class="n">d1.log.sub</span><span class="o">$</span><span class="n">view</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">0.750629048021201</div><img alt="_images/02_stat_46_1.png" src="_images/02_stat_46_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -737,8 +702,6 @@ $<span class="math notranslate nohighlight">\(\hat{\rho}(X,Y ) = \frac{\hat{cov}
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">0.633698143719527</div></div>
 </div>
 </div>
 </div>
@@ -791,7 +754,7 @@ $<span class="math notranslate nohighlight">\(\hat{\rho}(X,Y ) = \frac{\hat{cov}
     
       By Zhentao Shi<br/>
     
-        &copy; Copyright 2021.<br/>
+        &copy; Copyright 2022.<br/>
   </p>
 </footer>
 </main>

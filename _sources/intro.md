@@ -1,11 +1,19 @@
-# Welcome to your Jupyter Book
+# Introduction
 
-This is a small sample book to give you a feel for how book content is
-structured.
-It shows off a few of the major file types, as well as some sample content.
-It does not go in-depth into any particular topic - check out [the Jupyter Book documentation](https://jupyterbook.org) for more information.
+**(2022 summer, CUHK)**
 
-Check out the content pages bundled with this sample book to see more.
+Welcome to the 2022 summer short course for MSc.
 
+This is the first time I experiment with Jupyter Book.
+The teaching materials will be edited when the dates approach.
+
+  
 ```{tableofcontents}
 ```
+
+
+
+## Extensive reading
+Besides the lecture notes in this Github repository, you will find self-contained lecture notes in the first two chapters of
+Kevin Sheppard's [Financial Economics I](https://www.kevinsheppard.com/teaching/mfe/notes/) for MSc at Oxford University.
+
