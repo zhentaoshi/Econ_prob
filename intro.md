@@ -7,6 +7,9 @@ Welcome to the 2022 summer short course for MSc.
 This is the first time I experiment with Jupyter Book.
 The teaching materials will be edited when the dates approach.
 
+```{warning}
+This is a project under construction.
+```
   
 ```{tableofcontents}
 ```
