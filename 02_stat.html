@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Basic Asymptotic Theory" href="03_asym.html" />
+    <link rel="next" title="Basic Asymptotics" href="03_asym.html" />
     <link rel="prev" title="Probability" href="01_prob.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -108,7 +108,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="03_asym.html">
-   Basic Asymptotic Theory
+   Basic Asymptotics
   </a>
  </li>
 </ul>
@@ -264,6 +264,16 @@ const thebe_selector_output = ".output, .cell_output"
    Multivariate Variables
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#regressions">
+   Regressions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#remarks">
+   Remarks
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -333,6 +343,16 @@ const thebe_selector_output = ".output, .cell_output"
    Multivariate Variables
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#regressions">
+   Regressions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#remarks">
+   Remarks
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -344,6 +364,7 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="statistics">
 <h1>Statistics<a class="headerlink" href="#statistics" title="Permalink to this headline">¶</a></h1>
+<p>Statistic theory goes the opposite way from probability theory. In reality what we observe is a sample of data, but we don’t know from what mechanism the data are generated. Statistics asks how can we infer the data generating process from the sample that we observe. For example, if we assume the data are generated from a normal distribution, what is the best way that we learn the population variance? Does the data provide evidence that two samples are drawn from population of the same means? How sure we are about tomorrow’s stock price?</p>
 <p><strong>Example</strong> The sample of 100 accounts from
 <a class="reference external" href="https://www.kaggle.com/datasets/patriotboy112/hks-top-300-youtubers">HK top 300 Youtubers</a> in the previous lecture.</p>
 <div class="cell docutils container">
@@ -377,6 +398,7 @@ We are also interested in the <em>sample variance</em> to learn the scale of spr
 This is a sample, so each observation is equally important.
 Assign equal probability <span class="math notranslate nohighlight">\(1/n\)</span> on each point, and naturally the sample mean is <span class="math notranslate nohighlight">\(\hat{\mu} = \bar{X} = n^{-1} \sum_{i=1}^n X_i.\)</span>
 Similarly, a widely used sample variance is computed as <span class="math notranslate nohighlight">\(s^2 = (n-1)^{-1} \sum_{i=1}^n (X_i - \hat{\mu})^2\)</span>.</p>
+<p>More generally, for <span class="math notranslate nohighlight">\(p&gt;0\)</span> the statistic <span class="math notranslate nohighlight">\(n^{-1} \sum_{i=1}^n x_i^p\)</span> is called the <span class="math notranslate nohighlight">\(p\)</span>-th sample moment, and <span class="math notranslate nohighlight">\(n^{-1} \sum_{i=1}^n (X_i - \bar{X})^p\)</span> is called the <span class="math notranslate nohighlight">\(p\)</span>-th centered moment.</p>
 <div class="section" id="estimation-methods">
 <h2>Estimation methods<a class="headerlink" href="#estimation-methods" title="Permalink to this headline">¶</a></h2>
 <p>The familiar mean and variance are two examples.
@@ -415,6 +437,7 @@ From data, we estimate <span class="math notranslate nohighlight">\(\hat{\sigma}
 <ul class="simple">
 <li><p>Maximum likelihood</p></li>
 </ul>
+<p>Looking for the value of the parameter that maximizes the value of the log-likelihood. Why is this a good strategy? Because by the concavity of logarithm, in population the true parameter is the value that maximize the population maximum likelihood. In reality, we maximize its empirical version.</p>
 <p>Consider a random sample of
 drawn from a parametric
 distribution with density <span class="math notranslate nohighlight">\(f_{x}\left(x_{i};\theta\right)\)</span>, where
@@ -674,12 +697,13 @@ specified test size <span class="math notranslate nohighlight">\(\alpha\)</span>
 </div>
 <div class="section" id="multivariate-variables">
 <h2>Multivariate Variables<a class="headerlink" href="#multivariate-variables" title="Permalink to this headline">¶</a></h2>
+<p>For a bivariate random vector <span class="math notranslate nohighlight">\((X_i,Y_i)\)</span>,</p>
 <ul class="simple">
 <li><p>Covariance</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[
-\hat{cov}(X,Y) = \frac{1}{n} \sum_{i=1}^n (X_i - \bar{X}) (Y_i - \bar{Y}) = \frac{1}{n} \sum_{i=1}^n X_i Y_i - bar{X} \bar{Y}.
+\hat{cov}(X,Y) = \frac{1}{n} \sum_{i=1}^n (X_i - \bar{X}) (Y_i - \bar{Y}) = \frac{1}{n} \sum_{i=1}^n X_i Y_i - \bar{X} \bar{Y}.
 \]</div>
 <ul class="simple">
 <li><p>Correlation coefficient</p></li>
@@ -703,6 +727,26 @@ specified test size <span class="math notranslate nohighlight">\(\alpha\)</span>
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="regressions">
+<h2>Regressions<a class="headerlink" href="#regressions" title="Permalink to this headline">¶</a></h2>
+<p>Data fitting. Basic learning task. Get the prediction as close as possible.</p>
+<p>ANOVA. The decomposition of sample variance.</p>
+<p>Regression does a very simple task, which in principle has nothing to do with causality. It minimizes the SSR. In other words, it tries to use a linear combination of the <span class="math notranslate nohighlight">\(X\)</span> to reduce the variance of Y as much as possible. The any <span class="math notranslate nohighlight">\((X,Y)\)</span>, such an algorithm can be implemented. It is a numerical algorithm that has nothing to do with uncertainty.</p>
+<p>Now we superimpose uncertainty on it. If <span class="math notranslate nohighlight">\(X\)</span> is still fixed but Y is uncertain, we have conditional inference (discriminative model. These terms are used in classification, not in regression.) If both <span class="math notranslate nohighlight">\((X,Y)\)</span> are uncertain, we have unconditional inference (generative model). It matters only for interpretation. In reality, both <span class="math notranslate nohighlight">\((X,Y)\)</span> are fixed. 从最庸俗到最抽象. The conditional model is not good for extrapolation out of the support of the observed X.</p>
+<p>Perhaps use the bivariate regression and elementary algebra to derive the formula. If both <span class="math notranslate nohighlight">\((y,x)\)</span> have unit variance, then the regression coefficient is simply the correlation coefficient.</p>
+<div class="math notranslate nohighlight">
+\[\frac{\sigma_{xy}}{\sigma_x^2}=\frac{\rho \sigma_x \sigma_y}{\sigma_x^2} = \rho \frac{\sigma_y} {\sigma_x}\]</div>
+<p>The matrix version is a more general analogue.</p>
+<p>The unconditional model can be thought as if it is generated in two steps:</p>
+<p>First draw <span class="math notranslate nohighlight">\(X\)</span>, and then draw <span class="math notranslate nohighlight">\(Y|X\)</span>. We know <span class="math notranslate nohighlight">\(P(X,Y) = P(Y|X)P(X)\)</span> so that the discriminative model and the generative model are linked together.) However, in dynamic model such formulation is insufficient, for example the predictive model.</p>
+<p>Unbiasedness: this is about the uncertainty in beta. At least one component of <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> must be random. so beta is a random variable and we can discuss its mean and variance. Also the distribution of beta.</p>
+<p>Why OLS? It is also the MLE under the normal distribution. Normal distribution has a simple form that the mean and variance are sufficient statistic to describe the distribution.</p>
+</div>
+<div class="section" id="remarks">
+<h2>Remarks<a class="headerlink" href="#remarks" title="Permalink to this headline">¶</a></h2>
+<p>The beauty of statistics lies in their deep connection with philosophy. A realized sample is a set of given numbers. They are fixed, known, and invariant. But where is uncertainty? Bayesians argue that uncertainty comes from people’s belief about the object of interest. The data is a set of information to help us refine or update our belief. In contrast, frequentists contend that uncertainty is present  before the numbers, or realizations, are revealed; once the realizations are revealed, uncertainty is gone.</p>
+<p>The two schools of philosophical thoughts, Bayesian and frequentist, have been contesting over centuries. Nowadays in academic research and in teaching, frequentist remains the mainstream so it is the one that we are more familiar with. However, frequentist interpretation of probability and the resulting implication for statistical inference are not completely natural. In particular, repeated experiments are more easily perceived in physics and other natural science, but may be unrealistic in many economic settings. On the other hand, the difficulty of Bayesian lies in the consensus about the prior distribution, or the belief. Either has pros and cons.</p>
 </div>
 </div>
 
@@ -741,7 +785,7 @@ specified test size <span class="math notranslate nohighlight">\(\alpha\)</span>
     <a class='right-next' id="next-link" href="03_asym.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Basic Asymptotic Theory</p>
+        <p class="prev-next-title">Basic Asymptotics</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

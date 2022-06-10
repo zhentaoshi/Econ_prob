@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Basic Asymptotic Theory &#8212; Lecture Notes</title>
+    <title>Basic Asymptotics &#8212; Lecture Notes</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -90,7 +90,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="intro.html">
-   Welcome to CUHK MSc
+   Introduction
   </a>
  </li>
 </ul>
@@ -107,7 +107,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Basic Asymptotic Theory
+   Basic Asymptotics
   </a>
  </li>
 </ul>
@@ -256,7 +256,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Basic Asymptotic Theory</h1>
+                <h1>Basic Asymptotics</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -307,39 +307,42 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="basic-asymptotic-theory">
-<h1>Basic Asymptotic Theory<a class="headerlink" href="#basic-asymptotic-theory" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="basic-asymptotics">
+<h1>Basic Asymptotics<a class="headerlink" href="#basic-asymptotics" title="Permalink to this headline">¶</a></h1>
 <!-- Qingliang covers basic asymptotic theory -->
 <div class="section" id="modes-of-convergence">
 <h2>Modes of Convergence<a class="headerlink" href="#modes-of-convergence" title="Permalink to this headline">¶</a></h2>
 <p>Let <span class="math notranslate nohighlight">\(x_{1},x_{2},\ldots\)</span> be an infinite
 sequence of non-random variables.
-Convergence of this non-random sequence means that for any
+<em>Convergence</em> of this non-random sequence means that for any
 <span class="math notranslate nohighlight">\(\varepsilon&gt;0\)</span>, there exists an <span class="math notranslate nohighlight">\(N\left(\varepsilon\right)\)</span> such that
 for all <span class="math notranslate nohighlight">\(n&gt;N\left(\varepsilon\right)\)</span>, we have
 <span class="math notranslate nohighlight">\(\left|x_{n}-x\right|&lt;\varepsilon\)</span>. We say <span class="math notranslate nohighlight">\(x\)</span> is the limit of <span class="math notranslate nohighlight">\(x_{n}\)</span>,
 and write <span class="math notranslate nohighlight">\(x_{n}\to x\)</span> or <span class="math notranslate nohighlight">\(\lim_{n\to\infty}x_{n}=x\)</span>.</p>
-<p>Instead of a deterministic sequence, we are interested in the
+<p>Instead of a deterministic sequence, in this course we are interested in the
 convergence of a sequence of random variables. Since a random variable
 is “random” thanks to the induced probability measure by the measurable
-function, we must be clear what <em>convergence</em> means. Several modes of
+function, we must be clear what <em>convergence</em> means in this context. Several modes of
 convergence are widely used.</p>
 <p>We say a sequence of random variables <span class="math notranslate nohighlight">\(\left(x_{n}\right)\)</span> converges in
 probability to <span class="math notranslate nohighlight">\(x\)</span>, where <span class="math notranslate nohighlight">\(x\)</span> can be either a random variable or a
-non-random constant, if for any <span class="math notranslate nohighlight">\(\varepsilon&gt;0\)</span>, the probability
-<span class="math notranslate nohighlight">\(P\left\{ \left|x_{n} -x\right|&lt;\varepsilon\right\} \to1\)</span>
-(or equivalently
+non-random constant, if for any <span class="math notranslate nohighlight">\(\varepsilon&gt;0\)</span>, the probability</p>
+<div class="math notranslate nohighlight">
+\[
+P\left\{ \left|x_{n} -x\right|&lt;\varepsilon\right\} \to1
+\]</div>
+<p>(or equivalently
 <span class="math notranslate nohighlight">\(P\left\{ \left|x_{n} -x\right|\geq\varepsilon\right\} \to0\)</span>)
 as <span class="math notranslate nohighlight">\(n\to\infty\)</span>. We can write <span class="math notranslate nohighlight">\(x_{n}\stackrel{p}{\to}x\)</span> or
 <span class="math notranslate nohighlight">\(\mathrm{plim}_{n\to\infty}x_{n}=x\)</span>.</p>
-<p>A sequence of random variables <span class="math notranslate nohighlight">\(\left(x_{n}\right)\)</span> converges in
-squared-mean to <span class="math notranslate nohighlight">\(x\)</span>, where <span class="math notranslate nohighlight">\(x\)</span> can be either a random variable or a
+<p>A sequence of random variables <span class="math notranslate nohighlight">\(\left(x_{n}\right)\)</span> <em>converges in
+squared-mean</em> to <span class="math notranslate nohighlight">\(x\)</span>, where <span class="math notranslate nohighlight">\(x\)</span> can be either a random variable or a
 non-random constant, if <span class="math notranslate nohighlight">\(E\left[\left(x_{n}-x\right)^{2}\right]\to0.\)</span> It
 is denoted as <span class="math notranslate nohighlight">\(x_{n}\stackrel{m.s.}{\to}x\)</span>.</p>
 <p>In these definitions either
 <span class="math notranslate nohighlight">\(P\left\{ \left|x_{n}-x\right|&gt;\varepsilon\right\}\)</span>
 or <span class="math notranslate nohighlight">\(E\left[\left(x_{n}-x\right)^{2}\right]\)</span> is a non-random quantity,
-and it converges to 0 as a non-random sequence.</p>
+and it thus converges to 0 as a non-random sequence.</p>
 <p>Squared-mean convergence is stronger than convergence in probability.
 That is, <span class="math notranslate nohighlight">\(x_{n}\stackrel{m.s.}{\to}x\)</span> implies <span class="math notranslate nohighlight">\(x_{n}\stackrel{p}{\to}x\)</span>
 but the converse is untrue. Here is an example.</p>
@@ -360,10 +363,10 @@ the sample space of small probability. Squared-mean convergence deals
 with the average over the entire probability space. If a random variable
 can take a wild value, with small probability though, it may blow away
 the squared-mean convergence. On the contrary, such irregularity does
-not undermine convergence in probability.</p>
+not destroy convergence in probability.</p>
 <p>Both convergence in probability and squared-mean convergence are about
 convergence of random variables to a target random variable or constant.
-That is, the distribution of <span class="math notranslate nohighlight">\(x_{n}-x\)</span> is concentrated around 0 as
+That is, the distribution of <span class="math notranslate nohighlight">\((x_{n}-x)\)</span> is concentrated around 0 as
 <span class="math notranslate nohighlight">\(n\to\infty\)</span>. Instead, <em>convergence in distribution</em> is about the
 convergence of CDF, but not the random variable. Let
 <span class="math notranslate nohighlight">\(F_{x_{n}}\left(\cdot\right)\)</span> be the CDF of <span class="math notranslate nohighlight">\(x_{n}\)</span> and
@@ -371,13 +374,13 @@ convergence of CDF, but not the random variable. Let
 <p>We say a sequence of random variables <span class="math notranslate nohighlight">\(\left(x_{n}\right)\)</span> converges in
 distribution to a random variable <span class="math notranslate nohighlight">\(x\)</span> if
 <span class="math notranslate nohighlight">\(F_{x_{n}}\left(a\right)\to F_{x}\left(a\right)\)</span> as <span class="math notranslate nohighlight">\(n\to\infty\)</span> at each
-point <span class="math notranslate nohighlight">\(a\in\mathbb{R}\)</span> such that where <span class="math notranslate nohighlight">\(F_{x}\left(\cdot\right)\)</span> is
+point <span class="math notranslate nohighlight">\(a\in\mathbb{R}\)</span> where <span class="math notranslate nohighlight">\(F_{x}\left(\cdot\right)\)</span> is
 continuous. We write <span class="math notranslate nohighlight">\(x_{n}\stackrel{d}{\to}x\)</span>.</p>
 <p>Convergence in distribution is the weakest mode. If
 <span class="math notranslate nohighlight">\(x_{n}\stackrel{p}{\to}x\)</span>, then <span class="math notranslate nohighlight">\(x_{n}\stackrel{d}{\to}x\)</span>. The converse
 is not true in general, unless <span class="math notranslate nohighlight">\(x\)</span> is a non-random constant (A constant
 <span class="math notranslate nohighlight">\(x\)</span> can be viewed as a degenerate random variables, with a corresponding
-“CDF” <span class="math notranslate nohighlight">\(F_{x}\left(\cdot\right)=1\left\{ \cdot\geq x\right\}\)</span>.</p>
+“CDF” <span class="math notranslate nohighlight">\(F_{x}\left(\cdot\right)=1\left\{ \cdot\geq x\right\}\)</span>.)</p>
 <p>Let <span class="math notranslate nohighlight">\(x\sim N\left(0,1\right)\)</span>. If <span class="math notranslate nohighlight">\(x_{n}=x+1/n\)</span>, then
 <span class="math notranslate nohighlight">\(x_{n}\stackrel{p}{\to}x\)</span> and of course <span class="math notranslate nohighlight">\(x_{n}\stackrel{d}{\to}x\)</span>.
 However, if <span class="math notranslate nohighlight">\(x_{n}=-x+1/n\)</span>, or <span class="math notranslate nohighlight">\(x_{n}=y+1/n\)</span> where
@@ -387,11 +390,13 @@ However, if <span class="math notranslate nohighlight">\(x_{n}=-x+1/n\)</span>, 
 probability <span class="math notranslate nohighlight">\(1/\sqrt{n}\)</span>, and <span class="math notranslate nohighlight">\(x_{n}=0\)</span> with probability <span class="math notranslate nohighlight">\(1-1/\sqrt{n}\)</span>.
 Then <span class="math notranslate nohighlight">\(x_{n}\stackrel{d}{\to}x=0.\)</span> Because</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}F_{x_{n}}\left(a\right)=\begin{cases}
+\[\begin{split}
+F_{x_{n}}\left(a\right)=\begin{cases}
 0 &amp; a&lt;0\\
 1-1/\sqrt{n} &amp; 0\leq a\leq n\\
 1 &amp; a\geq n
-\end{cases}.\end{split}\]</div>
+\end{cases}.
+\end{split}\]</div>
 <p><span class="math notranslate nohighlight">\(F_{x}\left(a\right)=\begin{cases} 0, &amp; a&lt;0\\ 1 &amp; a\geq0 \end{cases}\)</span>.
 It is easy to verify that <span class="math notranslate nohighlight">\(F_{x_{n}}\left(a\right)\)</span> converges to
 <span class="math notranslate nohighlight">\(F_{x}\left(a\right)\)</span> <em>pointwisely</em> on each point in
@@ -451,7 +456,7 @@ inequality.</p>
 <span class="math notranslate nohighlight">\(\mu_{i}=E\left[x_{i}\right]\)</span> and
 <span class="math notranslate nohighlight">\(\sigma_{i}^{2}=\mathrm{var}\left[x_{i}\right]\)</span>. We apply the Chebyshev
 inequality to the sample mean
-<span class="math notranslate nohighlight">\(x_{n}=\overline{x}-\bar{\mu}=n^{-1}\left(S_{n}-E\left[S_{n}\right]\right)\)</span>. Assume the iid data.</p>
+<span class="math notranslate nohighlight">\(x_{n}=\overline{x}-\bar{\mu}=n^{-1}\left(S_{n}-E\left[S_{n}\right]\right)\)</span>. Assume the data are iid</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}

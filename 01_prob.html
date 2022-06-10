@@ -56,7 +56,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Statistics" href="02_stat.html" />
-    <link rel="prev" title="Welcome to CUHK MSc" href="intro.html" />
+    <link rel="prev" title="Introduction" href="intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -91,7 +91,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="intro.html">
-   Welcome to CUHK MSc
+   Introduction
   </a>
  </li>
 </ul>
@@ -108,7 +108,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="03_asym.html">
-   Basic Asymptotic Theory
+   Basic Asymptotics
   </a>
  </li>
 </ul>
@@ -326,11 +326,12 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="probability">
 <h1>Probability<a class="headerlink" href="#probability" title="Permalink to this headline">¶</a></h1>
+<p>Probability theory talks about construction and implications of probability models. For example, given a probability distribution, what are the mean and variance? What is the distribution of a transformed random variable? In computer simulations, we control the data generating process and the probability theory tells us what will happen to the generated realizations, in particular when the experiments can be repeated as many times as the researcher wishes. This is a real-world analogue of the frequentist’s interpretation of probability.</p>
 <div class="section" id="probability-space">
 <h2>Probability Space<a class="headerlink" href="#probability-space" title="Permalink to this headline">¶</a></h2>
 <p>A <em>sample space</em> <span class="math notranslate nohighlight">\(\Omega\)</span> is a collection of all possible outcomes. It is a set of things.</p>
 <p>An <em>event</em> <span class="math notranslate nohighlight">\(A\)</span> is a subset of <span class="math notranslate nohighlight">\(\Omega\)</span>. It is something of interest on the sample space.</p>
-<p>A <span class="math notranslate nohighlight">\(\sigma\)</span>-<em>field</em> is a complete set of events that includes all countably finite unions, interactions, and differences.
+<p>A <span class="math notranslate nohighlight">\(\sigma\)</span>-<em>field</em> is a complete set of events that include all countably finite unions, interactions, and differences.
 It is a well-organized structure built on the sample space.</p>
 <p>A <em>probability measure</em> satisfies</p>
 <ul class="simple">
@@ -340,19 +341,17 @@ are mutually disjoint, then
 <span class="math notranslate nohighlight">\(P\left(\bigcup_{i\in\mathbb{N}}A_{i}\right)=\sum_{i\in\mathbb{N}}\mu\left(A_{i}\right).\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(P(\Omega) = 1\)</span>.</p></li>
 </ul>
-<p><strong>Example</strong>: (probability measure) Personal wealth management: asset allocation.
-A probability function is not necessarily about uncertainty. Two allocation rules: 1. Equal weight. 2. Optimal weight.</p>
-<p>So far we have answered the question: “What is a well-defined probability?”, but we have not yet
+<p>We have answered the question: “What is a well-defined probability?”, but we have not yet
 answered “How to assign the probability?”</p>
-<p>There are two major schools of thinking on probability assignement. One is
-<em>frequentist</em>, who considers probability as the average chance of occurrence if a large number of experiments
-are carried out. The other is <em>Bayesian</em>, who deems probability as a subjective brief.
+<p>There are two major schools of thinking on probability assignment. One is
+the <em>frequentist</em>, who considers probability as the average chance of occurrence if a large number of experiments
+are carried out. The other is the <em>Bayesian</em>, who deems probability as a subjective brief.
 The principles of these two schools are largely incompatible, while each school has
-peculiar merit under different context.</p>
+peculiar pros and cons under different contexts.</p>
 </div>
 <div class="section" id="random-variable">
 <h2>Random Variable<a class="headerlink" href="#random-variable" title="Permalink to this headline">¶</a></h2>
-<p><em>Random variable</em> maps events to a real number. If the outcome is multivariate, we call it a <em>random vector</em>.</p>
+<p>A <em>Random variable</em> maps events to a real number. If the outcome is multivariate, we call it a <em>random vector</em>.</p>
 <p><strong>Data example</strong></p>
 <p>Data source: <a class="reference external" href="https://www.kaggle.com/datasets/patriotboy112/hks-top-300-youtubers">HK top 300 Youtubers</a>. We look at the number of uploaded videos in these accounts.</p>
 <div class="cell docutils container">
@@ -398,12 +397,14 @@ peculiar merit under different context.</p>
 </div>
 <div class="section" id="distribution-function">
 <h2>Distribution Function<a class="headerlink" href="#distribution-function" title="Permalink to this headline">¶</a></h2>
-<p>We go back to some terms that we have learned in a undergraduate
+<p>We go back to some terms learned in a undergraduate
 probability course. A <em>(cumulative) distribution function</em>
-<span class="math notranslate nohighlight">\(F:\mathbb{R}\mapsto [0,1]\)</span> is defined as
-$<span class="math notranslate nohighlight">\(F\left(x\right)=P\left(X\leq x\right)=
-P\left(\{X\leq x\}\right).\)</span>$
-It is often abbreviated as CDF, and it has the following properties.</p>
+<span class="math notranslate nohighlight">\(F:\mathbb{R}\mapsto [0,1]\)</span> is defined as</p>
+<div class="math notranslate nohighlight">
+\[
+F\left(x\right)=P\left(X\leq x\right).
+\]</div>
+<p>It is often abbreviated as CDF, and it has the following properties.</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\lim_{x\to-\infty}F\left(x\right)=0\)</span>,</p></li>
 <li><p><span class="math notranslate nohighlight">\(\lim_{x\to\infty}F\left(x\right)=1\)</span>,</p></li>
@@ -417,7 +418,7 @@ It is often abbreviated as CDF, and it has the following properties.</p>
 </div>
 </div>
 </div>
-<p>Add the definitions of quantiles</p>
+<p>The <span class="math notranslate nohighlight">\(q\)</span>-th quantile of a random variable is <span class="math notranslate nohighlight">\(\min_{x\in \mathbb R} P(X \leq x) \geq q\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">quantile</span><span class="p">(</span><span class="n">d1.log</span><span class="p">[[</span><span class="s">&quot;count&quot;</span><span class="p">]],</span> <span class="n">probs</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="o">/</span><span class="m">4</span> <span class="p">)</span>
@@ -425,18 +426,17 @@ It is often abbreviated as CDF, and it has the following properties.</p>
 </div>
 </div>
 </div>
-<p>For continuous distribution, if there exists a function <span class="math notranslate nohighlight">\(f\)</span> such that for all <span class="math notranslate nohighlight">\(x\)</span>,</p>
+<p>For a continuous distribution, if its CDF is differentiable, then</p>
 <div class="math notranslate nohighlight">
 \[
-F\left(x\right)=\int_{-\infty}^{x}f\left(y\right)dy,
+f(x) = d F\left(x\right) / d x
 \]</div>
-<p>then <span class="math notranslate nohighlight">\(f\)</span> is
-called the <em>probability density function</em> of <span class="math notranslate nohighlight">\(X\)</span>, often abbreviated as PDF.
+<p>is called the <em>probability density function</em> of <span class="math notranslate nohighlight">\(X\)</span>, often abbreviated as PDF.
 It is easy to show that <span class="math notranslate nohighlight">\(f\left(x\right)\geq0\)</span> and
 <span class="math notranslate nohighlight">\(\int_{a}^{b}f\left(x\right)dx=F\left(b\right)-F\left(a\right)\)</span>.</p>
 <p>We have learned many parametric distributions. A parametric distribution can be completely
 characterized by a few parameters.</p>
-<p>Binomial distribution.</p>
+<p><strong>Examples</strong>: Binomial distribution.</p>
 <p>Poisson distribution.</p>
 <p>Uniform distribution.</p>
 <p>Normal distribution.
@@ -444,7 +444,7 @@ $<span class="math notranslate nohighlight">\(
 f(x; \mu, \sigma^2) = \frac{1}{\sqrt{2\pi} \sigma} \exp\left( - \frac{(x-\mu)^2}{2\sigma^2}\right)
 \)</span>$</p>
 <p><span class="math notranslate nohighlight">\(\chi^{2}\)</span>, <span class="math notranslate nohighlight">\(t\)</span>, and <span class="math notranslate nohighlight">\(F\)</span> distributions.</p>
-<p><strong>Example</strong> <code class="docutils literal notranslate"><span class="pre">R</span></code> has a rich collection of distributions implemented in a unified rule:
+<p><strong>Example</strong> <code class="docutils literal notranslate"><span class="pre">R</span></code> has a rich collection of distributions implemented in a unified pattern:
 <code class="docutils literal notranslate"><span class="pre">d</span></code> for density, <code class="docutils literal notranslate"><span class="pre">p</span></code> for probability, <code class="docutils literal notranslate"><span class="pre">q</span></code> for quantile, and <code class="docutils literal notranslate"><span class="pre">r</span></code> for random variable generation.
 For instance, <code class="docutils literal notranslate"><span class="pre">dnorm</span></code>, <code class="docutils literal notranslate"><span class="pre">pnorm</span></code>, <code class="docutils literal notranslate"><span class="pre">qnorm</span></code>, and <code class="docutils literal notranslate"><span class="pre">rnorm</span></code> are the corresponding functions of the normal distribution, and the parameters <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span> can be specified in the arguments of the functions.</p>
 <div class="cell docutils container">
@@ -489,7 +489,7 @@ For instance, <code class="docutils literal notranslate"><span class="pre">dnorm
 <li><p>Calculate the 95th quantile and the empirical probability of observing a value greater than the 95th quantile.
 In population, this value is 5%. What is the number coming out of this experiment?</p></li>
 </ol>
-<p>(Since we do not fix the random seed in the computer, the outcome is slightly different each time we run the code.)</p>
+<p>(Since we do not fix the random seed in the computer, the outcome is slightly different each time when we run the code.)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">x_axis</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">-3</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="n">by</span> <span class="o">=</span> <span class="m">0.01</span><span class="p">)</span>
@@ -517,7 +517,7 @@ In population, this value is 5%. What is the number coming out of this experimen
 <span class="math notranslate nohighlight">\(E\left[X\right]\)</span>, instead of <span class="math notranslate nohighlight">\(\int X\mathrm{d}P\)</span>, for convenience.</p>
 <p>Expectation provides the average of a random variable,
 despite that we cannot foresee the realization of a random variable in a particular trial
-(otherwise the study of uncertainty is trivial). In the frequentist’s view,
+(otherwise there is no uncertainty). In the frequentist’s view,
 the expectation is the average outcome if we carry out a large number of independent
 trials.</p>
 <p>If we know the probability mass function of a discrete random variable, its expectation
@@ -552,40 +552,51 @@ called <em>skewness</em>, is a measurement of the
 symmetry of a random variable, and the fourth centered moment
 <span class="math notranslate nohighlight">\(E\left[\left(X-\mu\right)^{4}\right]\)</span>, called <em>kurtosis</em>, is
 a measurement of the tail thickness.</p>
-<ul class="simple">
+<ul>
 <li><p>We call
 <span class="math notranslate nohighlight">\(E\left[\left(X-\mu\right)^{3}\right]/\sigma^{3}\)</span> the <em>skewness coefficient</em>, and
 <span class="math notranslate nohighlight">\(E\left[\left(X-\mu\right)^{4}\right]/\sigma^{4}-3\)</span> <em>degree of excess</em>. A normal distribution’s  skewness and  degree of excess are both zero.</p>
-<ul>
+<ul class="simple">
 <li><p><strong>Application</strong>: <a class="reference external" href="http://archive.wired.com/techbiz/it/magazine/17-03/wp_quant?currentPage=all">The formula that killed Wall
 Street</a></p></li>
 </ul>
 </li>
 <li><p>Moments do not always exist. For example, the mean of the Cauchy distribution does not exist,
 and the variance of the <span class="math notranslate nohighlight">\(t(2)\)</span> distribution does not exist.</p></li>
-<li><p><span class="math notranslate nohighlight">\(E[\cdot]\)</span> is a linear operation. If <span class="math notranslate nohighlight">\(\phi(\cdot)\)</span> is a linear function, then <span class="math notranslate nohighlight">\(E[\phi(X)] = \phi(E[X]).\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(E[\cdot]\)</span> is a linear operation. <span class="math notranslate nohighlight">\(E[a X_1 + b X_2] = a E[X_1] + b E[X_2].\)</span></p></li>
 <li><p><em>Jensen’s inequality</em> is an important fact.
 A function <span class="math notranslate nohighlight">\(\varphi(\cdot)\)</span> is convex if
 <span class="math notranslate nohighlight">\(\varphi( a x_1 + (1-a) x_2 ) \leq a \varphi(x_1) + (1-a) \varphi(x_2)\)</span> for all <span class="math notranslate nohighlight">\(x_1,x_2\)</span>
 in the domain and <span class="math notranslate nohighlight">\(a\in[0,1]\)</span>. For instance, <span class="math notranslate nohighlight">\(x^2\)</span> is a convex function.
 Jensen’s inequality says that if <span class="math notranslate nohighlight">\(\varphi\left(\cdot\right)\)</span> is a convex
-function, then
-<span class="math notranslate nohighlight">\(\varphi\left(E\left[X\right]\right)\leq E\left[\varphi\left(X\right)\right].\)</span></p></li>
+function, then</p>
+<div class="math notranslate nohighlight">
+\[
+    \varphi\left(E\left[X\right]\right)\leq E\left[\varphi\left(X\right)\right].
+    \]</div>
+</li>
 </ul>
-<p><em>Markov inequality</em> is another simple but important fact. If <span class="math notranslate nohighlight">\(E\left[\left|X\right|^{r}\right]\)</span> exists,
-then
-<span class="math notranslate nohighlight">\(P\left(\left|X\right|&gt;\epsilon\right)\leq E\left[\left|X\right|^{r}\right]/\epsilon^{r}\)</span>
-for all <span class="math notranslate nohighlight">\(r\geq1\)</span>. <em>Chebyshev inequality</em> <span class="math notranslate nohighlight">\(P\left(\left|X\right|&gt;\epsilon\right)\leq E\left[X^{2}\right]/\epsilon^{2}\)</span>
+<ul>
+<li><p><em>Markov inequality</em> is another simple but important fact. If <span class="math notranslate nohighlight">\(E\left[\left|X\right|^{r}\right]\)</span>
+exists, then</p>
+<div class="math notranslate nohighlight">
+\[
+    P\left(\left|X\right|&gt;\epsilon\right)\leq E\left[\left|X\right|^{r}\right]/\epsilon^{r}
+    \]</div>
+<p>for all <span class="math notranslate nohighlight">\(r\geq1\)</span>. <em>Chebyshev inequality</em> <span class="math notranslate nohighlight">\(P\left(\left|X\right|&gt;\epsilon\right)\leq E\left[X^{2}\right]/\epsilon^{2}\)</span>
 is a special case of the Markov inequality when <span class="math notranslate nohighlight">\(r=2\)</span>.</p>
+</li>
+</ul>
 </div>
 <div class="section" id="multivariate-random-variable">
 <h2>Multivariate Random Variable<a class="headerlink" href="#multivariate-random-variable" title="Permalink to this headline">¶</a></h2>
-<p>A bivariate random variable is a
-measurable function <span class="math notranslate nohighlight">\(X:\Omega\mapsto\mathbb{R}^{2}\)</span>, and more generally a multivariate random
-variable is a measurable function <span class="math notranslate nohighlight">\(X:\Omega\mapsto\mathbb{R}^{n}\)</span>.
-We can define the <em>joint CDF</em> as
-<span class="math notranslate nohighlight">\(F\left(x_{1},\ldots,x_{n}\right)=P\left(X_{1}\leq x_{1},\ldots,X_{n}\leq x_{n}\right)\)</span>.
-Joint PDF is defined similarly.</p>
+<p>A bivariate random variable is a vector of two scalar random variables, and more generally a multivariate random variable.</p>
+<p><em>Joint CDF</em> is</p>
+<div class="math notranslate nohighlight">
+\[F
+\left(x_{1},\ldots,x_{n}\right)=P\left(X_{1}\leq x_{1},\ldots,X_{n}\leq x_{n}\right).
+\]</div>
+<p>Joint PDF is defined similarly.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">plot</span><span class="p">(</span><span class="n">d1.log</span><span class="o">$</span><span class="n">subs</span><span class="p">,</span> <span class="n">d1.log</span><span class="o">$</span><span class="n">view</span><span class="p">)</span>
@@ -598,17 +609,19 @@ and marginal distribution in the simple bivariate case, and these definitions
 can be extended to multivariate distributions. Suppose
 a bivariate random variable <span class="math notranslate nohighlight">\((X,Y)\)</span> has a joint density
 <span class="math notranslate nohighlight">\(f(\cdot,\cdot)\)</span>.
-The  <em>conditional density</em> can be roughly written as  <span class="math notranslate nohighlight">\(f\left(y|x\right)=f\left(x,y\right)/f\left(x\right)\)</span> if we do not formally deal
-with the case <span class="math notranslate nohighlight">\(f(x)=0\)</span>.
+The  <em>conditional density</em> can be roughly written as  <span class="math notranslate nohighlight">\(f\left(y|x\right)=f\left(x,y\right)/f\left(x\right)\)</span>  for <span class="math notranslate nohighlight">\(f(x) \neq 0\)</span>.
 The <em>marginal density</em> <span class="math notranslate nohighlight">\(f\left(y\right)=\int f\left(x,y\right)dx\)</span> integrates out
 the coordinate that is not interested.</p>
 </div>
 <div class="section" id="independence">
 <h2>Independence<a class="headerlink" href="#independence" title="Permalink to this headline">¶</a></h2>
-<p>In a probability space <span class="math notranslate nohighlight">\((\Omega, \mathcal{F}, P)\)</span>, for two events <span class="math notranslate nohighlight">\(A_1,A_2\in \mathcal{F}\)</span> the <em>conditional probability</em> is</p>
+<p>For two events <span class="math notranslate nohighlight">\(A_1,A_2\)</span>, the <em>conditional probability</em> is</p>
 <div class="math notranslate nohighlight">
-\[P\left(A_1|A_2\right) = \frac{P\left(A_1 A_2\right)}{ P\left(A_2\right) }.\]</div>
-<p>In the definition of conditional probability, <span class="math notranslate nohighlight">\(A_2\)</span> plays
+\[
+P\left(A_1|A_2\right) = \frac{P\left(A_1 A_2\right)}{ P\left(A_2\right) }.
+\]</div>
+<p>if <span class="math notranslate nohighlight">\(P(A_2) \neq  0\)</span>.
+In the definition of conditional probability, <span class="math notranslate nohighlight">\(A_2\)</span> plays
 the role of the outcome space  so that
 <span class="math notranslate nohighlight">\(P(A_1 A_2)\)</span> is standardized by the total mass <span class="math notranslate nohighlight">\(P(A_2)\)</span>.</p>
 <p>Since <span class="math notranslate nohighlight">\(A_1\)</span> and <span class="math notranslate nohighlight">\(A_2\)</span> are symmetric, we also have <span class="math notranslate nohighlight">\(P(A_1 A_2) = P(A_2|A_1)P(A_1)\)</span>.
@@ -639,13 +652,13 @@ In words, knowing <span class="math notranslate nohighlight">\(A_2\)</span> does
 </div>
 </div>
 <p><strong>Application</strong>: (Chebyshev law of large numbers) If
-<span class="math notranslate nohighlight">\(X_{1},X_{2},\ldots,X_{n}\)</span> are independent, and they have the same mean
-<span class="math notranslate nohighlight">\(0\)</span> and variance <span class="math notranslate nohighlight">\(\sigma^{2}&lt;\infty\)</span>. Let
+<span class="math notranslate nohighlight">\(X_{1},X_{2},\ldots,X_{n}\)</span> are independent and identically distributed,
+with mean <span class="math notranslate nohighlight">\(0\)</span> and variance <span class="math notranslate nohighlight">\(\sigma^{2}&lt;\infty\)</span>. Let
 <span class="math notranslate nohighlight">\(Z_{n}=\frac{1}{n}\sum_{i=1}^{n} X_{i}\)</span>. Then the
 probability <span class="math notranslate nohighlight">\(P\left(\left|Z_{n}\right|&gt;\epsilon\right)\to0\)</span> as
 <span class="math notranslate nohighlight">\(n\to\infty\)</span>.</p>
 <p>The culmination of probability theory is <em>law of large numbers</em> and
-<em>central limit theorem</em>.</p>
+<em>central limit theorem</em>, to be covered later in this short course.</p>
 </div>
 <div class="section" id="law-of-iterated-expectations">
 <h2>Law of Iterated Expectations<a class="headerlink" href="#law-of-iterated-expectations" title="Permalink to this headline">¶</a></h2>
@@ -725,7 +738,7 @@ into two parts, a conditional mean and a residual. Write
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Welcome to CUHK MSc</p>
+            <p class="prev-next-title">Introduction</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="02_stat.html" title="next page">
