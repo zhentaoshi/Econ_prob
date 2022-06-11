@@ -1,11 +1,14 @@
 # Probability and Statistics
 
+[![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
+
+Welcome to the 2022 summer short course for MSc.
 
 **Zhentao Shi**
 
 **(2022 summer, CUHK)**
 
-Welcome to the 2022 summer short course for MSc.
+
 
 ## Contents
 
@@ -35,3 +38,15 @@ Kevin Sheppard's [Financial Economics I](https://www.kevinsheppard.com/teaching/
 
 ## Course Page
 The [course web page](https://zhentaoshi.github.io/Econ_prob/) is the same as this README file.
+
+## License
+
+
+This work is licensed under a
+[Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License][cc-by-nc-sa].
+
+[![CC BY-NC-SA 4.0][cc-by-nc-sa-image]][cc-by-nc-sa]
+
+[cc-by-nc-sa]: http://creativecommons.org/licenses/by-nc-sa/4.0/
+[cc-by-nc-sa-image]: https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png
+[cc-by-nc-sa-shield]: https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg
