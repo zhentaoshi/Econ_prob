@@ -310,6 +310,7 @@ const thebe_selector_output = ".output, .cell_output"
   <div class="tex2jax_ignore mathjax_ignore section" id="basic-asymptotics">
 <h1>Basic Asymptotics<a class="headerlink" href="#basic-asymptotics" title="Permalink to this headline">¶</a></h1>
 <!-- Qingliang covers basic asymptotic theory -->
+<p>Asymptotic theory is a set of mathematical tools that invoke limits to simplify our understanding of the behavior of statistics.</p>
 <div class="section" id="modes-of-convergence">
 <h2>Modes of Convergence<a class="headerlink" href="#modes-of-convergence" title="Permalink to this headline">¶</a></h2>
 <p>Let <span class="math notranslate nohighlight">\(x_{1},x_{2},\ldots\)</span> be an infinite
@@ -319,13 +320,15 @@ sequence of non-random variables.
 for all <span class="math notranslate nohighlight">\(n&gt;N\left(\varepsilon\right)\)</span>, we have
 <span class="math notranslate nohighlight">\(\left|x_{n}-x\right|&lt;\varepsilon\)</span>. We say <span class="math notranslate nohighlight">\(x\)</span> is the limit of <span class="math notranslate nohighlight">\(x_{n}\)</span>,
 and write <span class="math notranslate nohighlight">\(x_{n}\to x\)</span> or <span class="math notranslate nohighlight">\(\lim_{n\to\infty}x_{n}=x\)</span>.</p>
-<p>Instead of a deterministic sequence, in this course we are interested in the
-convergence of a sequence of random variables. Since a random variable
-is “random” thanks to the induced probability measure by the measurable
-function, we must be clear what <em>convergence</em> means in this context. Several modes of
+<p><strong>Example</strong></p>
+<p><span class="math notranslate nohighlight">\(x_{1,n} = 1 + 1/n\)</span> is a sequence. <span class="math notranslate nohighlight">\(x_{2,n} = - \exp(-n)\)</span> is another sequence. The limits of both sequences are 1. In this sense, we can say they are asymptotic equivalent in that
+<span class="math notranslate nohighlight">\(\lim_{n\to \infty} | x_{1,n} - x_{2,n} | =0\)</span>.</p>
+<p>Limits of deterministic sequences are knowledge we learned from high school.
+Now, we discuss convergence of a sequence of random variables. Since a random variable
+is “random”, we must be clear what <em>convergence</em> means. Several modes of
 convergence are widely used.</p>
-<p>We say a sequence of random variables <span class="math notranslate nohighlight">\(\left(x_{n}\right)\)</span> converges in
-probability to <span class="math notranslate nohighlight">\(x\)</span>, where <span class="math notranslate nohighlight">\(x\)</span> can be either a random variable or a
+<p>We say a sequence of random variables <span class="math notranslate nohighlight">\(\left(x_{n}\right)\)</span> <em>converges in
+probability</em> to <span class="math notranslate nohighlight">\(x\)</span>, where <span class="math notranslate nohighlight">\(x\)</span> can be either a random variable or a
 non-random constant, if for any <span class="math notranslate nohighlight">\(\varepsilon&gt;0\)</span>, the probability</p>
 <div class="math notranslate nohighlight">
 \[
@@ -342,7 +345,8 @@ is denoted as <span class="math notranslate nohighlight">\(x_{n}\stackrel{m.s.}{
 <p>In these definitions either
 <span class="math notranslate nohighlight">\(P\left\{ \left|x_{n}-x\right|&gt;\varepsilon\right\}\)</span>
 or <span class="math notranslate nohighlight">\(E\left[\left(x_{n}-x\right)^{2}\right]\)</span> is a non-random quantity,
-and it thus converges to 0 as a non-random sequence.</p>
+and it thus converges to 0 as a non-random sequence under the standard
+meaning of “<span class="math notranslate nohighlight">\(\to\)</span>”.</p>
 <p>Squared-mean convergence is stronger than convergence in probability.
 That is, <span class="math notranslate nohighlight">\(x_{n}\stackrel{m.s.}{\to}x\)</span> implies <span class="math notranslate nohighlight">\(x_{n}\stackrel{p}{\to}x\)</span>
 but the converse is untrue. Here is an example.</p>
@@ -358,7 +362,7 @@ and thereby <span class="math notranslate nohighlight">\(x_{n}\stackrel{p}{\to}0
 so <span class="math notranslate nohighlight">\(x_{n}\stackrel{m.s.}{\nrightarrow}0\)</span>.</p>
 <p>This example
 highlights the difference between the two modes of convergence.
-Convergence in probability does not count what happens on a subset in
+Convergence in probability does not take account what happens on a subset in
 the sample space of small probability. Squared-mean convergence deals
 with the average over the entire probability space. If a random variable
 can take a wild value, with small probability though, it may blow away
@@ -403,13 +407,11 @@ It is easy to verify that <span class="math notranslate nohighlight">\(F_{x_{n}}
 <span class="math notranslate nohighlight">\(\left(-\infty,0\right)\cup\left(0,+\infty\right)\)</span>, where
 <span class="math notranslate nohighlight">\(F_{x}\left(a\right)\)</span> is continuous.</p>
 <p>So far we have talked about convergence of scalar variables. These three
-modes of converges can be easily generalixed to random vectors. In
-particular, the <em>Cramer-Wold device</em> collapses a random vector into a
-random vector via arbitrary linear combination.</p>
+modes of converges can be easily generalized to finite-dimensional random vectors.</p>
 </div>
 <div class="section" id="law-of-large-numbers">
 <h2>Law of Large Numbers<a class="headerlink" href="#law-of-large-numbers" title="Permalink to this headline">¶</a></h2>
-<p>(Weak) law of large numbers (LLN) is a collection of statements about
+<p>Law of large numbers (LLN) is a collection of statements about
 convergence in probability of the sample average to its population
 counterpart. The basic form of LLN is:</p>
 <div class="math notranslate nohighlight">
@@ -430,28 +432,25 @@ moment <span class="math notranslate nohighlight">\(E\left[x^{2}\right]&lt;\inft
 <span class="math notranslate nohighlight">\(P\left\{ \left|x\right|&gt;\varepsilon\right\} \leq E\left[x^{2}\right]/\varepsilon^{2}\)</span>
 for any constant <span class="math notranslate nohighlight">\(\varepsilon&gt;0\)</span>.</p></li>
 </ul>
-<p>Show that if <span class="math notranslate nohighlight">\(r_{2}\geq r_{1}\geq1\)</span>, then
-<span class="math notranslate nohighlight">\(E\left[\left|x\right|^{r_{2}}\right]&lt;\infty\)</span> implies
-<span class="math notranslate nohighlight">\(E\left[\left|x\right|^{r_{1}}\right]&lt;\infty.\)</span> (Hint: use Holder’s
-inequality.)</p>
-<p>The Chebyshev inequality is a special case of the <em>Markov inequality</em>.</p>
-<ul class="simple">
-<li><p><em>Markov inequality</em>: If a random variable <span class="math notranslate nohighlight">\(x\)</span> has a finite <span class="math notranslate nohighlight">\(r\)</span>-th
-absolute moment <span class="math notranslate nohighlight">\(E\left[\left|x\right|^{r}\right]&lt;\infty\)</span> for some
-<span class="math notranslate nohighlight">\(r\ge1\)</span>, then we have
-<span class="math notranslate nohighlight">\(P\left\{ \left|x\right|&gt;\varepsilon\right\} \leq E\left[\left|x\right|^{r}\right]/\varepsilon^{r}\)</span>
-any constant <span class="math notranslate nohighlight">\(\varepsilon&gt;0\)</span>.</p></li>
-</ul>
-<p>It is easy to verify the Markov inequality.</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}E\left[\left|x\right|^{r}\right] &amp; =\int_{\left|x\right|&gt;\varepsilon}\left|x\right|^{r}dF_{X}+\int_{\left|x\right|\leq\varepsilon}\left|x\right|^{r}dF_{X}\\
- &amp; \geq\int_{\left|x\right|&gt;\varepsilon}\left|x\right|^{r}dF_{X}\\
- &amp; \geq\varepsilon^{r}\int_{\left|x\right|&gt;\varepsilon}dF_{X}=\varepsilon^{r}P\left\{ \left|x\right|&gt;\varepsilon\right\} .
+<!-- The Chebyshev inequality is a special case of the *Markov inequality*.
+
+-   *Markov inequality*: If a random variable $x$ has a finite $r$-th
+    absolute moment $E\left[\left|x\right|^{r}\right]<\infty$ for some
+    $r\ge1$, then we have
+    $P\left\{ \left|x\right|>\varepsilon\right\} \leq E\left[\left|x\right|^{r}\right]/\varepsilon^{r}$
+    any constant $\varepsilon>0$. 
+-->
+<!-- 
+$$
+\begin{aligned}E\left[\left|x\right|^{r}\right] & =\int_{\left|x\right|>\varepsilon}\left|x\right|^{r}dF_{X}+\int_{\left|x\right|\leq\varepsilon}\left|x\right|^{r}dF_{X}\\
+ & \geq\int_{\left|x\right|>\varepsilon}\left|x\right|^{r}dF_{X}\\
+ & \geq\varepsilon^{r}\int_{\left|x\right|>\varepsilon}dF_{X}=\varepsilon^{r}P\left\{ \left|x\right|>\varepsilon\right\} .
 \end{aligned}
-\end{split}\]</div>
-<p>Rearrange the above inequality and we obtain the Markov
-inequality.</p>
+$$
+
+Rearrange the above inequality and we obtain the Markov
+inequality.
+  -->
 <p>Let the <em>partial sum</em> <span class="math notranslate nohighlight">\(S_{n}=\sum_{i=1}^{n}x_{i}\)</span>, where
 <span class="math notranslate nohighlight">\(\mu_{i}=E\left[x_{i}\right]\)</span> and
 <span class="math notranslate nohighlight">\(\sigma_{i}^{2}=\mathrm{var}\left[x_{i}\right]\)</span>. We apply the Chebyshev
@@ -473,17 +472,17 @@ iid observations, <span class="math notranslate nohighlight">\(E\left[x_{1}\righ
 <span class="math notranslate nohighlight">\(\sigma^{2}=\mathrm{var}\left[x_{1}\right]&lt;\infty\)</span> exists, then
 <span class="math notranslate nohighlight">\(\frac{1}{n}\sum_{i=1}^{n}x_{i}\stackrel{p}{\to}\mu.\)</span></p></li>
 </ul>
-<p>Another useful LLN is the <em>Kolmogorov LLN</em>. Since its derivation
+<!-- Another useful LLN is the *Kolmogorov LLN*. Since its derivation
 requires more advanced knowledge of probability theory, we state the
-result without proof.</p>
-<ul class="simple">
-<li><p>Kolmogorov LLN: If <span class="math notranslate nohighlight">\(\left(x_{1},\ldots,x_{n}\right)\)</span> is a sample of
-iid observations and <span class="math notranslate nohighlight">\(E\left[x_{1}\right]=\mu\)</span> exists, then
-<span class="math notranslate nohighlight">\(\frac{1}{n}\sum_{i=1}^{n}x_{i}\stackrel{p}{\to}\mu\)</span>.</p></li>
-</ul>
-<p>Compared with the Chebyshev LLN, the Kolmogorov LLN only requires the
+result without proof.
+
+-   Kolmogorov LLN: If $\left(x_{1},\ldots,x_{n}\right)$ is a sample of
+    iid observations and $E\left[x_{1}\right]=\mu$ exists, then
+    $\frac{1}{n}\sum_{i=1}^{n}x_{i}\stackrel{p}{\to}\mu$.
+
+Compared with the Chebyshev LLN, the Kolmogorov LLN only requires the
 existence of the population mean, but not any higher moments. On the
-other hand, iid is essential for the Kolmogorov LLN.</p>
+other hand, iid is essential for the Kolmogorov LLN. -->
 <p>Consider three distributions: standard normal <span class="math notranslate nohighlight">\(N\left(0,1\right)\)</span>,
 <span class="math notranslate nohighlight">\(t\left(2\right)\)</span> (zero mean, infinite variance), and the Cauchy
 distribution (no moments exist). We plot paths of the sample average
@@ -509,7 +508,7 @@ We allow three distributions, namely, <span class="math notranslate nohighlight"
 </div>
 </div>
 </div>
-<p>This function plots the sample mean over the path of geometrically increasing sample size.</p>
+<p>This function plots the sample mean over the path of geometrically increasing sample sizes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">LLN.plot</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(</span><span class="n">distribution</span><span class="p">){</span>
@@ -538,17 +537,17 @@ We allow three distributions, namely, <span class="math notranslate nohighlight"
 <h2>Central Limit Theorem<a class="headerlink" href="#central-limit-theorem" title="Permalink to this headline">¶</a></h2>
 <p>The central limit theorem (CLT) is a collection of probability results
 about the convergence in distribution to a stable distribution. The
-limiting distribution is usually the Gaussian distribution. The basic
-form of the CLT is:</p>
-<ul>
-<li><p><em>Under some conditions to be spelled out</em>, the sample average of
-<em>zero-mean</em> random variables <span class="math notranslate nohighlight">\(\left(x_{1},\ldots,x_{n}\right)\)</span>
-multiplied by <span class="math notranslate nohighlight">\(\sqrt{n}\)</span> satisfies</p>
-<div class="math notranslate nohighlight">
-\[\frac{1}{\sqrt{n}}\sum_{i=1}^{n}x_{i}\stackrel{d}{\to}N\left(0,\sigma^{2}\right)\]</div>
-<p>as <span class="math notranslate nohighlight">\(n\to\infty\)</span>.</p>
-</li>
-</ul>
+limiting distribution is usually the Gaussian distribution.</p>
+<!-- The basic
+form of the CLT is:
+
+-   *Under some conditions to be spelled out*, the sample average of
+    *zero-mean* random variables $\left(x_{1},\ldots,x_{n}\right)$
+    multiplied by $\sqrt{n}$ satisfies
+
+    $$\frac{1}{\sqrt{n}}\sum_{i=1}^{n}x_{i}\stackrel{d}{\to}N\left(0,\sigma^{2}\right)$$
+    
+    as $n\to\infty$. -->
 <p>Various versions of CLT work under different assumptions about the
 random variables. <em>Lindeberg-Levy CLT</em> is the simplest CLT.</p>
 <ul class="simple">

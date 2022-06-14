@@ -364,7 +364,7 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="statistics">
 <h1>Statistics<a class="headerlink" href="#statistics" title="Permalink to this headline">¶</a></h1>
-<p>Statistic theory goes the opposite way from probability theory. In reality what we observe is a sample of data, but we don’t know from what mechanism the data are generated. Statistics asks how can we infer the data generating process from the sample that we observe. For example, if we assume the data are generated from a normal distribution, what is the best way that we learn the population variance? Does the data provide evidence that two samples are drawn from population of the same means? How sure we are about tomorrow’s stock price?</p>
+<p>Statistic theory goes the opposite way to probability theory. In reality what we observe is a sample of data, but we don’t know from what mechanism the data are generated. Statistics asks how can we infer the data generating process from the sample that we observe. For example, if we assume the data are generated from a normal distribution, what is the best way that we learn the population variance? Does the data provide evidence that two samples are drawn from populations of the same means?</p>
 <p><strong>Example</strong> The sample of 100 accounts from
 <a class="reference external" href="https://www.kaggle.com/datasets/patriotboy112/hks-top-300-youtubers">HK top 300 Youtubers</a> in the previous lecture.</p>
 <div class="cell docutils container">
@@ -392,17 +392,17 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>We are interested in the <em>sample mean</em> to learn the location of the center in the probability weighted average, or <em>population mean</em> <span class="math notranslate nohighlight">\(\mu = E[X_i]\)</span>.
-We are also interested in the <em>sample variance</em> to learn the scale of spread of the sample, or <em>population variance</em> <span class="math notranslate nohighlight">\(\sigma^2 = var(X_i)\)</span>.</p>
-<p>View the sample as a multinomial distribution with <span class="math notranslate nohighlight">\(n\)</span> outcomes at the observed realized points.
-This is a sample, so each observation is equally important.
+<p>We are interested in the <em>sample mean</em>, as it tells us the location of the center in the probability weighted average, or <em>population mean</em> <span class="math notranslate nohighlight">\(\mu = E[X_i]\)</span>.
+We are also interested in the <em>sample variance</em>, as it tells us the scale of spread of the sample, or <em>population variance</em> <span class="math notranslate nohighlight">\(\sigma^2 = var(X_i)\)</span>.</p>
+<p>In the example, we can view the sample as a multinomial distribution with <span class="math notranslate nohighlight">\(n\)</span> outcomes at the observed realized points.
+Since each observation is draw randomly and independently, everyone is equally important.
 Assign equal probability <span class="math notranslate nohighlight">\(1/n\)</span> on each point, and naturally the sample mean is <span class="math notranslate nohighlight">\(\hat{\mu} = \bar{X} = n^{-1} \sum_{i=1}^n X_i.\)</span>
 Similarly, a widely used sample variance is computed as <span class="math notranslate nohighlight">\(s^2 = (n-1)^{-1} \sum_{i=1}^n (X_i - \hat{\mu})^2\)</span>.</p>
 <p>More generally, for <span class="math notranslate nohighlight">\(p&gt;0\)</span> the statistic <span class="math notranslate nohighlight">\(n^{-1} \sum_{i=1}^n x_i^p\)</span> is called the <span class="math notranslate nohighlight">\(p\)</span>-th sample moment, and <span class="math notranslate nohighlight">\(n^{-1} \sum_{i=1}^n (X_i - \bar{X})^p\)</span> is called the <span class="math notranslate nohighlight">\(p\)</span>-th centered moment.</p>
 <div class="section" id="estimation-methods">
 <h2>Estimation methods<a class="headerlink" href="#estimation-methods" title="Permalink to this headline">¶</a></h2>
-<p>The familiar mean and variance are two examples.
-Suppose the data are generated from a parametric model, Statistical
+<p>The familiar mean and variance are two examples of statistics.
+Suppose the data are generated from a parametric model, and then statistical
 estimation looks for the unknown parameter from the observed data. A
 <em>principle</em> is an ideology about a proper way of estimation. Over the
 history of statistics, only a few principles are widely accepted.
@@ -427,8 +427,8 @@ are the method of moments estimates of the two parameters.</p>
 </div>
 </div>
 <p><strong>Example</strong>:</p>
-<p><span class="math notranslate nohighlight">\(t\)</span> distribution has one parameter, its degree of freedom <span class="math notranslate nohighlight">\(\nu\)</span>. The variance of <span class="math notranslate nohighlight">\(t(\nu)\)</span>, if <span class="math notranslate nohighlight">\(\nu &gt;2\)</span>,  is  <span class="math notranslate nohighlight">\(\sigma^2 = \nu / (\nu - 2)\)</span>.
-From data, we estimate <span class="math notranslate nohighlight">\(\hat{\sigma}^2\)</span>, and then solve <span class="math notranslate nohighlight">\(\hat{\sigma}^2 = \nu / (\nu - 2)\)</span> to get</p>
+<p>The <span class="math notranslate nohighlight">\(t\)</span> distribution has one parameter, its degree of freedom <span class="math notranslate nohighlight">\(\nu\)</span>. The variance of <span class="math notranslate nohighlight">\(t(\nu)\)</span>, if <span class="math notranslate nohighlight">\(\nu &gt;2\)</span>,  is  <span class="math notranslate nohighlight">\(\sigma^2 = \nu / (\nu - 2)\)</span>.
+From the data, we estimate <span class="math notranslate nohighlight">\(\hat{\sigma}^2\)</span>, and then solve <span class="math notranslate nohighlight">\(\hat{\sigma}^2 = \nu / (\nu - 2)\)</span> to get</p>
 <div class="math notranslate nohighlight">
 \[
   \hat{\nu} = \frac{2\hat{\sigma}^2}{\hat{\sigma}^2 - 1}
@@ -437,11 +437,11 @@ From data, we estimate <span class="math notranslate nohighlight">\(\hat{\sigma}
 <ul class="simple">
 <li><p>Maximum likelihood</p></li>
 </ul>
-<p>Looking for the value of the parameter that maximizes the value of the log-likelihood. Why is this a good strategy? Because by the concavity of logarithm, in population the true parameter is the value that maximize the population maximum likelihood. In reality, we maximize its empirical version.</p>
-<p>Consider a random sample of
+<p>The maximum likelihood estimation (MLE) Looks for the value of the parameter that maximizes the log-likelihood. Why is this a good strategy? Because by the concavity of logarithm, in population the true parameter is the value that maximizes the population maximum likelihood. In reality, we maximize its empirical version.</p>
+<p>Consider a random sample
 drawn from a parametric
-distribution with density <span class="math notranslate nohighlight">\(f_{x}\left(x_{i};\theta\right)\)</span>, where
-<span class="math notranslate nohighlight">\(z_{i}\)</span> is either a scalar random variable or a random vector. A
+distribution with density <span class="math notranslate nohighlight">\(f\left(x;\theta\right)\)</span>, where
+<span class="math notranslate nohighlight">\(x\)</span> is either a scalar random variable or a random vector. A
 parametric distribution is completely characterized by a
 finite-dimensional parameter <span class="math notranslate nohighlight">\(\theta\)</span>. We know that <span class="math notranslate nohighlight">\(\theta\)</span> belongs to
 a parameter space <span class="math notranslate nohighlight">\(\Theta\)</span>. We use the data to estimate <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
@@ -459,12 +459,12 @@ is</p>
 explanation is that <span class="math notranslate nohighlight">\(\widehat{\theta}_{MLE}\)</span> makes observing <span class="math notranslate nohighlight">\(X\)</span> the
 “most likely” in the entire parametric space.</p>
 <p>A formal justification of MLE uses the terminology the <em>Kullback-Leibler divergence</em>,
-which is a measurement of the “distance” between two distributions.</p>
+which is a measurement of the “distance” or “divergence” between two distributions.</p>
 <p><strong>Example</strong>:
 Consider the Gaussian location model <span class="math notranslate nohighlight">\(X_{i}\sim N\left(\mu,1\right)\)</span>,
 where <span class="math notranslate nohighlight">\(\mu\)</span> is the unknown parameter to be estimated. The likelihood of
 observing <span class="math notranslate nohighlight">\(X_{i}\)</span> is
-<span class="math notranslate nohighlight">\(f_{X}\left(X_{i};\mu\right)=\frac{1}{\sqrt{2\pi}}\exp\left(-\frac{1}{2}\left(X_{i}-\mu\right)^{2}\right)\)</span>.
+<span class="math notranslate nohighlight">\(f\left(X_{i};\mu\right)=\frac{1}{\sqrt{2\pi}}\exp\left(-\frac{1}{2}\left(X_{i}-\mu\right)^{2}\right)\)</span>.
 The likelihood of observing the sample <span class="math notranslate nohighlight">\(X\)</span> is</p>
 <div class="math notranslate nohighlight">
 \[f_{X}\left(X;\mu\right)=\prod_{i=1}^{n}\frac{1}{\sqrt{2\pi}}\exp\left(-\frac{1}{2}\left(X_{i}-\mu\right)^{2}\right)\]</div>
@@ -473,8 +473,7 @@ The likelihood of observing the sample <span class="math notranslate nohighlight
 \[L_{n}\left(\mu;X\right)=-\frac{n}{2}\log\left(2\pi\right)-\frac{1}{2}\sum_{i=1}^{n}\left(X_{i}-\mu\right)^{2}.\]</div>
 <p>In the above example, if the variance is unknown, it can also be added as a parameter and participate the optimization.
 The MLE estimator of the variance, in this example of normal distribution, is <span class="math notranslate nohighlight">\(\hat{\sigma}^2 = n^{-1} \sum_{i=1}^n (X_i - \bar{X})^2\)</span>.
-Notice the denominator here is <span class="math notranslate nohighlight">\(n\)</span>, instead of the previous <span class="math notranslate nohighlight">\((n-1)\)</span> as in <span class="math notranslate nohighlight">\(s^2\)</span>. While the fact that the latter adjustment is unbiased suggests the MLE
-estimator is biased.</p>
+Notice the denominator here is <span class="math notranslate nohighlight">\(n\)</span>, instead of <span class="math notranslate nohighlight">\((n-1)\)</span> as in <span class="math notranslate nohighlight">\(s^2\)</span>. The MLE estimator for the variance here is biased.</p>
 <p>Interval estimation</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -501,14 +500,13 @@ estimator is biased.</p>
 </div>
 <div class="section" id="statistic-inference">
 <h2>Statistic Inference<a class="headerlink" href="#statistic-inference" title="Permalink to this headline">¶</a></h2>
-<p>The above calculation are mechanical. Why do we want to do with them?</p>
-<p>Relate the statistic with the population.
-Suppose <span class="math notranslate nohighlight">\(X_i\)</span> are random draws from a population distribution <span class="math notranslate nohighlight">\(P\)</span>.
-We are interested in the mean <span class="math notranslate nohighlight">\(\mu: = E[X_i]\)</span>?
-The same mean is a natural estimator (guess) of <span class="math notranslate nohighlight">\(\mu\)</span>.</p>
+<p>The above calculation are mechanical. Why do we want them?</p>
+<p>We are interesting in relating the statistic to the population.
+Suppose <span class="math notranslate nohighlight">\(X_i\)</span> are random draws from a population distribution <span class="math notranslate nohighlight">\(P\)</span>,a nd we would like to learn the mean <span class="math notranslate nohighlight">\(\mu: = E[X_i]\)</span>?
+The sample mean is a natural estimator (guess) of <span class="math notranslate nohighlight">\(\mu\)</span>.</p>
 <div class="section" id="confidence-interval">
 <h3>Confidence Interval<a class="headerlink" href="#confidence-interval" title="Permalink to this headline">¶</a></h3>
-<p>The estimator <span class="math notranslate nohighlight">\(\hat{\mu}\)</span> has a sampling error. If we draw another sample from the same population, the sample mean is likely to be a different number.
+<p>The estimator <span class="math notranslate nohighlight">\(\hat{\mu}\)</span> has a sampling error. If we draw another sample from the same population, the sample mean is likely to be a different number (without probability 1 if the underlying distribution is continuous).
 We must characterize the uncertainty.
 We have provided an interval estimator. What does it mean?
 An interval estimator is only meaningful when we can figure out its <em>sampling distribution</em>.
@@ -520,7 +518,7 @@ It characterizes the uncertainty of the statistic.</p>
 <li><p>Assume <span class="math notranslate nohighlight">\(X_i \sim N(\mu, \sigma^2)\)</span> with a known variance. Then <span class="math notranslate nohighlight">\(\bar{X} \sim N(\mu, \sigma^2 / n)\)</span>.</p></li>
 <li><p>Assume <span class="math notranslate nohighlight">\(X_i \sim N(\mu, \sigma^2)\)</span> with a unknown variance. Then <span class="math notranslate nohighlight">\(\frac{\bar{X} - \mu}{s} \sim t(n-1)\)</span>.</p></li>
 <li><p>Assume <span class="math notranslate nohighlight">\(X_i \sim (\mu, \sigma^2)\)</span> with a finite variance variance.
-<span class="math notranslate nohighlight">\(\sqrt{n} \frac{\bar{X} - \mu}{\sigma} \stackrel{d}{\rightarrow} N(0, 1)\)</span>. (to be discussed later)</p></li>
+<span class="math notranslate nohighlight">\(\sqrt{n} \frac{\bar{X} - \mu}{\sigma} \stackrel{d}{\rightarrow} N(0, 1)\)</span>. (to be discussed in asymptotic theory)</p></li>
 </ul>
 <div class="section" id="simulation-examples">
 <h4>Simulation examples<a class="headerlink" href="#simulation-examples" title="Permalink to this headline">¶</a></h4>
@@ -554,9 +552,9 @@ It characterizes the uncertainty of the statistic.</p>
 </div>
 </div>
 </div>
-<p><em>Coverage probability</em> is the probability that the estimated confidence interval coverage the true value in repeated sampling.
+<p><em>Coverage probability</em> is the probability that the estimated confidence interval coverage to the true value in repeated sampling.
 Here the confidence interval is random while the true value is fixed.</p>
-<p>It is important to understand that it is not the probability that the parameter falls into a fixed interval, which is the interpretation of the <em>Bayesian credit interval</em>.
+<p>It is important to understand that the coverage probability is not the probability that the parameter falls into a fixed interval, which is the interpretation of the <em>Bayesian credit interval</em>.
 The latter requires different way for construction.</p>
 </div>
 </div>
@@ -590,14 +588,15 @@ We define the power function <span class="math notranslate nohighlight">\(\beta(
 </ul>
 <p>The philosophy on hypothesis testing has been debated for centuries. At
 present the prevailing framework in statistics textbooks is the
-<em>frequentist perspective</em>. A frequentist views the parameter as a fixed
+<em>frequentist perspective</em>. Frequentist view the parameter as a fixed
 constant. They keep a conservative attitude about the Type I error: Only
-if overwhelming evidence is demonstrated shall a researcher reject the
+if overwhelming evidence is revealed shall a researcher rejects the
 null. Under the principle of protecting the null hypothesis, a desirable
 test should have a small level. Conventionally we take <span class="math notranslate nohighlight">\(\alpha=0.01,\)</span>
-0.05 or 0.1. We say a test is <em>unbiased</em> if
-<span class="math notranslate nohighlight">\(\beta\left(\theta\right)&gt;\sup_{\theta\in\Theta_{0}}\beta\left(\theta\right)\)</span>
-for all <span class="math notranslate nohighlight">\(\theta\in\Theta_{1}\)</span>. There can be many tests of correct size.</p>
+0.05 or 0.1. We say a test is <em>unbiased</em> if</p>
+<div class="math notranslate nohighlight">
+\[\inf_{\theta\in\Theta_{1}}\beta\left(\theta\right)&gt;\sup_{\theta\in\Theta_{0}}\beta\left(\theta\right).\]</div>
+<p>There can be many tests of correct size.</p>
 <p>A trivial test function
 <span class="math notranslate nohighlight">\(\phi({x})=1\left\{ 0\leq U\leq\alpha\right\}\)</span> for all
 <span class="math notranslate nohighlight">\(\theta\in\Theta\)</span>, where <span class="math notranslate nohighlight">\(U\)</span> is a random variable from a uniform
@@ -730,23 +729,24 @@ specified test size <span class="math notranslate nohighlight">\(\alpha\)</span>
 </div>
 <div class="section" id="regressions">
 <h2>Regressions<a class="headerlink" href="#regressions" title="Permalink to this headline">¶</a></h2>
-<p>Data fitting. Basic learning task. Get the prediction as close as possible.</p>
-<p>ANOVA. The decomposition of sample variance.</p>
-<p>Regression does a very simple task, which in principle has nothing to do with causality. It minimizes the SSR. In other words, it tries to use a linear combination of the <span class="math notranslate nohighlight">\(X\)</span> to reduce the variance of Y as much as possible. The any <span class="math notranslate nohighlight">\((X,Y)\)</span>, such an algorithm can be implemented. It is a numerical algorithm that has nothing to do with uncertainty.</p>
-<p>Now we superimpose uncertainty on it. If <span class="math notranslate nohighlight">\(X\)</span> is still fixed but Y is uncertain, we have conditional inference (discriminative model. These terms are used in classification, not in regression.) If both <span class="math notranslate nohighlight">\((X,Y)\)</span> are uncertain, we have unconditional inference (generative model). It matters only for interpretation. In reality, both <span class="math notranslate nohighlight">\((X,Y)\)</span> are fixed. 从最庸俗到最抽象. The conditional model is not good for extrapolation out of the support of the observed X.</p>
-<p>Perhaps use the bivariate regression and elementary algebra to derive the formula. If both <span class="math notranslate nohighlight">\((y,x)\)</span> have unit variance, then the regression coefficient is simply the correlation coefficient.</p>
+<p>Using machine learning terminologies, so far we have talked about examples of <em>unsupervised learning</em>, that is, we extract some features from the observed data.
+Another category is called <em>supervised learning</em>, which is to use a few <em>independent variables</em> (regressors) to fit a <em>dependent variables</em>. Linear regression is a simple example of such statistical exercise.</p>
+<p>Regression does a very simple task, which in principle has nothing to do with causality. It minimizes the the sum of squared residuals <span class="math notranslate nohighlight">\(\sum_{i=1}^n (y_i - \hat{y_i})^2\)</span>.
+In other words, it combines the vector <span class="math notranslate nohighlight">\(X\)</span> into <span class="math notranslate nohighlight">\(\beta' X\)</span> to reduce the variance of Y as much as possible. For any sample <span class="math notranslate nohighlight">\((X,Y)_{i=1}^n\)</span>, such an algorithm can be implemented. It is a numerical algorithm that has nothing to do with uncertainty.</p>
+<p>Now we superimpose uncertainty on it. If <span class="math notranslate nohighlight">\(X\)</span> is still fixed but <span class="math notranslate nohighlight">\(Y\)</span> is uncertain, we have conditional inference (discriminative model. These terms are used in classification, not in regression.) If both <span class="math notranslate nohighlight">\((X,Y)\)</span> are uncertain, we have unconditional inference (generative model). It matters only for interpretation. In reality, both <span class="math notranslate nohighlight">\((X,Y)\)</span> are fixed. The conditional model is not good for extrapolation out of the support of the observed X.</p>
+<p>Perhaps use the bivariate regression and elementary algebra to derive the formula. If both <span class="math notranslate nohighlight">\((y,x)\)</span> have unit variance, then the regression coefficient is simply the correlation coefficient. More generally, the regression coefficient is proportional to the correlation coefficient.</p>
 <div class="math notranslate nohighlight">
 \[\frac{\sigma_{xy}}{\sigma_x^2}=\frac{\rho \sigma_x \sigma_y}{\sigma_x^2} = \rho \frac{\sigma_y} {\sigma_x}\]</div>
-<p>The matrix version is a more general analogue.</p>
 <p>The unconditional model can be thought as if it is generated in two steps:</p>
-<p>First draw <span class="math notranslate nohighlight">\(X\)</span>, and then draw <span class="math notranslate nohighlight">\(Y|X\)</span>. We know <span class="math notranslate nohighlight">\(P(X,Y) = P(Y|X)P(X)\)</span> so that the discriminative model and the generative model are linked together.) However, in dynamic model such formulation is insufficient, for example the predictive model.</p>
-<p>Unbiasedness: this is about the uncertainty in beta. At least one component of <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> must be random. so beta is a random variable and we can discuss its mean and variance. Also the distribution of beta.</p>
-<p>Why OLS? It is also the MLE under the normal distribution. Normal distribution has a simple form that the mean and variance are sufficient statistic to describe the distribution.</p>
+<p>First we draw <span class="math notranslate nohighlight">\(X\)</span>, and then draw <span class="math notranslate nohighlight">\(Y|X\)</span>. We know <span class="math notranslate nohighlight">\(P(X,Y) = P(Y|X)P(X)\)</span> so that the discriminative model and the generative model are linked together.) However, in dynamic model such formulation is insufficient, for example the predictive model.</p>
+<p>The OLS exercise is boring linear algebra if we view the observations as realized values. The more abstraction, the richer interpretation.</p>
+<p>Unbiasedness: this is about the uncertainty in <span class="math notranslate nohighlight">\(\hat{\beta}\)</span>. At least one component of <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> must be random, so <span class="math notranslate nohighlight">\(\hat{\beta}\)</span> is a random variable and we can discuss its mean and variance, as well as it sampling distribution.</p>
+<p>OLS is also the MLE under the normal distribution. Normal distribution has a simple form that the mean and variance are sufficient statistics to describe the distribution.</p>
 </div>
 <div class="section" id="remarks">
 <h2>Remarks<a class="headerlink" href="#remarks" title="Permalink to this headline">¶</a></h2>
-<p>The beauty of statistics lies in their deep connection with philosophy. A realized sample is a set of given numbers. They are fixed, known, and invariant. But where is uncertainty? Bayesians argue that uncertainty comes from people’s belief about the object of interest. The data is a set of information to help us refine or update our belief. In contrast, frequentists contend that uncertainty is present  before the numbers, or realizations, are revealed; once the realizations are revealed, uncertainty is gone.</p>
-<p>The two schools of philosophical thoughts, Bayesian and frequentist, have been contesting over centuries. Nowadays in academic research and in teaching, frequentist remains the mainstream so it is the one that we are more familiar with. However, frequentist interpretation of probability and the resulting implication for statistical inference are not completely natural. In particular, repeated experiments are more easily perceived in physics and other natural science, but may be unrealistic in many economic settings. On the other hand, the difficulty of Bayesian lies in the consensus about the prior distribution, or the belief. Either has pros and cons.</p>
+<p>The beauty of statistics lies in their deep connection with philosophy. A realized sample is a set of given numbers. They are fixed, known, and invariant. But where is uncertainty? Bayesians argue that uncertainty comes from people’s belief about the object of interest. The data is a set of information to help us refine or update our beliefs. In contrast, frequentists contend that uncertainty is present  before the numbers, or realizations, are revealed; once the realizations are revealed, uncertainty is gone.</p>
+<p>The two schools of philosophical thoughts, Bayesian and frequentist, have been contesting over centuries. Either has pros and cons. Nowadays in academic research and in teaching, frequentist remains the mainstream so it is the one that we are more familiar with. However, frequentist interpretation of probability and the resulting implication for statistical inference are not completely natural. In particular, repeated experiments are more easily perceived in physics and other natural science, but may be unrealistic in many economic settings. On the other hand, Bayesian encounters difficulty in reaching a consensus about the prior distribution.</p>
 </div>
 </div>
 

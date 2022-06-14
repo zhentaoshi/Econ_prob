@@ -436,13 +436,39 @@ It is easy to show that <span class="math notranslate nohighlight">\(f\left(x\ri
 <span class="math notranslate nohighlight">\(\int_{a}^{b}f\left(x\right)dx=F\left(b\right)-F\left(a\right)\)</span>.</p>
 <p>We have learned many parametric distributions. A parametric distribution can be completely
 characterized by a few parameters.</p>
-<p><strong>Examples</strong>: Binomial distribution.</p>
-<p>Poisson distribution.</p>
-<p>Uniform distribution.</p>
-<p>Normal distribution.
-$<span class="math notranslate nohighlight">\(
+<p><strong>Examples</strong>:</p>
+<ul class="simple">
+<li><p>Binomial distribution.</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[f(x;p) = \binom{n}{k}  p^k (1-p)^{n-k}\]</div>
+<ul class="simple">
+<li><p>Poisson distribution.</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[f(x;\lambda) = \frac{\lambda^k \exp(-\lambda)}{k!}\]</div>
+<ul class="simple">
+<li><p>Uniform distribution.</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[f(x; a, b) = \frac{1}{b-a} \cdot \mathbf{1}\{a\leq x \leq b\}\]</div>
+<ul class="simple">
+<li><p>Normal distribution.</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
 f(x; \mu, \sigma^2) = \frac{1}{\sqrt{2\pi} \sigma} \exp\left( - \frac{(x-\mu)^2}{2\sigma^2}\right)
-\)</span>$</p>
+\]</div>
+<p>Its mean is <span class="math notranslate nohighlight">\(\mu\)</span> and variance <span class="math notranslate nohighlight">\(\sigma^2\)</span>.</p>
+<ul class="simple">
+<li><p>Log-normal distribution.</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+f(x; \mu, \sigma^2) = \frac{1}{\sqrt{2\pi} \sigma} \exp\left( - \frac{(\ln(x)-\mu)^2}{2\sigma^2}\right),
+\]</div>
+<p>Its means is <span class="math notranslate nohighlight">\(\exp(\mu + 0.5 \sigma^2)\)</span> and variance
+<span class="math notranslate nohighlight">\([\exp(\sigma^2 - 1)] \exp(2\mu+ \sigma^2)\)</span></p>
 <p><span class="math notranslate nohighlight">\(\chi^{2}\)</span>, <span class="math notranslate nohighlight">\(t\)</span>, and <span class="math notranslate nohighlight">\(F\)</span> distributions.</p>
 <p><strong>Example</strong> <code class="docutils literal notranslate"><span class="pre">R</span></code> has a rich collection of distributions implemented in a unified pattern:
 <code class="docutils literal notranslate"><span class="pre">d</span></code> for density, <code class="docutils literal notranslate"><span class="pre">p</span></code> for probability, <code class="docutils literal notranslate"><span class="pre">q</span></code> for quantile, and <code class="docutils literal notranslate"><span class="pre">r</span></code> for random variable generation.
@@ -540,13 +566,7 @@ of an indicator function. <span class="math notranslate nohighlight">\(E\left[1\
 the second <em>centered</em> moment is called the <em>variance</em>
 <span class="math notranslate nohighlight">\(\mathrm{var}\left[X\right]=E\left[\left(X-\mu\right)^{2}\right]\)</span>.</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">var</span><span class="p">(</span><span class="n">d1.log</span><span class="p">[[</span><span class="s">&quot;count&quot;</span><span class="p">]])</span>
-</pre></div>
-</div>
-</div>
-</div>
+<p>var(d1.log[[“count”]])</p>
 <p>The third centered moment <span class="math notranslate nohighlight">\(E\left[\left(X-\mu\right)^{3}\right]\)</span>,
 called <em>skewness</em>, is a measurement of the
 symmetry of a random variable, and the fourth centered moment
@@ -575,8 +595,6 @@ function, then</p>
     \varphi\left(E\left[X\right]\right)\leq E\left[\varphi\left(X\right)\right].
     \]</div>
 </li>
-</ul>
-<ul>
 <li><p><em>Markov inequality</em> is another simple but important fact. If <span class="math notranslate nohighlight">\(E\left[\left|X\right|^{r}\right]\)</span>
 exists, then</p>
 <div class="math notranslate nohighlight">
@@ -625,9 +643,12 @@ In the definition of conditional probability, <span class="math notranslate nohi
 the role of the outcome space  so that
 <span class="math notranslate nohighlight">\(P(A_1 A_2)\)</span> is standardized by the total mass <span class="math notranslate nohighlight">\(P(A_2)\)</span>.</p>
 <p>Since <span class="math notranslate nohighlight">\(A_1\)</span> and <span class="math notranslate nohighlight">\(A_2\)</span> are symmetric, we also have <span class="math notranslate nohighlight">\(P(A_1 A_2) = P(A_2|A_1)P(A_1)\)</span>.
-It implies
-$<span class="math notranslate nohighlight">\(P(A_1 | A_2)=\frac{P\left(A_2| A_1\right)P\left(A_1\right)}{P\left(A_2\right)}\)</span>$
-This formula is the well-known <em>Bayes’ Theorem</em>. It is particularly important in
+It implies</p>
+<div class="math notranslate nohighlight">
+\[
+P(A_1 | A_2)=\frac{P\left(A_2| A_1\right)P\left(A_1\right)}{P\left(A_2\right)}
+\]</div>
+<p>This formula is the well-known <em>Bayes’ Theorem</em>. It is particularly important in
 decision theory.</p>
 <p><strong>Example:</strong> <span class="math notranslate nohighlight">\(A_1\)</span> is the event “a student can survive CUHK’s MSc program”, and <span class="math notranslate nohighlight">\(A_2\)</span> is
 his or her application profile.</p>
