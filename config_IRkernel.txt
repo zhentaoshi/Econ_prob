@@ -3,6 +3,11 @@ Configure IRkernel on Codespace
 
 # install libzmq
 
+# apt-get install pkg-config
+apt-get install libtool
+apt-get install pkg-config
+
+
 wget https://github.com/zeromq/libzmq/archive/v4.2.3.tar.gz
 tar zxvf v4.2.3.tar.gz
 cd libzmq-4.2.3/
@@ -12,7 +17,6 @@ make
 make install
 
 
-# apt-get install pkg-config
 
 
 install.packages("IRkernel")

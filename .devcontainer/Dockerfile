@@ -13,6 +13,8 @@ COPY library-scripts/*.sh /tmp/library-scripts/
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && /bin/bash /tmp/library-scripts/common-debian.sh "${INSTALL_ZSH}" "${USERNAME}" "${USER_UID}" "${USER_GID}" "${UPGRADE_PACKAGES}" \
     && apt-get -y install libzip-dev \
+    && apt-get -y install libtool
+    && apt-get -y install pkg-config	
     && apt-get autoremove -y && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/library-scripts
 
 # [Optional] Uncomment this section to install additional OS packages.
@@ -23,6 +25,7 @@ RUN apt-get update \
     libxml2-dev \
     python3-pip \
     libxt6
+    
 
 RUN python3 -m pip install setuptools
 RUN python3 -m pip install radian
