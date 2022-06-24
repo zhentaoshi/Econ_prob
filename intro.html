@@ -308,6 +308,11 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interactive-code">
+   Interactive code
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#license">
    License
   </a>
@@ -334,6 +339,11 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#extensive-reading">
    Extensive reading
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interactive-code">
+   Interactive code
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -374,6 +384,16 @@ The teaching materials will be edited when the dates approach.</p>
 <p>Besides the lecture notes in this Github repository, you will find self-contained lecture notes in the first two chapters of
 Kevin Sheppard’s <a class="reference external" href="https://www.kevinsheppard.com/teaching/mfe/notes/">Financial Economics I</a> for MSc at Oxford University.</p>
 <p><img alt="" src="https://github.com/zhentaoshi/Econ_prob/blob/master/macau.jpg" /></p>
+</section>
+<section id="interactive-code">
+<h2>Interactive code<a class="headerlink" href="#interactive-code" title="Permalink to this headline">#</a></h2>
+<p>The following approaches make it possible to interact with the code cells in the Jupyter notebooks. They are ranking from the most convenient to the most cumbersome in term of configuration.</p>
+<ol class="simple">
+<li><p>Click <a class="reference external" href="https://mybinder.org/v2/gh/zhentaoshi/Econ_prob/HEAD"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a>. It may take some time to build the environment. Be patient. Changes cannot be saved by this approach, and thus they will get lost after closing your web browser.</p></li>
+<li><p>Log in CUHK Econ’s <a class="reference external" href="https://scrp-login-2.econ.cuhk.edu.hk/jupyter">SCRP server</a>. Git and IRkernel are already installed there. Download the Github repos by copy and paste <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/zhentaoshi/Econ_prob.git</span></code></p></li>
+<li><p>Install <a class="reference external" href="https://docs.docker.com/get-docker/">Docker</a>. Download the <a class="reference external" href="https://hub.docker.com/repository/docker/ztshi/msc_prob_and_stat">Docker image</a> for this course by running <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">pull</span> <span class="pre">ztshi/msc_prob_and_stat</span></code> in a terminal. The Github repository is already written in the folder. Run <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">-p</span> <span class="pre">10000:8888</span> <span class="pre">ztshi/msc_prob_and_stat</span></code> in a terminal. A token must be copied to log in the web browser interface.</p></li>
+<li><p>Download to your local computer the Github repository. Copy and paste <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/zhentaoshi/Econ_prob.git</span></code> in a terminal if the Git is installed. Jupyter notebook must be installed to run the cells.</p></li>
+</ol>
 </section>
 <section id="license">
 <h2>License<a class="headerlink" href="#license" title="Permalink to this headline">#</a></h2>
