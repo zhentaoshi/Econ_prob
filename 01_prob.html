@@ -26,6 +26,8 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -443,32 +445,32 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="probability">
 <h1>Probability<a class="headerlink" href="#probability" title="Permalink to this headline">#</a></h1>
-<p>Probability theory talks about construction and implications of probability models. For example, given a probability distribution, what are the mean and variance? What is the distribution of a transformed random variable? In computer simulations, we control the data generating process and the probability theory tells us what will happen to the generated realizations, in particular when the experiments can be repeated as many times as the researcher wishes. This is a real-world analogue of the frequentist’s interpretation of probability.</p>
+<p>Probability theory talks about the construction and implications of probability models. For example, given a probability distribution, what are the mean and variance? What is the distribution of a transformed random variable? In computer simulations, probability theory tells us what will happen to the generated realizations, in particular when the experiments can be repeated as many times as the researcher wishes. This is a real-world analogue of the frequentist’s interpretation of probability.</p>
 <section id="probability-space">
 <h2>Probability Space<a class="headerlink" href="#probability-space" title="Permalink to this headline">#</a></h2>
 <p>A <em>sample space</em> <span class="math notranslate nohighlight">\(\Omega\)</span> is a collection of all possible outcomes. It is a set of things.</p>
 <p>An <em>event</em> <span class="math notranslate nohighlight">\(A\)</span> is a subset of <span class="math notranslate nohighlight">\(\Omega\)</span>. It is something of interest on the sample space.</p>
-<p>A <span class="math notranslate nohighlight">\(\sigma\)</span>-<em>field</em> is a complete set of events that include all countably finite unions, interactions, and differences.
+<p>A <span class="math notranslate nohighlight">\(\sigma\)</span>-<em>field</em> is a complete set of events that include all countable unions, interactions, and differences.
 It is a well-organized structure built on the sample space.</p>
 <p>A <em>probability measure</em> satisfies</p>
 <ul class="simple">
 <li><p>(positiveness) <span class="math notranslate nohighlight">\(P\left(A\right)\geq0\)</span> for all events;</p></li>
-<li><p>(countable additivity) if <span class="math notranslate nohighlight">\(A_{i}\)</span>, <span class="math notranslate nohighlight">\(i\in\mathbb{N}\)</span>, are
+<li><p>(countable additivity) If <span class="math notranslate nohighlight">\(A_{i}\)</span>, <span class="math notranslate nohighlight">\(i\in\mathbb{N}\)</span>,
 are mutually disjoint, then
 <span class="math notranslate nohighlight">\(P\left(\bigcup_{i\in\mathbb{N}}A_{i}\right)=\sum_{i\in\mathbb{N}}\mu\left(A_{i}\right).\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(P(\Omega) = 1\)</span>.</p></li>
 </ul>
-<p>We have answered the question: “What is a well-defined probability?”, but we have not yet
+<p>The above construction gives a mathematically well-defined probability measure, but we have not yet
 answered “How to assign the probability?”</p>
 <p>There are two major schools of thinking on probability assignment. One is
 the <em>frequentist</em>, who considers probability as the average chance of occurrence if a large number of experiments
 are carried out. The other is the <em>Bayesian</em>, who deems probability as a subjective brief.
 The principles of these two schools are largely incompatible, while each school has
-peculiar pros and cons under different contexts.</p>
+peculiar pros and cons under different real-world contexts.</p>
 </section>
 <section id="random-variable">
 <h2>Random Variable<a class="headerlink" href="#random-variable" title="Permalink to this headline">#</a></h2>
-<p>A <em>Random variable</em> maps events to a real number. If the outcome is multivariate, we call it a <em>random vector</em>.</p>
+<p>A <em>Random variable</em> maps an event to a real number. If the outcome is multivariate, we call it a <em>random vector</em>.</p>
 <p><strong>Data example</strong></p>
 <p>Data source: <a class="reference external" href="https://www.kaggle.com/datasets/patriotboy112/hks-top-300-youtubers">HK top 300 Youtubers</a>. We look at the number of uploaded videos in these accounts.</p>
 <div class="cell docutils container">
@@ -514,7 +516,7 @@ peculiar pros and cons under different contexts.</p>
 </section>
 <section id="distribution-function">
 <h2>Distribution Function<a class="headerlink" href="#distribution-function" title="Permalink to this headline">#</a></h2>
-<p>We go back to some terms learned in a undergraduate
+<p>We go back to some terminologies we learned in a undergraduate
 probability course. A <em>(cumulative) distribution function</em>
 <span class="math notranslate nohighlight">\(F:\mathbb{R}\mapsto [0,1]\)</span> is defined as</p>
 <div class="math notranslate nohighlight">
@@ -558,12 +560,12 @@ characterized by a few parameters.</p>
 <li><p>Binomial distribution.</p></li>
 </ul>
 <div class="math notranslate nohighlight">
-\[f(x;p) = \binom{n}{k}  p^k (1-p)^{n-k}\]</div>
+\[f(x = k ;p) = \binom{n}{k}  p^k (1-p)^{n-k}\]</div>
 <ul class="simple">
 <li><p>Poisson distribution.</p></li>
 </ul>
 <div class="math notranslate nohighlight">
-\[f(x;\lambda) = \frac{\lambda^k \exp(-\lambda)}{k!}\]</div>
+\[f(x = k;\lambda) = \frac{\lambda^k \exp(-\lambda)}{k!}\]</div>
 <ul class="simple">
 <li><p>Uniform distribution.</p></li>
 </ul>
@@ -582,13 +584,14 @@ f(x; \mu, \sigma^2) = \frac{1}{\sqrt{2\pi} \sigma} \exp\left( - \frac{(x-\mu)^2}
 </ul>
 <div class="math notranslate nohighlight">
 \[
-f(x; \mu, \sigma^2) = \frac{1}{\sqrt{2\pi} \sigma} \exp\left( - \frac{(\ln(x)-\mu)^2}{2\sigma^2}\right),
+f(x; \mu, \sigma^2) = \frac{1}{\sqrt{2\pi} \sigma} \exp\left( - \frac{(\log(x)-\mu)^2}{2\sigma^2}\right),
 \]</div>
 <p>Its means is <span class="math notranslate nohighlight">\(\exp(\mu + 0.5 \sigma^2)\)</span> and variance
-<span class="math notranslate nohighlight">\([\exp(\sigma^2 - 1)] \exp(2\mu+ \sigma^2)\)</span></p>
+<span class="math notranslate nohighlight">\([\exp(\sigma^2 - 1)] \exp(2\mu+ \sigma^2)\)</span>.</p>
 <p><span class="math notranslate nohighlight">\(\chi^{2}\)</span>, <span class="math notranslate nohighlight">\(t\)</span>, and <span class="math notranslate nohighlight">\(F\)</span> distributions.</p>
-<p><strong>Example</strong> <code class="docutils literal notranslate"><span class="pre">R</span></code> has a rich collection of distributions implemented in a unified pattern:
-<code class="docutils literal notranslate"><span class="pre">d</span></code> for density, <code class="docutils literal notranslate"><span class="pre">p</span></code> for probability, <code class="docutils literal notranslate"><span class="pre">q</span></code> for quantile, and <code class="docutils literal notranslate"><span class="pre">r</span></code> for random variable generation.
+<p><strong>Example</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">R</span></code> has a rich collection of distributions implemented in a unified pattern:
+<code class="docutils literal notranslate"><span class="pre">d</span></code> for density, <code class="docutils literal notranslate"><span class="pre">p</span></code> for probability, <code class="docutils literal notranslate"><span class="pre">q</span></code> for quantile, and <code class="docutils literal notranslate"><span class="pre">r</span></code> for random variable generator.
 For instance, <code class="docutils literal notranslate"><span class="pre">dnorm</span></code>, <code class="docutils literal notranslate"><span class="pre">pnorm</span></code>, <code class="docutils literal notranslate"><span class="pre">qnorm</span></code>, and <code class="docutils literal notranslate"><span class="pre">rnorm</span></code> are the corresponding functions of the normal distribution, and the parameters <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span> can be specified in the arguments of the functions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -654,18 +657,17 @@ In population, this value is 5%. What is the number coming out of this experimen
 </section>
 <section id="integration">
 <h2>Integration<a class="headerlink" href="#integration" title="Permalink to this headline">#</a></h2>
-<p>An integral
+<p>In probability theory, an integral
 <span class="math notranslate nohighlight">\(\int X\mathrm{d}P\)</span> is called the <em>expected value,</em> or
 <em>expectation,</em> of <span class="math notranslate nohighlight">\(X\)</span>. We often use the notation
 <span class="math notranslate nohighlight">\(E\left[X\right]\)</span>, instead of <span class="math notranslate nohighlight">\(\int X\mathrm{d}P\)</span>, for convenience.</p>
-<p>Expectation provides the average of a random variable,
+<p>The expectation is the average of a random variable,
 despite that we cannot foresee the realization of a random variable in a particular trial
 (otherwise there is no uncertainty). In the frequentist’s view,
 the expectation is the average outcome if we carry out a large number of independent
 trials.</p>
 <p>If we know the probability mass function of a discrete random variable, its expectation
-is calculated as <span class="math notranslate nohighlight">\(E\left[X\right]=\sum_{x}xP\left(X=x\right)\)</span>, which is
-the integral of a simple function.
+is calculated as <span class="math notranslate nohighlight">\(E\left[X\right]=\sum_{x}xP\left(X=x\right)\)</span>.
 If a continuous random variable has a PDF <span class="math notranslate nohighlight">\(f(x)\)</span>, its expectation
 can be computed as  <span class="math notranslate nohighlight">\(E\left[X\right]=\int xf\left(x\right)\mathrm{d}x\)</span>.</p>
 <div class="cell docutils container">
@@ -681,9 +683,15 @@ can be computed as  <span class="math notranslate nohighlight">\(E\left[X\right]
 of an indicator function. <span class="math notranslate nohighlight">\(E\left[1\left\{ A\right\}  \right]= 1\times P(A) + 0 \times P(A^c) =P\left(A\right)\)</span>.</p></li>
 <li><p><span class="math notranslate nohighlight">\(E\left[X^{r}\right]\)</span> is call the <span class="math notranslate nohighlight">\(r\)</span>-moment of <span class="math notranslate nohighlight">\(X\)</span>. The <em>mean</em> of a random variable is the first moment <span class="math notranslate nohighlight">\(\mu=E\left[X\right]\)</span>, and
 the second <em>centered</em> moment is called the <em>variance</em>
-<span class="math notranslate nohighlight">\(\mathrm{var}\left[X\right]=E\left[\left(X-\mu\right)^{2}\right]\)</span>.</p></li>
+<span class="math notranslate nohighlight">\(\mathrm{var}\left[X\right]=E [(X-\mu)^{2}]\)</span>.</p></li>
 </ul>
-<p>var(d1.log[[“count”]])</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">var</span><span class="p">(</span><span class="n">d1.log</span><span class="p">[[</span><span class="s">&quot;count&quot;</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>The third centered moment <span class="math notranslate nohighlight">\(E\left[\left(X-\mu\right)^{3}\right]\)</span>,
 called <em>skewness</em>, is a measurement of the
 symmetry of a random variable, and the fourth centered moment
@@ -725,11 +733,10 @@ is a special case of the Markov inequality when <span class="math notranslate no
 </section>
 <section id="multivariate-random-variable">
 <h2>Multivariate Random Variable<a class="headerlink" href="#multivariate-random-variable" title="Permalink to this headline">#</a></h2>
-<p>A bivariate random variable is a vector of two scalar random variables, and more generally a multivariate random variable.</p>
-<p><em>Joint CDF</em> is</p>
+<p>A bivariate random variable is a vector of two scalar random variables. More generally, a multivariate random variable has the <em>joint CDF</em> as</p>
 <div class="math notranslate nohighlight">
-\[F
-\left(x_{1},\ldots,x_{n}\right)=P\left(X_{1}\leq x_{1},\ldots,X_{n}\leq x_{n}\right).
+\[
+F\left(x_{1},\ldots,x_{n}\right)=P\left(X_{1}\leq x_{1},\ldots,X_{n}\leq x_{n}\right).
 \]</div>
 <p>Joint PDF is defined similarly.</p>
 <div class="cell docutils container">
@@ -744,35 +751,44 @@ and marginal distribution in the simple bivariate case, and these definitions
 can be extended to multivariate distributions. Suppose
 a bivariate random variable <span class="math notranslate nohighlight">\((X,Y)\)</span> has a joint density
 <span class="math notranslate nohighlight">\(f(\cdot,\cdot)\)</span>.
-The  <em>conditional density</em> can be roughly written as  <span class="math notranslate nohighlight">\(f\left(y|x\right)=f\left(x,y\right)/f\left(x\right)\)</span>  for <span class="math notranslate nohighlight">\(f(x) \neq 0\)</span>.
+The  <em>conditional density</em> can be written as  <span class="math notranslate nohighlight">\(f\left(y|x\right)=f\left(x,y\right)/f\left(x\right)\)</span>  for <span class="math notranslate nohighlight">\(f(x) \neq 0\)</span>.
 The <em>marginal density</em> <span class="math notranslate nohighlight">\(f\left(y\right)=\int f\left(x,y\right)dx\)</span> integrates out
 the coordinate that is not interested.</p>
 </section>
 <section id="independence">
 <h2>Independence<a class="headerlink" href="#independence" title="Permalink to this headline">#</a></h2>
-<p>For two events <span class="math notranslate nohighlight">\(A_1,A_2\)</span>, the <em>conditional probability</em> is</p>
+<p>For two events <span class="math notranslate nohighlight">\(A_1\)</span> and <span class="math notranslate nohighlight">\(A_2\)</span>, the <em>conditional probability</em> is</p>
 <div class="math notranslate nohighlight">
 \[
-P\left(A_1|A_2\right) = \frac{P\left(A_1 A_2\right)}{ P\left(A_2\right) }.
+P\left(A_1|A_2\right) = \frac{P\left(A_1 A_2\right)}{ P\left(A_2\right) }
 \]</div>
 <p>if <span class="math notranslate nohighlight">\(P(A_2) \neq  0\)</span>.
-In the definition of conditional probability, <span class="math notranslate nohighlight">\(A_2\)</span> plays
+In this definition of conditional probability, <span class="math notranslate nohighlight">\(A_2\)</span> plays
 the role of the outcome space  so that
 <span class="math notranslate nohighlight">\(P(A_1 A_2)\)</span> is standardized by the total mass <span class="math notranslate nohighlight">\(P(A_2)\)</span>.</p>
-<p>Since <span class="math notranslate nohighlight">\(A_1\)</span> and <span class="math notranslate nohighlight">\(A_2\)</span> are symmetric, we also have <span class="math notranslate nohighlight">\(P(A_1 A_2) = P(A_2|A_1)P(A_1)\)</span>.
+<p>Since <span class="math notranslate nohighlight">\(A_1\)</span> and <span class="math notranslate nohighlight">\(A_2\)</span> are symmetric, we have <span class="math notranslate nohighlight">\(P(A_1 A_2) = P(A_2|A_1)P(A_1)\)</span>.
 It implies</p>
 <div class="math notranslate nohighlight">
 \[
 P(A_1 | A_2)=\frac{P\left(A_2| A_1\right)P\left(A_1\right)}{P\left(A_2\right)}
 \]</div>
-<p>This formula is the well-known <em>Bayes’ Theorem</em>. It is particularly important in
-decision theory.</p>
-<p><strong>Example:</strong> <span class="math notranslate nohighlight">\(A_1\)</span> is the event “a student can survive CUHK’s MSc program”, and <span class="math notranslate nohighlight">\(A_2\)</span> is
+<p>This formula is the well-known <em>Bayes’ Theorem</em>, which is a cornerstone of
+<em>decision theory</em>.</p>
+<p><strong>Example</strong></p>
+<p><span class="math notranslate nohighlight">\(A_1\)</span> is the event “a student can survive CUHK’s MSc program”, and <span class="math notranslate nohighlight">\(A_2\)</span> is
 his or her application profile.</p>
 <p>We say two events <span class="math notranslate nohighlight">\(A_1\)</span> and <span class="math notranslate nohighlight">\(A_2\)</span> are <em>independent</em> if <span class="math notranslate nohighlight">\(P(A_1A_2) = P(A_1)P(A_2)\)</span>.
 If <span class="math notranslate nohighlight">\(P(A_2) \neq 0\)</span>, it is equivalent to <span class="math notranslate nohighlight">\(P(A_1 | A_2 ) = P(A_1)\)</span>.
 In words, knowing <span class="math notranslate nohighlight">\(A_2\)</span> does not change the probability of <span class="math notranslate nohighlight">\(A_1\)</span>.</p>
 <p>If <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> are independent, <span class="math notranslate nohighlight">\(E[XY] = E[X]E[Y]\)</span>.</p>
+<!-- **Application** (Chebyshev law of large numbers) 
+
+If
+$X_{1},X_{2},\ldots,X_{n}$ are independent and identically distributed,
+with mean $0$ and variance $\sigma^{2}<\infty$. Let
+$Z_{n}=\frac{1}{n}\sum_{i=1}^{n} X_{i}$. Then the
+probability $P\left(\left|Z_{n}\right|>\epsilon\right)\to0$ as
+$n\to\infty$. -->
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">Y</span> <span class="o">&lt;-</span> <span class="nf">matrix</span><span class="p">(</span><span class="nf">rnorm</span><span class="p">(</span><span class="m">200</span><span class="p">),</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">2</span><span class="p">)</span>
@@ -789,14 +805,6 @@ In words, knowing <span class="math notranslate nohighlight">\(A_2\)</span> does
 </div>
 </div>
 </div>
-<p><strong>Application</strong>: (Chebyshev law of large numbers) If
-<span class="math notranslate nohighlight">\(X_{1},X_{2},\ldots,X_{n}\)</span> are independent and identically distributed,
-with mean <span class="math notranslate nohighlight">\(0\)</span> and variance <span class="math notranslate nohighlight">\(\sigma^{2}&lt;\infty\)</span>. Let
-<span class="math notranslate nohighlight">\(Z_{n}=\frac{1}{n}\sum_{i=1}^{n} X_{i}\)</span>. Then the
-probability <span class="math notranslate nohighlight">\(P\left(\left|Z_{n}\right|&gt;\epsilon\right)\to0\)</span> as
-<span class="math notranslate nohighlight">\(n\to\infty\)</span>.</p>
-<p>The culmination of probability theory is <em>law of large numbers</em> and
-<em>central limit theorem</em>, to be covered later in this short course.</p>
 </section>
 <section id="law-of-iterated-expectations">
 <h2>Law of Iterated Expectations<a class="headerlink" href="#law-of-iterated-expectations" title="Permalink to this headline">#</a></h2>
@@ -823,7 +831,8 @@ The law of iterated expectation implies <span class="math notranslate nohighligh
 <li><p><span class="math notranslate nohighlight">\(E\left[E\left[Y|X_{1}\right]|X_{1},X_{2}\right]=E\left[Y|X_{1}\right];\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(E\left[h\left(X\right)Y|X\right]=h\left(X\right)E\left[Y|X\right].\)</span></p></li>
 </ol>
-<p><strong>Application</strong>: Regression is a technique that decomposes a random variable <span class="math notranslate nohighlight">\(Y\)</span>
+<p><strong>Application</strong></p>
+<p>Regression is a technique that decomposes a random variable <span class="math notranslate nohighlight">\(Y\)</span>
 into two parts, a conditional mean and a residual. Write
 <span class="math notranslate nohighlight">\(Y=E\left[Y|X\right]+\epsilon\)</span>, where
 <span class="math notranslate nohighlight">\(\epsilon=Y-E\left[Y|X\right]\)</span>. Show that <span class="math notranslate nohighlight">\(E[\epsilon] = 0\)</span> and  <span class="math notranslate nohighlight">\(E[\epsilon E[Y|X] ] = 0\)</span>.</p>
@@ -856,16 +865,16 @@ into two parts, a conditional mean and a residual. Write
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "conda-env-r-r"
+            mode: "r"
         },
         kernelOptions: {
-            kernelName: "conda-env-r-r",
+            kernelName: "ir",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'conda-env-r-r'</script>
+    <script>kernelName = 'ir'</script>
 
               </div>
               
