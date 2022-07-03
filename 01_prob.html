@@ -350,11 +350,6 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#expected-value">
-   Expected Value
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#integration">
    Integration
   </a>
@@ -411,11 +406,6 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#distribution-function">
    Distribution Function
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#expected-value">
-   Expected Value
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -526,7 +516,7 @@ peculiar pros and cons under different real-world contexts.</p>
 </section>
 <section id="distribution-function">
 <h2>Distribution Function<a class="headerlink" href="#distribution-function" title="Permalink to this headline">#</a></h2>
-<p>We go back to some terminologies we learned in a undergraduate
+<p>We go back to some terminologies we learned in an undergraduate
 probability course. A <em>(cumulative) distribution function</em>
 <span class="math notranslate nohighlight">\(F:\mathbb{R}\mapsto [0,1]\)</span> is defined as</p>
 <div class="math notranslate nohighlight">
@@ -561,7 +551,7 @@ F\left(x\right)=P\left(X\leq x\right).
 f(x) = d F\left(x\right) / d x
 \]</div>
 <p>is called the <em>probability density function</em> of <span class="math notranslate nohighlight">\(X\)</span>, often abbreviated as PDF.
-It is easy to show that <span class="math notranslate nohighlight">\(f\left(x\right)\geq0\)</span> and
+It is easy to show that <span class="math notranslate nohighlight">\(f\left(x\right)\geq0\)</span>, and by the Leibniz integral rule
 <span class="math notranslate nohighlight">\(\int_{a}^{b}f\left(x\right)dx=F\left(b\right)-F\left(a\right)\)</span>.</p>
 <p>We have learned many parametric distributions. A parametric distribution can be completely
 characterized by a few parameters.</p>
@@ -652,6 +642,7 @@ In population, this value is 5%. What is the number coming out of this experimen
 
 <span class="n">y</span> <span class="o">=</span> <span class="nf">dnorm</span><span class="p">(</span><span class="n">x_axis</span><span class="p">)</span>
 <span class="nf">plot</span><span class="p">(</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">x_axis</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&quot;l&quot;</span><span class="p">,</span> <span class="n">xlab</span> <span class="o">=</span> <span class="s">&quot;value&quot;</span><span class="p">,</span> <span class="n">ylab</span> <span class="o">=</span> <span class="s">&quot;density&quot;</span><span class="p">)</span>
+
 <span class="n">z</span> <span class="o">=</span> <span class="nf">rnorm</span><span class="p">(</span><span class="m">1000</span><span class="p">)</span>
 <span class="nf">lines</span><span class="p">(</span> <span class="nf">density</span><span class="p">(</span><span class="n">z</span><span class="p">),</span> <span class="n">col</span> <span class="o">=</span> <span class="s">&quot;red&quot;</span><span class="p">)</span>
 <span class="n">crit</span> <span class="o">=</span> <span class="nf">qnorm</span><span class="p">(</span><span class="n">.</span><span class="m">95</span><span class="p">)</span>
@@ -661,9 +652,6 @@ In population, this value is 5%. What is the number coming out of this experimen
 </div>
 </div>
 </div>
-</section>
-<section id="expected-value">
-<h2>Expected Value<a class="headerlink" href="#expected-value" title="Permalink to this headline">#</a></h2>
 </section>
 <section id="integration">
 <h2>Integration<a class="headerlink" href="#integration" title="Permalink to this headline">#</a></h2>
@@ -689,8 +677,6 @@ can be computed as  <span class="math notranslate nohighlight">\(E\left[X\right]
 </div>
 <p>Here are some properties of the expectation.</p>
 <ul class="simple">
-<li><p>The probability of an event <span class="math notranslate nohighlight">\(A\)</span> is the expectation
-of an indicator function. <span class="math notranslate nohighlight">\(E\left[1\left\{ A\right\}  \right]= 1\times P(A) + 0 \times P(A^c) =P\left(A\right)\)</span>.</p></li>
 <li><p><span class="math notranslate nohighlight">\(E\left[X^{r}\right]\)</span> is call the <span class="math notranslate nohighlight">\(r\)</span>-moment of <span class="math notranslate nohighlight">\(X\)</span>. The <em>mean</em> of a random variable is the first moment <span class="math notranslate nohighlight">\(\mu=E\left[X\right]\)</span>, and
 the second <em>centered</em> moment is called the <em>variance</em>
 <span class="math notranslate nohighlight">\(\mathrm{var}\left[X\right]=E [(X-\mu)^{2}]\)</span>.</p></li>
@@ -756,14 +742,14 @@ F\left(x_{1},\ldots,x_{n}\right)=P\left(X_{1}\leq x_{1},\ldots,X_{n}\leq x_{n}\r
 </div>
 </div>
 </div>
-<p>It is sufficient to introduce the joint distribution, conditional distribution
+<p>It is illustrative to introduce the joint distribution, conditional distribution
 and marginal distribution in the simple bivariate case, and these definitions
-can be extended to multivariate distributions. Suppose
-a bivariate random variable <span class="math notranslate nohighlight">\((X,Y)\)</span> has a joint density
+can be extended to multivariate distributions.
+Suppose a bivariate random variable <span class="math notranslate nohighlight">\((X,Y)\)</span> has a joint density
 <span class="math notranslate nohighlight">\(f(\cdot,\cdot)\)</span>.
-The  <em>conditional density</em> can be written as  <span class="math notranslate nohighlight">\(f\left(y|x\right)=f\left(x,y\right)/f\left(x\right)\)</span>  for <span class="math notranslate nohighlight">\(f(x) \neq 0\)</span>.
 The <em>marginal density</em> <span class="math notranslate nohighlight">\(f\left(y\right)=\int f\left(x,y\right)dx\)</span> integrates out
-the coordinate that is not interested.</p>
+the coordinate that is not interested.
+The  <em>conditional density</em> can be written as  <span class="math notranslate nohighlight">\(f\left(y|x\right)=f\left(x,y\right)/f\left(x\right)\)</span>  for <span class="math notranslate nohighlight">\(f(x) \neq 0\)</span>.</p>
 </section>
 <section id="independence">
 <h2>Independence<a class="headerlink" href="#independence" title="Permalink to this headline">#</a></h2>
