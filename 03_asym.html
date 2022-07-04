@@ -4,13 +4,11 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Asymptotics &#8212; Lecture Notes</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -20,18 +18,22 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -39,13 +41,12 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -64,21 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
-
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -87,10 +74,9 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
       
@@ -103,15 +89,14 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="intro.html">
-                    Introduction
-                </a>
-            </li>
-        </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="01_prob.html">
    Probability
@@ -130,17 +115,12 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
-    </div>
-    <div id="rtd-footer-container"></div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
 </div>
 
 
@@ -148,191 +128,94 @@ const thebe_selector_output = ".output, .cell_output"
 
 
           
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="header-article row sticky-top noprint">
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
         
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/zhentaoshi/Econ_prob/master?urlpath=tree/docs/03_asym.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/zhentaoshi/Econ_prob"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/zhentaoshi/Econ_prob/issues/new?title=Issue%20on%20page%20%2F03_asym.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="_sources/03_asym.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/03_asym.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/zhentaoshi/Econ_prob"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/zhentaoshi/Econ_prob/issues/new?title=Issue%20on%20page%20%2F03_asym.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
     </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/zhentaoshi/Econ_prob/master?urlpath=tree/docs/03_asym.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#modes-of-convergence">
    Modes of Convergence
@@ -362,11 +245,12 @@ title="Print to PDF"
  </li>
 </ul>
 
-    </nav>
-</div>
+            </nav>
+        </div>
     </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Asymptotics</h1>
@@ -412,23 +296,21 @@ title="Print to PDF"
                     </div>
                 </div>
             </div>
-            <main id="main-content" role="main">
-                
+            
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="asymptotics">
-<h1>Asymptotics<a class="headerlink" href="#asymptotics" title="Permalink to this headline">#</a></h1>
-<!-- Qingliang covers basic asymptotic theory -->
+  <div class="tex2jax_ignore mathjax_ignore section" id="asymptotics">
+<h1>Asymptotics<a class="headerlink" href="#asymptotics" title="Permalink to this headline">¶</a></h1>
+<!-- QL covers basic asymptotic theory -->
 <p>Asymptotic theory is a set of mathematical tools that invoke limits to simplify our understanding of the behavior of statistics.</p>
-<section id="modes-of-convergence">
-<h2>Modes of Convergence<a class="headerlink" href="#modes-of-convergence" title="Permalink to this headline">#</a></h2>
+<div class="section" id="modes-of-convergence">
+<h2>Modes of Convergence<a class="headerlink" href="#modes-of-convergence" title="Permalink to this headline">¶</a></h2>
 <p>Let <span class="math notranslate nohighlight">\(x_{1},x_{2},\ldots\)</span> be an infinite
 sequence of non-random variables.
 <em>Convergence</em> of this non-random sequence means that for any
 <span class="math notranslate nohighlight">\(\varepsilon&gt;0\)</span>, there exists an <span class="math notranslate nohighlight">\(N\left(\varepsilon\right)\)</span> such that
 for all <span class="math notranslate nohighlight">\(n&gt;N\left(\varepsilon\right)\)</span>, we have
-<span class="math notranslate nohighlight">\(\left|x_{n}-x\right|&lt;\varepsilon\)</span>. We say <span class="math notranslate nohighlight">\(x\)</span> is the limit of <span class="math notranslate nohighlight">\(x_{n}\)</span>,
-and write <span class="math notranslate nohighlight">\(x_{n}\to x\)</span> or <span class="math notranslate nohighlight">\(\lim_{n\to\infty}x_{n}=x\)</span>.</p>
+<span class="math notranslate nohighlight">\(\left|x_{n}-x\right|&lt;\varepsilon.\)</span></p>
 <p><strong>Example</strong></p>
 <p><span class="math notranslate nohighlight">\(x_{1,n} = 1 + 1/n\)</span> is a sequence. <span class="math notranslate nohighlight">\(x_{2,n} = - \exp(-n)\)</span> is another sequence. The limits of both sequences are 1. They are asymptotically similar in that
 <span class="math notranslate nohighlight">\(\lim_{n\to \infty} (x_{1,n} - x_{2,n})  =0\)</span>.</p>
@@ -443,7 +325,7 @@ non-random constant, if for any <span class="math notranslate nohighlight">\(\va
 \[
 P\left\{ \left|x_{n} -x\right|\geq\varepsilon\right\} \to0
 \]</div>
-<p>as <span class="math notranslate nohighlight">\(n\to\infty\)</span>. We can write <span class="math notranslate nohighlight">\(x_{n}\stackrel{p}{\to}x\)</span> or
+<p>as <span class="math notranslate nohighlight">\(n\to\infty\)</span>. We write <span class="math notranslate nohighlight">\(x_{n}\stackrel{p}{\to}x\)</span> or
 <span class="math notranslate nohighlight">\(\mathrm{plim}_{n\to\infty}x_{n}=x\)</span>.</p>
 <p>A sequence of random variables <span class="math notranslate nohighlight">\(\left(x_{n}\right)\)</span> <em>converges in
 squared-mean</em> to <span class="math notranslate nohighlight">\(x\)</span>, where <span class="math notranslate nohighlight">\(x\)</span> can be either a random variable or a
@@ -493,11 +375,13 @@ continuous. We write <span class="math notranslate nohighlight">\(x_{n}\stackrel
 is untrue in general, unless <span class="math notranslate nohighlight">\(x\)</span> is a non-random constant (A constant
 <span class="math notranslate nohighlight">\(x\)</span> can be viewed as a degenerate random variables, with a corresponding
 “CDF” <span class="math notranslate nohighlight">\(F_{x}(\cdot)=1 \{ \cdot\geq x \}\)</span>.)</p>
+<p><strong>Example</strong></p>
 <p>Let <span class="math notranslate nohighlight">\(x\sim N\left(0,1\right)\)</span>. If <span class="math notranslate nohighlight">\(x_{n}=x+1/n\)</span>, then
 <span class="math notranslate nohighlight">\(x_{n}\stackrel{p}{\to}x\)</span> and of course <span class="math notranslate nohighlight">\(x_{n}\stackrel{d}{\to}x\)</span>.
 However, if <span class="math notranslate nohighlight">\(x_{n}=-x+1/n\)</span>, or <span class="math notranslate nohighlight">\(x_{n}=y+1/n\)</span> where
 <span class="math notranslate nohighlight">\(y\sim N\left(0,1\right)\)</span> is independent of <span class="math notranslate nohighlight">\(x\)</span>, then
 <span class="math notranslate nohighlight">\(x_{n}\stackrel{d}{\to}x\)</span> but <span class="math notranslate nohighlight">\(x_{n}\stackrel{p}{\nrightarrow}x\)</span>.</p>
+<p><strong>Example</strong></p>
 <p><span class="math notranslate nohighlight">\((x_{n})\)</span> is a sequence of binary random variables: <span class="math notranslate nohighlight">\(x_{n}=n\)</span> with
 probability <span class="math notranslate nohighlight">\(1/\sqrt{n}\)</span>, and <span class="math notranslate nohighlight">\(x_{n}=0\)</span> with probability <span class="math notranslate nohighlight">\(1-1/\sqrt{n}\)</span>.
 Then <span class="math notranslate nohighlight">\(x_{n}\stackrel{d}{\to}x=0.\)</span> Because</p>
@@ -509,16 +393,16 @@ F_{x_{n}}\left(a\right)=\begin{cases}
 1 &amp; a\geq n
 \end{cases}.
 \end{split}\]</div>
-<p><span class="math notranslate nohighlight">\(F_{x}\left(a\right)=\begin{cases} 0, &amp; a&lt;0\\ 1 &amp; a\geq0 \end{cases}\)</span>.
+<p>Let
+<span class="math notranslate nohighlight">\(F_{x}\left(a\right)=\begin{cases} 0, &amp; a&lt;0\\ 1 &amp; a\geq0 \end{cases}\)</span>.
 It is easy to verify that <span class="math notranslate nohighlight">\(F_{x_{n}}\left(a\right)\)</span> converges to
-<span class="math notranslate nohighlight">\(F_{x}\left(a\right)\)</span> <em>pointwisely</em> on each point in
-<span class="math notranslate nohighlight">\(\left(-\infty,0\right)\cup\left(0,+\infty\right)\)</span>, where
-<span class="math notranslate nohighlight">\(F_{x}\left(a\right)\)</span> is continuous.</p>
+<span class="math notranslate nohighlight">\(F_{x}\left(a\right)\)</span> <em>pointwisely</em> on each point in <span class="math notranslate nohighlight">\(\mathbb{R}\backslash \{0\}\)</span>,
+where <span class="math notranslate nohighlight">\(F_{x}\left(a\right)\)</span> is continuous.</p>
 <p>So far we have talked about convergence of scalar variables. These three
 modes of converges can be easily generalized to finite-dimensional random vectors.</p>
-</section>
-<section id="law-of-large-numbers">
-<h2>Law of Large Numbers<a class="headerlink" href="#law-of-large-numbers" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="law-of-large-numbers">
+<h2>Law of Large Numbers<a class="headerlink" href="#law-of-large-numbers" title="Permalink to this headline">¶</a></h2>
 <p>Law of large numbers (LLN) is a collection of statements about
 convergence in probability of the sample average to its population
 counterpart. The basic form of LLN is:</p>
@@ -529,16 +413,10 @@ counterpart. The basic form of LLN is:</p>
 <p>as <span class="math notranslate nohighlight">\(n\to\infty\)</span>. Various versions of LLN work under different assumptions
 about moment restrictions and/or dependence of the underlying random
 variables.</p>
-<section id="cherbyshev-lln">
-<h3>Cherbyshev LLN<a class="headerlink" href="#cherbyshev-lln" title="Permalink to this headline">#</a></h3>
+<div class="section" id="cherbyshev-lln">
+<h3>Cherbyshev LLN<a class="headerlink" href="#cherbyshev-lln" title="Permalink to this headline">¶</a></h3>
 <p>We illustrate LLN by the simple example of Chebyshev LLN. It utilizes the <em>Chebyshev
 inequality</em>.</p>
-<ul class="simple">
-<li><p><em>Chebyshev inequality</em>: If a random variable <span class="math notranslate nohighlight">\(x\)</span> has a finite second
-moment <span class="math notranslate nohighlight">\(E\left[x^{2}\right]&lt;\infty\)</span>, then we have
-<span class="math notranslate nohighlight">\(P\left\{ \left|x\right|&gt;\varepsilon\right\} \leq E\left[x^{2}\right]/\varepsilon^{2}\)</span>
-for any constant <span class="math notranslate nohighlight">\(\varepsilon&gt;0\)</span>.</p></li>
-</ul>
 <!-- The Chebyshev inequality is a special case of the *Markov inequality*.
 
 -   *Markov inequality*: If a random variable $x$ has a finite $r$-th
@@ -562,7 +440,7 @@ inequality.
 <span class="math notranslate nohighlight">\(\mu=E\left[x_{1}\right]\)</span> and
 <span class="math notranslate nohighlight">\(\sigma^{2}=\mathrm{var}\left[x_{1}\right]\)</span>. We apply the Chebyshev
 inequality to the sample mean
-<span class="math notranslate nohighlight">\(x_{n}=\overline{x}-\mu=n^{-1}\left(S_{n}-E\left[S_{n}\right]\right)\)</span>. We have</p>
+<span class="math notranslate nohighlight">\(x_{n}=\bar{x}-\mu=n^{-1}\left(S_{n}-E\left[S_{n}\right]\right)\)</span>. We have</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
@@ -637,10 +515,10 @@ Cauchy distribution does not.</p>
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="central-limit-theorem">
-<h2>Central Limit Theorem<a class="headerlink" href="#central-limit-theorem" title="Permalink to this headline">#</a></h2>
+</div>
+</div>
+<div class="section" id="central-limit-theorem">
+<h2>Central Limit Theorem<a class="headerlink" href="#central-limit-theorem" title="Permalink to this headline">¶</a></h2>
 <p>The central limit theorem (CLT) is a collection of statements
 about the convergence in distribution to a stable distribution. The
 limiting distribution is usually the Gaussian distribution.</p>
@@ -677,6 +555,7 @@ random variables. <em>Lindeberg-Levy CLT</em> is the simplest version.</p>
       <span class="p">}</span>
   <span class="nf">return </span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
 <span class="p">}</span>
+
 <span class="n">CLT_plot</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">distribution</span><span class="p">){</span>
   <span class="n">Rep</span> <span class="o">=</span> <span class="m">10000</span>
   <span class="n">ZZ</span> <span class="o">=</span> <span class="nf">rep</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="n">Rep</span><span class="p">)</span>
@@ -697,10 +576,13 @@ random variables. <em>Lindeberg-Levy CLT</em> is the simplest version.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="_images/03_asym_24_0.png" src="_images/03_asym_24_0.png" />
 </div>
-</section>
-<section id="tools-for-transformations">
-<h2>Tools for Transformations<a class="headerlink" href="#tools-for-transformations" title="Permalink to this headline">#</a></h2>
+</div>
+</div>
+<div class="section" id="tools-for-transformations">
+<h2>Tools for Transformations<a class="headerlink" href="#tools-for-transformations" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Continuous mapping theorem 1: If <span class="math notranslate nohighlight">\(x_{n}\stackrel{p}{\to}a\)</span> and
 <span class="math notranslate nohighlight">\(f\left(\cdot\right)\)</span> is continuous at <span class="math notranslate nohighlight">\(a\)</span>, then
@@ -718,10 +600,9 @@ random variables. <em>Lindeberg-Levy CLT</em> is the simplest version.</p>
 </li>
 </ul>
 <p>Slutsky’s theorem consists of special cases of the continuous mapping
-theorem 2. Only because the addition, multiplication and division are
-encountered so frequently in practice, we list it as a separate theorem.</p>
-</section>
-</section>
+theorem 2.</p>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -745,11 +626,9 @@ encountered so frequently in practice, we list it as a separate theorem.</p>
 
               </div>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="02_stat.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -758,28 +637,24 @@ encountered so frequently in practice, we list it as a separate theorem.</p>
         </div>
     </a>
 </div>
-            </footer>
+            
         </div>
     </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By 史震涛 Shi Zhentao<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+    <footer class="footer">
+  <p>
     
-</div>
+      By 史震涛 Shi Zhentao<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
 
 
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>
