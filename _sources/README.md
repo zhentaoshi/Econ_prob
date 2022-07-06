@@ -39,6 +39,9 @@ Kevin Sheppard's [Financial Economics I](https://www.kevinsheppard.com/teaching/
 ## Course Page
 The [course web page](https://zhentaoshi.github.io/Econ_prob/) is the same as this README file.
 
+QR code for the web page.
+![QR code](https://github.com/zhentaoshi/Econ_prob/blob/master/qrcode_pre.png)
+
 ## Mirror
 
 If you are in Mainland China, [here is a mirror](https://gitee.com/ztshi/Econ_prob) in Shenzhen.
