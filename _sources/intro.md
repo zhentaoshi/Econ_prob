@@ -22,10 +22,10 @@ This is a project under construction.
 ```{tableofcontents}
 ```
 
-<iframe
+<!-- Weibo is only open for registered users <iframe
   src="http://t.cn/A6aXqHgn"
   style="width:100%; height:600px;"
-></iframe>
+></iframe> -->
 
 
 ## Extensive reading
