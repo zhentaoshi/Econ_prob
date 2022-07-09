@@ -10,7 +10,7 @@ copyright: "2022"
 # See https://jupyterbook.org/content/execute.html
 execute:
 #  execute_notebooks: force
-  execute_notebooks: 'off'
+  execute_notebooks: 'auto'
   allow_errors: true
   only_build_toc_files: true
   
