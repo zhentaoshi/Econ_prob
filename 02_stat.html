@@ -503,11 +503,21 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] 6.209361
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">sigma</span> <span class="o">&lt;-</span> <span class="nf">sd</span><span class="p">(</span><span class="n">d1.log.sub</span><span class="p">[[</span><span class="s">&quot;count&quot;</span><span class="p">]])</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">sigma</span><span class="o">^</span><span class="m">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] 2.599968
 </pre></div>
 </div>
 </div>
@@ -543,6 +553,8 @@ are the method of moments estimates of the two parameters.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html">0.690578770944648</div><div class="output text_html">0.842372317736601</div></div>
 </div>
 <p><strong>Example</strong>:</p>
 <p>The <span class="math notranslate nohighlight">\(t\)</span> distribution has one parameter, its degree of freedom <span class="math notranslate nohighlight">\(\nu\)</span>. The variance of <span class="math notranslate nohighlight">\(t(\nu)\)</span>, if <span class="math notranslate nohighlight">\(\nu &gt;2\)</span>,  is  <span class="math notranslate nohighlight">\(\sigma^2 = \nu / (\nu - 2)\)</span>.
@@ -627,6 +639,14 @@ The sample mean is a natural estimator for <span class="math notranslate nohighl
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><dl>
+	<dt>$lower</dt>
+		<dd>5.89332261060554</dd>
+	<dt>$upper</dt>
+		<dd>6.525399738991</dd>
+</dl>
+</div></div>
 </div>
 <p>An interval estimator is constructed according to a <em>sampling distribution</em>.
 The sampling distribution is the distribution of a statistic.</p>
@@ -657,6 +677,11 @@ The sampling distribution is the distribution of a statistic.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>the emprical coverage probability =  0.908
+</pre></div>
+</div>
+</div>
 </div>
 <p><em>Coverage probability</em> is the probability that the confidence interval captures the true value in repeated sampling.
 Here the confidence interval is random while the true value is fixed.</p>
@@ -671,6 +696,9 @@ Here the confidence interval is random while the true value is fixed.</p>
 <span class="nf">abline</span><span class="p">(</span><span class="n">h</span><span class="o">=</span><span class="m">2</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="s">&quot;red&quot;</span><span class="p">,</span> <span class="n">lty</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">lwd</span> <span class="o">=</span> <span class="m">2</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/02_stat_29_0.png" src="_images/02_stat_29_0.png" />
 </div>
 </div>
 <p>It is important to understand that the coverage probability is not the probability that the parameter falls into a fixed interval, which is the interpretation of the <em>Bayesian credit interval</em>.
@@ -743,6 +771,8 @@ is the desirable size or level.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html">-24.8070991590094</div></div>
 </div>
 <p>Another commonly popular indicator for the compatibility between the data and the null hypothesis is the <span class="math notranslate nohighlight">\(p\)</span>-value:</p>
 <div class="math notranslate nohighlight">
@@ -795,6 +825,8 @@ confidence interval by inverting the  test. In words, if we collect all points t
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html">6.14638913572936</div><div class="output text_html">0.633698143719527</div></div>
 </div>
 </section>
 <section id="random-sampling">
@@ -823,6 +855,9 @@ outcomes is <span class="math notranslate nohighlight">\(N=300\)</span>. For a s
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="_images/02_stat_45_0.png" src="_images/02_stat_45_0.png" />
+</div>
 </div>
 </section>
 </section>
@@ -850,6 +885,9 @@ outcomes is <span class="math notranslate nohighlight">\(N=300\)</span>. For a s
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html">0.732184537917333</div><img alt="_images/02_stat_48_1.png" src="_images/02_stat_48_1.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -857,6 +895,8 @@ outcomes is <span class="math notranslate nohighlight">\(N=300\)</span>. For a s
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html">0.633698143719527</div></div>
 </div>
 </section>
 <section id="regressions">
