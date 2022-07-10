@@ -6,26 +6,16 @@
 
 Welcome to the 2022 summer short course for [MSc Econ](https://admission.econ.cuhk.edu.hk/pg/master-economics/).
 
-<iframe
+<!-- <iframe
   src="https://admission.econ.cuhk.edu.hk/pg/master-economics/"
   style="width:100%; height:600px;"
-></iframe>
+></iframe> -->
 
 
-This is the first time I experiment with Jupyter Book.
-The teaching materials will be edited when the dates approach.
-
-```{warning}
-This is a project under construction.
-```
+Last update: July-10-2022
 
 ```{tableofcontents}
 ```
-
-<!-- Weibo is only open for registered users <iframe
-  src="http://t.cn/A6aXqHgn"
-  style="width:100%; height:600px;"
-></iframe> -->
 
 
 ## Extensive reading
