@@ -6,21 +6,16 @@
 
 Welcome to the 2022 summer short course for [MSc Econ](https://admission.econ.cuhk.edu.hk/pg/master-economics/).
 
-<iframe
+<!-- <iframe
   src="https://admission.econ.cuhk.edu.hk/pg/master-economics/"
   style="width:100%; height:600px;"
-></iframe>
+></iframe> -->
 
 
 Last update: July-10-2022
 
 ```{tableofcontents}
 ```
-
-<iframe
-  src="http://t.cn/A6aXqHgn"
-  style="width:100%; height:600px;"
-></iframe>
 
 
 ## Extensive reading
