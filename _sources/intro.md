@@ -23,8 +23,16 @@ Besides the lecture notes in this Github repository, you will find self-containe
 Kevin Sheppard's [Financial Economics I](https://www.kevinsheppard.com/teaching/mfe/notes/) for MSc at Oxford University.
 
 
-![](https://github.com/zhentaoshi/Econ_prob/blob/master/macau.jpg)
 
+
+
+<iframe
+  src="https://www.bilibili.com/video/BV16a411n7vA/?vd_source=a4b181aa9857818286999eec4d9925e6&t=126.7"
+  style="width:100%; height:600px;"
+></iframe>
+
+
+https://www.bilibili.com/video/BV16a411n7vA/?vd_source=a4b181aa9857818286999eec4d9925e6&t=39.9
 
 ## Interactive code
 
