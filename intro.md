@@ -4,12 +4,22 @@
 
 [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
 
-Welcome to the 2022 summer short course for [MSc Econ](https://admission.econ.cuhk.edu.hk/pg/master-economics/).
+Welcome to the 2022 summer short course for CUHK Econ's
 
-<!-- <iframe
+* [Master of Science (MSc)](https://admission.econ.cuhk.edu.hk/pg/master-economics/)
+<iframe
   src="https://admission.econ.cuhk.edu.hk/pg/master-economics/"
   style="width:100%; height:600px;"
-></iframe> -->
+></iframe>
+
+and 
+
+* [Dual Master's Degree (DMDP) program](https://admission.econ.cuhk.edu.hk/pg/dual-masters-degree-in-applied-economics-social-and-economic-policy/).
+
+<iframe
+  src="https://admission.econ.cuhk.edu.hk/pg/dual-masters-degree-in-applied-economics-social-and-economic-policy/"
+  style="width:100%; height:600px;"
+></iframe>
 
 
 Last update: July-10-2022
