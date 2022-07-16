@@ -31,6 +31,7 @@ Kevin Sheppard's [Financial Economics I](https://www.kevinsheppard.com/teaching/
 
 
 
+## Interactive code
 
 
 <iframe
@@ -39,9 +40,6 @@ Kevin Sheppard's [Financial Economics I](https://www.kevinsheppard.com/teaching/
 ></iframe>
 
 
-https://www.bilibili.com/video/BV16a411n7vA/?vd_source=a4b181aa9857818286999eec4d9925e6&t=39.9
-
-## Interactive code
 
 The following approaches make it possible to interact with the code cells in the Jupyter notebooks. They are ranking from the most convenient to the most cumbersome in term of configuration.
 
