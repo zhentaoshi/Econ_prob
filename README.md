@@ -18,6 +18,7 @@ Three topics will be covered:
 * [Probability](https://github.com/zhentaoshi/Econ_prob/blob/master/01_prob.ipynb)
 * [Statistic](https://github.com/zhentaoshi/Econ_prob/blob/master/02_stat.ipynb)
 * [Basic asymptotics](https://github.com/zhentaoshi/Econ_prob/blob/master/03_asym.ipynb)
+* [Basic programming](https://github.com/zhentaoshi/Econ_prob/blob/master/03_python.ipynb)
 
 The contents can be found in the Jupyter Notebook lecture notes, which can be displayed in a web browser in a static form.
 
