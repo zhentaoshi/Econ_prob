@@ -15,16 +15,16 @@ Welcome to the 2024 summer preparatory course for MSc.
 <!-- The teaching materials will be edited when the dates approach. -->
 
 Topics to be covered:
-* [Probability](https://github.com/zhentaoshi/Econ_prob/blob/master/01_prob.ipynb)
-* [Statistic](https://github.com/zhentaoshi/Econ_prob/blob/master/02_stat.ipynb)
-* [Basic asymptotics](https://github.com/zhentaoshi/Econ_prob/blob/master/03_asym.ipynb)
-* [Basic programming](https://github.com/zhentaoshi/Econ_prob/blob/master/03_python.ipynb)
+* [Probability](https://github.com/zhentaoshi/Econ_prob/blob/master/01_prob_py.ipynb)
+* [Statistic](https://github.com/zhentaoshi/Econ_prob/blob/master/02_stat_py.ipynb)
+* [Basic asymptotics](https://github.com/zhentaoshi/Econ_prob/blob/master/03_asym_py.ipynb)
+* [Basic programming](https://github.com/zhentaoshi/Econ_prob/blob/master/04_python.ipynb)
 
 The contents can be found in the Jupyter Notebook lecture notes, which can be displayed in a web browser in a static form.
 
 ## Interactive code
 
-The following approaches make it possible to interact with the code cells in the Jupyter notebooks. They are ranked from the most convenient to the most cumbersome in terms of configuration.
+The following approaches make it possible to interact with the code cells in the Jupyter notebooks.
 
 
 <!-- 1. Click [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/zhentaoshi/Econ_prob/HEAD). It may take some time to build the environment. Be patient. Changes cannot be saved by this approach, and thus they will get lost after closing your web browser. -->
