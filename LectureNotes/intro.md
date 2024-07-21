@@ -4,7 +4,7 @@
 
 [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
 
-Welcome to the 2022 summer short course for CUHK Econ's
+Welcome to the 2024 summer short course for CUHK Econ's
 
 * [Master of Science (MSc)](https://admission.econ.cuhk.edu.hk/pg/master-economics/)
 <!-- <iframe
@@ -19,7 +19,7 @@ Welcome to the 2022 summer short course for CUHK Econ's
 ></iframe> -->
 
 
-Last update: July-10-2022
+Last update: July-21-2024
 
 ```{tableofcontents}
 ```
@@ -33,11 +33,11 @@ Kevin Sheppard's [Financial Economics I](https://www.kevinsheppard.com/teaching/
 
 ## Interactive code
 
-
+<!-- 
 <iframe
   src="https://www.bilibili.com/video/BV16a411n7vA/?vd_source=a4b181aa9857818286999eec4d9925e6&t=126.7"
   style="width:100%; height:600px;"
-></iframe>
+></iframe> -->
 
 
 
