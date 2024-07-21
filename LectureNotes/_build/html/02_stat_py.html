@@ -1,0 +1,1108 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Statistics &#8212; Lecture Notes</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=ca93fcec" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=20b57f81" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '02_stat_py';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Asymptotics" href="03_asym_py.html" />
+    <link rel="prev" title="Probability" href="01_prob_py.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Lecture Notes</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_prob_py.html">Probability</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_asym_py.html">Asymptotics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_python.html">Basic Programming</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/zhentaoshi/Econ_prob" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/zhentaoshi/Econ_prob/issues/new?title=Issue%20on%20page%20%2F02_stat_py.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/02_stat_py.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Statistics</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estimation-methods">Estimation methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-of-moments">Method of moments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maximum-likelihood">Maximum likelihood</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistic-inference">Statistic Inference</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hypothesis-testing">Hypothesis Testing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connections">Connections</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#revealing-the-population">Revealing the population</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#random-sampling">Random Sampling</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multivariate-variables">Multivariate Variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regressions">Regressions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remarks">Remarks</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="statistics">
+<h1>Statistics<a class="headerlink" href="#statistics" title="Link to this heading">#</a></h1>
+<p>Statistic theory goes the opposite way to probability theory. In reality what we observe is a sample of data, but we don’t know via what mechanism the data are generated. Statistics asks how can we infer the data generating process from the sample that we observe. For example, if we assume the sample comes from a normal distribution, what is the best way that we learn the population mean and variance? Do the data provide sufficient evidence that two samples are drawn from populations of the same means? Statistics uses the sample to compute some numbers, while the underlying probability model guides the interpretation of these numbers.</p>
+<p><strong>Example</strong></p>
+<p>This is a sample of 100 accounts from
+<a class="reference external" href="https://www.kaggle.com/datasets/patriotboy112/hks-top-300-youtubers">HK top 300 Youtubers</a> in the previous lecture.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Reading the CSV file</span>
+<span class="n">d1_log_sub</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;logYoutuber_sample.csv&quot;</span><span class="p">)</span>
+
+<span class="c1"># Checking the number of rows</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">d1_log_sub</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Reading the CSV file</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">d1_log_sub</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;logYoutuber_sample.csv&quot;</span><span class="p">)</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Point estimates</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">d1_log_sub</span><span class="p">[</span><span class="s2">&quot;count&quot;</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">d1_log_sub</span><span class="p">[</span><span class="s2">&quot;count&quot;</span><span class="p">]))</span>
+
+<span class="ne">NameError</span>: name &#39;d1_log_sub&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">d1_log_sub</span><span class="p">[</span><span class="s2">&quot;count&quot;</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">d1_log_sub</span><span class="p">[</span><span class="s2">&quot;count&quot;</span><span class="p">]))</span>
+
+<span class="ne">NameError</span>: name &#39;d1_log_sub&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>We are interested in the <em>sample mean</em>, as it tells us the location of the center in the probability weighted average, or <em>population mean</em> <span class="math notranslate nohighlight">\(\mu = E[X_i]\)</span>.
+We are also interested in the <em>sample variance</em>, as it tells us the scale of spread of the sample, or <em>population variance</em> <span class="math notranslate nohighlight">\(\sigma^2 = var(X_i)\)</span>.</p>
+<p>In this example, we can view the sample as a multinomial distribution with <span class="math notranslate nohighlight">\(n\)</span> outcomes at the observed realized points.
+Since each observation is drawn randomly and independently, everyone is equally important.
+Assigning equal probability <span class="math notranslate nohighlight">\(1/n\)</span> on each point naturally delivers the sample mean <span class="math notranslate nohighlight">\(\hat{\mu} = \bar{X} = n^{-1} \sum_{i=1}^n X_i.\)</span>
+Similarly, a widely used sample variance is computed as <span class="math notranslate nohighlight">\(s^2 = (n-1)^{-1} \sum_{i=1}^n (X_i - \hat{\mu})^2\)</span>.</p>
+<p>More generally, for <span class="math notranslate nohighlight">\(p&gt;0\)</span> the statistic <span class="math notranslate nohighlight">\(n^{-1} \sum_{i=1}^n x_i^p\)</span> is called the <span class="math notranslate nohighlight">\(p\)</span>-th sample moment, and <span class="math notranslate nohighlight">\(n^{-1} \sum_{i=1}^n (X_i - \bar{X})^p\)</span> is called the <span class="math notranslate nohighlight">\(r\)</span>-th centered moment.</p>
+<section id="estimation-methods">
+<h2>Estimation methods<a class="headerlink" href="#estimation-methods" title="Link to this heading">#</a></h2>
+<p>Suppose that the data are generated from a parametric model. Statistical
+estimation is an “educated guess” of the unknown parameter from the observed data. A
+<em>principle</em> is an ideology about a proper way of estimation. Over the
+history of statistics, only a few principles are widely accepted.
+The two most popular methods are the <em>method of moments</em> and the <em>maximum likelihood method</em>.</p>
+<section id="method-of-moments">
+<h3>Method of moments<a class="headerlink" href="#method-of-moments" title="Link to this heading">#</a></h3>
+<p>The method of moments expresses some moments as functions
+of these parameters.
+We use the sample moments to mimic the corresponding population moments.
+Then we invert the functions to back out the parameters.</p>
+<p><strong>Example</strong></p>
+<p>A normal distribution is completely characterized by <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\sigma^2\)</span>. The following two estimates
+are the method of moments estimates of the two parameters.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.4881605012162108
+0.6667536399701588
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Example</strong>:</p>
+<p>The <span class="math notranslate nohighlight">\(t\)</span> distribution has one parameter, its degree of freedom <span class="math notranslate nohighlight">\(\nu\)</span>. The variance of <span class="math notranslate nohighlight">\(t(\nu)\)</span>, if <span class="math notranslate nohighlight">\(\nu &gt;2\)</span>,  is  <span class="math notranslate nohighlight">\(\sigma^2 = \nu / (\nu - 2)\)</span>.
+From the data, we estimate <span class="math notranslate nohighlight">\(\hat{\sigma}^2\)</span>, and then solve <span class="math notranslate nohighlight">\(\hat{\sigma}^2 = \nu / (\nu - 2)\)</span> to get</p>
+<div class="math notranslate nohighlight">
+\[
+  \hat{\nu} = \frac{2\hat{\sigma}^2}{\hat{\sigma}^2 - 1}
+\]</div>
+<p>Note: The population variance of <span class="math notranslate nohighlight">\(t\)</span> distribution is no smaller than 1.</p>
+</section>
+<section id="maximum-likelihood">
+<h3>Maximum likelihood<a class="headerlink" href="#maximum-likelihood" title="Link to this heading">#</a></h3>
+<p>The maximum likelihood estimation (MLE) looks for the value of the parameter that maximizes the log-likelihood. Because by the concavity of logarithm, the true parameter is the value that maximizes the expected likelihood function. In reality, we maximize its empirical version.</p>
+<p>Consider a random sample
+drawn from a parametric
+distribution with density <span class="math notranslate nohighlight">\(f\left(x;\theta\right)\)</span>, where
+<span class="math notranslate nohighlight">\(x\)</span> is either a scalar random variable or a random vector. A
+parametric distribution is completely characterized by a
+finite-dimensional parameter <span class="math notranslate nohighlight">\(\theta\)</span>. We use the data to estimate <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
+<p>The log-likelihood of observing the entire <em>random</em> sample <span class="math notranslate nohighlight">\(\mathbf{X}=(X_1,X_2,\ldots,X_n)\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[
+  L_{n}\left(\theta;\mathbf{X}\right):=\log\left(\prod_{i=1}^{n}f\left(X_{i};\theta\right)\right)=\sum_{i=1}^{n}\log f\left(X_{i};\theta\right).
+\]</div>
+<p>In reality the sample <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> is given and for each <span class="math notranslate nohighlight">\(\theta\in\Theta\)</span> we can
+evaluate <span class="math notranslate nohighlight">\(L_{n}\left(\theta;X\right)\)</span>. The maximum likelihood estimator
+is</p>
+<div class="math notranslate nohighlight">
+\[\widehat{\theta}_{MLE}:=\arg\max_{\theta\in\Theta}L_{n}\left(\theta;\mathbf{X}\right).\]</div>
+<p>This <span class="math notranslate nohighlight">\(\widehat{\theta}_{MLE}\)</span> makes observing <span class="math notranslate nohighlight">\(X\)</span> the
+“most likely” in the entire parametric space.
+A formal justification of MLE uses the terminology the <em>Kullback-Leibler information criterion</em>,
+which is a measurement of the “distance” or “divergence” between two distributions. This information criterion is maximized at the true parameter value.</p>
+<p><strong>Example</strong></p>
+<p>Consider the Gaussian location model <span class="math notranslate nohighlight">\(X_{i}\sim N\left(\mu, \sigma^2 \right)\)</span>,
+where <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span> are unknown parameters to be estimated. The likelihood of
+observing <span class="math notranslate nohighlight">\(X_{i}\)</span> is
+<span class="math notranslate nohighlight">\(f\left(X_{i};\mu\right)=\frac{1}{\sqrt{2\pi}\sigma}\exp\left(-\frac{1}{2\sigma^2}\left(X_{i}-\mu\right)^{2}\right)\)</span>.
+The likelihood of observing the sample <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[f\left(\mathbf{X};\mu, \sigma \right)=\prod_{i=1}^{n}\frac{1}{\sqrt{2\pi}\sigma}\exp\left(-\frac{1}{2\sigma^2}\left(X_{i}-\mu\right)^{2}\right)\]</div>
+<p>and the log-likelihood is</p>
+<div class="math notranslate nohighlight">
+\[L_{n}\left(\mu, \sigma;\mathbf{X}\right)=-\frac{n}{2}\log\left(2\pi\right) - n \log \sigma -\frac{1}{2\sigma^2}\sum_{i=1}^{n}\left(X_{i}-\mu\right)^{2}.\]</div>
+<p>After some computation, we will find <span class="math notranslate nohighlight">\(\hat{\mu}=n^{-1} \sum_{i=1}^n X_i\)</span> and <span class="math notranslate nohighlight">\(\hat{\sigma}^2 = n^{-1} \sum_{i=1}^n (X_i - \bar{X})^2\)</span>.
+Notice the denominator in the estimated variance here is <span class="math notranslate nohighlight">\(n\)</span>, instead of <span class="math notranslate nohighlight">\((n-1)\)</span> as in <span class="math notranslate nohighlight">\(s^2\)</span>. While <span class="math notranslate nohighlight">\(s^2\)</span> is an unbiased estimator for the variance, the MLE estimator is therefore biased for the variance.</p>
+</section>
+</section>
+<section id="statistic-inference">
+<h2>Statistic Inference<a class="headerlink" href="#statistic-inference" title="Link to this heading">#</a></h2>
+<p>We are interesting in relating the statistic to the population.
+Suppose <span class="math notranslate nohighlight">\(X_i\)</span>’s randomly drawn from a distribution, and we would like to learn the mean <span class="math notranslate nohighlight">\(\mu: = E[X_i]\)</span>.
+The sample mean is a natural estimator for <span class="math notranslate nohighlight">\(\mu\)</span>.</p>
+<p>Interval estimation quantifies the uncertainty of the estimator. The most familiar formula might be</p>
+<div class="math notranslate nohighlight">
+\[
+\left(
+\hat{\mu} - \frac{1.96}{\sqrt{n}} \hat{\sigma}, 
+\hat{\mu} + \frac{1.96}{\sqrt{n}} \hat{\sigma}
+\right).
+\]</div>
+<p>We will explain the rationale behind this formula.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">CI</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="c1"># x is a numpy array of random variables</span>
+    <span class="c1"># nominal coverage probability is 95%</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">mu</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">sig</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># ddof=1 for sample standard deviation</span>
+    <span class="n">upper</span> <span class="o">=</span> <span class="n">mu</span> <span class="o">+</span> <span class="mf">1.96</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">*</span> <span class="n">sig</span>
+    <span class="n">lower</span> <span class="o">=</span> <span class="n">mu</span> <span class="o">-</span> <span class="mf">1.96</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">*</span> <span class="n">sig</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;lower&#39;</span><span class="p">:</span> <span class="n">lower</span><span class="p">,</span> <span class="s1">&#39;upper&#39;</span><span class="p">:</span> <span class="n">upper</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CI</span><span class="p">(</span><span class="n">d1_log_sub</span><span class="p">[</span><span class="s2">&quot;count&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">CI</span><span class="p">(</span><span class="n">d1_log_sub</span><span class="p">[</span><span class="s2">&quot;count&quot;</span><span class="p">])</span>
+
+<span class="ne">NameError</span>: name &#39;d1_log_sub&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>An interval estimator is constructed according to a <em>sampling distribution</em>.
+The sampling distribution is the distribution of a statistic.</p>
+<p><strong>Example</strong></p>
+<p>Sampling distributions. Under normal distribution</p>
+<ul class="simple">
+<li><p>Assume <span class="math notranslate nohighlight">\(X_i \sim N(\mu, \sigma^2)\)</span> with a known variance. Then <span class="math notranslate nohighlight">\(\bar{X} \sim N(\mu, \sigma^2 / n)\)</span>.</p></li>
+<li><p>Assume <span class="math notranslate nohighlight">\(X_i \sim N(\mu, \sigma^2)\)</span> with a unknown variance. Then <span class="math notranslate nohighlight">\(\frac{\bar{X} - \mu}{s} \sim t(n-1)\)</span>.</p></li>
+<li><p>Assume <span class="math notranslate nohighlight">\(X_i \sim (\mu, \sigma^2)\)</span> with a finite variance.
+<span class="math notranslate nohighlight">\(\sqrt{n} \frac{\bar{X} - \mu}{\sigma} \stackrel{d}{\rightarrow} N(0, 1)\)</span>. (to be discussed in asymptotic theory)</p></li>
+</ul>
+<p><strong>Simulation example</strong></p>
+<p>In a simulation, we compute the empirical coverage probability of the formula of the confidence interval.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">poisson</span>
+
+<span class="k">def</span> <span class="nf">CI</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">mu</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">sig</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Sample standard deviation</span>
+    <span class="n">upper</span> <span class="o">=</span> <span class="n">mu</span> <span class="o">+</span> <span class="mf">1.96</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">*</span> <span class="n">sig</span>
+    <span class="n">lower</span> <span class="o">=</span> <span class="n">mu</span> <span class="o">-</span> <span class="mf">1.96</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">*</span> <span class="n">sig</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;lower&#39;</span><span class="p">:</span> <span class="n">lower</span><span class="p">,</span> <span class="s1">&#39;upper&#39;</span><span class="p">:</span> <span class="n">upper</span><span class="p">}</span>
+
+<span class="n">Rep</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">sample_size</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">capture</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">Rep</span><span class="p">)</span>
+<span class="n">Bounds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">Rep</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">mu</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">Rep</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">poisson</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">sample_size</span><span class="p">)</span>
+    <span class="n">bounds</span> <span class="o">=</span> <span class="n">CI</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">capture</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">((</span><span class="n">bounds</span><span class="p">[</span><span class="s1">&#39;lower&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">mu</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">mu</span> <span class="o">&lt;=</span> <span class="n">bounds</span><span class="p">[</span><span class="s1">&#39;upper&#39;</span><span class="p">]))</span>
+    <span class="n">Bounds</span><span class="p">[</span><span class="n">i</span><span class="p">,]</span> <span class="o">=</span> <span class="p">[</span><span class="n">bounds</span><span class="p">[</span><span class="s1">&#39;lower&#39;</span><span class="p">],</span> <span class="n">bounds</span><span class="p">[</span><span class="s1">&#39;upper&#39;</span><span class="p">]]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The empirical coverage probability =&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">capture</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">poisson</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">def</span> <span class="nf">CI</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;scipy&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>Coverage probability</em> is the probability that the confidence interval captures the true value in repeated sampling.
+Here the confidence interval is random while the true value is fixed.</p>
+<p><strong>Simulation example</strong></p>
+<p>Witness the confidence intervals from 25 replications.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Assuming Bounds is a numpy array with shape (Rep, 2) and contains the confidence intervals</span>
+<span class="n">Bounds25</span> <span class="o">=</span> <span class="n">Bounds</span><span class="p">[:</span><span class="mi">25</span><span class="p">,</span> <span class="p">:]</span>  <span class="c1"># Extract the first 25 confidence intervals</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">lower</span><span class="p">,</span> <span class="n">upper</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">Bounds25</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="p">],</span> <span class="p">[</span><span class="n">lower</span><span class="p">,</span> <span class="n">upper</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;_&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>  <span class="c1"># Plot each confidence interval</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">xmin</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">xmax</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyles</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># True mean line</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="n">Bounds25</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">Bounds25</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Sample Number&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Confidence Interval&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Confidence Intervals for the First 25 Samples&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Assuming Bounds is a numpy array with shape (Rep, 2) and contains the confidence intervals</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">Bounds25</span> <span class="o">=</span> <span class="n">Bounds</span><span class="p">[:</span><span class="mi">25</span><span class="p">,</span> <span class="p">:]</span>  <span class="c1"># Extract the first 25 confidence intervals</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;matplotlib&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>It is important to understand that the coverage probability is not the probability that the parameter falls into a fixed interval, which is the interpretation of the <em>Bayesian credit interval</em>.
+The latter requires different way for construction.</p>
+<section id="hypothesis-testing">
+<h3>Hypothesis Testing<a class="headerlink" href="#hypothesis-testing" title="Link to this heading">#</a></h3>
+<p>A <em>hypothesis</em> is a statement about the parameter space <span class="math notranslate nohighlight">\(\Theta\)</span>.
+Hypothesis testing checks whether the data support a <em>null hypothesis</em>
+<span class="math notranslate nohighlight">\(\Theta_{0}\)</span>, which is a subset of <span class="math notranslate nohighlight">\(\Theta\)</span> of interest. Ideally the
+null hypothesis should be suggested by scientific theory. The
+<em>alternative hypothesis</em> <span class="math notranslate nohighlight">\(\Theta_{1}=\Theta\backslash\Theta_{0}\)</span> is the
+complement of <span class="math notranslate nohighlight">\(\Theta_{0}\)</span>. Based on the observed evidence, hypothesis
+testing decides to accept or reject the null hypothesis. If the null
+hypothesis is rejected by the data, it implies that from the statistical
+perspective the data are incompatible with the proposed scientific
+theory.</p>
+<p>Let <span class="math notranslate nohighlight">\(\phi(\mathbf{X};\theta)\)</span> be the <em>decision function</em>. It takes value “1” when <span class="math notranslate nohighlight">\(\theta\)</span> is rejected as a null hypothesis, and it takes value “0” otherwise.
+We define the power function <span class="math notranslate nohighlight">\(\beta(\theta) = E[ \phi(\mathbf{X};\theta) ]\)</span>, which is the probability of rejecting a null hypothesis <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
+<p>Actions, States and Consequences:</p>
+<hr class="docutils" />
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>                |   accept $H_{0}$  |   reject $H_{0}$
+  $H_{0}$ true  |  correct decision |    Type I error
+  $H_{0}$ false |   Type II error   |  correct decision
+</pre></div>
+</div>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>The <em>probability of committing Type I error</em> is
+<span class="math notranslate nohighlight">\(\beta\left(\theta\right)\)</span> for some <span class="math notranslate nohighlight">\(\theta\in\Theta_{0}\)</span>.</p></li>
+<li><p>The <em>probability of committing Type II error</em> is
+<span class="math notranslate nohighlight">\(1-\beta\left(\theta\right)\)</span> for some <span class="math notranslate nohighlight">\(\theta\in\Theta_{1}\)</span>.</p></li>
+</ul>
+<p>The philosophy on hypothesis testing has been debated for a long time. At
+present the prevailing framework in statistics textbooks is the
+<em>frequentist perspective</em>. Frequentist views the parameter as fixed. They keep a conservative attitude about the Type I error: Only
+if overwhelming evidence is revealed shall a researcher reject the
+null. Under the principle of protecting the null hypothesis, a desirable
+test should have a small level. Conventionally we take <span class="math notranslate nohighlight">\(\alpha=0.01,\)</span>
+<span class="math notranslate nohighlight">\(0.05\)</span> or <span class="math notranslate nohighlight">\(0.1\)</span>. We say a test is <em>unbiased</em> if</p>
+<div class="math notranslate nohighlight">
+\[\inf_{\theta\in\Theta_{1}}\beta\left(\theta\right)&gt;\sup_{\theta\in\Theta_{0}}\beta\left(\theta\right).\]</div>
+<p>There can be many tests of correct size.</p>
+<p><strong>Remark</strong></p>
+<p>Let <span class="math notranslate nohighlight">\(\mathbf{x} = (x_1, x_2, \ldots, x_n)\)</span>.
+A trivial test function
+<span class="math notranslate nohighlight">\(\phi(\mathbf{x})=1\left\{ 0\leq U\leq\alpha\right\}\)</span> for all
+<span class="math notranslate nohighlight">\(\theta\in\Theta\)</span>, where <span class="math notranslate nohighlight">\(U\)</span> is a random variable from a uniform
+distribution on <span class="math notranslate nohighlight">\(\left[0,1\right]\)</span>, has the correct size <span class="math notranslate nohighlight">\(\alpha\)</span> but no
+non-trivial power at the alternative. On the other extreme, the trivial
+test function <span class="math notranslate nohighlight">\(\phi(\mathbf{x})=1\)</span> for all <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>
+enjoys the biggest power but suffers incorrect size.</p>
+<p>Usually, we design a test by proposing a test statistic
+<span class="math notranslate nohighlight">\(T_{n}\)</span> and a corresponding critical value
+<span class="math notranslate nohighlight">\(c_{1-\alpha}\)</span>. Given <span class="math notranslate nohighlight">\(T_{n}\)</span> and <span class="math notranslate nohighlight">\(c_{1-\alpha}\)</span>, we write the test
+function as</p>
+<div class="math notranslate nohighlight">
+\[
+\phi(\mathbf{X})=1\left\{ T_{n} (\mathbf{X})&gt;c_{1-\alpha}\right\}.
+\]</div>
+<p>To ensure such a <span class="math notranslate nohighlight">\(\phi(\mathbf{x})\)</span> has the correct size, we need
+to figure out the distribution of <span class="math notranslate nohighlight">\(T_{n}\)</span> under the null hypothesis
+(called the <em>null distribution</em>), and choose a critical value
+<span class="math notranslate nohighlight">\(c_{1-\alpha}\)</span> according to the null distribution where <span class="math notranslate nohighlight">\(\alpha\)</span>
+is the desirable size or level.</p>
+<p>Another commonly popular indicator for the compatibility between the data and the null hypothesis is the <span class="math notranslate nohighlight">\(p\)</span>-value:</p>
+<div class="math notranslate nohighlight">
+\[\sup_{\theta\in\Theta_{0}}P_{\theta}\left\{ T_{n}\left({\mathbf{x}}\right)\leq T_{n}\left(\mathbf{X}\right)\right\}.\]</div>
+<p>In the above expression, <span class="math notranslate nohighlight">\(T_{n}\left(\mathbf{x}\right)\)</span> is the realized
+value of the test statistic <span class="math notranslate nohighlight">\(T_{n}\)</span>, while
+<span class="math notranslate nohighlight">\(T_{n}\left(\mathbf{X}\right)\)</span> is the random variable generated by
+<span class="math notranslate nohighlight">\(\mathbf{X}\)</span> under the null <span class="math notranslate nohighlight">\(\theta\in\Theta_{0}\)</span>. The interpretation of
+the <span class="math notranslate nohighlight">\(p\)</span>-value is tricky. <span class="math notranslate nohighlight">\(p\)</span>-value is the probability, when the null hypothesis is true,
+that we observe
+<span class="math notranslate nohighlight">\(T_{n}(\mathbf{X})\)</span> being greater than the realized <span class="math notranslate nohighlight">\(T_{n}(\mathbf{x})\)</span>.</p>
+<p>The <span class="math notranslate nohighlight">\(p\)</span>-value is <em>not</em> the probability that the null hypothesis is true.
+Under the frequentist perspective, the null hypothesis is either true or
+false, with certainty. The randomness of a test comes only from
+sampling, not from the hypothesis at all.</p>
+</section>
+<section id="connections">
+<h3>Connections<a class="headerlink" href="#connections" title="Link to this heading">#</a></h3>
+<p>Given the same sample and the underlying approach,
+hypothesis testing, confidence interval, and <span class="math notranslate nohighlight">\(p\)</span>-value are tightly connected. The followings are equivalent:</p>
+<ul class="simple">
+<li><p>The hypothesized value is rejected by a test of size <span class="math notranslate nohighlight">\(\alpha\)</span>;</p></li>
+<li><p>The hypothesized value is excluded by the confidence interval of coverage probability <span class="math notranslate nohighlight">\((1-\alpha)\)</span>;</p></li>
+<li><p>Its <span class="math notranslate nohighlight">\(p\)</span>-value under the hypothesized value is smaller than <span class="math notranslate nohighlight">\(\alpha\)</span>.</p></li>
+</ul>
+<p>On the opposite side of the coin, the followings are the equivalent as well:</p>
+<ul class="simple">
+<li><p>The hypothesized value is not rejected by a test of size <span class="math notranslate nohighlight">\(\alpha\)</span>;</p></li>
+<li><p>The hypothesized value is included by the confidence interval of coverage probability <span class="math notranslate nohighlight">\((1-\alpha)\)</span>;</p></li>
+<li><p>Its <span class="math notranslate nohighlight">\(p\)</span>-value under the hypothesized value is large than <span class="math notranslate nohighlight">\(\alpha\)</span>.</p></li>
+</ul>
+<p>The one-to-one mapping between the points in the confidence interval and the outcome of the test allows constructing the
+confidence interval by inverting the  test. In words, if we collect all points that are not rejected by the test of size <span class="math notranslate nohighlight">\(\alpha\)</span>, we obtain the confidence interval of coverage probability <span class="math notranslate nohighlight">\((1-\alpha)\)</span>.</p>
+</section>
+<section id="revealing-the-population">
+<h3>Revealing the population<a class="headerlink" href="#revealing-the-population" title="Link to this heading">#</a></h3>
+<p>As in the previous lecture, we view the HK top 300 Youtubers as the population.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d1_log</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;logYoutuber.csv&quot;</span><span class="p">)</span>
+
+<span class="c1"># Number of rows</span>
+<span class="n">N</span> <span class="o">=</span> <span class="n">d1_log</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">d1_log</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;logYoutuber.csv&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Number of rows</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">N</span> <span class="o">=</span> <span class="n">d1_log</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="ne">NameError</span>: name &#39;pd&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">d1_log</span><span class="p">[</span><span class="s2">&quot;count&quot;</span><span class="p">])</span> <span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">d1_log</span><span class="p">[</span><span class="s2">&quot;count&quot;</span><span class="p">])</span> <span class="p">)</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">d1_log</span><span class="p">[</span><span class="s2">&quot;count&quot;</span><span class="p">],</span> <span class="n">d1_log</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">])[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">d1_log</span><span class="p">[</span><span class="s2">&quot;count&quot;</span><span class="p">])</span> <span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">d1_log</span><span class="p">[</span><span class="s2">&quot;count&quot;</span><span class="p">])</span> <span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">d1_log</span><span class="p">[</span><span class="s2">&quot;count&quot;</span><span class="p">],</span> <span class="n">d1_log</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">])[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+
+<span class="ne">NameError</span>: name &#39;d1_log&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="random-sampling">
+<h3>Random Sampling<a class="headerlink" href="#random-sampling" title="Link to this heading">#</a></h3>
+<p>Each sample is random. It means that <span class="math notranslate nohighlight">\(\hat{\mu}\)</span> is a random variable across the potential samples. In this population the total number of
+outcomes is <span class="math notranslate nohighlight">\(N=300\)</span>. For a sample of size <span class="math notranslate nohighlight">\(n=100\)</span>, there are at most</p>
+<div class="math notranslate nohighlight">
+\[
+\binom {N} {n} = \binom {300} {100} = 4.15\times 10^{81}
+\]</div>
+<p>possibilities for the sample mean. This is a number as large as all the atoms in the universe.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Assuming d1.log is a pandas DataFrame and &#39;count&#39; is a column in that DataFrame</span>
+<span class="n">d1_log</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;count&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">1000</span><span class="p">)})</span>  <span class="c1"># Example data</span>
+<span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">d1_log</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">])</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">50</span>  <span class="c1"># Example subsample size</span>
+
+<span class="k">def</span> <span class="nf">subsample_mean</span><span class="p">():</span>
+    <span class="n">indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">),</span> <span class="n">n</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">d1_log</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">indices</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="n">rep_means</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">subsample_mean</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">200</span><span class="p">)])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">rep_means</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Assuming d1.log is a pandas DataFrame and &#39;count&#39; is a column in that DataFrame</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">d1_log</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;count&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">1000</span><span class="p">)})</span>  <span class="c1"># Example data</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Assuming rep.mean is a numpy array or a list of means</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">rep_means</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Histogram of Replicated Means&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Mean Value&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frequency&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Assuming rep.mean is a numpy array or a list of means</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">rep_means</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;matplotlib&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="multivariate-variables">
+<h2>Multivariate Variables<a class="headerlink" href="#multivariate-variables" title="Link to this heading">#</a></h2>
+<p>For a bivariate random vector <span class="math notranslate nohighlight">\((X_i,Y_i)\)</span>,</p>
+<ul class="simple">
+<li><p>Covariance</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\hat{\sigma}_{XY} = \frac{1}{n} \sum_{i=1}^n (X_i - \bar{X}) (Y_i - \bar{Y}) = \frac{1}{n} \sum_{i=1}^n X_i Y_i - \bar{X} \bar{Y}.
+\]</div>
+<ul class="simple">
+<li><p>Correlation coefficient</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\hat{\rho}_{XY} = \frac{\hat{\sigma}_{XY}} { \sqrt{ \hat {\sigma}^2_{X} \hat {\sigma}^2_{Y} }}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">d1_log_sub</span><span class="p">[</span><span class="s2">&quot;count&quot;</span><span class="p">],</span> <span class="n">d1_log_sub</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">])[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">d1_log_sub</span><span class="p">[</span><span class="s2">&quot;count&quot;</span><span class="p">],</span> <span class="n">d1_log_sub</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">])[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+
+<span class="ne">NameError</span>: name &#39;d1_log_sub&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="regressions">
+<h2>Regressions<a class="headerlink" href="#regressions" title="Link to this heading">#</a></h2>
+<p>In machine learning terminologies, all examples we have talked so far are <em>unsupervised learning</em>, which extracts some features from  observed data.
+Another category is called <em>supervised learning</em>, which is to use a few <em>independent variables</em> (regressors) to fit a <em>dependent variables</em>. The linear regression is a simple example of such a statistical exercise.</p>
+<p>Regression carries out a very simple task. It minimizes the the sum of squared residuals <span class="math notranslate nohighlight">\(\sum_{i=1}^n (y_i - \hat{y}_i)^2\)</span>.
+In other words, it combines the vector <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> into <span class="math notranslate nohighlight">\(\beta' \mathbf{x}\)</span> to reduce the variation of <span class="math notranslate nohighlight">\((\mathbf{y}-\mathbf{x}'\beta)\)</span> as much as possible. For any sample <span class="math notranslate nohighlight">\((x_i,y_i)_{i=1}^n\)</span>, such an algorithm can be implemented. It has nothing to do with causality.</p>
+<p>In reality, <span class="math notranslate nohighlight">\((x_i, y_i)\)</span> are observed numbers that the data analyst can only take as given.
+The <em>ordinary least squares</em> is a simple linear algebraic operation.</p>
+<p>Now we superimpose uncertainty on it. If <span class="math notranslate nohighlight">\(X\)</span> is fixed whereas <span class="math notranslate nohighlight">\(Y\)</span> is uncertain, we have the conditional model (discriminative model).
+It is useful for predicting the average outcome of <span class="math notranslate nohighlight">\(y\)</span> given an <span class="math notranslate nohighlight">\(x\)</span>, although not very informative if we are interested in  extrapolating out of the support of the observed <span class="math notranslate nohighlight">\(X\)</span>.</p>
+<p>If both <span class="math notranslate nohighlight">\((X,Y)\)</span> are uncertain, we have the unconditional model (generative model). The unconditional model can be thought as if it is generated via two steps:
+First we draw <span class="math notranslate nohighlight">\(X\)</span>, and then draw <span class="math notranslate nohighlight">\(Y|X\)</span>. We know <span class="math notranslate nohighlight">\(P(X,Y) = P(Y|X)P(X)\)</span>.</p>
+<p>The difference between the conditional model and the unconditional model is more about conceptional difference. They are the same in terms of the linear algebra in the estimation. (Slight difference exits in time series contexts where initial conditions matter in small sample.)</p>
+<p>Let us use the simple regression and elementary algebra to derive the regression coefficient. If both <span class="math notranslate nohighlight">\((X,Y)\)</span> have unit variance, then the regression coefficient is the correlation coefficient. More generally, the regression coefficient is proportional to the correlation coefficient:</p>
+<div class="math notranslate nohighlight">
+\[\beta = \frac{\sigma_{xy}}{\sigma_x^2}=\frac{\rho \sigma_x \sigma_y}{\sigma_x^2} = \rho \frac{\sigma_y} {\sigma_x}.\]</div>
+<p>Given a sample, we use the observed data to compute <span class="math notranslate nohighlight">\(\hat{\sigma}_{xy}\)</span> and <span class="math notranslate nohighlight">\(\hat{\sigma}_x^2\)</span>, and thereby <span class="math notranslate nohighlight">\(\hat{\beta}\)</span> as their ratio.</p>
+</section>
+<section id="remarks">
+<h2>Remarks<a class="headerlink" href="#remarks" title="Link to this heading">#</a></h2>
+<p>The beauty of statistics lies in their deep connection with philosophy. A realized sample is a set of given numbers. They are fixed, known, and invariant. But where is uncertainty? Bayesians argue that uncertainty comes from people’s belief about the object of interest. The data contain information to help refine or update our beliefs. In contrast, frequentists contend that uncertainty is present  before the numbers, or realizations, are revealed; once the realizations are revealed, uncertainty is gone.</p>
+<p>The two schools of philosophical thoughts, Bayesian and frequentist, have been contesting over centuries. Either has pros and cons. Nowadays in academic research and in teaching, frequentist remains the mainstream so it is the one that we are more familiar with. However, frequentist interpretation of probability and the resulting implication for statistical inference are not completely natural. Repeated experiments are more easily perceived in physics and other natural science, but may be unrealistic in many economic settings. On the other hand, Bayesian encounters difficulty in reaching a consensus about prior distributions.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="01_prob_py.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Probability</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="03_asym_py.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Asymptotics</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estimation-methods">Estimation methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-of-moments">Method of moments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maximum-likelihood">Maximum likelihood</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistic-inference">Statistic Inference</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hypothesis-testing">Hypothesis Testing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connections">Connections</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#revealing-the-population">Revealing the population</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#random-sampling">Random Sampling</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multivariate-variables">Multivariate Variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regressions">Regressions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remarks">Remarks</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By 史震涛 Shi Zhentao
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
