@@ -15,10 +15,10 @@ Welcome to the 2024 summer preparatory course for MSc.
 <!-- The teaching materials will be edited when the dates approach. -->
 
 Topics to be covered:
-* [Probability](https://github.com/zhentaoshi/Econ_prob/blob/master/01_prob_py.ipynb)
-* [Statistic](https://github.com/zhentaoshi/Econ_prob/blob/master/02_stat_py.ipynb)
-* [Basic asymptotics](https://github.com/zhentaoshi/Econ_prob/blob/master/03_asym_py.ipynb)
-* [Basic programming](https://github.com/zhentaoshi/Econ_prob/blob/master/04_python.ipynb)
+* [Probability](https://github.com/zhentaoshi/Econ_prob/LectureNotes/blob/master/01_prob_py.ipynb)
+* [Statistic](https://github.com/zhentaoshi/Econ_prob/blob/master/LectureNotes/02_stat_py.ipynb)
+* [Basic asymptotics](https://github.com/zhentaoshi/Econ_prob/blob/master/LectureNotes/03_asym_py.ipynb)
+* [Basic programming](https://github.com/zhentaoshi/Econ_prob/blob/master/LectureNotes/04_python.ipynb)
 
 The contents can be found in the Jupyter Notebook lecture notes, which can be displayed in a web browser in a static form.
 

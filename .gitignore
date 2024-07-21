@@ -12,13 +12,6 @@ book_version/_book/search_index.json
 book_version/_book/
 book_version/_bookdown_files/
 
-Julia_scripts
-Jupyter_notebooks
-Lecture_optimization/
-Lecture_advanced_R/
-Lecture_simulation/
-Lec_bootstrap/
-
 
 
 ## LyX
@@ -159,4 +152,3 @@ sympy-plots-for-*.tex/
 
 # xindy
 *.xdy
-_build/

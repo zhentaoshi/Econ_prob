@@ -1,0 +1,10 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+chapters:
+- file: 01_prob_py
+- file: 02_stat_py
+- file: 03_asym_py
+- file: 04_python
