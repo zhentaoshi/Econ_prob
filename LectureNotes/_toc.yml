@@ -4,6 +4,7 @@
 format: jb-book
 root: intro
 chapters:
-- file: 01_prob
-- file: 02_stat
-- file: 03_asym
+- file: 01_prob_py
+- file: 02_stat_py
+- file: 03_asym_py
+- file: 04_python
