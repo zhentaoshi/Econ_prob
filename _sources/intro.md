@@ -1,6 +1,6 @@
 # Introduction
 
-**(2022 summer, CUHK)**
+**(2024 summer, CUHK)**
 
 [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
 
@@ -41,13 +41,12 @@ Kevin Sheppard's [Financial Economics I](https://www.kevinsheppard.com/teaching/
 
 
 
-The following approaches make it possible to interact with the code cells in the Jupyter notebooks. They are ranking from the most convenient to the most cumbersome in term of configuration.
+The following approaches make it possible to interact with the code cells in the Jupyter notebooks.
 
 
-1. Click [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/zhentaoshi/Econ_prob/HEAD). It may take some time to build the environment. Be patient. Changes cannot be saved by this approach, and thus they will get lost after closing your web browser.
-2. Log in CUHK Econ's [SCRP server](https://scrp-login-2.econ.cuhk.edu.hk/jupyter). Git and IRkernel are already installed there. Download the Github repos by copy and paste `git clone https://github.com/zhentaoshi/Econ_prob.git`
-3. Install [Docker](https://docs.docker.com/get-docker/). Download the [Docker image](https://hub.docker.com/repository/docker/ztshi/msc_prob_and_stat) for this course by running `docker pull ztshi/msc_prob_and_stat` in a terminal. The Github repository is already written in the folder. Run `docker run -p 10000:8888 ztshi/msc_prob_and_stat` in a terminal. A token must be copied to log in the web browser interface.
-4. Download to your local computer the Github repository. Copy and paste `git clone https://github.com/zhentaoshi/Econ_prob.git` in a terminal if the Git is installed. Jupyter notebook must be installed to run the cells.
+* Log in CUHK Econ's [SCRP server](https://scrp-login-2.econ.cuhk.edu.hk/jupyter). Git and IRkernel are already installed there. Download the Github repos by copy and paste `git clone https://github.com/zhentaoshi/Econ_prob.git`
+* Install [Docker](https://docs.docker.com/get-docker/). Download the [Docker image](https://hub.docker.com/repository/docker/ztshi/msc_prob_and_stat) for this course by running `docker pull ztshi/msc_prob_and_stat` in a terminal. The Github repository is already written in the folder. Run `docker run -p 10000:8888 ztshi/msc_prob_and_stat` in a terminal. A token must be copied to log in the web browser interface.
+* Download to your local computer the Github repository. Copy and paste `git clone https://github.com/zhentaoshi/Econ_prob.git` in a terminal if the Git is installed. Jupyter notebook must be installed to run the cells.
 
 
 
