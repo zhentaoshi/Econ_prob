@@ -28,14 +28,14 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=ca93fcec" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=20b57f81" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -379,7 +379,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-space">Probability Space</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random-variable">Random Variable</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distribution-fun">Distribution Fun</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distribution-function">Distribution Function</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integration">Integration</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multivariate-random-variable">Multivariate Random Variable</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#independence">Independence</a></li>
@@ -398,6 +398,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="probability">
 <h1>Probability<a class="headerlink" href="#probability" title="Link to this heading">#</a></h1>
+<p>玄之又玄，众妙之门</p>
 <p>Probability theory talks about the construction and implications of probability models. For example, given a probability distribution, what are the mean and variance? What is the distribution of a transformed random variable? In computer simulations, probability theory tells us what will happen to the generated realizations, in particular when the experiments can be repeated as many times as the researcher wishes. This is a real-world analogue of the frequentist’s interpretation of probability.</p>
 <section id="probability-space">
 <h2>Probability Space<a class="headerlink" href="#probability-space" title="Link to this heading">#</a></h2>
@@ -420,6 +421,11 @@ the <em>frequentist</em>, who considers probability as the average chance of occ
 are carried out. The other is the <em>Bayesian</em>, who deems probability as a subjective brief.
 The principles of these two schools are largely incompatible, while each school has
 peculiar pros and cons under different real-world contexts.</p>
+<p><strong>Questions for AI</strong></p>
+<ul class="simple">
+<li><p>Why do we need “measure theory” to define probability?</p></li>
+<li><p>What is the Vitali set?</p></li>
+</ul>
 </section>
 <section id="random-variable">
 <h2>Random Variable<a class="headerlink" href="#random-variable" title="Link to this heading">#</a></h2>
@@ -579,12 +585,12 @@ Name: count, Length: 294, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/da9b0d4a2b882e7edbb4830a57f82c28dff786b81f09040e346847158ab0e64a.png" src="_images/da9b0d4a2b882e7edbb4830a57f82c28dff786b81f09040e346847158ab0e64a.png" />
+<img alt="_images/0359bce5f824b4838e8601663afc8dca5c41461bc5a57947a95a3e97372a99a9.png" src="_images/0359bce5f824b4838e8601663afc8dca5c41461bc5a57947a95a3e97372a99a9.png" />
 </div>
 </div>
 </section>
-<section id="distribution-fun">
-<h2>Distribution Fun<a class="headerlink" href="#distribution-fun" title="Link to this heading">#</a></h2>
+<section id="distribution-function">
+<h2>Distribution Function<a class="headerlink" href="#distribution-function" title="Link to this heading">#</a></h2>
 <p>We go back to some terminologies we learned in an undergraduate
 probability course. A <em>(cumulative) distribution function</em>
 <span class="math notranslate nohighlight">\(F:\mathbb{R}\mapsto [0,1]\)</span> is defined as</p>
@@ -601,7 +607,7 @@ F\left(x\right)=P\left(X\leq x\right).
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Assuming d1_log is a DataFrame and &#39;count&#39; is a column in d1_log</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">![](</span>eTMsk2kyfPdEwwJioTRKnedkY2xUFvz1.svg<span class="o">)</span>
 <span class="c1"># Calculate the ECDF for the &#39;count&#39; column</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">d1_log</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">])</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -616,7 +622,11 @@ F\left(x\right)=P\left(X\leq x\right).
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/54998d620d50efa81503d7cd55eddb5ac150bbc937e95bedd69e88c1fe3fa59f.png" src="_images/54998d620d50efa81503d7cd55eddb5ac150bbc937e95bedd69e88c1fe3fa59f.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;[]&#39; is not recognized as an internal or external command,
+operable program or batch file.
+</pre></div>
+</div>
+<img alt="_images/63a737e8bb011e8536ed872a964511d0800afffbe1e7e26a236c97ec8025bb40.png" src="_images/63a737e8bb011e8536ed872a964511d0800afffbe1e7e26a236c97ec8025bb40.png" />
 </div>
 </div>
 <p>The <span class="math notranslate nohighlight">\(q\)</span>-th quantile of a random variable is <span class="math notranslate nohighlight">\(\min_{x\in \mathbb R} P(X \leq x) \geq q\)</span>.</p>
@@ -696,7 +706,7 @@ f(x; \mu, \sigma^2) = \frac{1}{\sqrt{2\pi} \sigma} \exp\left( - \frac{(\log(x)-\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(1.959963984540054)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.959963984540054
 </pre></div>
 </div>
 </div>
@@ -708,7 +718,7 @@ f(x; \mu, \sigma^2) = \frac{1}{\sqrt{2\pi} \sigma} \exp\left( - \frac{(\log(x)-\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.5)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5
 </pre></div>
 </div>
 </div>
@@ -720,31 +730,31 @@ f(x; \mu, \sigma^2) = \frac{1}{\sqrt{2\pi} \sigma} \exp\left( - \frac{(\log(x)-\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.3989422804014327)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.3989422804014327
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.04551741,  0.90159374,  0.21419417])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.16741004, -0.26563582,  1.35770181])
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">poisson</span><span class="p">(</span><span class="n">lam</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">poisson</span><span class="p">(</span><span class="n">lam</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([6, 4, 4])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([39, 55, 54])
 </pre></div>
 </div>
 </div>
@@ -794,10 +804,10 @@ In population, this value is 5%. What is the number coming out of this experimen
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The empirical rejection probability is 0.051
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The empirical rejection probability is 0.043
 </pre></div>
 </div>
-<img alt="_images/c81feeea3ff1fc7665edb29412b107e5f01cb66c5af4a2b5c5126a13cf8e32a0.png" src="_images/c81feeea3ff1fc7665edb29412b107e5f01cb66c5af4a2b5c5126a13cf8e32a0.png" />
+<img alt="_images/144bbae9036a7680f4ce13cd681889b2e133c18da21c78d3c2486a314629c399.png" src="_images/144bbae9036a7680f4ce13cd681889b2e133c18da21c78d3c2486a314629c399.png" />
 </div>
 </div>
 </section>
@@ -823,7 +833,7 @@ can be computed as  <span class="math notranslate nohighlight">\(E\left[X\right]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(6.146389135729357)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.146389135729357
 </pre></div>
 </div>
 </div>
@@ -841,7 +851,7 @@ the second <em>centered</em> moment is called the <em>variance</em>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(2.6415986858999068)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.6415986858999068
 </pre></div>
 </div>
 </div>
@@ -900,7 +910,7 @@ F\left(x_{1},\ldots,x_{n}\right)=P\left(X_{1}\leq x_{1},\ldots,X_{n}\leq x_{n}\r
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/2d4f7699b7ba814a27fc552ede2d52799b45cb268d74e4e3c1afb5aebea9a30a.png" src="_images/2d4f7699b7ba814a27fc552ede2d52799b45cb268d74e4e3c1afb5aebea9a30a.png" />
+<img alt="_images/b9f1766b34fe94af19c8dc45fa54dbc9167e58588ef83102681df07d234e2052.png" src="_images/b9f1766b34fe94af19c8dc45fa54dbc9167e58588ef83102681df07d234e2052.png" />
 </div>
 </div>
 <p>It is illustrative to introduce the joint distribution, conditional distribution
@@ -961,7 +971,7 @@ $n\to\infty$. -->
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/1412e188f5bac1114bc05ed8651c4add6c9640482491ce0a26ba2ccafc363d4f.png" src="_images/1412e188f5bac1114bc05ed8651c4add6c9640482491ce0a26ba2ccafc363d4f.png" />
+<img alt="_images/a5be601c2d2a2ae5d4d9e156d11135a12b82466fd538ec26b567af7d7ebe5377.png" src="_images/a5be601c2d2a2ae5d4d9e156d11135a12b82466fd538ec26b567af7d7ebe5377.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -981,7 +991,7 @@ $n\to\infty$. -->
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/d4939a77cc62c1bdf2be51c56e701618a1e10d36c6a94aaa852d746bc47188a4.png" src="_images/d4939a77cc62c1bdf2be51c56e701618a1e10d36c6a94aaa852d746bc47188a4.png" />
+<img alt="_images/fee5b414ff0051ceb4e468043ebfdbb4fc9276f74ff0bf45dec4eefb1b4c33b8.png" src="_images/fee5b414ff0051ceb4e468043ebfdbb4fc9276f74ff0bf45dec4eefb1b4c33b8.png" />
 </div>
 </div>
 </section>
@@ -1028,16 +1038,25 @@ The law of iterated expectation implies <span class="math notranslate nohighligh
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate weighted average over categories</span>
 <span class="n">weighted_avg</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">dx</span><span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">dx</span><span class="p">[</span><span class="s1">&#39;no&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">d1_log</span><span class="p">)))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">weighted_avg</span><span class="p">)</span>
-
-<span class="c1"># Calculate and print overall average of &#39;count&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.146389135729357
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate and print overall average of &#39;count&#39;</span>
 <span class="n">overall_avg</span> <span class="o">=</span> <span class="n">d1_log</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">overall_avg</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.146389135729356
-6.146389135729357
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.146389135729357
 </pre></div>
 </div>
 </div>
@@ -1084,16 +1103,16 @@ into two parts, a conditional mean and a residual. Write
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "scrp"
+            mode: "python"
         },
         kernelOptions: {
-            name: "scrp",
+            name: "python3",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'scrp'</script>
+    <script>kernelName = 'python3'</script>
 
                 </article>
               
@@ -1141,7 +1160,7 @@ into two parts, a conditional mean and a residual. Write
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-space">Probability Space</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random-variable">Random Variable</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distribution-fun">Distribution Fun</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distribution-function">Distribution Function</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integration">Integration</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multivariate-random-variable">Multivariate Random Variable</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#independence">Independence</a></li>
@@ -1171,7 +1190,7 @@ By 史震涛 Shi Zhentao
 
   <p class="copyright">
     
-      © Copyright 2024.
+      © Copyright 2025.
       <br/>
     
   </p>

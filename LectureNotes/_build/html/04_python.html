@@ -28,14 +28,14 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=ca93fcec" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=20b57f81" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -386,7 +386,7 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Example</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ols-example">OLS-Example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-ols">Example: OLS</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#package-module-library">Package/Module/Library</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-and-output">Input and Output</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Example:</a></li>
@@ -520,8 +520,8 @@ A matrix is a 2-dimensional array.</p>
 <a class="reference external" href="https://docs.scipy.org/doc/numpy/user/numpy-for-matlab-users.html">https://docs.scipy.org/doc/numpy/user/numpy-for-matlab-users.html</a></p>
 </section>
 </section>
-<section id="ols-example">
-<h3>OLS-Example<a class="headerlink" href="#ols-example" title="Link to this heading">#</a></h3>
+<section id="example-ols">
+<h3>Example: OLS<a class="headerlink" href="#example-ols" title="Link to this heading">#</a></h3>
 <p>OLS estimation with one <span class="math notranslate nohighlight">\(x\)</span> regressor and a constant.
 Graduate textbook expresses the OLS in matrix form
 <span class="math notranslate nohighlight">\(\hat{\beta} = (X' X)^{-1} X'y.\)</span>
@@ -579,7 +579,7 @@ To conduct OLS estimation in Python, we literally translate the mathematical exp
 </section>
 <section id="statistics">
 <h3>Statistics<a class="headerlink" href="#statistics" title="Link to this heading">#</a></h3>
-<p>To implement most of the statistical tasks, use the package SciPy. Commonly used probability distributions can be found in the subpackage SciPy.stats. If you hope to draw the kernel density plot for a given set of data, use the seaborn package.</p>
+<p>To implement most of the statistical tasks, use the package <code class="docutils literal notranslate"><span class="pre">SciPy</span></code>. Commonly used probability distributions can be found in the subpackage SciPy.stats. If you hope to draw the kernel density plot for a given set of data, use the seaborn package.</p>
 <section id="id3">
 <h4>Example:<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
@@ -606,7 +606,7 @@ To conduct OLS estimation in Python, we literally translate the mathematical exp
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/z7/k6ryh25d6jj9s6wh66q1g2hr0000gn/T/ipykernel_54879/3930501868.py:13: UserWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\zhent\AppData\Local\Temp\ipykernel_38532\3930501868.py:13: UserWarning: 
 
 `distplot` is a deprecated function and will be removed in seaborn v0.14.0.
 
@@ -619,7 +619,7 @@ https://gist.github.com/mwaskom/de44147ed2974457ad6372750bbe5751
   sns.distplot(z, hist = False, color = &#39;red&#39;)
 </pre></div>
 </div>
-<img alt="_images/6c15a5735cd97074aca6439b86f2c106542f0f404260c07606eb27c43996721b.png" src="_images/6c15a5735cd97074aca6439b86f2c106542f0f404260c07606eb27c43996721b.png" />
+<img alt="_images/72fc1b55071639e99dae1d670c81258a7295e4b314f8db19151b87ff5bfacf6c.png" src="_images/72fc1b55071639e99dae1d670c81258a7295e4b314f8db19151b87ff5bfacf6c.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -739,8 +739,8 @@ The OLS function of the package <code class="docutils literal notranslate"><span
 Dep. Variable:                      y   R-squared (uncentered):                   0.782
 Model:                            OLS   Adj. R-squared (uncentered):              0.767
 Method:                 Least Squares   F-statistic:                              50.26
-Date:                Mon, 22 Jul 2024   Prob (F-statistic):                    5.42e-10
-Time:                        14:19:14   Log-Likelihood:                         -38.515
+Date:                Fri, 18 Jul 2025   Prob (F-statistic):                    5.42e-10
+Time:                        22:22:56   Log-Likelihood:                         -38.515
 No. Observations:                  30   AIC:                                      81.03
 Df Residuals:                      28   BIC:                                      83.83
 Df Model:                           2                                                  
@@ -777,7 +777,7 @@ Notes:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/19602ad5f39a19729066085b7335f1c25ba9658f4e2d556acde5ec8050f95629.png" src="_images/19602ad5f39a19729066085b7335f1c25ba9658f4e2d556acde5ec8050f95629.png" />
+<img alt="_images/79f56cb7151c076602cff04813c5d2fbf72779f4d0b5b0bb8a0e8e7548679abf.png" src="_images/79f56cb7151c076602cff04813c5d2fbf72779f4d0b5b0bb8a0e8e7548679abf.png" />
 </div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">result</span></code> object is a list containing the regression results. As shown in the results, we can easily read the estimated coefficients, t-test results, F-test results, and the R-sqaure.</p>
@@ -796,7 +796,7 @@ Notes:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/74b9e2d14fa01191b2989c1ded8c67535c388b0148e0227a7e80e904bc01b491.png" src="_images/74b9e2d14fa01191b2989c1ded8c67535c388b0148e0227a7e80e904bc01b491.png" />
+<img alt="_images/4d4dc9e3e047ffdaf37f7baff649deecf8286d71098b2a82949d722469b42d71.png" src="_images/4d4dc9e3e047ffdaf37f7baff649deecf8286d71098b2a82949d722469b42d71.png" />
 </div>
 </div>
 </section>
@@ -812,16 +812,16 @@ Notes:
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "scrp"
+            mode: "python"
         },
         kernelOptions: {
-            name: "scrp",
+            name: "python3",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'scrp'</script>
+    <script>kernelName = 'python3'</script>
 
                 </article>
               
@@ -868,7 +868,7 @@ Notes:
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Example</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ols-example">OLS-Example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-ols">Example: OLS</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#package-module-library">Package/Module/Library</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-and-output">Input and Output</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Example:</a></li>
@@ -913,7 +913,7 @@ By 史震涛 Shi Zhentao
 
   <p class="copyright">
     
-      © Copyright 2024.
+      © Copyright 2025.
       <br/>
     
   </p>
