@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/proof.css?v=ca93fcec" />
     <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=20b57f81" />
@@ -379,7 +379,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modes-of-convergence">Modes of Convergence</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#law-of-large-numbers">Law of Large Numbers</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cherbyshev-lln">Cherbyshev LLN</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chebyshev-lln">Chebyshev LLN</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#central-limit-theorem">Central Limit Theorem</a></li>
@@ -397,11 +397,11 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="asymptotics">
 <h1>Asymptotics<a class="headerlink" href="#asymptotics" title="Link to this heading">#</a></h1>
-<!-- QL covers basic asymptotic theory -->
+<p>广大如法界，究竟如虛空</p>
 <p>Asymptotic theory is a set of mathematical tools that invoke limits to simplify our understanding of the behavior of statistics.</p>
 <section id="modes-of-convergence">
 <h2>Modes of Convergence<a class="headerlink" href="#modes-of-convergence" title="Link to this heading">#</a></h2>
-<p>Let <span class="math notranslate nohighlight">\(x_{1},x_{2},\ldots\)</span> be an infinite
+<p>Let <span class="math notranslate nohighlight">\(x_{1},x_{2},\ldots\)</span> be a (countably) infinite
 sequence of non-random variables.
 <em>Convergence</em> of this non-random sequence means that for any
 <span class="math notranslate nohighlight">\(\varepsilon&gt;0\)</span>, there exists an <span class="math notranslate nohighlight">\(N\left(\varepsilon\right)\)</span> such that
@@ -507,8 +507,8 @@ counterpart. The basic form of LLN is:</p>
 <p>as <span class="math notranslate nohighlight">\(n\to\infty\)</span>. Various versions of LLN work under different assumptions
 about moment restrictions and/or dependence of the underlying random
 variables.</p>
-<section id="cherbyshev-lln">
-<h3>Cherbyshev LLN<a class="headerlink" href="#cherbyshev-lln" title="Link to this heading">#</a></h3>
+<section id="chebyshev-lln">
+<h3>Chebyshev LLN<a class="headerlink" href="#chebyshev-lln" title="Link to this heading">#</a></h3>
 <p>We illustrate LLN by the simple example of Chebyshev LLN. It utilizes the <em>Chebyshev
 inequality</em>.</p>
 <p>The Chebyshev inequality is a special case of the <em>Markov inequality</em>.</p>
@@ -539,7 +539,7 @@ inequality to the sample mean
 P\left\{ \left|y_{n}\right|\geq\varepsilon\right\}  &amp; =P\left\{ n^{-1}\left|S_{n}-E\left[S_{n}\right]\right|\geq\varepsilon\right\} \\
  &amp; \leq E\left[\left(n^{-1}\sum_{i=1}^{n}\left(x_{i}-\mu\right)\right)^{2}\right]/\varepsilon^{2} \\
  &amp; =\left(n\varepsilon\right)^{-2}  E\left[\sum_{i=1}^{n}\left(x_{i}-\mu\right)^{2}\right] \\
- &amp; = \frac{1} {n\varepsilon^2} \mathrm{var}\left(x_{1}\right).
+ &amp; = \frac{1} {n\varepsilon^2} \sigma^2 \to 0.
 \end{aligned}
 \end{split}\]</div>
 <p>This result gives the Chebyshev LLN:</p>
@@ -597,24 +597,6 @@ Cauchy distribution does not.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">norm</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">cauchy</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="k">def</span> <span class="nf">sample_mean</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">distribution</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span><span class="sd">     This function calculates the sample mean for a given distribution.</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span><span class="sd">     </span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span><span class="sd">     - The mean of the generated samples.</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span><span class="sd">     &quot;&quot;&quot;</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;scipy&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <p>This function plots the sample mean over the path of geometrically increasing sample sizes.</p>
 <div class="cell docutils container">
@@ -622,17 +604,6 @@ Cauchy distribution does not.</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">norm</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">cauchy</span>
-
-<span class="k">def</span> <span class="nf">sample_mean</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">distribution</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">distribution</span> <span class="o">==</span> <span class="s2">&quot;normal&quot;</span><span class="p">:</span>
-        <span class="n">y</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">distribution</span> <span class="o">==</span> <span class="s2">&quot;t2&quot;</span><span class="p">:</span>
-        <span class="n">y</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">df</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">distribution</span> <span class="o">==</span> <span class="s2">&quot;cauchy&quot;</span><span class="p">:</span>
-        <span class="n">y</span> <span class="o">=</span> <span class="n">cauchy</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Unsupported distribution&quot;</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">LLN_plot</span><span class="p">(</span><span class="n">distribution</span><span class="p">):</span>
     <span class="n">NN</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">21</span><span class="p">)</span>  <span class="c1"># Sample sizes</span>
@@ -651,8 +622,8 @@ Cauchy distribution does not.</p>
     <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-<span class="c1"># Set seed for reproducibility</span>
-<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">2023</span><span class="o">-</span><span class="mi">7</span><span class="o">-</span><span class="mi">17</span><span class="p">)</span>
+<span class="c1"># np.random.seed(2024-7-25) # Set seed for reproducibility</span>
+
 
 <span class="c1"># Plotting</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
@@ -663,17 +634,9 @@ Cauchy distribution does not.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">norm</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">cauchy</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">def</span> <span class="nf">sample_mean</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">distribution</span><span class="p">):</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;matplotlib&#39;
-</pre></div>
-</div>
+<img alt="_images/8473da0e7a766bf33f1c990b4330d94216144fa3d84cc6db7a429509f6bcf460.png" src="_images/8473da0e7a766bf33f1c990b4330d94216144fa3d84cc6db7a429509f6bcf460.png" />
+<img alt="_images/729884dd694ae3c3418a825444d808fac35ddf9c1dc7ceca1efab1b6aa2306a6.png" src="_images/729884dd694ae3c3418a825444d808fac35ddf9c1dc7ceca1efab1b6aa2306a6.png" />
+<img alt="_images/e904495e12e4b2951ee4b6133059d4f21d0f88fbcd04f74a03ab9631a429d23b.png" src="_images/e904495e12e4b2951ee4b6133059d4f21d0f88fbcd04f74a03ab9631a429d23b.png" />
 </div>
 </div>
 </section>
@@ -734,24 +697,14 @@ random variables. <em>Lindeberg-Levy CLT</em> is the simplest version.</p>
 
 <span class="c1"># Plotting</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-<span class="n">CLT_plot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;chisq2&quot;</span><span class="p">)</span>
-<span class="n">CLT_plot</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;chisq2&quot;</span><span class="p">)</span>
-<span class="n">CLT_plot</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="s2">&quot;chisq2&quot;</span><span class="p">)</span>
+<span class="n">CLT_plot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;normal&quot;</span><span class="p">)</span>
+<span class="n">CLT_plot</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;normal&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">norm</span><span class="p">,</span> <span class="n">chi2</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">def</span> <span class="nf">Z_fun</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">distribution</span><span class="p">):</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;matplotlib&#39;
-</pre></div>
-</div>
+<img alt="_images/303799a3fb52ddfb376ce81c00d18a69e772c7818692f46476066a12485fa0e2.png" src="_images/303799a3fb52ddfb376ce81c00d18a69e772c7818692f46476066a12485fa0e2.png" />
+<img alt="_images/22df3d69ee530c52f610f3430eb16be6cf624533a3ee0da821c0bb354a8735b7.png" src="_images/22df3d69ee530c52f610f3430eb16be6cf624533a3ee0da821c0bb354a8735b7.png" />
 </div>
 </div>
 </section>
@@ -844,7 +797,7 @@ theorem 2.</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modes-of-convergence">Modes of Convergence</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#law-of-large-numbers">Law of Large Numbers</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cherbyshev-lln">Cherbyshev LLN</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chebyshev-lln">Chebyshev LLN</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#central-limit-theorem">Central Limit Theorem</a></li>
@@ -873,7 +826,7 @@ By 史震涛 Shi Zhentao
 
   <p class="copyright">
     
-      © Copyright 2024.
+      © Copyright 2025.
       <br/>
     
   </p>
