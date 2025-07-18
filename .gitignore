@@ -1,17 +1,5 @@
 
-.Rproj.user
-_book
-libs
-*_cache
-*_files
-tex2pdf.*
-*.lyx
-*.tex
-
-book_version/_book/search_index.json
-book_version/_book/
-book_version/_bookdown_files/
-
+LectureNotes/_build/
 
 
 ## LyX
