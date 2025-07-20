@@ -32,10 +32,10 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=ca93fcec" />
-    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=20b57f81" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=b4b7a797" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -392,6 +392,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multivariate-variables">Multivariate Variables</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regressions">Regressions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remarks">Remarks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study">Case Study</a></li>
 </ul>
             </nav>
         </div>
@@ -413,8 +414,15 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
-<span class="c1"># Reading the CSV file</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">43</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Reading the CSV file</span>
 <span class="n">d1_log_sub</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;logYoutuber_sample.csv&quot;</span><span class="p">)</span>
 
 <span class="c1"># Checking the number of rows</span>
@@ -432,14 +440,12 @@ document.write(`
 <p>Point estimates</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">d1_log_sub</span><span class="p">[</span><span class="s2">&quot;count&quot;</span><span class="p">]))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">d1_log_sub</span><span class="p">[</span><span class="s2">&quot;count&quot;</span><span class="p">]))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.334475425205827
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.064122168009075
 </pre></div>
 </div>
 </div>
@@ -451,7 +457,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.6759382667675173
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.494172970249846
 </pre></div>
 </div>
 </div>
@@ -489,8 +495,8 @@ are the method of moments estimates of the two parameters.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.1976461524040653
-0.6933137712085378
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.02302171273700368
+0.9210986680193605
 </pre></div>
 </div>
 </div>
@@ -506,7 +512,7 @@ From the data, we estimate <span class="math notranslate nohighlight">\(\hat{\si
 </section>
 <section id="maximum-likelihood">
 <h3>Maximum likelihood<a class="headerlink" href="#maximum-likelihood" title="Link to this heading">#</a></h3>
-<p>The maximum likelihood estimation (MLE) looks for the value of the parameter that maximizes the log-likelihood. Because by the concavity of logarithm, the true parameter is the value that maximizes the expected likelihood function. In reality, we maximize its empirical version.</p>
+<p>The maximum likelihood estimation (MLE) looks for the value of the parameter that maximizes the log-likelihood. By the concavity of logarithm, the true parameter is the value that maximizes the expected likelihood function. In reality, we maximize its empirical version.</p>
 <p>Consider a random sample
 drawn from a parametric
 distribution with density <span class="math notranslate nohighlight">\(f\left(x;\theta\right)\)</span>, where
@@ -545,7 +551,7 @@ Notice the denominator in the estimated variance here is <span class="math notra
 <section id="statistic-inference">
 <h2>Statistic Inference<a class="headerlink" href="#statistic-inference" title="Link to this heading">#</a></h2>
 <p>We are interesting in relating the statistic to the population.
-Suppose <span class="math notranslate nohighlight">\(X_i\)</span>’s randomly drawn from a distribution, and we would like to learn the mean <span class="math notranslate nohighlight">\(\mu: = E[X_i]\)</span>.
+Suppose <span class="math notranslate nohighlight">\(X_i\)</span>’s are randomly drawn from a distribution, and we would like to learn the mean <span class="math notranslate nohighlight">\(\mu: = E[X_i]\)</span>.
 The sample mean is a natural estimator for <span class="math notranslate nohighlight">\(\mu\)</span>.</p>
 <p>Interval estimation quantifies the uncertainty of the estimator. The most familiar formula might be</p>
 <div class="math notranslate nohighlight">
@@ -580,7 +586,7 @@ The sample mean is a natural estimator for <span class="math notranslate nohighl
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;lower&#39;: 6.013852836394401, &#39;upper&#39;: 6.655098014017254}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;lower&#39;: 5.754580331054653, &#39;upper&#39;: 6.373664004963498}
 </pre></div>
 </div>
 </div>
@@ -649,7 +655,7 @@ Here the confidence interval is random while the true value is fixed.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f7f0a5b6dde73b7e120b128f6a21ad245210644b12f74a252862e2dc0c59411a.png" src="_images/f7f0a5b6dde73b7e120b128f6a21ad245210644b12f74a252862e2dc0c59411a.png" />
+<img alt="_images/e6cf4121c5ca131589e35c18b709ab51bae309dc4de10a5a54b5f7b896880cf5.png" src="_images/e6cf4121c5ca131589e35c18b709ab51bae309dc4de10a5a54b5f7b896880cf5.png" />
 </div>
 </div>
 <p>It is important to understand that the coverage probability is not the probability that the parameter falls into a fixed interval, which is the interpretation of the <em>Bayesian credit interval</em>.
@@ -699,7 +705,7 @@ test should have a small level. Conventionally we take <span class="math notrans
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.47663956])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.23168469])
 </pre></div>
 </div>
 </div>
@@ -805,11 +811,11 @@ confidence interval by inverting the  test. In words, if we collect all points t
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.334475425205827
-2.6759382667675173
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.064122168009075
+2.494172970249846
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6058591366324277
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.4920793350404544
 </pre></div>
 </div>
 </div>
@@ -845,23 +851,23 @@ outcomes is <span class="math notranslate nohighlight">\(N=300\)</span>. For a s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[47.36 47.14 60.38 51.84 50.78 46.   49.   45.34 52.68 54.62 46.7  44.58
- 50.96 49.78 49.36 43.08 47.76 41.1  49.26 51.7  48.84 53.34 47.26 50.7
- 52.48 47.32 47.12 49.74 40.24 49.68 48.02 51.4  60.52 45.34 49.32 51.88
- 49.34 54.44 51.22 51.44 52.88 46.16 48.62 50.02 51.6  43.84 46.68 50.42
- 46.04 51.36 54.78 51.82 56.1  60.7  52.68 55.06 49.26 50.14 54.76 46.66
- 53.94 49.34 45.54 42.8  42.5  48.64 44.1  52.48 49.   50.58 51.   46.38
- 50.8  42.8  50.24 52.58 53.04 50.24 51.72 54.06 52.54 51.5  55.78 46.48
- 49.68 52.2  45.54 53.9  53.54 57.56 53.96 45.78 50.66 54.04 50.84 52.78
- 44.74 49.1  48.28 51.18 52.68 45.94 48.44 47.14 49.42 49.42 49.18 56.14
- 50.72 51.3  52.96 49.16 50.02 53.   42.58 53.72 46.8  53.54 49.56 57.12
- 52.68 50.56 46.94 49.04 46.04 49.76 45.12 50.78 50.22 48.08 51.76 47.36
- 45.74 47.5  41.24 48.04 51.26 46.62 54.58 47.42 37.9  48.54 48.88 55.44
- 46.04 53.44 52.34 48.34 56.52 56.12 50.8  49.2  53.52 52.7  55.68 50.66
- 54.24 50.02 50.88 50.32 55.32 53.08 54.4  60.16 56.44 54.64 48.7  53.9
- 49.74 54.58 52.26 48.46 52.68 55.14 52.32 55.06 47.06 54.36 52.74 46.96
- 47.56 43.68 49.62 53.54 45.52 54.56 52.08 55.44 49.8  50.24 51.9  40.48
- 53.86 55.18 50.62 52.44 54.58 50.46 59.5  47.52]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[47.54 46.66 51.02 53.98 44.84 49.3  46.28 48.7  54.72 55.52 43.68 50.04
+ 54.22 52.08 60.36 55.74 54.92 55.84 42.1  58.14 45.14 45.4  46.7  52.22
+ 50.44 44.78 51.96 53.46 42.96 56.   45.46 58.36 50.14 47.48 46.8  52.4
+ 49.08 45.24 47.28 49.8  51.02 56.52 48.2  49.18 55.38 47.56 56.48 49.76
+ 43.26 47.02 45.58 52.74 52.84 59.36 48.58 51.6  51.6  45.88 48.66 46.74
+ 51.24 48.54 45.22 50.44 49.38 48.74 51.82 53.48 50.02 49.36 49.98 51.92
+ 53.64 53.62 54.64 53.96 56.28 52.04 53.3  52.7  50.9  55.78 51.5  46.04
+ 51.76 48.98 47.92 49.62 47.58 44.96 49.96 40.76 47.16 49.62 54.8  55.3
+ 54.86 48.34 51.56 49.42 50.48 58.48 48.78 55.66 48.12 46.72 49.4  57.7
+ 51.86 50.6  50.22 48.64 53.74 52.34 49.84 49.6  51.48 51.82 50.08 45.68
+ 52.86 46.2  55.16 51.54 49.76 48.22 42.72 49.68 50.84 43.96 55.94 46.84
+ 47.48 51.12 42.84 55.02 55.76 54.5  44.88 48.52 51.14 52.04 46.14 55.1
+ 53.98 50.14 46.46 44.6  57.04 46.32 46.78 52.94 44.58 56.82 49.84 48.66
+ 53.16 51.24 50.96 57.18 54.78 50.66 50.34 53.72 47.46 47.16 46.   48.94
+ 46.68 47.8  52.84 49.36 35.12 52.14 45.92 47.52 55.42 55.76 52.22 47.98
+ 51.18 59.94 43.6  49.06 52.24 43.84 51.78 51.   47.12 49.16 51.18 45.68
+ 58.4  46.72 45.84 56.4  52.54 51.   50.3  58.8 ]
 </pre></div>
 </div>
 </div>
@@ -880,7 +886,7 @@ outcomes is <span class="math notranslate nohighlight">\(N=300\)</span>. For a s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5ff8b387f666194454238786efac8b7fa54d0e8e59b3615b811e05e9339affb3.png" src="_images/5ff8b387f666194454238786efac8b7fa54d0e8e59b3615b811e05e9339affb3.png" />
+<img alt="_images/f9effb6ab17f49c3a1ff851c7028576517a5fcac3444851151aec002dae3e555.png" src="_images/f9effb6ab17f49c3a1ff851c7028576517a5fcac3444851151aec002dae3e555.png" />
 </div>
 </div>
 </section>
@@ -909,7 +915,7 @@ outcomes is <span class="math notranslate nohighlight">\(N=300\)</span>. For a s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6058591366324277
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.4920793350404544
 </pre></div>
 </div>
 </div>
@@ -937,6 +943,16 @@ First we draw <span class="math notranslate nohighlight">\(X\)</span>, and then 
 <h2>Remarks<a class="headerlink" href="#remarks" title="Link to this heading">#</a></h2>
 <p>The beauty of statistics lies in their deep connection with philosophy. A realized sample is a set of given numbers. They are fixed, known, and invariant. But where is uncertainty? Bayesians argue that uncertainty comes from people’s belief about the object of interest. The data contain information to help refine or update our beliefs. In contrast, frequentists contend that uncertainty is present  before the numbers, or realizations, are revealed; once the realizations are revealed, uncertainty is gone.</p>
 <p>The two schools of philosophical thoughts, Bayesian and frequentist, have been contesting over centuries. Either has pros and cons. Nowadays in academic research and in teaching, frequentist remains the mainstream so it is the one that we are more familiar with. However, frequentist interpretation of probability and the resulting implication for statistical inference are not completely natural. Repeated experiments are more easily perceived in physics and other natural science, but may be unrealistic in many economic settings. On the other hand, Bayesian encounters difficulty in reaching a consensus about prior distributions.</p>
+</section>
+<section id="case-study">
+<h2>Case Study<a class="headerlink" href="#case-study" title="Link to this heading">#</a></h2>
+<p><strong>Value-added of Master’s Programs</strong></p>
+<p>Self-financed master’s programs charge high tuition fees to exchange for a one-year intensive curriculum. These programs promise not only advanced knowledge but also enhanced career prospects. A central question arises: What is the true “value-added” of such a program? In econometric terms, this can be framed as estimating the average treatment effect (ATE). That is, what is the causal impact of enrolling in the program on outcomes like future earnings, compared to what would have happened without it.</p>
+<p>To explore this, we can conceptualize a thought experiment involving a randomized controlled trial (RCT).
+Imagine a pool of qualified applicants who have successfully passed the admissions criteria for the master’s program. To estimate the ATE, we randomly assign half of these applicants to the <em>treatment group</em>, granting them admission and requiring them to complete the one-year program. The other half, the <em>control group</em>, would be denied entry and compelled to enter the job market immediately, without pursuing alternative education. After five years, we would measure and compare the average salaries between the two groups. The difference in these averages would represent the ATE, capturing the program’s causal contribution to earnings, net of confounding factors like individual ability or motivation, which are balanced by randomization.</p>
+<p>This setup draws from the gold standard of causal inference in social sciences, where randomization ensures that treatment and control groups are statistically equivalent on both observed and unobserved characteristics. In theory, it isolates the “value-added” of the master’s degree: Does the specialized training, networking, credentialing, and skill enhancement truly boost salaries?</p>
+<p>However, this thought experiment is fundamentally infeasible in practice. Control group members, upon losing the lottery, are unlikely to passively enter the job market; they may pursue other master’s programs, online courses, certifications, or even doctoral studies. This <em>non-compliance</em> contaminates the control group and introduces bias if alternative paths differentially affect outcomes.</p>
+<p>This case exemplifies broader challenges in relying on pure statistical methods to address real-world causal questions, where ethical and practical hurdles abound. Statistically, RCTs assume perfect compliance, no spillovers, and stable unit treatment value—assumptions often violated in dynamic social contexts. In education, as seen here, individuals adapt to “treatment” denial, leading to selection bias or endogenous responses that pure randomization cannot fully mitigate. This mirrors issues in fields like medicine (e.g., placebo ethics in drug trials) or economics (e.g., welfare experiments denying benefits), where human agency complicates controlled environments.</p>
 </section>
 </section>
 
@@ -1019,6 +1035,7 @@ First we draw <span class="math notranslate nohighlight">\(X\)</span>, and then 
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multivariate-variables">Multivariate Variables</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regressions">Regressions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remarks">Remarks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study">Case Study</a></li>
 </ul>
   </nav></div>
 

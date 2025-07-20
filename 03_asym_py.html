@@ -32,10 +32,10 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=ca93fcec" />
-    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=20b57f81" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=b4b7a797" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -384,6 +384,7 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#central-limit-theorem">Central Limit Theorem</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tools-for-transformations">Tools for Transformations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study">Case Study</a></li>
 </ul>
             </nav>
         </div>
@@ -572,8 +573,15 @@ Cauchy distribution does not.</p>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">norm</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">cauchy</span>
-
-<span class="k">def</span> <span class="nf">sample_mean</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">distribution</span><span class="p">):</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sample_mean</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">distribution</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    This function calculates the sample mean for a given distribution.</span>
 <span class="sd">    </span>
@@ -634,9 +642,9 @@ Cauchy distribution does not.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/8473da0e7a766bf33f1c990b4330d94216144fa3d84cc6db7a429509f6bcf460.png" src="_images/8473da0e7a766bf33f1c990b4330d94216144fa3d84cc6db7a429509f6bcf460.png" />
-<img alt="_images/729884dd694ae3c3418a825444d808fac35ddf9c1dc7ceca1efab1b6aa2306a6.png" src="_images/729884dd694ae3c3418a825444d808fac35ddf9c1dc7ceca1efab1b6aa2306a6.png" />
-<img alt="_images/e904495e12e4b2951ee4b6133059d4f21d0f88fbcd04f74a03ab9631a429d23b.png" src="_images/e904495e12e4b2951ee4b6133059d4f21d0f88fbcd04f74a03ab9631a429d23b.png" />
+<img alt="_images/87a7d79621d6ae90e63e90a6bb1b484072f7622ac6b014feb79ab06493a01a1f.png" src="_images/87a7d79621d6ae90e63e90a6bb1b484072f7622ac6b014feb79ab06493a01a1f.png" />
+<img alt="_images/c822b06310d8c130dc3498c3a97fe90a3ba7ec4d96800eb8326e9ae29d2a3ccb.png" src="_images/c822b06310d8c130dc3498c3a97fe90a3ba7ec4d96800eb8326e9ae29d2a3ccb.png" />
+<img alt="_images/cb120d0a5c92664254dd57f56c4d1d6c630a0847fd44ebd787b6c9d17b8ad700.png" src="_images/cb120d0a5c92664254dd57f56c4d1d6c630a0847fd44ebd787b6c9d17b8ad700.png" />
 </div>
 </div>
 </section>
@@ -703,8 +711,8 @@ random variables. <em>Lindeberg-Levy CLT</em> is the simplest version.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/303799a3fb52ddfb376ce81c00d18a69e772c7818692f46476066a12485fa0e2.png" src="_images/303799a3fb52ddfb376ce81c00d18a69e772c7818692f46476066a12485fa0e2.png" />
-<img alt="_images/22df3d69ee530c52f610f3430eb16be6cf624533a3ee0da821c0bb354a8735b7.png" src="_images/22df3d69ee530c52f610f3430eb16be6cf624533a3ee0da821c0bb354a8735b7.png" />
+<img alt="_images/4a6983af9a6356d67c0ca027e621a20a6e76449834bca10c855f0ed9b523ee45.png" src="_images/4a6983af9a6356d67c0ca027e621a20a6e76449834bca10c855f0ed9b523ee45.png" />
+<img alt="_images/e6a341e2fc29c4a4b7ae20d405e51358c6701a3b3667b5d36e353932215abb29.png" src="_images/e6a341e2fc29c4a4b7ae20d405e51358c6701a3b3667b5d36e353932215abb29.png" />
 </div>
 </div>
 </section>
@@ -728,6 +736,16 @@ random variables. <em>Lindeberg-Levy CLT</em> is the simplest version.</p>
 </ul>
 <p>Slutsky’s theorem consists of special cases of the continuous mapping
 theorem 2.</p>
+</section>
+<section id="case-study">
+<h2>Case Study<a class="headerlink" href="#case-study" title="Link to this heading">#</a></h2>
+<p><strong>Price-Weighted Stock Indexes</strong></p>
+<p>In the realm of financial markets, stock indexes serve as vital barometers, distilling the complex interplay of thousands of individual securities into a single, digestible metric. Among these, price-weighted indexes such as the Dow Jones Industrial Average (DJIA) and the Nikkei 225 stand out for their simplicity. The DJIA, comprising 30 blue-chip companies listed on U.S. exchanges, and the Nikkei 225, tracking 225 prominent stocks on the Tokyo Stock Exchange, both calculate their values by essentially averaging the prices of their constituent stocks (adjusted for factors like splits and changes).</p>
+<p>Stock prices are influenced by corporate earnings, investor sentiment, geopolitical events, etc. Each stock’s price is inherently prone to idiosyncratic risks. However, when aggregated into an index, these prices form a larger sample. The LLN suggests that the average of these prices should stabilize around an expected value reflective of broader market conditions.</p>
+<p>These indexes’ role as market health indicators stems directly from this statistical stability. Stock prices, in aggregate, incorporate forward-looking information about corporate profitability, which ties into economic fundamentals like GDP growth, employment, and inflation. The LLN ensures that the index average isn’t derailed by transient events; instead, it trends toward an equilibrium shaped by these macro forces.</p>
+<p>In essence, price-weighted indexes operationalize the LLN by treating stock prices as random variables whose mean reveals underlying truths. This averaging process not only measures market health but also informs economic policy. Central banks like the Federal Reserve or Bank of Japan closely monitor these indexes.</p>
+<p>Price-weighted stock indexes are practical manifestations of the law of large numbers, where the aggregation of individual stock prices yields a cross-sectionally stable average that transcends volatility. As financial markets evolve, the enduring appeal of these indexes lies in their statistical elegance. In the multitude of prices, the truth emerges, steady and revealing.</p>
+<p>As a final note, in Asia’s premier financial center, Hong Kong flagship Hang Seng Index (HSI) differs markedly from price-weighted indexes. HSI weights companies based on the market value of their publicly tradable shares. Similarly, in Mainland China the Shanghai Composite (SSE) and CSI300 are also weighted indices.</p>
 </section>
 </section>
 
@@ -802,6 +820,7 @@ theorem 2.</p>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#central-limit-theorem">Central Limit Theorem</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tools-for-transformations">Tools for Transformations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study">Case Study</a></li>
 </ul>
   </nav></div>
 

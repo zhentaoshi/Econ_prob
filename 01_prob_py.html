@@ -32,10 +32,10 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=ca93fcec" />
-    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=20b57f81" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=b4b7a797" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -385,6 +385,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#independence">Independence</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#law-of-iterated-expectations">Law of Iterated Expectations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-the-next-lecture">For the next lecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#story">Story</a></li>
 </ul>
             </nav>
         </div>
@@ -409,8 +410,8 @@ It is a well-organized structure built on the sample space.</p>
 <p>A <em>probability measure</em> satisfies</p>
 <ul class="simple">
 <li><p>(positiveness) <span class="math notranslate nohighlight">\(P\left(A\right)\geq0\)</span> for all events;</p></li>
-<li><p>(countable additivity) If <span class="math notranslate nohighlight">\(A_{i}\)</span>, <span class="math notranslate nohighlight">\(i\in\mathbb{N}\)</span>,
-are mutually disjoint, then
+<li><p>(countable additivity) If <span class="math notranslate nohighlight">\(A_{i}\)</span>
+are mutually disjoint for <span class="math notranslate nohighlight">\(i\in\mathbb{N}\)</span>, then
 <span class="math notranslate nohighlight">\(P\left(\bigcup_{i\in\mathbb{N}}A_{i}\right)=\sum_{i\in\mathbb{N}} P \left(A_{i}\right).\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(P(\Omega) = 1\)</span>.</p></li>
 </ul>
@@ -607,8 +608,7 @@ F\left(x\right)=P\left(X\leq x\right).
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">![](</span>eTMsk2kyfPdEwwJioTRKnedkY2xUFvz1.svg<span class="o">)</span>
-<span class="c1"># Calculate the ECDF for the &#39;count&#39; column</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate the ECDF for the &#39;count&#39; column</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">d1_log</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">])</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
@@ -622,10 +622,6 @@ F\left(x\right)=P\left(X\leq x\right).
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;[]&#39; is not recognized as an internal or external command,
-operable program or batch file.
-</pre></div>
-</div>
 <img alt="_images/63a737e8bb011e8536ed872a964511d0800afffbe1e7e26a236c97ec8025bb40.png" src="_images/63a737e8bb011e8536ed872a964511d0800afffbe1e7e26a236c97ec8025bb40.png" />
 </div>
 </div>
@@ -737,12 +733,20 @@ f(x; \mu, \sigma^2) = \frac{1}{\sqrt{2\pi} \sigma} \exp\left( - \frac{(\log(x)-\
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># set a random seed for reproducibility</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.16741004, -0.26563582,  1.35770181])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.49671415, -0.1382643 ,  0.64768854])
 </pre></div>
 </div>
 </div>
@@ -754,7 +758,7 @@ f(x; \mu, \sigma^2) = \frac{1}{\sqrt{2\pi} \sigma} \exp\left( - \frac{(\log(x)-\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([39, 55, 54])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([42, 52, 58])
 </pre></div>
 </div>
 </div>
@@ -804,10 +808,10 @@ In population, this value is 5%. What is the number coming out of this experimen
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The empirical rejection probability is 0.043
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The empirical rejection probability is 0.054
 </pre></div>
 </div>
-<img alt="_images/144bbae9036a7680f4ce13cd681889b2e133c18da21c78d3c2486a314629c399.png" src="_images/144bbae9036a7680f4ce13cd681889b2e133c18da21c78d3c2486a314629c399.png" />
+<img alt="_images/e1918157710402f358a115cfbe1a40632d53caade6e4ab80a714958a3fa053d5.png" src="_images/e1918157710402f358a115cfbe1a40632d53caade6e4ab80a714958a3fa053d5.png" />
 </div>
 </div>
 </section>
@@ -892,7 +896,7 @@ is a special case of the Markov inequality when <span class="math notranslate no
 </section>
 <section id="multivariate-random-variable">
 <h2>Multivariate Random Variable<a class="headerlink" href="#multivariate-random-variable" title="Link to this heading">#</a></h2>
-<p>A <em>bivariate</em> random variable is a vector of two scalar random variables. More generally, a <em>multivariate</em> random variable has the <em>joint CDF</em> as</p>
+<p>A <em>bivariate</em> random variable is a vector of two scalar random variables. More generally, a <em>multivariate</em> random variable has the <em>joint CDF</em> defined as</p>
 <div class="math notranslate nohighlight">
 \[
 F\left(x_{1},\ldots,x_{n}\right)=P\left(X_{1}\leq x_{1},\ldots,X_{n}\leq x_{n}\right).
@@ -942,7 +946,7 @@ P(A_1 | A_2)=\frac{P\left(A_2| A_1\right)P\left(A_1\right)}{P\left(A_2\right)}
 <p>This formula is the well-known <em>Bayes’ Theorem</em>, which is a cornerstone of
 <em>decision theory</em>.</p>
 <p><strong>Example</strong></p>
-<p><span class="math notranslate nohighlight">\(A_1\)</span> is the event “a student can survive CUHK’s MSc program”, and <span class="math notranslate nohighlight">\(A_2\)</span> is
+<p><span class="math notranslate nohighlight">\(A_1\)</span> is the event “a student can survive CUHK’s master’s program”, and <span class="math notranslate nohighlight">\(A_2\)</span> is
 his or her application profile.</p>
 <p>We say two events <span class="math notranslate nohighlight">\(A_1\)</span> and <span class="math notranslate nohighlight">\(A_2\)</span> are <em>independent</em> if <span class="math notranslate nohighlight">\(P(A_1A_2) = P(A_1)P(A_2)\)</span>.
 If <span class="math notranslate nohighlight">\(P(A_2) \neq 0\)</span>, it is equivalent to <span class="math notranslate nohighlight">\(P(A_1 | A_2 ) = P(A_1)\)</span>.
@@ -971,7 +975,7 @@ $n\to\infty$. -->
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/a5be601c2d2a2ae5d4d9e156d11135a12b82466fd538ec26b567af7d7ebe5377.png" src="_images/a5be601c2d2a2ae5d4d9e156d11135a12b82466fd538ec26b567af7d7ebe5377.png" />
+<img alt="_images/7a86f27a1314066192bce97b314212f33600f0bc837099b92739990de8dab4a2.png" src="_images/7a86f27a1314066192bce97b314212f33600f0bc837099b92739990de8dab4a2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -991,7 +995,7 @@ $n\to\infty$. -->
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/fee5b414ff0051ceb4e468043ebfdbb4fc9276f74ff0bf45dec4eefb1b4c33b8.png" src="_images/fee5b414ff0051ceb4e468043ebfdbb4fc9276f74ff0bf45dec4eefb1b4c33b8.png" />
+<img alt="_images/1d650ef660255a9f8375d07fc217b20a0044ed99aff31db00862501dcefeb1fa.png" src="_images/1d650ef660255a9f8375d07fc217b20a0044ed99aff31db00862501dcefeb1fa.png" />
 </div>
 </div>
 </section>
@@ -1092,6 +1096,15 @@ into two parts, a conditional mean and a residual. Write
 </div>
 </div>
 </section>
+<section id="story">
+<h2>Story<a class="headerlink" href="#story" title="Link to this heading">#</a></h2>
+<p><img alt="" src="_images/gaokao.jpg" /></p>
+<p>We live in a world of uncertainty. About 20 years ago, students in China could select only one university as their first choice. It was a high-stakes gamble: success or failure carried lifelong consequences.</p>
+<p>My Gaokao score fell short of my hopes, shattering my dreams of studying in Beijing or Shanghai. My options narrowed to Nanjing University (NJU) or Zhejiang University (ZJU). Back then, reliable information was scarce for would-be first-generation college-goers.</p>
+<p>Zhejiang was my home province, and my high school routinely sent over 40 students to ZJU each year. Attending there wouldn’t earn me any bragging rights — it was expected. NJU, on the other hand, felt far more exotic. I had learned about it from a fellow small-town resident who had been admitted there and become a local legend, admired by every parent as an inspiring role model kid. For me, NJU was the dream school.</p>
+<p>I managed to reach an NJU admissions representative by phone. After sharing my score and ranking, I asked which majors I might qualify for. He explained that my score was marginal. “You could try for geology,” he suggested half-heartedly. Geology wasn’t on my list of interests, but in my naivety, I thought it might not be so bad. I had read stories about Li Siguang, the geologist who pioneered oil exploration in China. Perhaps spending long stretches in the wilderness for fieldwork could even be romantic, I mused.</p>
+<p>The decision loomed as a probability puzzle. I had two choices: ZJU or NJU. Each carried two possible consequences: success or failure. That yielded four scenarios, each with its own probability attached. Before submitting the piece of paper signalling my willingness, and before the cutoff scores were announced, I hung in suspense. What should I do? Shall I pursue my dream school, or play it safe?</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1166,6 +1179,7 @@ into two parts, a conditional mean and a residual. Write
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#independence">Independence</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#law-of-iterated-expectations">Law of Iterated Expectations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-the-next-lecture">For the next lecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#story">Story</a></li>
 </ul>
   </nav></div>
 
