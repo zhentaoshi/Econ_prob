@@ -391,7 +391,7 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multivariate-variables">Multivariate Variables</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regressions">Regressions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remarks">Remarks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study">Case Study</a></li>
 </ul>
             </nav>
@@ -410,19 +410,13 @@ document.write(`
 <p>Statistic theory goes the opposite way to probability theory. In reality what we observe is a sample of data, but we don’t know via what mechanism the data are generated. Statistics asks how can we infer the data generating process from the sample that we observe. For example, if we assume the sample comes from a normal distribution, what is the best way that we learn the population mean and variance? Do the data provide sufficient evidence that two samples are drawn from populations of the same means? Statistics uses the sample to compute some numbers, while the underlying probability model guides the interpretation of these numbers.</p>
 <p><strong>Example</strong></p>
 <p>This is a sample of 100 accounts from
-<a class="reference external" href="https://www.kaggle.com/datasets/patriotboy112/hks-top-300-youtubers">HK top 300 Youtubers</a> in the previous lecture.</p>
+<a class="reference external" href="https://www.kaggle.com/datasets/patriotboy112/hks-top-300-youtubers">HK top 300 Youtubers</a> which we randomly drew at the end of the previous lecture.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">43</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Reading the CSV file</span>
+
+<span class="c1"># Reading the CSV file</span>
 <span class="n">d1_log_sub</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;logYoutuber_sample.csv&quot;</span><span class="p">)</span>
 
 <span class="c1"># Checking the number of rows</span>
@@ -445,7 +439,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.064122168009075
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.138765387049602
 </pre></div>
 </div>
 </div>
@@ -457,18 +451,17 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.494172970249846
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.565091620358193
 </pre></div>
 </div>
 </div>
 </div>
-<p>We are interested in the <em>sample mean</em>, as it tells us the location of the center in the probability weighted average, or <em>population mean</em> <span class="math notranslate nohighlight">\(\mu = E[X_i]\)</span>.
-We are also interested in the <em>sample variance</em>, as it tells us the scale of spread of the sample, or <em>population variance</em> <span class="math notranslate nohighlight">\(\sigma^2 = var(X_i)\)</span>.</p>
+<p>We are interested in the <em>sample mean</em>, as it tells the location of the center in the probability weighted average, or <em>population mean</em> <span class="math notranslate nohighlight">\(\mu = E[X_i]\)</span>.
+We are also interested in the <em>sample variance</em>, as it tells the scale of spread of the sample, or <em>population variance</em> <span class="math notranslate nohighlight">\(\sigma^2 = var(X_i)\)</span>.</p>
 <p>In this example, we can view the sample as a multinomial distribution with <span class="math notranslate nohighlight">\(n\)</span> outcomes at the observed realized points.
 Since each observation is drawn randomly and independently, everyone is equally important.
 Assigning equal probability <span class="math notranslate nohighlight">\(1/n\)</span> on each point naturally delivers the sample mean <span class="math notranslate nohighlight">\(\hat{\mu} = \bar{X} = n^{-1} \sum_{i=1}^n X_i.\)</span>
-Similarly, a widely used sample variance is computed as <span class="math notranslate nohighlight">\(s^2 = (n-1)^{-1} \sum_{i=1}^n (X_i - \hat{\mu})^2\)</span>.</p>
-<p>More generally, for <span class="math notranslate nohighlight">\(p&gt;0\)</span> the statistic <span class="math notranslate nohighlight">\(n^{-1} \sum_{i=1}^n x_i^p\)</span> is called the <span class="math notranslate nohighlight">\(p\)</span>-th sample moment, and <span class="math notranslate nohighlight">\(n^{-1} \sum_{i=1}^n (X_i - \bar{X})^p\)</span> is called the <span class="math notranslate nohighlight">\(r\)</span>-th centered moment.</p>
+Similarly, a widely used sample variance is computed as <span class="math notranslate nohighlight">\(s^2 = (n-1)^{-1} \sum_{i=1}^n (X_i - \hat{\mu})^2\)</span>. More generally, for <span class="math notranslate nohighlight">\(p&gt;0\)</span> the statistic <span class="math notranslate nohighlight">\(n^{-1} \sum_{i=1}^n x_i^p\)</span> is called the <span class="math notranslate nohighlight">\(p\)</span>-th sample moment, and <span class="math notranslate nohighlight">\(n^{-1} \sum_{i=1}^n (X_i - \bar{X})^p\)</span> is called the <span class="math notranslate nohighlight">\(r\)</span>-th centered moment.</p>
 <section id="estimation-methods">
 <h2>Estimation methods<a class="headerlink" href="#estimation-methods" title="Link to this heading">#</a></h2>
 <p>Suppose that the data are generated from a parametric model. Statistical
@@ -487,7 +480,9 @@ Then we invert the functions to back out the parameters.</p>
 are the method of moments estimates of the two parameters.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">43</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
@@ -586,7 +581,7 @@ The sample mean is a natural estimator for <span class="math notranslate nohighl
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;lower&#39;: 5.754580331054653, &#39;upper&#39;: 6.373664004963498}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;lower&#39;: 5.824853680215212, &#39;upper&#39;: 6.452677093883993}
 </pre></div>
 </div>
 </div>
@@ -601,9 +596,13 @@ The sampling distribution is the distribution of a statistic.</p>
 <li><p>Assume <span class="math notranslate nohighlight">\(X_i \sim (\mu, \sigma^2)\)</span> with a finite variance.
 <span class="math notranslate nohighlight">\(\sqrt{n} \frac{\bar{X} - \mu}{\sigma} \stackrel{d}{\rightarrow} N(0, 1)\)</span>. (to be discussed in asymptotic theory)</p></li>
 </ul>
-<p><strong>Simulation example</strong></p>
-<p>In a simulation, we compute the empirical coverage probability of the formula of the confidence interval.</p>
-<div class="cell docutils container">
+<div class="proof example admonition" id="example-0">
+<p class="admonition-title"><span class="caption-number">Example 2 </span></p>
+<section class="example-content" id="proof-content">
+<p>In a simulation, we compute the empirical coverage probability of the formula of the confidence interval.
+The underlying data generating process is a Poisson distribution.</p>
+</section>
+</div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">poisson</span>
 
@@ -631,9 +630,12 @@ The sampling distribution is the distribution of a statistic.</p>
 </div>
 <p><em>Coverage probability</em> is the probability that the confidence interval captures the true value in repeated sampling.
 Here the confidence interval is random while the true value is fixed.</p>
-<p><strong>Simulation example</strong></p>
+<div class="proof example admonition" id="example-1">
+<p class="admonition-title"><span class="caption-number">Example 3 </span></p>
+<section class="example-content" id="proof-content">
 <p>Witness the confidence intervals from 25 replications.</p>
-<div class="cell docutils container">
+</section>
+</div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
@@ -698,19 +700,9 @@ test should have a small level. Conventionally we take <span class="math notrans
 <div class="math notranslate nohighlight">
 \[\inf_{\theta\in\Theta_{1}}\beta\left(\theta\right)&gt;\sup_{\theta\in\Theta_{0}}\beta\left(\theta\right).\]</div>
 <p>There can be many tests of correct size.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.23168469])
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>Remark</strong></p>
+<div class="proof remark admonition" id="remark-2">
+<p class="admonition-title"><span class="caption-number">Remark 1 </span></p>
+<section class="remark-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(\mathbf{x} = (x_1, x_2, \ldots, x_n)\)</span>.
 A trivial test function
 <span class="math notranslate nohighlight">\(\phi(\mathbf{x})=1\left\{ 0\leq U\leq\alpha\right\}\)</span> for all
@@ -719,7 +711,8 @@ distribution on <span class="math notranslate nohighlight">\(\left[0,1\right]\)<
 non-trivial power at the alternative. On the other extreme, the trivial
 test function <span class="math notranslate nohighlight">\(\phi(\mathbf{x})=1\)</span> for all <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>
 enjoys the biggest power but suffers incorrect size.</p>
-<p>Usually, we design a test by proposing a test statistic
+</section>
+</div><p>Usually, we design a test by proposing a test statistic
 <span class="math notranslate nohighlight">\(T_{n}\)</span> and a corresponding critical value
 <span class="math notranslate nohighlight">\(c_{1-\alpha}\)</span>. Given <span class="math notranslate nohighlight">\(T_{n}\)</span> and <span class="math notranslate nohighlight">\(c_{1-\alpha}\)</span>, we write the test
 function as</p>
@@ -732,7 +725,7 @@ to figure out the distribution of <span class="math notranslate nohighlight">\(T
 (called the <em>null distribution</em>), and choose a critical value
 <span class="math notranslate nohighlight">\(c_{1-\alpha}\)</span> according to the null distribution where <span class="math notranslate nohighlight">\(\alpha\)</span>
 is the desirable size or level.</p>
-<p>Another commonly popular indicator for the compatibility between the data and the null hypothesis is the <span class="math notranslate nohighlight">\(p\)</span>-value:</p>
+<p>Another popular indicator for the compatibility between the data and the null hypothesis is the <span class="math notranslate nohighlight">\(p\)</span>-value:</p>
 <div class="math notranslate nohighlight">
 \[\sup_{\theta\in\Theta_{0}}P_{\theta}\left\{ T_{n}\left({\mathbf{x}}\right)\leq T_{n}\left(\mathbf{X}\right)\right\}.\]</div>
 <p>In the above expression, <span class="math notranslate nohighlight">\(T_{n}\left(\mathbf{x}\right)\)</span> is the realized
@@ -811,11 +804,11 @@ confidence interval by inverting the  test. In words, if we collect all points t
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.064122168009075
-2.494172970249846
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.138765387049602
+2.565091620358193
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.4920793350404544
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5915970429711244
 </pre></div>
 </div>
 </div>
@@ -851,23 +844,23 @@ outcomes is <span class="math notranslate nohighlight">\(N=300\)</span>. For a s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[47.54 46.66 51.02 53.98 44.84 49.3  46.28 48.7  54.72 55.52 43.68 50.04
- 54.22 52.08 60.36 55.74 54.92 55.84 42.1  58.14 45.14 45.4  46.7  52.22
- 50.44 44.78 51.96 53.46 42.96 56.   45.46 58.36 50.14 47.48 46.8  52.4
- 49.08 45.24 47.28 49.8  51.02 56.52 48.2  49.18 55.38 47.56 56.48 49.76
- 43.26 47.02 45.58 52.74 52.84 59.36 48.58 51.6  51.6  45.88 48.66 46.74
- 51.24 48.54 45.22 50.44 49.38 48.74 51.82 53.48 50.02 49.36 49.98 51.92
- 53.64 53.62 54.64 53.96 56.28 52.04 53.3  52.7  50.9  55.78 51.5  46.04
- 51.76 48.98 47.92 49.62 47.58 44.96 49.96 40.76 47.16 49.62 54.8  55.3
- 54.86 48.34 51.56 49.42 50.48 58.48 48.78 55.66 48.12 46.72 49.4  57.7
- 51.86 50.6  50.22 48.64 53.74 52.34 49.84 49.6  51.48 51.82 50.08 45.68
- 52.86 46.2  55.16 51.54 49.76 48.22 42.72 49.68 50.84 43.96 55.94 46.84
- 47.48 51.12 42.84 55.02 55.76 54.5  44.88 48.52 51.14 52.04 46.14 55.1
- 53.98 50.14 46.46 44.6  57.04 46.32 46.78 52.94 44.58 56.82 49.84 48.66
- 53.16 51.24 50.96 57.18 54.78 50.66 50.34 53.72 47.46 47.16 46.   48.94
- 46.68 47.8  52.84 49.36 35.12 52.14 45.92 47.52 55.42 55.76 52.22 47.98
- 51.18 59.94 43.6  49.06 52.24 43.84 51.78 51.   47.12 49.16 51.18 45.68
- 58.4  46.72 45.84 56.4  52.54 51.   50.3  58.8 ]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[56.72 50.16 48.98 54.38 46.78 45.94 51.02 56.7  52.72 51.8  49.22 53.42
+ 64.08 46.14 41.48 51.26 53.1  54.98 49.06 41.4  49.94 46.44 60.2  51.9
+ 56.22 46.3  43.32 49.5  46.3  48.94 52.12 58.44 48.3  51.94 43.66 46.18
+ 43.28 49.36 52.64 45.38 45.6  52.42 50.2  54.5  51.22 55.86 55.82 50.96
+ 46.62 41.96 51.46 48.22 56.34 44.22 40.9  52.42 48.28 57.78 50.96 55.24
+ 51.8  51.   51.6  57.26 51.8  46.76 51.08 46.16 55.56 54.92 49.9  48.46
+ 55.7  48.68 43.74 45.64 41.36 55.72 48.8  48.82 49.74 53.96 52.54 53.12
+ 45.48 48.88 52.82 51.68 44.2  55.38 50.02 49.96 45.02 48.84 49.84 48.22
+ 49.54 51.54 55.86 49.44 62.52 57.54 48.06 45.38 51.34 45.1  52.62 48.86
+ 51.98 42.18 48.26 48.84 51.   49.6  53.9  47.1  39.86 50.42 53.36 55.5
+ 51.44 52.44 52.12 47.32 54.26 52.64 46.64 49.76 52.7  49.06 52.44 49.32
+ 55.1  41.9  47.96 46.76 46.82 47.52 46.56 53.   55.16 54.38 51.6  51.9
+ 54.74 50.44 49.46 44.58 54.02 51.9  54.16 54.44 51.08 53.44 52.02 48.88
+ 59.26 48.48 36.94 60.06 48.66 57.18 55.98 46.94 55.02 55.52 48.42 55.34
+ 48.26 52.4  52.   41.02 48.44 41.76 42.82 48.8  40.02 44.78 53.88 50.02
+ 45.6  57.38 48.86 52.88 56.88 47.24 47.42 54.32 54.02 54.84 48.96 51.6
+ 50.02 49.46 44.24 57.48 54.06 56.98 46.32 50.42]
 </pre></div>
 </div>
 </div>
@@ -886,7 +879,7 @@ outcomes is <span class="math notranslate nohighlight">\(N=300\)</span>. For a s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f9effb6ab17f49c3a1ff851c7028576517a5fcac3444851151aec002dae3e555.png" src="_images/f9effb6ab17f49c3a1ff851c7028576517a5fcac3444851151aec002dae3e555.png" />
+<img alt="_images/032e9e71a25e0674ce146c9b110ea3a96d8dd6c41ec8addb68154220f08b4bd2.png" src="_images/032e9e71a25e0674ce146c9b110ea3a96d8dd6c41ec8addb68154220f08b4bd2.png" />
 </div>
 </div>
 </section>
@@ -915,12 +908,23 @@ outcomes is <span class="math notranslate nohighlight">\(N=300\)</span>. For a s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.4920793350404544
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5915970429711244
 </pre></div>
 </div>
 </div>
 </div>
+<div class="proof remark admonition" id="remark-3">
+<p class="admonition-title"><span class="caption-number">Remark 2 </span></p>
+<section class="remark-content" id="proof-content">
+<p>Mean and variance appear to be very simple objects. It turns out they are fundamental for finance, where the mean is associated with the expected return of multiple assets, and the (co)variance matrix is associated with the risk.</p>
+<p>Modern Portfolio Theory (Markowitz, 1952) is a framework for constructing investment portfolios that maximize expected return for a given level of risk, or minimize risk for a given expected return. Mean and variance are the only inputs in the theory.
+Consider <span class="math notranslate nohighlight">\(d\)</span> assets with expected return vector <span class="math notranslate nohighlight">\(\mu \in \mathbb{R}^d\)</span>, and covariance matrix <span class="math notranslate nohighlight">\(\Sigma \in \mathbb{R}^{d \times d}\)</span>.
+A portfolio is defined by weights <span class="math notranslate nohighlight">\(w \in \mathbb{R}^d\)</span> such that <span class="math notranslate nohighlight">\(w' \mathbf{1} = 1\)</span> (fully invested).</p>
+<p>The portfolio’s expected return is <span class="math notranslate nohighlight">\(r_p = w' \mu\)</span>, and the portfolio’s variance (risk) is <span class="math notranslate nohighlight">\(\sigma_p^2 = w' \Sigma w\)</span>.
+To find optimal portfolios, solve the quadratic optimization problem, e.g., minimize <span class="math notranslate nohighlight">\(\sigma_p^2\)</span> subject to <span class="math notranslate nohighlight">\(r_p = r^*\)</span> (target return) with <span class="math notranslate nohighlight">\(w' \mathbf{1} = 1\)</span>. The set of such minima traces the efficient frontier, where portfolios offer the highest <span class="math notranslate nohighlight">\(\mu\)</span> for each <span class="math notranslate nohighlight">\(\sigma_p^2\)</span>.</p>
+<p>In reality, both <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\Sigma\)</span> are unknown and thus must be estimated from data.</p>
 </section>
+</div></section>
 <section id="regressions">
 <h2>Regressions<a class="headerlink" href="#regressions" title="Link to this heading">#</a></h2>
 <p>In machine learning terminologies, all examples we have talked so far are <em>unsupervised learning</em>, which extracts some features from  observed data.
@@ -939,20 +943,20 @@ First we draw <span class="math notranslate nohighlight">\(X\)</span>, and then 
 \[\beta = \frac{\sigma_{xy}}{\sigma_x^2}=\frac{\rho \sigma_x \sigma_y}{\sigma_x^2} = \rho \frac{\sigma_y} {\sigma_x}.\]</div>
 <p>Given a sample, we use the observed data to compute <span class="math notranslate nohighlight">\(\hat{\sigma}_{xy}\)</span> and <span class="math notranslate nohighlight">\(\hat{\sigma}_x^2\)</span>, and thereby <span class="math notranslate nohighlight">\(\hat{\beta}\)</span> as their ratio.</p>
 </section>
-<section id="remarks">
-<h2>Remarks<a class="headerlink" href="#remarks" title="Link to this heading">#</a></h2>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
 <p>The beauty of statistics lies in their deep connection with philosophy. A realized sample is a set of given numbers. They are fixed, known, and invariant. But where is uncertainty? Bayesians argue that uncertainty comes from people’s belief about the object of interest. The data contain information to help refine or update our beliefs. In contrast, frequentists contend that uncertainty is present  before the numbers, or realizations, are revealed; once the realizations are revealed, uncertainty is gone.</p>
 <p>The two schools of philosophical thoughts, Bayesian and frequentist, have been contesting over centuries. Either has pros and cons. Nowadays in academic research and in teaching, frequentist remains the mainstream so it is the one that we are more familiar with. However, frequentist interpretation of probability and the resulting implication for statistical inference are not completely natural. Repeated experiments are more easily perceived in physics and other natural science, but may be unrealistic in many economic settings. On the other hand, Bayesian encounters difficulty in reaching a consensus about prior distributions.</p>
 </section>
 <section id="case-study">
 <h2>Case Study<a class="headerlink" href="#case-study" title="Link to this heading">#</a></h2>
 <p><strong>Value-added of Master’s Programs</strong></p>
-<p>Self-financed master’s programs charge high tuition fees to exchange for a one-year intensive curriculum. These programs promise not only advanced knowledge but also enhanced career prospects. A central question arises: What is the true “value-added” of such a program? In econometric terms, this can be framed as estimating the average treatment effect (ATE). That is, what is the causal impact of enrolling in the program on outcomes like future earnings, compared to what would have happened without it.</p>
+<p>Self-financed master’s programs in the United States charge high tuition fees to exchange for a one-year intensive curriculum. These programs promise not only advanced knowledge but also enhanced career prospects. A central question arises: What is the value-added of such a program? In econometric terms, this can be framed as estimating the average treatment effect (ATE). That is, what is the causal impact of enrolling in the program on outcomes like future earnings, compared to what would have happened without it.</p>
 <p>To explore this, we can conceptualize a thought experiment involving a randomized controlled trial (RCT).
-Imagine a pool of qualified applicants who have successfully passed the admissions criteria for the master’s program. To estimate the ATE, we randomly assign half of these applicants to the <em>treatment group</em>, granting them admission and requiring them to complete the one-year program. The other half, the <em>control group</em>, would be denied entry and compelled to enter the job market immediately, without pursuing alternative education. After five years, we would measure and compare the average salaries between the two groups. The difference in these averages would represent the ATE, capturing the program’s causal contribution to earnings, net of confounding factors like individual ability or motivation, which are balanced by randomization.</p>
-<p>This setup draws from the gold standard of causal inference in social sciences, where randomization ensures that treatment and control groups are statistically equivalent on both observed and unobserved characteristics. In theory, it isolates the “value-added” of the master’s degree: Does the specialized training, networking, credentialing, and skill enhancement truly boost salaries?</p>
-<p>However, this thought experiment is fundamentally infeasible in practice. Control group members, upon losing the lottery, are unlikely to passively enter the job market; they may pursue other master’s programs, online courses, certifications, or even doctoral studies. This <em>non-compliance</em> contaminates the control group and introduces bias if alternative paths differentially affect outcomes.</p>
-<p>This case exemplifies broader challenges in relying on pure statistical methods to address real-world causal questions, where ethical and practical hurdles abound. Statistically, RCTs assume perfect compliance, no spillovers, and stable unit treatment value—assumptions often violated in dynamic social contexts. In education, as seen here, individuals adapt to “treatment” denial, leading to selection bias or endogenous responses that pure randomization cannot fully mitigate. This mirrors issues in fields like medicine (e.g., placebo ethics in drug trials) or economics (e.g., welfare experiments denying benefits), where human agency complicates controlled environments.</p>
+Imagine a pool of qualified applicants who have successfully passed the admissions criteria for the master’s program. To estimate the ATE, we run a lottery to randomly assign half of these applicants to the <em>treatment group</em>, granting them admission and requiring them to complete the one-year program. The other half, the <em>control group</em>, would be denied entry and compelled to enter the job market immediately, without pursuing alternative education. After five years, we would measure and compare the average salaries between the two groups. The difference in these averages would represent the ATE, capturing the program’s causal contribution to earnings, net of confounding factors like individual ability or motivation, which are balanced by randomization.</p>
+<p>This setup draws from the gold standard of causal inference in social sciences, where randomization ensures that treatment and control groups are statistically equivalent on both observed and unobserved characteristics. In theory, it isolates the value-added of the master’s degree.</p>
+<p>However, this thought experiment is fundamentally infeasible in practice. Control group members, upon losing the lottery, are unlikely to passively enter the job market; they may pursue other master’s programs, online courses, and certifications. This <em>non-compliance</em> contaminates the control group and introduces bias if alternative paths affect outcomes.</p>
+<p>This case exemplifies broader challenges in relying on pure statistical methods to address real-world questions, where ethical and practical hurdles abound. Statistically, RCTs assume perfect compliance, which is often violated in social contexts. This mirrors issues in fields like medicine (e.g., placebo ethics in drug trials) or economics (e.g., welfare experiments denying benefits), where humans complicate controlled environments.</p>
 </section>
 </section>
 
@@ -1034,7 +1038,7 @@ Imagine a pool of qualified applicants who have successfully passed the admissio
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multivariate-variables">Multivariate Variables</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regressions">Regressions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remarks">Remarks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study">Case Study</a></li>
 </ul>
   </nav></div>

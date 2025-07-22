@@ -382,6 +382,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distribution-function">Distribution Function</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integration">Integration</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multivariate-random-variable">Multivariate Random Variable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bayes-theorem">Bayes Theorem</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#independence">Independence</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#law-of-iterated-expectations">Law of Iterated Expectations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-the-next-lecture">For the next lecture</a></li>
@@ -763,6 +764,9 @@ f(x; \mu, \sigma^2) = \frac{1}{\sqrt{2\pi} \sigma} \exp\left( - \frac{(\log(x)-\
 </div>
 </div>
 </div>
+<div class="proof example admonition" id="example-0">
+<p class="admonition-title"><span class="caption-number">Example 1 </span></p>
+<section class="example-content" id="proof-content">
 <p>Below is a piece of code for demonstration.</p>
 <ol class="arabic simple">
 <li><p>Plot the density of standard normal distribution over an equally spaced grid system.</p></li>
@@ -770,8 +774,8 @@ f(x; \mu, \sigma^2) = \frac{1}{\sqrt{2\pi} \sigma} \exp\left( - \frac{(\log(x)-\
 <li><p>Calculate the 95th quantile and the empirical probability of observing a value greater than the 95th quantile.
 In population, this value is 5%. What is the number coming out of this experiment?</p></li>
 </ol>
-<p>(Since we do not fix the random seed in the computer, the outcome is slightly different each time when we run the code.)</p>
-<div class="cell docutils container">
+</section>
+</div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create x-axis from -3 to 3 with steps of 0.01</span>
 <span class="n">x_axis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
@@ -926,8 +930,8 @@ The <em>marginal density</em> <span class="math notranslate nohighlight">\(f\lef
 the coordinate that is not interested.
 The  <em>conditional density</em> can be written as  <span class="math notranslate nohighlight">\(f\left(y|x\right)=f\left(x,y\right)/f\left(x\right)\)</span>  for <span class="math notranslate nohighlight">\(f(x) \neq 0\)</span>.</p>
 </section>
-<section id="independence">
-<h2>Independence<a class="headerlink" href="#independence" title="Link to this heading">#</a></h2>
+<section id="bayes-theorem">
+<h2>Bayes Theorem<a class="headerlink" href="#bayes-theorem" title="Link to this heading">#</a></h2>
 <p>For two events <span class="math notranslate nohighlight">\(A_1\)</span> and <span class="math notranslate nohighlight">\(A_2\)</span>, the <em>conditional probability</em> is</p>
 <div class="math notranslate nohighlight">
 \[
@@ -946,8 +950,32 @@ P(A_1 | A_2)=\frac{P\left(A_2| A_1\right)P\left(A_1\right)}{P\left(A_2\right)}
 <p>This formula is the well-known <em>Bayes’ Theorem</em>, which is a cornerstone of
 <em>decision theory</em>.</p>
 <p><strong>Example</strong></p>
-<p><span class="math notranslate nohighlight">\(A_1\)</span> is the event “a student can survive CUHK’s master’s program”, and <span class="math notranslate nohighlight">\(A_2\)</span> is
-his or her application profile.</p>
+<p><span class="math notranslate nohighlight">\(A_1\)</span> is the event “a student being get a CUHK Econ master offer”, and <span class="math notranslate nohighlight">\(A_2\)</span> is
+“his or her GPA higher than 3.5”.
+We are applying Bayes’ Theorem to compute the posterior probability <span class="math notranslate nohighlight">\( P(A_1=1 \mid A_2) \)</span></p>
+<p>Given probabilities:</p>
+<ul class="simple">
+<li><p>Prior: <span class="math notranslate nohighlight">\( P(A_1=1) = 0.1 \)</span> (so <span class="math notranslate nohighlight">\( P(A_1=0) = 0.9 \)</span>).</p></li>
+<li><p>Likelihood: <span class="math notranslate nohighlight">\( P(A_2 \mid A_1=1) = 0.5 \)</span>.</p></li>
+<li><p>Likelihood: <span class="math notranslate nohighlight">\( P(A_2 \mid A_1=0) = 0.05 \)</span>.</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>Compute the marginal probability <span class="math notranslate nohighlight">\( P(A_2) \)</span> using the law of total probability:
+$<span class="math notranslate nohighlight">\(
+P(A_2) = P(A_2 \mid A_1=1) \cdot P(A_1=1) + P(A_2 \mid A_1=0) \cdot P(A_1=0)
+\)</span><span class="math notranslate nohighlight">\(
+Substituting the values:
+\)</span><span class="math notranslate nohighlight">\(
+P(A_2) = 0.5 \times 0.1 + 0.05 \times 0.9 = 0.05 + 0.045 = 0.095
+\)</span>$</p></li>
+<li><p>Now compute the posterior:
+$<span class="math notranslate nohighlight">\(
+P(A_1=1 \mid A_2) = \frac{0.5 \times 0.1}{0.095} = \frac{0.05}{0.095} = \frac{10}{19} \approx 0.5263
+\)</span>$</p></li>
+</ol>
+</section>
+<section id="independence">
+<h2>Independence<a class="headerlink" href="#independence" title="Link to this heading">#</a></h2>
 <p>We say two events <span class="math notranslate nohighlight">\(A_1\)</span> and <span class="math notranslate nohighlight">\(A_2\)</span> are <em>independent</em> if <span class="math notranslate nohighlight">\(P(A_1A_2) = P(A_1)P(A_2)\)</span>.
 If <span class="math notranslate nohighlight">\(P(A_2) \neq 0\)</span>, it is equivalent to <span class="math notranslate nohighlight">\(P(A_1 | A_2 ) = P(A_1)\)</span>.
 In words, knowing <span class="math notranslate nohighlight">\(A_2\)</span> does not change the probability of <span class="math notranslate nohighlight">\(A_1\)</span>.</p>
@@ -1180,6 +1208,7 @@ into two parts, a conditional mean and a residual. Write
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distribution-function">Distribution Function</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integration">Integration</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multivariate-random-variable">Multivariate Random Variable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bayes-theorem">Bayes Theorem</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#independence">Independence</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#law-of-iterated-expectations">Law of Iterated Expectations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-the-next-lecture">For the next lecture</a></li>
