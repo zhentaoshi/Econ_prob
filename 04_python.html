@@ -32,10 +32,10 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=ca93fcec" />
-    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=20b57f81" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=b4b7a797" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -377,7 +377,6 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#help-system">Help System</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector">Vector</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
 </ul>
@@ -436,16 +435,11 @@ document.write(`
 </ul>
 <p>This lecture quickly sketches some key points of the manual, while you should carefully go over Python-Introduction
 after today’s lecture.</p>
-<section id="help-system">
-<h3>Help System<a class="headerlink" href="#help-system" title="Link to this heading">#</a></h3>
-<p>The help system for Python is a build-in function named <code class="docutils literal notranslate"><span class="pre">help([object])</span></code> with which you can check its usage. Another way to find help is to check each package-documentation you installed.</p>
-</section>
 <section id="vector">
 <h3>Vector<a class="headerlink" href="#vector" title="Link to this heading">#</a></h3>
 <p>A <em>vector</em> is a collection of elements of the same type, say, integer, logical value, real number, complex number, characters or factor.
 Python does not require explicit type declaration. Although, if you want to save a strings, you need <code class="docutils literal notranslate"><span class="pre">&quot;</span> <span class="pre">&quot;</span></code> around your vector</p>
 <ul class="simple">
-<li><p>assigns the value on its right-hand side to a self-defined variable name on its left-hand side.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code> creates a list of vectors</p></li>
 <li><p>Binary arithmetic operations <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code> and <code class="docutils literal notranslate"><span class="pre">\</span></code> are performed element by element.</p></li>
 <li><p>Further arithmetic operators: exponends are expressed with <code class="docutils literal notranslate"><span class="pre">**</span></code>, and <code class="docutils literal notranslate"><span class="pre">%</span></code> is the reminder.</p></li>
@@ -463,8 +457,6 @@ Python does not require explicit type declaration. Although, if you want to save
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Import the NumPy library</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="c1"># Import the Pandas library</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 </pre></div>
 </div>
 </div>
@@ -587,7 +579,6 @@ To conduct OLS estimation in Python, we literally translate the mathematical exp
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import Packages</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 
@@ -606,7 +597,7 @@ To conduct OLS estimation in Python, we literally translate the mathematical exp
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\zhent\AppData\Local\Temp\ipykernel_38532\3930501868.py:13: UserWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\zhent\AppData\Local\Temp\ipykernel_8032\2912524242.py:12: UserWarning: 
 
 `distplot` is a deprecated function and will be removed in seaborn v0.14.0.
 
@@ -739,8 +730,8 @@ The OLS function of the package <code class="docutils literal notranslate"><span
 Dep. Variable:                      y   R-squared (uncentered):                   0.782
 Model:                            OLS   Adj. R-squared (uncentered):              0.767
 Method:                 Least Squares   F-statistic:                              50.26
-Date:                Fri, 18 Jul 2025   Prob (F-statistic):                    5.42e-10
-Time:                        22:22:56   Log-Likelihood:                         -38.515
+Date:                Wed, 23 Jul 2025   Prob (F-statistic):                    5.42e-10
+Time:                        21:47:58   Log-Likelihood:                         -38.515
 No. Observations:                  30   AIC:                                      81.03
 Df Residuals:                      28   BIC:                                      83.83
 Df Model:                           2                                                  
@@ -780,7 +771,7 @@ Notes:
 <img alt="_images/79f56cb7151c076602cff04813c5d2fbf72779f4d0b5b0bb8a0e8e7548679abf.png" src="_images/79f56cb7151c076602cff04813c5d2fbf72779f4d0b5b0bb8a0e8e7548679abf.png" />
 </div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">result</span></code> object is a list containing the regression results. As shown in the results, we can easily read the estimated coefficients, t-test results, F-test results, and the R-sqaure.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">results</span></code> object is a list containing the regression results. As shown in the results, we can easily read the estimated coefficients, t-test results, F-test results, and the R-sqaured.</p>
 <p>We can plot the true value of <span class="math notranslate nohighlight">\(y\)</span> and fitted value to examine whether the first regressor fits the data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -859,7 +850,6 @@ Notes:
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#help-system">Help System</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector">Vector</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
 </ul>
