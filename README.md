@@ -6,7 +6,7 @@ Welcome to the 2024 summer preparatory course for MSc.
 
 **Zhentao Shi**
 
-**(July 2024, CUHK)**
+**(July 2025, CUHK)**
 
 
 
