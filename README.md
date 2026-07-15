@@ -2,11 +2,11 @@
 
 [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
 
-Welcome to the 2024 summer preparatory course for MSc.
+Welcome to the 2026 summer preparatory course for MSc.
 
 **Zhentao Shi**
 
-**(July 2025, CUHK)**
+**(July 2026, CUHK)**
 
 
 
