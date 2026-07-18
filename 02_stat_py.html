@@ -1,12 +1,13 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="./" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Statistics &#8212; Lecture Notes</title>
   
@@ -28,37 +29,41 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=b4b7a797" />
-    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js?v=f930bc37"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '02_stat_py';</script>
@@ -156,18 +161,7 @@
     <p class="title logo__title">Lecture Notes</p>
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -211,9 +205,9 @@
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -354,9 +348,9 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
       
     </div>
@@ -405,7 +399,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="statistics">
-<h1>Statistics<a class="headerlink" href="#statistics" title="Link to this heading">#</a></h1>
+<h1>Statistics<a class="headerlink" href="#statistics" title="Permalink to this heading">#</a></h1>
 <p>形而上者谓之道，形而下者谓之器</p>
 <p>Statistic theory goes the opposite way to probability theory. In reality what we observe is a sample of data, but we don’t know via what mechanism the data are generated. Statistics asks how can we infer the data generating process from the sample that we observe. For example, if we assume the sample comes from a normal distribution, what is the best way that we learn the population mean and variance? Do the data provide sufficient evidence that two samples are drawn from populations of the same means? Statistics uses the sample to compute some numbers, while the underlying probability model guides the interpretation of these numbers.</p>
 <p><strong>Example</strong></p>
@@ -413,8 +407,8 @@ document.write(`
 <a class="reference external" href="https://www.kaggle.com/datasets/patriotboy112/hks-top-300-youtubers">HK top 300 Youtubers</a> which we randomly drew at the end of the previous lecture.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="c1"># Reading the CSV file</span>
 <span class="n">d1_log_sub</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;logYoutuber_sample.csv&quot;</span><span class="p">)</span>
@@ -426,7 +420,14 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Reading the CSV file</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
 </pre></div>
 </div>
 </div>
@@ -439,7 +440,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.064122168009075
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">d1_log_sub</span><span class="p">[</span><span class="s2">&quot;count&quot;</span><span class="p">]))</span>
+
+<span class="ne">NameError</span>: name &#39;np&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -451,7 +457,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.494172970249846
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">d1_log_sub</span><span class="p">[</span><span class="s2">&quot;count&quot;</span><span class="p">]))</span>
+
+<span class="ne">NameError</span>: name &#39;np&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -463,14 +474,14 @@ Since each observation is drawn randomly and independently, everyone is equally 
 Assigning equal probability <span class="math notranslate nohighlight">\(1/n\)</span> on each point naturally delivers the sample mean <span class="math notranslate nohighlight">\(\hat{\mu} = \bar{X} = n^{-1} \sum_{i=1}^n X_i.\)</span>
 Similarly, a widely used sample variance is computed as <span class="math notranslate nohighlight">\(s^2 = (n-1)^{-1} \sum_{i=1}^n (X_i - \hat{\mu})^2\)</span>. More generally, for <span class="math notranslate nohighlight">\(p&gt;0\)</span> the statistic <span class="math notranslate nohighlight">\(n^{-1} \sum_{i=1}^n x_i^p\)</span> is called the <span class="math notranslate nohighlight">\(p\)</span>-th sample moment, and <span class="math notranslate nohighlight">\(n^{-1} \sum_{i=1}^n (X_i - \bar{X})^p\)</span> is called the <span class="math notranslate nohighlight">\(r\)</span>-th centered moment.</p>
 <section id="estimation-methods">
-<h2>Estimation methods<a class="headerlink" href="#estimation-methods" title="Link to this heading">#</a></h2>
+<h2>Estimation methods<a class="headerlink" href="#estimation-methods" title="Permalink to this heading">#</a></h2>
 <p>Suppose that the data are generated from a parametric model. Statistical
 estimation is an “educated guess” of the unknown parameter from the observed data. A
 <em>principle</em> is an ideology about a proper way of estimation. Over the
 history of statistics, only a few principles are widely accepted.
 The two most popular methods are the <em>method of moments</em> and the <em>maximum likelihood method</em>.</p>
 <section id="method-of-moments">
-<h3>Method of moments<a class="headerlink" href="#method-of-moments" title="Link to this heading">#</a></h3>
+<h3>Method of moments<a class="headerlink" href="#method-of-moments" title="Permalink to this heading">#</a></h3>
 <p>The method of moments expresses some moments as functions
 of these parameters.
 We use the sample moments to mimic the corresponding population moments.
@@ -490,8 +501,14 @@ are the method of moments estimates of the two parameters.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.02302171273700368
-0.9210986680193605
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">43</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+
+<span class="ne">NameError</span>: name &#39;np&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -506,7 +523,7 @@ From the data, we estimate <span class="math notranslate nohighlight">\(\hat{\si
 <p>Note: The population variance of <span class="math notranslate nohighlight">\(t\)</span> distribution is no smaller than 1.</p>
 </section>
 <section id="maximum-likelihood">
-<h3>Maximum likelihood<a class="headerlink" href="#maximum-likelihood" title="Link to this heading">#</a></h3>
+<h3>Maximum likelihood<a class="headerlink" href="#maximum-likelihood" title="Permalink to this heading">#</a></h3>
 <p>The maximum likelihood estimation (MLE) looks for the value of the parameter that maximizes the log-likelihood. By the concavity of logarithm, the true parameter is the value that maximizes the expected likelihood function. In reality, we maximize its empirical version.</p>
 <p>Consider a random sample
 drawn from a parametric
@@ -544,7 +561,7 @@ Notice the denominator in the estimated variance here is <span class="math notra
 </section>
 </section>
 <section id="statistic-inference">
-<h2>Statistic Inference<a class="headerlink" href="#statistic-inference" title="Link to this heading">#</a></h2>
+<h2>Statistic Inference<a class="headerlink" href="#statistic-inference" title="Permalink to this heading">#</a></h2>
 <p>We are interesting in relating the statistic to the population.
 Suppose <span class="math notranslate nohighlight">\(X_i\)</span>’s are randomly drawn from a distribution, and we would like to learn the mean <span class="math notranslate nohighlight">\(\mu: = E[X_i]\)</span>.
 The sample mean is a natural estimator for <span class="math notranslate nohighlight">\(\mu\)</span>.</p>
@@ -559,9 +576,9 @@ The sample mean is a natural estimator for <span class="math notranslate nohighl
 <p>We will explain the rationale behind this formula.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
-<span class="k">def</span> <span class="nf">CI</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">CI</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="c1"># x is a numpy array of random variables</span>
     <span class="c1"># nominal coverage probability is 95%</span>
     <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -573,6 +590,20 @@ The sample mean is a natural estimator for <span class="math notranslate nohighl
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">def</span><span class="w"> </span><span class="nf">CI</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="c1"># x is a numpy array of random variables</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="c1"># nominal coverage probability is 95%</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;numpy&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -581,7 +612,12 @@ The sample mean is a natural estimator for <span class="math notranslate nohighl
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;lower&#39;: 5.754580331054653, &#39;upper&#39;: 6.373664004963498}
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">CI</span><span class="p">(</span><span class="n">d1_log_sub</span><span class="p">[</span><span class="s2">&quot;count&quot;</span><span class="p">])</span>
+
+<span class="ne">NameError</span>: name &#39;CI&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -604,7 +640,7 @@ The underlying data generating process is a Poisson distribution.</p>
 </section>
 </div><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">poisson</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">poisson</span>
 
 <span class="n">Rep</span> <span class="o">=</span> <span class="mi">1000</span>
 <span class="n">sample_size</span> <span class="o">=</span> <span class="mi">6</span>
@@ -623,7 +659,14 @@ The underlying data generating process is a Poisson distribution.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The empirical coverage probability = 0.866
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">poisson</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">Rep</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">sample_size</span> <span class="o">=</span> <span class="mi">6</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;scipy&#39;
 </pre></div>
 </div>
 </div>
@@ -637,7 +680,7 @@ Here the confidence interval is random while the true value is fixed.</p>
 </section>
 </div><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="c1"># Assuming Bounds is a numpy array with shape (Rep, 2) and contains the confidence intervals</span>
 <span class="n">Bounds25</span> <span class="o">=</span> <span class="n">Bounds</span><span class="p">[:</span><span class="mi">25</span><span class="p">,</span> <span class="p">:]</span>  <span class="c1"># Extract the first 25 confidence intervals</span>
@@ -657,13 +700,22 @@ Here the confidence interval is random while the true value is fixed.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/e6cf4121c5ca131589e35c18b709ab51bae309dc4de10a5a54b5f7b896880cf5.png" src="_images/e6cf4121c5ca131589e35c18b709ab51bae309dc4de10a5a54b5f7b896880cf5.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Assuming Bounds is a numpy array with shape (Rep, 2) and contains the confidence intervals</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">Bounds25</span> <span class="o">=</span> <span class="n">Bounds</span><span class="p">[:</span><span class="mi">25</span><span class="p">,</span> <span class="p">:]</span>  <span class="c1"># Extract the first 25 confidence intervals</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;matplotlib&#39;
+</pre></div>
+</div>
 </div>
 </div>
 <p>It is important to understand that the coverage probability is not the probability that the parameter falls into a fixed interval, which is the interpretation of the <em>Bayesian credit interval</em>.
 The latter requires different way for construction.</p>
 <section id="hypothesis-testing">
-<h3>Hypothesis Testing<a class="headerlink" href="#hypothesis-testing" title="Link to this heading">#</a></h3>
+<h3>Hypothesis Testing<a class="headerlink" href="#hypothesis-testing" title="Permalink to this heading">#</a></h3>
 <p>A <em>hypothesis</em> is a statement about the parameter space <span class="math notranslate nohighlight">\(\Theta\)</span>.
 Hypothesis testing checks whether the data support a <em>null hypothesis</em>
 <span class="math notranslate nohighlight">\(\Theta_{0}\)</span>, which is a subset of <span class="math notranslate nohighlight">\(\Theta\)</span> of interest. Ideally the
@@ -741,7 +793,7 @@ false, with certainty. The randomness of a test comes only from
 sampling, not from the hypothesis at all.</p>
 </section>
 <section id="connections">
-<h3>Connections<a class="headerlink" href="#connections" title="Link to this heading">#</a></h3>
+<h3>Connections<a class="headerlink" href="#connections" title="Permalink to this heading">#</a></h3>
 <p>Given the same sample and the underlying approach,
 hypothesis testing, confidence interval, and <span class="math notranslate nohighlight">\(p\)</span>-value are tightly connected. The followings are equivalent:</p>
 <ul class="simple">
@@ -759,7 +811,7 @@ hypothesis testing, confidence interval, and <span class="math notranslate nohig
 confidence interval by inverting the  test. In words, if we collect all points that are not rejected by the test of size <span class="math notranslate nohighlight">\(\alpha\)</span>, we obtain the confidence interval of coverage probability <span class="math notranslate nohighlight">\((1-\alpha)\)</span>.</p>
 </section>
 <section id="revealing-the-population">
-<h3>Revealing the population<a class="headerlink" href="#revealing-the-population" title="Link to this heading">#</a></h3>
+<h3>Revealing the population<a class="headerlink" href="#revealing-the-population" title="Permalink to this heading">#</a></h3>
 <p>As in the previous lecture, we view the HK top 300 Youtubers as the population.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -770,10 +822,22 @@ confidence interval by inverting the  test. In words, if we collect all points t
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">d1_log</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;logYoutuber.csv&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Number of rows</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">N</span> <span class="o">=</span> <span class="n">d1_log</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="ne">NameError</span>: name &#39;pd&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="nb">print</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">d1_log</span><span class="p">[</span><span class="s2">&quot;count&quot;</span><span class="p">])</span> <span class="p">)</span>
 
@@ -784,11 +848,14 @@ confidence interval by inverting the  test. In words, if we collect all points t
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.146389135729357
-2.6415986858999068
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6086587545357828
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">d1_log</span><span class="p">[</span><span class="s2">&quot;count&quot;</span><span class="p">])</span> <span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="nb">print</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">d1_log</span><span class="p">[</span><span class="s2">&quot;count&quot;</span><span class="p">])</span> <span class="p">)</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;numpy&#39;
 </pre></div>
 </div>
 </div>
@@ -804,18 +871,21 @@ confidence interval by inverting the  test. In words, if we collect all points t
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.064122168009075
-2.494172970249846
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.4920793350404544
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">d1_log_sub</span><span class="p">[</span><span class="s2">&quot;count&quot;</span><span class="p">])</span> <span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">d1_log_sub</span><span class="p">[</span><span class="s2">&quot;count&quot;</span><span class="p">])</span> <span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">d1_log_sub</span><span class="p">[</span><span class="s2">&quot;count&quot;</span><span class="p">],</span> <span class="n">d1_log_sub</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">])[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+
+<span class="ne">NameError</span>: name &#39;np&#39; is not defined
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="random-sampling">
-<h3>Random Sampling<a class="headerlink" href="#random-sampling" title="Link to this heading">#</a></h3>
+<h3>Random Sampling<a class="headerlink" href="#random-sampling" title="Permalink to this heading">#</a></h3>
 <p>Each sample is random. It means that <span class="math notranslate nohighlight">\(\hat{\mu}\)</span> is a random variable across the potential samples. In this population the total number of
 outcomes is <span class="math notranslate nohighlight">\(N=300\)</span>. For a sample of size <span class="math notranslate nohighlight">\(n=100\)</span>, there are</p>
 <div class="math notranslate nohighlight">
@@ -825,15 +895,15 @@ outcomes is <span class="math notranslate nohighlight">\(N=300\)</span>. For a s
 <p>possibilities for the sample mean. This is a number as large as all the atoms in the universe.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 
 <span class="c1"># Assuming d1.log is a pandas DataFrame and &#39;count&#39; is a column in that DataFrame</span>
 <span class="n">d1_log</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;count&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">1000</span><span class="p">)})</span>  <span class="c1"># Example data</span>
 <span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">d1_log</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">])</span>
 <span class="n">n</span> <span class="o">=</span> <span class="mi">50</span>  <span class="c1"># Example subsample size</span>
 
-<span class="k">def</span> <span class="nf">subsample_mean</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">subsample_mean</span><span class="p">():</span>
     <span class="n">indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">),</span> <span class="n">n</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">d1_log</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">indices</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 
@@ -844,30 +914,21 @@ outcomes is <span class="math notranslate nohighlight">\(N=300\)</span>. For a s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[56.72 50.16 48.98 54.38 46.78 45.94 51.02 56.7  52.72 51.8  49.22 53.42
- 64.08 46.14 41.48 51.26 53.1  54.98 49.06 41.4  49.94 46.44 60.2  51.9
- 56.22 46.3  43.32 49.5  46.3  48.94 52.12 58.44 48.3  51.94 43.66 46.18
- 43.28 49.36 52.64 45.38 45.6  52.42 50.2  54.5  51.22 55.86 55.82 50.96
- 46.62 41.96 51.46 48.22 56.34 44.22 40.9  52.42 48.28 57.78 50.96 55.24
- 51.8  51.   51.6  57.26 51.8  46.76 51.08 46.16 55.56 54.92 49.9  48.46
- 55.7  48.68 43.74 45.64 41.36 55.72 48.8  48.82 49.74 53.96 52.54 53.12
- 45.48 48.88 52.82 51.68 44.2  55.38 50.02 49.96 45.02 48.84 49.84 48.22
- 49.54 51.54 55.86 49.44 62.52 57.54 48.06 45.38 51.34 45.1  52.62 48.86
- 51.98 42.18 48.26 48.84 51.   49.6  53.9  47.1  39.86 50.42 53.36 55.5
- 51.44 52.44 52.12 47.32 54.26 52.64 46.64 49.76 52.7  49.06 52.44 49.32
- 55.1  41.9  47.96 46.76 46.82 47.52 46.56 53.   55.16 54.38 51.6  51.9
- 54.74 50.44 49.46 44.58 54.02 51.9  54.16 54.44 51.08 53.44 52.02 48.88
- 59.26 48.48 36.94 60.06 48.66 57.18 55.98 46.94 55.02 55.52 48.42 55.34
- 48.26 52.4  52.   41.02 48.44 41.76 42.82 48.8  40.02 44.78 53.88 50.02
- 45.6  57.38 48.86 52.88 56.88 47.24 47.42 54.32 54.02 54.84 48.96 51.6
- 50.02 49.46 44.24 57.48 54.06 56.98 46.32 50.42]
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Assuming d1.log is a pandas DataFrame and &#39;count&#39; is a column in that DataFrame</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;numpy&#39;
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="c1"># Assuming rep.mean is a numpy array or a list of means</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">rep_means</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
@@ -879,13 +940,22 @@ outcomes is <span class="math notranslate nohighlight">\(N=300\)</span>. For a s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/032e9e71a25e0674ce146c9b110ea3a96d8dd6c41ec8addb68154220f08b4bd2.png" src="_images/032e9e71a25e0674ce146c9b110ea3a96d8dd6c41ec8addb68154220f08b4bd2.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Assuming rep.mean is a numpy array or a list of means</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">rep_means</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;matplotlib&#39;
+</pre></div>
+</div>
 </div>
 </div>
 </section>
 </section>
 <section id="multivariate-variables">
-<h2>Multivariate Variables<a class="headerlink" href="#multivariate-variables" title="Link to this heading">#</a></h2>
+<h2>Multivariate Variables<a class="headerlink" href="#multivariate-variables" title="Permalink to this heading">#</a></h2>
 <p>For a bivariate random vector <span class="math notranslate nohighlight">\((X_i,Y_i)\)</span>,</p>
 <ul class="simple">
 <li><p>Covariance</p></li>
@@ -908,7 +978,12 @@ outcomes is <span class="math notranslate nohighlight">\(N=300\)</span>. For a s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.4920793350404544
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">d1_log_sub</span><span class="p">[</span><span class="s2">&quot;count&quot;</span><span class="p">],</span> <span class="n">d1_log_sub</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">])[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+
+<span class="ne">NameError</span>: name &#39;np&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -926,7 +1001,7 @@ To find optimal portfolios, solve the quadratic optimization problem, e.g., mini
 </section>
 </div></section>
 <section id="regressions">
-<h2>Regressions<a class="headerlink" href="#regressions" title="Link to this heading">#</a></h2>
+<h2>Regressions<a class="headerlink" href="#regressions" title="Permalink to this heading">#</a></h2>
 <p>In machine learning terminologies, all examples we have talked so far are <em>unsupervised learning</em>, which extracts some features from  observed data.
 Another category is called <em>supervised learning</em>, which is to use a few <em>independent variables</em> (regressors, predictor, covariates) to fit a <em>dependent variable</em>. The linear regression is a simple example of such a statistical exercise.</p>
 <p>Regression carries out a very simple task. It minimizes the the sum of squared residuals <span class="math notranslate nohighlight">\(\sum_{i=1}^n (y_i - \hat{y}_i)^2\)</span>.
@@ -944,12 +1019,12 @@ First we draw <span class="math notranslate nohighlight">\(X\)</span>, and then 
 <p>Given a sample, we use the observed data to compute <span class="math notranslate nohighlight">\(\hat{\sigma}_{xy}\)</span> and <span class="math notranslate nohighlight">\(\hat{\sigma}_x^2\)</span>, and thereby <span class="math notranslate nohighlight">\(\hat{\beta}\)</span> as their ratio.</p>
 </section>
 <section id="conclusion">
-<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this heading">#</a></h2>
 <p>The beauty of statistics lies in their deep connection with philosophy. A realized sample is a set of given numbers. They are fixed, known, and invariant. But where is uncertainty? Bayesians argue that uncertainty comes from people’s belief about the object of interest. The data contain information to help refine or update our beliefs. In contrast, frequentists contend that uncertainty is present  before the numbers, or realizations, are revealed; once the realizations are revealed, uncertainty is gone.</p>
 <p>The two schools of philosophical thoughts, Bayesian and frequentist, have been contesting over centuries. Either has pros and cons. Nowadays in academic research and in teaching, frequentist remains the mainstream so it is the one that we are more familiar with. However, frequentist interpretation of probability and the resulting implication for statistical inference are not completely natural. Repeated experiments are more easily perceived in physics and other natural science, but may be unrealistic in many economic settings. On the other hand, Bayesian encounters difficulty in reaching a consensus about prior distributions.</p>
 </section>
 <section id="case-study">
-<h2>Case Study<a class="headerlink" href="#case-study" title="Link to this heading">#</a></h2>
+<h2>Case Study<a class="headerlink" href="#case-study" title="Permalink to this heading">#</a></h2>
 <p><strong>Value-added of Master’s Programs</strong></p>
 <p>Self-financed master’s programs in the United States charge high tuition fees to exchange for a one-year intensive curriculum. These programs promise not only advanced knowledge but also enhanced career prospects. A central question arises: What is the value-added of such a program? In econometric terms, this can be framed as estimating the average treatment effect (ATE). That is, what is the causal impact of enrolling in the program on outcomes like future earnings, compared to what would have happened without it.</p>
 <p>To explore this, we can conceptualize a thought experiment involving a randomized controlled trial (RCT).
@@ -1064,7 +1139,7 @@ By 史震涛 Shi Zhentao
 
   <p class="copyright">
     
-      © Copyright 2025.
+      © Copyright 2026.
       <br/>
     
   </p>

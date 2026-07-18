@@ -1,12 +1,13 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="./" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Probability &#8212; Lecture Notes</title>
   
@@ -28,37 +29,41 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=b4b7a797" />
-    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js?v=f930bc37"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '01_prob_py';</script>
@@ -156,18 +161,7 @@
     <p class="title logo__title">Lecture Notes</p>
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -211,9 +205,9 @@
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -354,9 +348,9 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
       
     </div>
@@ -399,11 +393,11 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="probability">
-<h1>Probability<a class="headerlink" href="#probability" title="Link to this heading">#</a></h1>
+<h1>Probability<a class="headerlink" href="#probability" title="Permalink to this heading">#</a></h1>
 <p>玄之又玄，众妙之门</p>
 <p>Probability theory talks about the construction and implications of probability models. For example, given a probability distribution, what are the mean and variance? What is the distribution of a transformed random variable? In computer simulations, probability theory tells us what will happen to the generated realizations, in particular when the experiments can be repeated as many times as the researcher wishes. This is a real-world analogue of the frequentist’s interpretation of probability.</p>
 <section id="probability-space">
-<h2>Probability Space<a class="headerlink" href="#probability-space" title="Link to this heading">#</a></h2>
+<h2>Probability Space<a class="headerlink" href="#probability-space" title="Permalink to this heading">#</a></h2>
 <p>A <em>sample space</em> <span class="math notranslate nohighlight">\(\Omega\)</span> is a collection of all possible outcomes. It is a set of things.</p>
 <p>An <em>event</em> <span class="math notranslate nohighlight">\(A\)</span> is a subset of <span class="math notranslate nohighlight">\(\Omega\)</span>. It is something of interest on the sample space.</p>
 <p>A <span class="math notranslate nohighlight">\(\sigma\)</span>-<em>field</em> is a complete set of events that include all countable unions, intersections, and differences.
@@ -416,7 +410,7 @@ are mutually disjoint for <span class="math notranslate nohighlight">\(i\in\math
 <span class="math notranslate nohighlight">\(P\left(\bigcup_{i\in\mathbb{N}}A_{i}\right)=\sum_{i\in\mathbb{N}} P \left(A_{i}\right).\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(P(\Omega) = 1\)</span>.</p></li>
 </ul>
-<p>The above construction gives a mathematically well-defined probability measure, but we have not yet
+<p>The above construction gives a mathematically complete, well-defined probability measure. However, we have not yet
 answered “How to assign the probability?”</p>
 <p>There are two major schools of thinking on probability assignment. One is
 the <em>frequentist</em>, who considers probability as the average chance of occurrence if a large number of experiments
@@ -426,17 +420,20 @@ peculiar pros and cons under different real-world contexts.</p>
 <p><strong>Questions for AI</strong></p>
 <ul class="simple">
 <li><p>Why do we need “measure theory” to define probability?</p></li>
-<li><p>What is the Vitali set?</p></li>
+</ul>
+<p><strong>Video</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=mZBwsm6B280">Bertrand’s Paradox</a></p></li>
 </ul>
 </section>
 <section id="random-variable">
-<h2>Random Variable<a class="headerlink" href="#random-variable" title="Link to this heading">#</a></h2>
+<h2>Random Variable<a class="headerlink" href="#random-variable" title="Permalink to this heading">#</a></h2>
 <p>A <em>random variable</em> maps an event to a real number. If the outcome is multivariate, we call it a <em>random vector</em>.</p>
 <p><strong>Data example</strong></p>
 <p>Data source: <a class="reference external" href="https://www.kaggle.com/datasets/patriotboy112/hks-top-300-youtubers">HK top 300 Youtubers</a>. We look at the number of uploaded videos in these accounts.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 
 <span class="c1"># Reading the CSV file</span>
 <span class="n">d0</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;HKTop300YouTubers.csv&quot;</span><span class="p">)</span>
@@ -445,33 +442,14 @@ peculiar pros and cons under different real-world contexts.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     rank                                           Youtuber subscribers  \
-0       1                          Shadow MusicShadow Music    7,690,000   
-1       2                                  Emi WongEmi Wong    4,870,000   
-2       3                                iQIYI 爱奇艺iQIYI 爱奇艺    4,010,000   
-3       4  South China Morning PostSouth China Morning Post    2,650,000   
-4       5                                      GEM鄧紫棋GEM鄧紫棋    2,520,000   
-..    ...                                                ...         ...   
-295   296                          Jessica WongJessica Wong       69,000   
-296   297                                          昼与白鲸昼与白鲸       68,700   
-297   298                                        后宫冷婶儿后宫冷婶儿       68,600   
-298   299                              CatGirl貓女孩CatGirl貓女孩       68,200   
-299   300                                    男人EEETV男人EEETV       66,400   
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Reading the CSV file</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">d0</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;HKTop300YouTubers.csv&quot;</span><span class="p">)</span>
 
-       video views video count          category  started  
-0    3,665,970,114       1,144    People &amp; Blogs     2017  
-1      607,656,993         390    People &amp; Blogs     2014  
-2    1,744,552,001       9,740  Film &amp; Animation     2015  
-3    2,612,265,071      11,376   News &amp; Politics     2007  
-4    1,752,111,944          77    People &amp; Blogs     2019  
-..             ...         ...               ...      ...  
-295      3,008,911          80     Howto &amp; Style     2014  
-296     18,950,918         156  Film &amp; Animation     2020  
-297     43,142,355         323     Howto &amp; Style     2020  
-298              0           0     Entertainment     2015  
-299      7,627,706         147            Comedy     2018  
-
-[300 rows x 7 columns]
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
 </pre></div>
 </div>
 </div>
@@ -492,20 +470,15 @@ peculiar pros and cons under different real-world contexts.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          subs           view   count
-0    7,690,000  3,665,970,114   1,144
-1    4,870,000    607,656,993     390
-2    4,010,000  1,744,552,001   9,740
-3    2,650,000  2,612,265,071  11,376
-4    2,520,000  1,752,111,944      77
-..         ...            ...     ...
-295     69,000      3,008,911      80
-296     68,700     18,950,918     156
-297     68,600     43,142,355     323
-298     68,200              0       0
-299     66,400      7,627,706     147
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Remove NA and zeros by replacing zeros with NaN and then dropping rows with any NaN values</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">d0</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">NA</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">d0</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># Select columns 3 to 5 (Python uses 0-based indexing, adjust accordingly)</span>
 
-[294 rows x 3 columns]
+<span class="ne">NameError</span>: name &#39;d0&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -521,20 +494,15 @@ peculiar pros and cons under different real-world contexts.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        subs        view  count
-0    7690000  3665970114   1144
-1    4870000   607656993    390
-2    4010000  1744552001   9740
-3    2650000  2612265071  11376
-4    2520000  1752111944     77
-..       ...         ...    ...
-295    69000     3008911     80
-296    68700    18950918    156
-297    68600    43142355    323
-298    68200           0      0
-299    66400     7627706    147
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># convert string into numbers</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">d1</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">d1</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">d1</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="nb">print</span><span class="p">(</span><span class="n">d1</span><span class="p">)</span>
 
-[294 rows x 3 columns]
+<span class="ne">NameError</span>: name &#39;d1&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -546,25 +514,19 @@ peculiar pros and cons under different real-world contexts.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0       1144
-1        390
-2       9740
-3      11376
-4         77
-       ...  
-295       80
-296      156
-297      323
-298        0
-299      147
-Name: count, Length: 294, dtype: int64
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">d1</span><span class="p">[</span><span class="s2">&quot;count&quot;</span><span class="p">]</span>
+
+<span class="ne">NameError</span>: name &#39;d1&#39; is not defined
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="c1"># if any value is zero, remove the row</span>
 <span class="n">d1</span> <span class="o">=</span> <span class="n">d1</span><span class="p">[(</span><span class="n">d1</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
@@ -572,10 +534,22 @@ Name: count, Length: 294, dtype: int64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># if any value is zero, remove the row</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">d1</span> <span class="o">=</span> <span class="n">d1</span><span class="p">[(</span><span class="n">d1</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;numpy&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="c1"># Plotting histogram of the &#39;count&#39; column after log transformation</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">d1_log</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">)</span>  <span class="c1"># &#39;auto&#39; lets matplotlib decide the number of bins</span>
@@ -587,12 +561,21 @@ Name: count, Length: 294, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/0359bce5f824b4838e8601663afc8dca5c41461bc5a57947a95a3e97372a99a9.png" src="_images/0359bce5f824b4838e8601663afc8dca5c41461bc5a57947a95a3e97372a99a9.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Plotting histogram of the &#39;count&#39; column after log transformation</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">d1_log</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">)</span>  <span class="c1"># &#39;auto&#39; lets matplotlib decide the number of bins</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;matplotlib&#39;
+</pre></div>
+</div>
 </div>
 </div>
 </section>
 <section id="distribution-function">
-<h2>Distribution Function<a class="headerlink" href="#distribution-function" title="Link to this heading">#</a></h2>
+<h2>Distribution Function<a class="headerlink" href="#distribution-function" title="Permalink to this heading">#</a></h2>
 <p>We go back to some terminologies we learned in an undergraduate
 probability course. A <em>(cumulative) distribution function</em>
 <span class="math notranslate nohighlight">\(F:\mathbb{R}\mapsto [0,1]\)</span> is defined as</p>
@@ -623,7 +606,17 @@ F\left(x\right)=P\left(X\leq x\right).
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/63a737e8bb011e8536ed872a964511d0800afffbe1e7e26a236c97ec8025bb40.png" src="_images/63a737e8bb011e8536ed872a964511d0800afffbe1e7e26a236c97ec8025bb40.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Calculate the ECDF for the &#39;count&#39; column</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">d1_log</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># Plot the ECDF as a step plot</span>
+
+<span class="ne">NameError</span>: name &#39;np&#39; is not defined
+</pre></div>
+</div>
 </div>
 </div>
 <p>The <span class="math notranslate nohighlight">\(q\)</span>-th quantile of a random variable is <span class="math notranslate nohighlight">\(\min_{x\in \mathbb R} P(X \leq x) \geq q\)</span>.</p>
@@ -634,11 +627,12 @@ F\left(x\right)=P\left(X\leq x\right).
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.25     5.087596
-0.50     5.899897
-0.75     7.107425
-1.00    11.164587
-Name: count, dtype: float64
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">d1_log</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">([</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">])</span>
+
+<span class="ne">NameError</span>: name &#39;d1_log&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -695,7 +689,7 @@ f(x; \mu, \sigma^2) = \frac{1}{\sqrt{2\pi} \sigma} \exp\left( - \frac{(\log(x)-\
 <p><code class="docutils literal notranslate"><span class="pre">scipy.stat</span></code> has a rich collection of distributions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">norm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">norm</span>
 
 <span class="c1"># Calculate the 97.5th percentile of the standard normal distribution</span>
 <span class="n">norm</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.975</span><span class="p">)</span>
@@ -703,7 +697,14 @@ f(x; \mu, \sigma^2) = \frac{1}{\sqrt{2\pi} \sigma} \exp\left( - \frac{(\log(x)-\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.959963984540054
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">norm</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Calculate the 97.5th percentile of the standard normal distribution</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">norm</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.975</span><span class="p">)</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;scipy&#39;
 </pre></div>
 </div>
 </div>
@@ -715,7 +716,12 @@ f(x; \mu, \sigma^2) = \frac{1}{\sqrt{2\pi} \sigma} \exp\left( - \frac{(\log(x)-\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">norm</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;norm&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -727,7 +733,12 @@ f(x; \mu, \sigma^2) = \frac{1}{\sqrt{2\pi} \sigma} \exp\left( - \frac{(\log(x)-\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.3989422804014327
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;norm&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -739,6 +750,17 @@ f(x; \mu, \sigma^2) = \frac{1}{\sqrt{2\pi} \sigma} \exp\left( - \frac{(\log(x)-\
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># set a random seed for reproducibility</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;np&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -747,7 +769,12 @@ f(x; \mu, \sigma^2) = \frac{1}{\sqrt{2\pi} \sigma} \exp\left( - \frac{(\log(x)-\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.49671415, -0.1382643 ,  0.64768854])
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;np&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -759,7 +786,12 @@ f(x; \mu, \sigma^2) = \frac{1}{\sqrt{2\pi} \sigma} \exp\left( - \frac{(\log(x)-\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([42, 52, 58])
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">poisson</span><span class="p">(</span><span class="n">lam</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;np&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -812,15 +844,22 @@ In population, this value is 5%. What is the number coming out of this experimen
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The empirical rejection probability is 0.054
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">15</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Create x-axis from -3 to 3 with steps of 0.01</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">x_axis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Calculate the density of the standard normal distribution for x_axis</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">y</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x_axis</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;np&#39; is not defined
 </pre></div>
 </div>
-<img alt="_images/e1918157710402f358a115cfbe1a40632d53caade6e4ab80a714958a3fa053d5.png" src="_images/e1918157710402f358a115cfbe1a40632d53caade6e4ab80a714958a3fa053d5.png" />
 </div>
 </div>
 </section>
 <section id="integration">
-<h2>Integration<a class="headerlink" href="#integration" title="Link to this heading">#</a></h2>
+<h2>Integration<a class="headerlink" href="#integration" title="Permalink to this heading">#</a></h2>
 <p>In probability theory, an integral
 <span class="math notranslate nohighlight">\(\int X\mathrm{d}P\)</span> is called the <em>expected value,</em> or
 <em>expectation,</em> of <span class="math notranslate nohighlight">\(X\)</span>. We often use the notation
@@ -841,7 +880,12 @@ can be computed as  <span class="math notranslate nohighlight">\(E\left[X\right]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.146389135729357
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span> <span class="n">d1_log</span><span class="p">[</span><span class="s2">&quot;count&quot;</span><span class="p">]</span> <span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;np&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -859,7 +903,12 @@ the second <em>centered</em> moment is called the <em>variance</em>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.6415986858999068
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">17</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">d1_log</span><span class="p">[</span><span class="s2">&quot;count&quot;</span><span class="p">])</span>
+
+<span class="ne">NameError</span>: name &#39;np&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -899,13 +948,13 @@ is a special case of the Markov inequality when <span class="math notranslate no
 </ul>
 </section>
 <section id="multivariate-random-variable">
-<h2>Multivariate Random Variable<a class="headerlink" href="#multivariate-random-variable" title="Link to this heading">#</a></h2>
+<h2>Multivariate Random Variable<a class="headerlink" href="#multivariate-random-variable" title="Permalink to this heading">#</a></h2>
 <p>A <em>bivariate</em> random variable is a vector of two scalar random variables. More generally, a <em>multivariate</em> random variable has the <em>joint CDF</em> defined as</p>
 <div class="math notranslate nohighlight">
 \[
 F\left(x_{1},\ldots,x_{n}\right)=P\left(X_{1}\leq x_{1},\ldots,X_{n}\leq x_{n}\right).
 \]</div>
-<p>Joint PDF is defined similarly.</p>
+<p>Joint PDF is defined similarly, as a partial derivative.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plotting &#39;subs&#39; on the x-axis and &#39;view&#39; on the y-axis</span>
@@ -918,7 +967,17 @@ F\left(x_{1},\ldots,x_{n}\right)=P\left(X_{1}\leq x_{1},\ldots,X_{n}\leq x_{n}\r
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/b9f1766b34fe94af19c8dc45fa54dbc9167e58588ef83102681df07d234e2052.png" src="_images/b9f1766b34fe94af19c8dc45fa54dbc9167e58588ef83102681df07d234e2052.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">18</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Plotting &#39;subs&#39; on the x-axis and &#39;view&#39; on the y-axis</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">d1_log</span><span class="p">[</span><span class="s1">&#39;subs&#39;</span><span class="p">],</span> <span class="n">d1_log</span><span class="p">[</span><span class="s1">&#39;view&#39;</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;None&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Subscribers&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Views&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;plt&#39; is not defined
+</pre></div>
+</div>
 </div>
 </div>
 <p>It is illustrative to introduce the joint distribution, conditional distribution
@@ -931,7 +990,7 @@ the coordinate that is not interested.
 The  <em>conditional density</em> can be written as  <span class="math notranslate nohighlight">\(f\left(y|x\right)=f\left(x,y\right)/f\left(x\right)\)</span>  for <span class="math notranslate nohighlight">\(f(x) \neq 0\)</span>.</p>
 </section>
 <section id="bayes-theorem">
-<h2>Bayes Theorem<a class="headerlink" href="#bayes-theorem" title="Link to this heading">#</a></h2>
+<h2>Bayes Theorem<a class="headerlink" href="#bayes-theorem" title="Permalink to this heading">#</a></h2>
 <p>For two events <span class="math notranslate nohighlight">\(A_1\)</span> and <span class="math notranslate nohighlight">\(A_2\)</span>, the <em>conditional probability</em> is</p>
 <div class="math notranslate nohighlight">
 \[
@@ -964,7 +1023,7 @@ we compute the marginal probability <span class="math notranslate nohighlight">\
 Notice the contrast: without knowing the GPA, the prior admission rate is only <span class="math notranslate nohighlight">\(10\%\)</span>. The high GPA boosts it to <span class="math notranslate nohighlight">\(52\%\)</span>.</p>
 </section>
 <section id="independence">
-<h2>Independence<a class="headerlink" href="#independence" title="Link to this heading">#</a></h2>
+<h2>Independence<a class="headerlink" href="#independence" title="Permalink to this heading">#</a></h2>
 <p>We say two events <span class="math notranslate nohighlight">\(A_1\)</span> and <span class="math notranslate nohighlight">\(A_2\)</span> are <em>independent</em> if <span class="math notranslate nohighlight">\(P(A_1A_2) = P(A_1)P(A_2)\)</span>.
 If <span class="math notranslate nohighlight">\(P(A_2) \neq 0\)</span>, it is equivalent to <span class="math notranslate nohighlight">\(P(A_1 | A_2 ) = P(A_1)\)</span>.
 In words, knowing <span class="math notranslate nohighlight">\(A_2\)</span> does not change the probability of <span class="math notranslate nohighlight">\(A_1\)</span>.</p>
@@ -992,7 +1051,17 @@ $n\to\infty$. -->
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/7a86f27a1314066192bce97b314212f33600f0bc837099b92739990de8dab4a2.png" src="_images/7a86f27a1314066192bce97b314212f33600f0bc837099b92739990de8dab4a2.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">19</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Generate a 2-column matrix with 100 rows of random numbers from a standard normal distribution</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Plot the first column against the second column</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">Y</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">Y</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
+
+<span class="ne">NameError</span>: name &#39;np&#39; is not defined
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -1012,12 +1081,21 @@ $n\to\infty$. -->
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/1d650ef660255a9f8375d07fc217b20a0044ed99aff31db00862501dcefeb1fa.png" src="_images/1d650ef660255a9f8375d07fc217b20a0044ed99aff31db00862501dcefeb1fa.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">20</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Apply the linear transformation</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span> <span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;np&#39; is not defined
+</pre></div>
+</div>
 </div>
 </div>
 </section>
 <section id="law-of-iterated-expectations">
-<h2>Law of Iterated Expectations<a class="headerlink" href="#law-of-iterated-expectations" title="Link to this heading">#</a></h2>
+<h2>Law of Iterated Expectations<a class="headerlink" href="#law-of-iterated-expectations" title="Permalink to this heading">#</a></h2>
 <p>In the bivariate case, if the conditional density exists, the conditional expectation can be computed as
 <span class="math notranslate nohighlight">\(E\left[Y|X\right]=\int yf\left(y|X\right)dy\)</span>.
 The law of iterated expectation implies <span class="math notranslate nohighlight">\(E\left[E\left[Y|X\right]\right]=E\left[Y\right]\)</span>.</p>
@@ -1034,22 +1112,15 @@ The law of iterated expectation implies <span class="math notranslate nohighligh
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                 category      mean  no
-0        Autos &amp; Vehicles  7.516632   2
-1                  Comedy  5.742748   8
-2               Education  6.290369  10
-3           Entertainment  6.342173  41
-4        Film &amp; Animation  5.976671  28
-5                  Gaming  6.427200  28
-6           Howto &amp; Style  5.713592  31
-7                   Music  5.914223  24
-8         News &amp; Politics  8.134565  22
-9   Nonprofits &amp; Activism  6.445720   1
-10         People &amp; Blogs  5.724408  68
-11         Pets &amp; Animals  6.188264   1
-12   Science &amp; Technology  6.083646   8
-13                 Sports  6.140040   5
-14        Travel &amp; Events  5.483655  12
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">21</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Add &#39;category&#39; column from d0 to d1_log</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">d1_log</span><span class="p">[</span><span class="s1">&#39;category&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">d0</span><span class="p">[</span><span class="s1">&#39;category&#39;</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Group by &#39;category&#39; and calculate mean and count</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">dx</span> <span class="o">=</span> <span class="n">d1_log</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">mean</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;count&#39;</span><span class="p">,</span> <span class="s1">&#39;mean&#39;</span><span class="p">),</span> <span class="n">no</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;count&#39;</span><span class="p">,</span> <span class="s1">&#39;size&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: name &#39;d0&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1063,7 +1134,14 @@ The law of iterated expectation implies <span class="math notranslate nohighligh
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.146389135729357
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">22</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Calculate weighted average over categories</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">weighted_avg</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">dx</span><span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">dx</span><span class="p">[</span><span class="s1">&#39;no&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">d1_log</span><span class="p">)))</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="n">weighted_avg</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;dx&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1077,7 +1155,14 @@ The law of iterated expectation implies <span class="math notranslate nohighligh
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.146389135729357
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">23</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Calculate and print overall average of &#39;count&#39;</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">overall_avg</span> <span class="o">=</span> <span class="n">d1_log</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="n">overall_avg</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;d1_log&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1092,14 +1177,51 @@ The law of iterated expectation implies <span class="math notranslate nohighligh
 <p>Regression is a technique that decomposes a random variable <span class="math notranslate nohighlight">\(Y\)</span>
 into two parts, a conditional mean and a residual. Write
 <span class="math notranslate nohighlight">\(Y=E\left[Y|X\right]+\epsilon\)</span>, where
-<span class="math notranslate nohighlight">\(\epsilon=Y-E\left[Y|X\right]\)</span>. Show that <span class="math notranslate nohighlight">\(E[\epsilon] = 0\)</span> and  <span class="math notranslate nohighlight">\(E[\epsilon E[Y|X] ] = 0\)</span>.</p>
+<span class="math notranslate nohighlight">\(\epsilon=Y-E\left[Y|X\right]\)</span>. Show that <span class="math notranslate nohighlight">\(E[\epsilon] = 0\)</span> and  <span class="math notranslate nohighlight">\(E[\epsilon \, E[Y|X] ] = 0\)</span>.</p>
+<p>Detailed derivations</p>
+<ol class="arabic simple">
+<li><p>Mean-zero residual</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+E[\epsilon] 
+= E\big[ Y - E[Y\mid X] \big]
+= E[Y] - E\big[ E[Y\mid X] \big]
+= E[Y] - E[Y] = 0,
+\]</div>
+<p>where we used the law of iterated expectations (tower property) <span class="math notranslate nohighlight">\(E\big[ E[Y\mid X] \big] = E[Y]\)</span>.
+Equivalently, note that
+$<span class="math notranslate nohighlight">\(
+E[\epsilon\mid X] = E\big[ Y - E[Y\mid X] \mid X \big] = E[Y\mid X] - E[Y\mid X] = 0,
+\)</span><span class="math notranslate nohighlight">\(
+so taking unconditional expectations gives \)</span>E[\epsilon] = E\big[ E[\epsilon\mid X] \big] = 0$.</p>
+<ol class="arabic simple" start="2">
+<li><p>Orthogonality with the fitted value</p></li>
+</ol>
+<p>Using iterated expectations and the fact that <span class="math notranslate nohighlight">\(E[\epsilon\mid X]=0\)</span>,
+$<span class="math notranslate nohighlight">\(
+E\big[ \epsilon \, E[Y\mid X] \big]
+= E\Big[ \, E\big[ \epsilon \, E[Y\mid X] \,\big|\, X \big] \,\Big]
+= E\Big[ \, E[Y\mid X] \cdot E\big[\epsilon\mid X\big] \,\Big]
+= E\big[ \, E[Y\mid X] \cdot 0 \,\big] = 0.
+\)</span>$</p>
 </section>
 <section id="for-the-next-lecture">
-<h2>For the next lecture<a class="headerlink" href="#for-the-next-lecture" title="Link to this heading">#</a></h2>
+<h2>For the next lecture<a class="headerlink" href="#for-the-next-lecture" title="Permalink to this heading">#</a></h2>
 <p>Save the following data files for the next lecture.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d1_log</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;logYoutuber.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">24</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">d1_log</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;logYoutuber.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;d1_log&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1111,10 +1233,21 @@ into two parts, a conditional mean and a residual. Write
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">25</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># save a random subsmaple</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">d1_log_sub</span> <span class="o">=</span> <span class="n">d1_log</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;logYoutuber_sample.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;d1_log&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="story">
-<h2>Story<a class="headerlink" href="#story" title="Link to this heading">#</a></h2>
+<h2>Story<a class="headerlink" href="#story" title="Permalink to this heading">#</a></h2>
 <p><img alt="" src="_images/gaokao.jpg" /></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Two</span> <span class="n">roads</span> <span class="n">diverged</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">yellow</span> <span class="n">wood</span><span class="p">,</span>
 <span class="n">And</span> <span class="n">sorry</span> <span class="n">I</span> <span class="n">could</span> <span class="ow">not</span> <span class="n">travel</span> <span class="n">both</span>
@@ -1123,7 +1256,7 @@ into two parts, a conditional mean and a residual. Write
 <p>We live in a world of uncertainty. About 20 years ago, students in China could select only one university as their first choice. It was a high-stakes gamble: success or failure carried lifelong consequences.</p>
 <p>My Gaokao score fell short of my hopes, shattering my dreams of studying in Beijing or Shanghai. My options narrowed to Nanjing University (NJU) or Zhejiang University (ZJU). Back then, reliable information was scarce for would-be first-generation college-goers.</p>
 <p>Zhejiang was my home province, and my high school routinely sent over 40 students to ZJU each year. Attending there wouldn’t earn me any bragging rights — it was expected. NJU, on the other hand, felt far more exotic. I had learned about it from a fellow small-town resident who had been admitted there and become a local legend, admired by every parent as an inspiring role model kid. For me, NJU was the dream school.</p>
-<p>I managed to reach an NJU admissions representative by phone. After sharing my score and ranking, I asked which majors I might qualify for. He explained that my score was marginal. “You could try for geology,” he suggested half-heartedly. Geology wasn’t on my list of interests, but in my naivety, I thought it might not be so bad. I had read stories about Li Siguang, the geologist who pioneered oil exploration in China. Perhaps spending long stretches in the wilderness for fieldwork could even be romantic, I mused.</p>
+<p>I managed to reach an NJU admissions representative by phone. After sharing my score and provincial ranking, I asked which majors I might be qualified of. He explained that my score was marginal. “You could try for geology,” he suggested half-heartedly. Geology wasn’t on my list of interests, but in my naivety, I thought it might not be so bad. I had read stories about Li Siguang, the geologist who pioneered oil exploration in China. Perhaps spending long stretches in the wilderness for fieldwork could even be romantic, I mused.</p>
 <p>The decision loomed as a probability puzzle. I had two choices: ZJU or NJU. Each carried two possible consequences: success or failure. That yielded four scenarios, each with its own probability attached. Before submitting the piece of paper signalling my willingness, and before the cutoff scores were announced, I hung in suspense. What should I do? Shall I pursue my dream school, or play it safe?</p>
 </section>
 </section>
@@ -1226,7 +1359,7 @@ By 史震涛 Shi Zhentao
 
   <p class="copyright">
     
-      © Copyright 2025.
+      © Copyright 2026.
       <br/>
     
   </p>
