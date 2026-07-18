@@ -2,7 +2,7 @@
 
 [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
 
-2025 summer preparatory short course for CUHK Econ's
+2026 summer preparatory short course for CUHK Econ's
 
 * [Master of Science (MSc)](https://admission.econ.cuhk.edu.hk/pg/master-economics/)
 
@@ -10,7 +10,7 @@
 
 
 
-Last update: July-25-2025
+Last update: July-19-2026
 
 ```{tableofcontents}
 ```
@@ -24,7 +24,7 @@ In the ivory tower, generations of scholars have built a mathematical language t
 
 ![](fig/sphinx2.jpg)
 
-Now we are in the era of AI. College-level mainstream mathematical formulations are all well-spoken (if not understood) by modern large language models. As a human, what is the point of learning them, given that our propose is not to develop new probability and statistical theories that are out of the reach of AI at this time? The answer, it seems to me, is to have a wider and deeper comprehension of uncertainty in an intuitive and rigorous manner so that we are better enlightened by the truths of the world and life.
+Now we are in the era of AI. College-level mainstream mathematical formulations are all well-spoken by modern large language models. As a human, what is the point of learning them, given that our propose is not to develop new probability and statistical theories that are out of the reach of AI at this time? The answer, it seems to me, is to have a wider and deeper comprehension of uncertainty in an intuitive and rigorous manner so that we are better enlightened by the truths of the world and life.
 
 
 ## Extensive reading
