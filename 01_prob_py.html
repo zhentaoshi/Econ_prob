@@ -410,13 +410,6 @@ are mutually disjoint for <span class="math notranslate nohighlight">\(i\in\math
 <span class="math notranslate nohighlight">\(P\left(\bigcup_{i\in\mathbb{N}}A_{i}\right)=\sum_{i\in\mathbb{N}} P \left(A_{i}\right).\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(P(\Omega) = 1\)</span>.</p></li>
 </ul>
-<p>The above construction gives a mathematically complete, well-defined probability measure. However, we have not yet
-answered “How to assign the probability?”</p>
-<p>There are two major schools of thinking on probability assignment. One is
-the <em>frequentist</em>, who considers probability as the average chance of occurrence if a large number of experiments
-are carried out. The other is the <em>Bayesian</em>, who deems probability as a subjective brief.
-The principles of these two schools are largely incompatible, while each school has
-peculiar pros and cons under different real-world contexts.</p>
 <p><strong>Questions for AI</strong></p>
 <ul class="simple">
 <li><p>Why do we need “measure theory” to define probability?</p></li>
@@ -425,6 +418,20 @@ peculiar pros and cons under different real-world contexts.</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.youtube.com/watch?v=mZBwsm6B280">Bertrand’s Paradox</a></p></li>
 </ul>
+<p>The above construction gives a mathematically complete, well-defined probability measure. However, we have not yet
+answered “How to assign the probability?”</p>
+<p>There are two major schools of thinking on probability assignment. One is
+the <em>frequentist</em>, who considers probability as the average chance of occurrence if a large number of experiments
+are carried out. The other is the <em>Bayesian</em>, who deems probability as a subjective brief.
+The principles of these two schools are largely incompatible, while each school has
+peculiar pros and cons under different real-world contexts.</p>
+<p><strong>The World Cup Final</strong></p>
+<p><img alt="" src="_images/world-cup.png" />
+[Screenshot at 11 pm, 2026-7-19, Beijing Time]</p>
+<p>The 2026 World Cup final between Spain and Argentina is once-in-a-life-time event. It will be played once, and one team will lift the trophy. It is not a repeated experiment in which we can watch the same teams play the same final thousands of times under identical conditions. A frequentist interpretation of probability as the long-run relative frequency of repeated events is therefore less natural for the question, “Who will win this match?”</p>
+<p>The Bayesian interpretation is better suited to this unique event. Before kickoff on 19 July 2026 (USA Time), probability measures our degree of belief about the winner, conditional on the information available. As new evidence arrives, we revise that belief in a coherent way.</p>
+<p>Football is a fantastic game of unpredictable. Spain may dominate possession, yet one Argentine counterattack can decide the match. A deflection, a remarkable save, or a missed penalty can reverse the result. Skill influences the likelihoods, but it does not determine the realization within 90 minutes, extra time, or a shootout.</p>
+<p>For supporters, uncertainty creates suspense. For coaches, it guides decisions. Whether to attack, defend, or save a player for penalties depends not only on which outcome is most probable, but also on the expected consequences of each action. Probability cannot remove uncertainty from the final; it provides a coherent way to learn from evidence and act before the winner is known.</p>
 </section>
 <section id="random-variable">
 <h2>Random Variable<a class="headerlink" href="#random-variable" title="Permalink to this heading">#</a></h2>
@@ -556,20 +563,35 @@ In this case, we define the <em>probability mass function</em> <span class="math
 characterized by a few parameters.</p>
 <p><strong>Examples</strong></p>
 <ul class="simple">
-<li><p>Binomial distribution.</p></li>
+<li><p>Bernoulli distribution. <span class="math notranslate nohighlight">\(X\)</span> equals <span class="math notranslate nohighlight">\(1\)</span> with probability <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(0\)</span> with probability <span class="math notranslate nohighlight">\(1-p\)</span>.</p></li>
 </ul>
 <div class="math notranslate nohighlight">
-\[f(x = k ;p) = \binom{n}{k}  p^k (1-p)^{n-k}\]</div>
+\[f(x = k; p) = p^k (1-p)^{1-k}, \quad k \in \{0,1\}\]</div>
+<p>Its mean is <span class="math notranslate nohighlight">\(p\)</span> and variance <span class="math notranslate nohighlight">\(p(1-p)\)</span>.</p>
 <ul class="simple">
-<li><p>Poisson distribution.</p></li>
+<li><p>Binomial distribution. The number of successes in <span class="math notranslate nohighlight">\(n\)</span> independent Bernoulli trials.</p></li>
 </ul>
 <div class="math notranslate nohighlight">
-\[f(x = k;\lambda) = \frac{\lambda^k \exp(-\lambda)}{k!}\]</div>
+\[f(x = k ;p) = \binom{n}{k}  p^k (1-p)^{n-k}, \quad k = 0,1,\ldots,n\]</div>
+<p>Its mean is <span class="math notranslate nohighlight">\(np\)</span> and variance <span class="math notranslate nohighlight">\(np(1-p)\)</span>.</p>
+<ul class="simple">
+<li><p>Poisson distribution. The number of events occurring in a fixed interval of time.</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[f(x = k;\lambda) = \frac{\lambda^k \exp(-\lambda)}{k!}, \quad k = 0,1,2,\ldots\]</div>
+<p>Its mean is <span class="math notranslate nohighlight">\(\lambda\)</span> and variance <span class="math notranslate nohighlight">\(\lambda\)</span>.</p>
 <ul class="simple">
 <li><p>Uniform distribution.</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[f(x; a, b) = \frac{1}{b-a} \cdot \mathbf{1}\{a\leq x \leq b\}\]</div>
+<p>Its mean is <span class="math notranslate nohighlight">\((a+b)/2\)</span> and variance <span class="math notranslate nohighlight">\((b-a)^2/12\)</span>.</p>
+<ul class="simple">
+<li><p>Exponential distribution. The waiting time between two consecutive events in a Poisson process.</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[f(x; \lambda) = \lambda \exp(-\lambda x), \quad x \geq 0\]</div>
+<p>Its mean is <span class="math notranslate nohighlight">\(1/\lambda\)</span> and variance <span class="math notranslate nohighlight">\(1/\lambda^2\)</span>.</p>
 <ul class="simple">
 <li><p>Normal distribution.</p></li>
 </ul>
@@ -579,16 +601,22 @@ f(x; \mu, \sigma^2) = \frac{1}{\sqrt{2\pi} \sigma} \exp\left( - \frac{(x-\mu)^2}
 \]</div>
 <p>Its mean is <span class="math notranslate nohighlight">\(\mu\)</span> and variance <span class="math notranslate nohighlight">\(\sigma^2\)</span>.</p>
 <ul class="simple">
-<li><p>Log-normal distribution.</p></li>
+<li><p>Log-normal distribution. If <span class="math notranslate nohighlight">\(\log X \sim N(\mu, \sigma^2)\)</span>, then <span class="math notranslate nohighlight">\(X\)</span> follows a log-normal distribution.</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[
-f(x; \mu, \sigma^2) = \frac{1}{\sqrt{2\pi} \sigma} \exp\left( - \frac{(\log(x)-\mu)^2}{2\sigma^2}\right),
+f(x; \mu, \sigma^2) = \frac{1}{\sqrt{2\pi} \sigma x} \exp\left( - \frac{(\log(x)-\mu)^2}{2\sigma^2}\right), \quad x &gt; 0
 \]</div>
-<p>Its means is <span class="math notranslate nohighlight">\(\exp(\mu + 0.5 \sigma^2)\)</span> and variance
-<span class="math notranslate nohighlight">\([\exp(\sigma^2 - 1)] \exp(2\mu+ \sigma^2)\)</span>.</p>
+<p>Its mean is <span class="math notranslate nohighlight">\(\exp(\mu + 0.5 \sigma^2)\)</span> and variance
+<span class="math notranslate nohighlight">\([\exp(\sigma^2) - 1] \exp(2\mu+ \sigma^2)\)</span>.</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\chi^{2}\)</span>, <span class="math notranslate nohighlight">\(t\)</span>, and <span class="math notranslate nohighlight">\(F\)</span> distributions.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\chi^{2}\)</span>, <span class="math notranslate nohighlight">\(t\)</span>, and <span class="math notranslate nohighlight">\(F\)</span> distributions. They are constructed from the standard normal.</p>
+<ul>
+<li><p>If <span class="math notranslate nohighlight">\(Z_1,\ldots,Z_k\)</span> are independent <span class="math notranslate nohighlight">\(N(0,1)\)</span> random variables, then <span class="math notranslate nohighlight">\(\sum_{i=1}^{k} Z_i^2 \sim \chi^2(k)\)</span>.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(Z \sim N(0,1)\)</span> and <span class="math notranslate nohighlight">\(U \sim \chi^2(k)\)</span> are independent, then <span class="math notranslate nohighlight">\(Z/\sqrt{U/k} \sim t(k)\)</span>.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(U_1 \sim \chi^2(k_1)\)</span> and <span class="math notranslate nohighlight">\(U_2 \sim \chi^2(k_2)\)</span> are independent, then <span class="math notranslate nohighlight">\(\frac{U_1/k_1}{U_2/k_2} \sim F(k_1, k_2)\)</span>.</p></li>
+</ul>
+</li>
 </ul>
 <p><strong>Example</strong></p>
 <p><code class="docutils literal notranslate"><span class="pre">scipy.stat</span></code> has a rich collection of distributions.</p>
