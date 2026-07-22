@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Statistics &#8212; Lecture Notes</title>
   
@@ -29,41 +28,37 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=8c6b312c" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '02_stat_py';</script>
@@ -161,7 +156,18 @@ const thebe_selector_output = ".output, .cell_output"
     <p class="title logo__title">Lecture Notes</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -205,9 +211,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -348,9 +354,9 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -399,9 +405,10 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="statistics">
-<h1>Statistics<a class="headerlink" href="#statistics" title="Permalink to this heading">#</a></h1>
+<h1>Statistics<a class="headerlink" href="#statistics" title="Link to this heading">#</a></h1>
 <p>形而上者谓之道，形而下者谓之器</p>
 <p>Statistic theory goes the opposite way to probability theory. In reality what we observe is a sample of data, but we don’t know via what mechanism the data are generated. Statistics asks how can we infer the data generating process from the sample that we observe. For example, if we assume the sample comes from a normal distribution, what is the best way that we learn the population mean and variance? Do the data provide sufficient evidence that two samples are drawn from populations of the same means? Statistics uses the sample to compute some numbers, while the underlying probability model guides the interpretation of these numbers.</p>
+<p><img alt="" src="_images/conan.jpg" /></p>
 <p><strong>Example</strong></p>
 <p>This is a sample of 100 accounts from
 <a class="reference external" href="https://www.kaggle.com/datasets/patriotboy112/hks-top-300-youtubers">HK top 300 Youtubers</a> which we randomly drew at the end of the previous lecture.</p>
@@ -440,16 +447,16 @@ We are also interested in the <em>sample variance</em>, as it tells the scale of
 <p>In this example, we can view the sample as a multinomial distribution with <span class="math notranslate nohighlight">\(n\)</span> outcomes at the observed realized points.
 Since each observation is drawn randomly and independently, everyone is equally important.
 Assigning equal probability <span class="math notranslate nohighlight">\(1/n\)</span> on each point naturally delivers the sample mean <span class="math notranslate nohighlight">\(\hat{\mu} = \bar{X} = n^{-1} \sum_{i=1}^n X_i.\)</span>
-Similarly, a widely used sample variance is computed as <span class="math notranslate nohighlight">\(s^2 = (n-1)^{-1} \sum_{i=1}^n (X_i - \hat{\mu})^2\)</span>. More generally, for <span class="math notranslate nohighlight">\(p&gt;0\)</span> the statistic <span class="math notranslate nohighlight">\(n^{-1} \sum_{i=1}^n x_i^p\)</span> is called the <span class="math notranslate nohighlight">\(p\)</span>-th sample moment, and <span class="math notranslate nohighlight">\(n^{-1} \sum_{i=1}^n (X_i - \bar{X})^p\)</span> is called the <span class="math notranslate nohighlight">\(r\)</span>-th centered moment.</p>
+Similarly, a widely used sample variance is computed as <span class="math notranslate nohighlight">\(s^2 = (n-1)^{-1} \sum_{i=1}^n (X_i - \hat{\mu})^2\)</span>. More generally, for <span class="math notranslate nohighlight">\(p&gt;0\)</span> the statistic <span class="math notranslate nohighlight">\(n^{-1} \sum_{i=1}^n x_i^p\)</span> is called the <span class="math notranslate nohighlight">\(p\)</span>-th sample moment, and <span class="math notranslate nohighlight">\(n^{-1} \sum_{i=1}^n (X_i - \bar{X})^p\)</span> is called the <span class="math notranslate nohighlight">\(p\)</span>-th centered moment.</p>
 <section id="estimation-methods">
-<h2>Estimation methods<a class="headerlink" href="#estimation-methods" title="Permalink to this heading">#</a></h2>
+<h2>Estimation methods<a class="headerlink" href="#estimation-methods" title="Link to this heading">#</a></h2>
 <p>Suppose that the data are generated from a parametric model. Statistical
 estimation is an “educated guess” of the unknown parameter from the observed data. A
 <em>principle</em> is an ideology about a proper way of estimation. Over the
 history of statistics, only a few principles are widely accepted.
 The two most popular methods are the <em>method of moments</em> and the <em>maximum likelihood method</em>.</p>
 <section id="method-of-moments">
-<h3>Method of moments<a class="headerlink" href="#method-of-moments" title="Permalink to this heading">#</a></h3>
+<h3>Method of moments<a class="headerlink" href="#method-of-moments" title="Link to this heading">#</a></h3>
 <p>The method of moments expresses some moments as functions
 of these parameters.
 We use the sample moments to mimic the corresponding population moments.
@@ -471,7 +478,7 @@ are the method of moments estimates of the two parameters.</p>
 </div>
 <p><strong>Example</strong>:</p>
 <p>The <span class="math notranslate nohighlight">\(t\)</span> distribution has one parameter, its degree of freedom <span class="math notranslate nohighlight">\(\nu\)</span>. The variance of <span class="math notranslate nohighlight">\(t(\nu)\)</span>, if <span class="math notranslate nohighlight">\(\nu &gt;2\)</span>,  is  <span class="math notranslate nohighlight">\(\sigma^2 = \nu / (\nu - 2)\)</span>.
-From the data, we estimate <span class="math notranslate nohighlight">\(\hat{\sigma}^2\)</span>, and then solve <span class="math notranslate nohighlight">\(\hat{\sigma}^2 = \nu / (\nu - 2)\)</span> to get</p>
+From the data, we estimate <span class="math notranslate nohighlight">\(\hat{\sigma}^2\)</span>, and then solve <span class="math notranslate nohighlight">\({\sigma}^2 = \nu / (\nu - 2)\)</span> to get</p>
 <div class="math notranslate nohighlight">
 \[
   \hat{\nu} = \frac{2\hat{\sigma}^2}{\hat{\sigma}^2 - 1}
@@ -479,7 +486,7 @@ From the data, we estimate <span class="math notranslate nohighlight">\(\hat{\si
 <p>Note: The population variance of <span class="math notranslate nohighlight">\(t\)</span> distribution is no smaller than 1.</p>
 </section>
 <section id="maximum-likelihood">
-<h3>Maximum likelihood<a class="headerlink" href="#maximum-likelihood" title="Permalink to this heading">#</a></h3>
+<h3>Maximum likelihood<a class="headerlink" href="#maximum-likelihood" title="Link to this heading">#</a></h3>
 <p>The maximum likelihood estimation (MLE) looks for the value of the parameter that maximizes the log-likelihood. By the concavity of logarithm, the true parameter is the value that maximizes the expected likelihood function. In reality, we maximize its empirical version.</p>
 <p>Consider a random sample
 drawn from a parametric
@@ -496,8 +503,8 @@ finite-dimensional parameter <span class="math notranslate nohighlight">\(\theta
 evaluate <span class="math notranslate nohighlight">\(L_{n}\left(\theta;X\right)\)</span>. The maximum likelihood estimator
 is</p>
 <div class="math notranslate nohighlight">
-\[\widehat{\theta}_{MLE}:=\arg\max_{\theta\in\Theta}L_{n}\left(\theta;\mathbf{X}\right).\]</div>
-<p>This <span class="math notranslate nohighlight">\(\widehat{\theta}_{MLE}\)</span> makes observing <span class="math notranslate nohighlight">\(X\)</span> the
+\[\widehat{\theta}_{\mathrm{MLE}}:=\arg\max_{\theta\in\Theta}L_{n}\left(\theta;\mathbf{X}\right).\]</div>
+<p>This <span class="math notranslate nohighlight">\(\widehat{\theta}_{\mathrm{MLE}}\)</span> makes observing <span class="math notranslate nohighlight">\(X\)</span> the
 “most likely” in the entire parametric space.
 A formal justification of MLE uses the terminology the <em>Kullback-Leibler information criterion</em>,
 which is a measurement of the “distance” or “divergence” between two distributions. This information criterion is maximized at the true parameter value.</p>
@@ -505,8 +512,8 @@ which is a measurement of the “distance” or “divergence” between two dis
 <p>Consider the Gaussian model <span class="math notranslate nohighlight">\(X_{i}\sim N\left(\mu, \sigma^2 \right)\)</span>,
 where <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span> are unknown parameters to be estimated. The likelihood of
 observing <span class="math notranslate nohighlight">\(X_{i}\)</span> is
-<span class="math notranslate nohighlight">\(f\left(X_{i};\mu\right)=\frac{1}{\sqrt{2\pi}\sigma}\exp\left(-\frac{1}{2\sigma^2}\left(X_{i}-\mu\right)^{2}\right)\)</span>.
-The likelihood of observing the sample <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> is</p>
+$<span class="math notranslate nohighlight">\(f\left(X_{i};\mu, \sigma^2\right)=\frac{1}{\sqrt{2\pi}\sigma}\exp\left(-\frac{1}{2\sigma^2}\left(X_{i}-\mu\right)^{2}\right).\)</span><span class="math notranslate nohighlight">\(
+The likelihood of observing the sample \)</span>\mathbf{X}$ is</p>
 <div class="math notranslate nohighlight">
 \[f\left(\mathbf{X};\mu, \sigma^2 \right)=\prod_{i=1}^{n}\frac{1}{\sqrt{2\pi}\sigma}\exp\left(-\frac{1}{2\sigma^2}\left(X_{i}-\mu\right)^{2}\right)\]</div>
 <p>and the log-likelihood is</p>
@@ -517,7 +524,7 @@ Notice the denominator in the estimated variance here is <span class="math notra
 </section>
 </section>
 <section id="statistic-inference">
-<h2>Statistic Inference<a class="headerlink" href="#statistic-inference" title="Permalink to this heading">#</a></h2>
+<h2>Statistic Inference<a class="headerlink" href="#statistic-inference" title="Link to this heading">#</a></h2>
 <p>We are interesting in relating the statistic to the population.
 Suppose <span class="math notranslate nohighlight">\(X_i\)</span>’s are randomly drawn from a distribution, and we would like to learn the mean <span class="math notranslate nohighlight">\(\mu: = E[X_i]\)</span>.
 The sample mean is a natural estimator for <span class="math notranslate nohighlight">\(\mu\)</span>.</p>
@@ -575,7 +582,7 @@ The underlying data generating process is a Poisson distribution.</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">poisson</span>
 
 <span class="n">Rep</span> <span class="o">=</span> <span class="mi">1000</span>
-<span class="n">sample_size</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="n">sample_size</span> <span class="o">=</span> <span class="mi">200</span>
 <span class="n">capture</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">Rep</span><span class="p">)</span>
 <span class="n">Bounds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">Rep</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 <span class="n">mu</span> <span class="o">=</span> <span class="mi">2</span>
@@ -623,7 +630,7 @@ Here the confidence interval is random while the true value is fixed.</p>
 <p>It is important to understand that the coverage probability is not the probability that the parameter falls into a fixed interval, which is the interpretation of the <em>Bayesian credit interval</em>.
 The latter requires different way for construction.</p>
 <section id="hypothesis-testing">
-<h3>Hypothesis Testing<a class="headerlink" href="#hypothesis-testing" title="Permalink to this heading">#</a></h3>
+<h3>Hypothesis Testing<a class="headerlink" href="#hypothesis-testing" title="Link to this heading">#</a></h3>
 <p>A <em>hypothesis</em> is a statement about the parameter space <span class="math notranslate nohighlight">\(\Theta\)</span>.
 Hypothesis testing checks whether the data support a <em>null hypothesis</em>
 <span class="math notranslate nohighlight">\(\Theta_{0}\)</span>, which is a subset of <span class="math notranslate nohighlight">\(\Theta\)</span> of interest. Ideally the
@@ -658,7 +665,7 @@ null. Under the principle of protecting the null hypothesis, a desirable
 test should have a small level. Conventionally we take <span class="math notranslate nohighlight">\(\alpha=0.01,\)</span>
 <span class="math notranslate nohighlight">\(0.05\)</span> or <span class="math notranslate nohighlight">\(0.1\)</span>. We say a test is <em>unbiased</em> if</p>
 <div class="math notranslate nohighlight">
-\[\inf_{\theta\in\Theta_{1}}\beta\left(\theta\right)&gt;\sup_{\theta\in\Theta_{0}}\beta\left(\theta\right).\]</div>
+\[\inf_{\theta\in\Theta_{1}}\beta\left(\theta\right)\geq \sup_{\theta\in\Theta_{0}}\beta\left(\theta\right).\]</div>
 <p>There can be many tests of correct size.</p>
 <div class="proof remark admonition" id="remark-2">
 <p class="admonition-title"><span class="caption-number">Remark 1 </span></p>
@@ -678,7 +685,7 @@ enjoys the biggest power but suffers incorrect size.</p>
 function as</p>
 <div class="math notranslate nohighlight">
 \[
-\phi(\mathbf{X})=1\left\{ T_{n} (\mathbf{X})&gt;c_{1-\alpha}\right\}.
+\phi(\mathbf{X}; \theta)=1\left\{ T_{n} (\mathbf{X})&gt;c_{1-\alpha}\right\}.
 \]</div>
 <p>To ensure such a <span class="math notranslate nohighlight">\(\phi(\mathbf{x})\)</span> has the correct size, we need
 to figure out the distribution of <span class="math notranslate nohighlight">\(T_{n}\)</span> under the null hypothesis
@@ -701,7 +708,7 @@ false, with certainty. The randomness of a test comes only from
 sampling, not from the hypothesis at all.</p>
 </section>
 <section id="connections">
-<h3>Connections<a class="headerlink" href="#connections" title="Permalink to this heading">#</a></h3>
+<h3>Connections<a class="headerlink" href="#connections" title="Link to this heading">#</a></h3>
 <p>Given the same sample and the underlying approach,
 hypothesis testing, confidence interval, and <span class="math notranslate nohighlight">\(p\)</span>-value are tightly connected. The followings are equivalent:</p>
 <ul class="simple">
@@ -719,7 +726,7 @@ hypothesis testing, confidence interval, and <span class="math notranslate nohig
 confidence interval by inverting the  test. In words, if we collect all points that are not rejected by the test of size <span class="math notranslate nohighlight">\(\alpha\)</span>, we obtain the confidence interval of coverage probability <span class="math notranslate nohighlight">\((1-\alpha)\)</span>.</p>
 </section>
 <section id="revealing-the-population">
-<h3>Revealing the population<a class="headerlink" href="#revealing-the-population" title="Permalink to this heading">#</a></h3>
+<h3>Revealing the population<a class="headerlink" href="#revealing-the-population" title="Link to this heading">#</a></h3>
 <p>As in the previous lecture, we view the HK top 300 Youtubers as the population.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -757,7 +764,7 @@ confidence interval by inverting the  test. In words, if we collect all points t
 </div>
 </section>
 <section id="random-sampling">
-<h3>Random Sampling<a class="headerlink" href="#random-sampling" title="Permalink to this heading">#</a></h3>
+<h3>Random Sampling<a class="headerlink" href="#random-sampling" title="Link to this heading">#</a></h3>
 <p>Each sample is random. It means that <span class="math notranslate nohighlight">\(\hat{\mu}\)</span> is a random variable across the potential samples. In this population the total number of
 outcomes is <span class="math notranslate nohighlight">\(N=300\)</span>. For a sample of size <span class="math notranslate nohighlight">\(n=100\)</span>, there are</p>
 <div class="math notranslate nohighlight">
@@ -803,7 +810,7 @@ outcomes is <span class="math notranslate nohighlight">\(N=300\)</span>. For a s
 </section>
 </section>
 <section id="multivariate-variables">
-<h2>Multivariate Variables<a class="headerlink" href="#multivariate-variables" title="Permalink to this heading">#</a></h2>
+<h2>Multivariate Variables<a class="headerlink" href="#multivariate-variables" title="Link to this heading">#</a></h2>
 <p>For a bivariate random vector <span class="math notranslate nohighlight">\((X_i,Y_i)\)</span>,</p>
 <ul class="simple">
 <li><p>Covariance</p></li>
@@ -826,6 +833,13 @@ outcomes is <span class="math notranslate nohighlight">\(N=300\)</span>. For a s
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d1_log_sub</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="proof remark admonition" id="remark-3">
 <p class="admonition-title"><span class="caption-number">Remark 2 </span></p>
 <section class="remark-content" id="proof-content">
@@ -839,12 +853,12 @@ To find optimal portfolios, solve the quadratic optimization problem, e.g., mini
 </section>
 </div></section>
 <section id="regressions">
-<h2>Regressions<a class="headerlink" href="#regressions" title="Permalink to this heading">#</a></h2>
+<h2>Regressions<a class="headerlink" href="#regressions" title="Link to this heading">#</a></h2>
 <p>In machine learning terminologies, all examples we have talked so far are <em>unsupervised learning</em>, which extracts some features from  observed data.
-Another category is called <em>supervised learning</em>, which is to use a few <em>independent variables</em> (regressors, predictor, covariates) to fit a <em>dependent variable</em>. The linear regression is a simple example of such a statistical exercise.</p>
-<p>Regression carries out a very simple task. It minimizes the the sum of squared residuals <span class="math notranslate nohighlight">\(\sum_{i=1}^n (y_i - \hat{y}_i)^2\)</span>.
+The other major category is called <em>supervised learning</em>, which is to use a few <em>independent variables</em> (regressors, predictor, covariates) to fit a <em>dependent variable</em>. The linear regression is a simple example of such a statistical exercise.</p>
+<p>Regression carries out a simple task. It minimizes the the sum of squared residuals <span class="math notranslate nohighlight">\(\sum_{i=1}^n (y_i - \hat{y}_i)^2\)</span>.
 In other words, it combines the vector <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> into <span class="math notranslate nohighlight">\(\beta' \mathbf{x}\)</span> to reduce the variation of <span class="math notranslate nohighlight">\((\mathbf{y}-\mathbf{x}'\beta)\)</span> as much as possible. For any sample <span class="math notranslate nohighlight">\((x_i,y_i)_{i=1}^n\)</span>, such an algorithm can be implemented. It has nothing to do with causality.</p>
-<p>In reality, <span class="math notranslate nohighlight">\((x_i, y_i)\)</span> are observed numbers that the data analyst can only take as given.
+<p>In reality, <span class="math notranslate nohighlight">\((x_i, y_i)\)</span> are observed numbers that a data analyst can only take as given.
 The <em>ordinary least squares</em> is a simple linear algebraic operation.</p>
 <p>Now we superimpose uncertainty on it. If <span class="math notranslate nohighlight">\(X\)</span> is fixed whereas <span class="math notranslate nohighlight">\(Y\)</span> is uncertain, we have the conditional model (discriminative model).
 It is useful for predicting the average outcome of <span class="math notranslate nohighlight">\(y\)</span> given an <span class="math notranslate nohighlight">\(x\)</span>, although not very informative if we are interested in  extrapolating out of the support of the observed <span class="math notranslate nohighlight">\(X\)</span>.</p>
@@ -857,12 +871,12 @@ First we draw <span class="math notranslate nohighlight">\(X\)</span>, and then 
 <p>Given a sample, we use the observed data to compute <span class="math notranslate nohighlight">\(\hat{\sigma}_{xy}\)</span> and <span class="math notranslate nohighlight">\(\hat{\sigma}_x^2\)</span>, and thereby <span class="math notranslate nohighlight">\(\hat{\beta}\)</span> as their ratio.</p>
 </section>
 <section id="conclusion">
-<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this heading">#</a></h2>
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
 <p>The beauty of statistics lies in their deep connection with philosophy. A realized sample is a set of given numbers. They are fixed, known, and invariant. But where is uncertainty? Bayesians argue that uncertainty comes from people’s belief about the object of interest. The data contain information to help refine or update our beliefs. In contrast, frequentists contend that uncertainty is present  before the numbers, or realizations, are revealed; once the realizations are revealed, uncertainty is gone.</p>
 <p>The two schools of philosophical thoughts, Bayesian and frequentist, have been contesting over centuries. Either has pros and cons. Nowadays in academic research and in teaching, frequentist remains the mainstream so it is the one that we are more familiar with. However, frequentist interpretation of probability and the resulting implication for statistical inference are not completely natural. Repeated experiments are more easily perceived in physics and other natural science, but may be unrealistic in many economic settings. On the other hand, Bayesian encounters difficulty in reaching a consensus about prior distributions.</p>
 </section>
 <section id="case-study">
-<h2>Case Study<a class="headerlink" href="#case-study" title="Permalink to this heading">#</a></h2>
+<h2>Case Study<a class="headerlink" href="#case-study" title="Link to this heading">#</a></h2>
 <p><strong>Value-added of Master’s Programs</strong></p>
 <p>Self-financed master’s programs in the United States charge high tuition fees to exchange for a one-year intensive curriculum. These programs promise not only advanced knowledge but also enhanced career prospects. A central question arises: What is the value-added of such a program? In econometric terms, this can be framed as estimating the average treatment effect (ATE). That is, what is the causal impact of enrolling in the program on outcomes like future earnings, compared to what would have happened without it.</p>
 <p>To explore this, we can conceptualize a thought experiment involving a randomized controlled trial (RCT).
