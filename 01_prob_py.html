@@ -1,12 +1,13 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="./" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Probability &#8212; Lecture Notes</title>
   
@@ -28,37 +29,41 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=8c6b312c" />
-    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js?v=36754332"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '01_prob_py';</script>
@@ -156,18 +161,7 @@
     <p class="title logo__title">Lecture Notes</p>
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -211,9 +205,9 @@
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -354,9 +348,9 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
       
     </div>
@@ -399,11 +393,11 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="probability">
-<h1>Probability<a class="headerlink" href="#probability" title="Link to this heading">#</a></h1>
+<h1>Probability<a class="headerlink" href="#probability" title="Permalink to this heading">#</a></h1>
 <p>玄之又玄，众妙之门</p>
 <p>Probability theory talks about the construction and implications of probability models. For example, given a probability distribution, what are the mean and variance? What is the distribution of a transformed random variable? In computer simulations, probability theory tells us what will happen to the generated realizations, in particular when the experiments can be repeated as many times as the researcher wishes. This is a real-world analogue of the frequentist’s interpretation of probability.</p>
 <section id="probability-space">
-<h2>Probability Space<a class="headerlink" href="#probability-space" title="Link to this heading">#</a></h2>
+<h2>Probability Space<a class="headerlink" href="#probability-space" title="Permalink to this heading">#</a></h2>
 <p>A <em>sample space</em> <span class="math notranslate nohighlight">\(\Omega\)</span> is a collection of all possible outcomes. It is a set of things.</p>
 <p>An <em>event</em> <span class="math notranslate nohighlight">\(A\)</span> is a subset of <span class="math notranslate nohighlight">\(\Omega\)</span>. It is something of interest on the sample space.</p>
 <p>A <span class="math notranslate nohighlight">\(\sigma\)</span>-<em>field</em> is a complete set of events that include all countable unions, intersections, and differences.
@@ -440,7 +434,7 @@ peculiar pros and cons under different real-world contexts.</p>
 <p>For supporters, uncertainty creates suspense. For coaches, it guides decisions. Whether to attack, defend, or save a player for penalties depends not only on which outcome is most probable, but also on the expected consequences of each action. Probability cannot remove uncertainty from the final; it provides a coherent way to learn from evidence and act before the winner is known.</p>
 </section>
 <section id="random-variable">
-<h2>Random Variable<a class="headerlink" href="#random-variable" title="Link to this heading">#</a></h2>
+<h2>Random Variable<a class="headerlink" href="#random-variable" title="Permalink to this heading">#</a></h2>
 <p>A <em>random variable</em> maps an event to a real number. If the outcome is multivariate, we call it a <em>random vector</em>.</p>
 <p><strong>Data example</strong></p>
 <p>Data source: <a class="reference external" href="https://www.kaggle.com/datasets/patriotboy112/hks-top-300-youtubers">HK top 300 Youtubers</a>. We look at the number of uploaded videos in these accounts.</p>
@@ -516,7 +510,7 @@ peculiar pros and cons under different real-world contexts.</p>
 </div>
 </section>
 <section id="distribution-function">
-<h2>Distribution Function<a class="headerlink" href="#distribution-function" title="Link to this heading">#</a></h2>
+<h2>Distribution Function<a class="headerlink" href="#distribution-function" title="Permalink to this heading">#</a></h2>
 <p>We go back to some terminologies we learned in an undergraduate
 probability course. A <em>(cumulative) distribution function</em>
 <span class="math notranslate nohighlight">\(F:\mathbb{R}\mapsto [0,1]\)</span> is defined as</p>
@@ -722,7 +716,7 @@ In population, this value is 5%. What is the number coming out of this experimen
 </div>
 </section>
 <section id="integration">
-<h2>Integration<a class="headerlink" href="#integration" title="Link to this heading">#</a></h2>
+<h2>Integration<a class="headerlink" href="#integration" title="Permalink to this heading">#</a></h2>
 <p>In probability theory, an integral
 <span class="math notranslate nohighlight">\(\int X\mathrm{d}P\)</span> is called the <em>expected value,</em> or
 <em>expectation,</em> of <span class="math notranslate nohighlight">\(X\)</span>. We often use the notation
@@ -791,7 +785,7 @@ is a special case of the Markov inequality when <span class="math notranslate no
 </ul>
 </section>
 <section id="multivariate-random-variable">
-<h2>Multivariate Random Variable<a class="headerlink" href="#multivariate-random-variable" title="Link to this heading">#</a></h2>
+<h2>Multivariate Random Variable<a class="headerlink" href="#multivariate-random-variable" title="Permalink to this heading">#</a></h2>
 <p>A <em>bivariate</em> random variable is a vector of two scalar random variables. More generally, a <em>multivariate</em> random variable has the <em>joint CDF</em> defined as</p>
 <div class="math notranslate nohighlight">
 \[
@@ -820,7 +814,7 @@ the coordinate that is not interested.
 The  <em>conditional density</em> can be written as  <span class="math notranslate nohighlight">\(f\left(y|x\right)=f\left(x,y\right)/f\left(x\right)\)</span>  for <span class="math notranslate nohighlight">\(f(x) \neq 0\)</span>.</p>
 </section>
 <section id="bayes-theorem">
-<h2>Bayes Theorem<a class="headerlink" href="#bayes-theorem" title="Link to this heading">#</a></h2>
+<h2>Bayes Theorem<a class="headerlink" href="#bayes-theorem" title="Permalink to this heading">#</a></h2>
 <p>For two events <span class="math notranslate nohighlight">\(A_1\)</span> and <span class="math notranslate nohighlight">\(A_2\)</span>, the <em>conditional probability</em> is</p>
 <div class="math notranslate nohighlight">
 \[
@@ -853,7 +847,7 @@ we compute the marginal probability <span class="math notranslate nohighlight">\
 Notice the contrast: without knowing the GPA, the prior admission rate is only <span class="math notranslate nohighlight">\(10\%\)</span>. The high GPA boosts it to <span class="math notranslate nohighlight">\(52\%\)</span>.</p>
 </section>
 <section id="independence">
-<h2>Independence<a class="headerlink" href="#independence" title="Link to this heading">#</a></h2>
+<h2>Independence<a class="headerlink" href="#independence" title="Permalink to this heading">#</a></h2>
 <p>We say two events <span class="math notranslate nohighlight">\(A_1\)</span> and <span class="math notranslate nohighlight">\(A_2\)</span> are <em>independent</em> if <span class="math notranslate nohighlight">\(P(A_1A_2) = P(A_1)P(A_2)\)</span>.
 If <span class="math notranslate nohighlight">\(P(A_2) \neq 0\)</span>, it is equivalent to <span class="math notranslate nohighlight">\(P(A_1 | A_2 ) = P(A_1)\)</span>.
 In words, knowing <span class="math notranslate nohighlight">\(A_2\)</span> does not change the probability of <span class="math notranslate nohighlight">\(A_1\)</span>.</p>
@@ -900,7 +894,7 @@ $n\to\infty$. -->
 </div>
 </section>
 <section id="law-of-iterated-expectations">
-<h2>Law of Iterated Expectations<a class="headerlink" href="#law-of-iterated-expectations" title="Link to this heading">#</a></h2>
+<h2>Law of Iterated Expectations<a class="headerlink" href="#law-of-iterated-expectations" title="Permalink to this heading">#</a></h2>
 <p>In the bivariate case, if the conditional density exists, the conditional expectation can be computed as
 <span class="math notranslate nohighlight">\(E\left[Y|X\right]=\int yf\left(y|X\right)dy\)</span>.
 The law of iterated expectation implies <span class="math notranslate nohighlight">\(E\left[E\left[Y|X\right]\right]=E\left[Y\right]\)</span>.</p>
@@ -975,7 +969,7 @@ E\big[ \epsilon \, E[Y\mid X] \big]
 \)</span>$</p>
 </section>
 <section id="for-the-next-lecture">
-<h2>For the next lecture<a class="headerlink" href="#for-the-next-lecture" title="Link to this heading">#</a></h2>
+<h2>For the next lecture<a class="headerlink" href="#for-the-next-lecture" title="Permalink to this heading">#</a></h2>
 <p>Save the following data files for the next lecture.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -994,7 +988,7 @@ E\big[ \epsilon \, E[Y\mid X] \big]
 </div>
 </section>
 <section id="story">
-<h2>Story<a class="headerlink" href="#story" title="Link to this heading">#</a></h2>
+<h2>Story<a class="headerlink" href="#story" title="Permalink to this heading">#</a></h2>
 <p><img alt="" src="_images/gaokao.jpg" /></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Two</span> <span class="n">roads</span> <span class="n">diverged</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">yellow</span> <span class="n">wood</span><span class="p">,</span>
 <span class="n">And</span> <span class="n">sorry</span> <span class="n">I</span> <span class="n">could</span> <span class="ow">not</span> <span class="n">travel</span> <span class="n">both</span>

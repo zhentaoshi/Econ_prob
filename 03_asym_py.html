@@ -1,12 +1,13 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="./" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Asymptotics &#8212; Lecture Notes</title>
   
@@ -28,37 +29,41 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=8c6b312c" />
-    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js?v=36754332"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '03_asym_py';</script>
@@ -156,18 +161,7 @@
     <p class="title logo__title">Lecture Notes</p>
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -211,9 +205,9 @@
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -354,9 +348,9 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
       
     </div>
@@ -397,18 +391,18 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="asymptotics">
-<h1>Asymptotics<a class="headerlink" href="#asymptotics" title="Link to this heading">#</a></h1>
+<h1>Asymptotics<a class="headerlink" href="#asymptotics" title="Permalink to this heading">#</a></h1>
 <p>广大如法界，究竟如虛空</p>
 <p>Asymptotic theory is a set of mathematical tools that invoke limits to simplify our understanding of the behavior of statistics. Because exact finite-sample distributions are rarely available in econometrics, asymptotic results justify consistency, approximate distributions, standard errors, and hypothesis tests used in practice.</p>
 <p>Key concepts and tools:</p>
 <ul class="simple">
-<li><p>Modes of convergence: “in probability” and in “distribution”.</p></li>
+<li><p>Modes of convergence: “in probability” and “in distribution”.</p></li>
 <li><p>Laws of Large Numbers (LLN): sample averages converge to population moments (consistency).</p></li>
 <li><p>Central Limit Theorems (CLT): properly scaled estimation errors are approximately normal.</p></li>
 <li><p>Continuous Mapping, Slutsky, and Delta Methods: transfer limit results through smooth transformations and plug-in steps.</p></li>
 </ul>
 <section id="modes-of-convergence">
-<h2>Modes of Convergence<a class="headerlink" href="#modes-of-convergence" title="Link to this heading">#</a></h2>
+<h2>Modes of Convergence<a class="headerlink" href="#modes-of-convergence" title="Permalink to this heading">#</a></h2>
 <p>Let <span class="math notranslate nohighlight">\(x_{1},x_{2},\ldots\)</span> be a (countably) infinite
 sequence of non-random variables.
 <em>Convergence</em> of this non-random sequence means that for any
@@ -504,7 +498,7 @@ where <span class="math notranslate nohighlight">\(F\left(a\right)\)</span> is c
 modes of convergence can be easily generalized to finite-dimensional random vectors.</p>
 </section>
 <section id="law-of-large-numbers">
-<h2>Law of Large Numbers<a class="headerlink" href="#law-of-large-numbers" title="Link to this heading">#</a></h2>
+<h2>Law of Large Numbers<a class="headerlink" href="#law-of-large-numbers" title="Permalink to this heading">#</a></h2>
 <p>Law of large numbers (LLN) is a collection of statements about
 convergence in probability of the sample average to its population
 counterpart. The basic form of LLN is:</p>
@@ -516,7 +510,7 @@ counterpart. The basic form of LLN is:</p>
 about moment restrictions and/or dependence of the underlying random
 variables.</p>
 <section id="chebyshev-lln">
-<h3>Chebyshev LLN<a class="headerlink" href="#chebyshev-lln" title="Link to this heading">#</a></h3>
+<h3>Chebyshev LLN<a class="headerlink" href="#chebyshev-lln" title="Permalink to this heading">#</a></h3>
 <p>We illustrate LLN by the simple example of Chebyshev LLN. It utilizes the <em>Chebyshev
 inequality</em>.</p>
 <p>The Chebyshev inequality is a special case of the <em>Markov inequality</em>.</p>
@@ -540,7 +534,10 @@ inequality.</p>
 <span class="math notranslate nohighlight">\(\mu=E\left[x_{1}\right]\)</span> and
 <span class="math notranslate nohighlight">\(\sigma^{2}=\mathrm{var}\left[x_{1}\right]\)</span>. We apply the Chebyshev
 inequality to the sample mean
-<span class="math notranslate nohighlight">\(y_{n}:=\bar{x}-\mu=n^{-1}\left(S_{n}-E\left[S_{n}\right]\right)\)</span>. We have</p>
+$<span class="math notranslate nohighlight">\(
+y_{n}:=\bar{x}_n-\mu=n^{-1}\left(S_{n}-E\left[S_{n}\right]\right).
+\)</span>$</p>
+<p>We have</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
@@ -652,7 +649,7 @@ Cauchy distribution does not.</p>
 </section>
 </section>
 <section id="central-limit-theorem">
-<h2>Central Limit Theorem<a class="headerlink" href="#central-limit-theorem" title="Link to this heading">#</a></h2>
+<h2>Central Limit Theorem<a class="headerlink" href="#central-limit-theorem" title="Permalink to this heading">#</a></h2>
 <p>The central limit theorem (CLT) is a collection of statements
 about the convergence in distribution to a stable distribution. The
 limiting distribution is usually the Gaussian distribution.</p>
@@ -716,7 +713,7 @@ random variables. <em>Lindeberg-Levy CLT</em> is the simplest version.</p>
 </div>
 </section>
 <section id="tools-for-transformations">
-<h2>Tools for Transformations<a class="headerlink" href="#tools-for-transformations" title="Link to this heading">#</a></h2>
+<h2>Tools for Transformations<a class="headerlink" href="#tools-for-transformations" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Continuous mapping theorem 1: If <span class="math notranslate nohighlight">\(y_{n}\stackrel{p}{\to}a\)</span> and
 <span class="math notranslate nohighlight">\(f\left(\cdot\right)\)</span> is continuous at <span class="math notranslate nohighlight">\(a\)</span>, then
@@ -737,11 +734,11 @@ random variables. <em>Lindeberg-Levy CLT</em> is the simplest version.</p>
 theorem 2.</p>
 </section>
 <section id="case-study">
-<h2>Case Study<a class="headerlink" href="#case-study" title="Link to this heading">#</a></h2>
+<h2>Case Study<a class="headerlink" href="#case-study" title="Permalink to this heading">#</a></h2>
 <p><strong>Price-Weighted Stock Indexes</strong></p>
 <p>In the realm of financial markets, stock indexes serve as vital barometers, distilling the complex interplay of thousands of individual securities into a single, digestible metric. Among these, price-weighted indexes such as the Dow Jones Industrial Average (DJIA) and the Nikkei 225 stand out for their simplicity. The DJIA, comprising 30 blue-chip companies listed on U.S. exchanges, and the Nikkei 225, tracking 225 prominent stocks on the Tokyo Stock Exchange, both calculate their values by essentially averaging the prices of their constituent stocks (adjusted for factors like splits and changes).</p>
 <p>Individual stock prices are influenced by corporate earnings, investor sentiment, geopolitical events, etc. Each stock’s price is inherently prone to idiosyncratic risks. However, when aggregated into an index, these prices form a larger sample. The LLN suggests that the average of these prices should stabilize around an expected value reflective of broader market conditions.</p>
-<p>In essence, price-weighted indexes operationalize the LLN by treating stock prices as random variables whose mean reveals underlying truths. This averaging process not only measures market health but also informs economic policy. Central banks like the Federal Reserve or Bank of Japan closely monitor these indexes. Stock prices, in aggregate, incorporate forward-looking information about corporate profitability, which ties into economic fundamentals like GDP growth, employment, and inflation. Price-weighted stock indexes are practical manifestations of LLN, where the aggregation of individual stock prices yields a cross-sectionally stable average. In the multitude of prices, the truth emerges, steady and revealing.</p>
+<p>In essence, price-weighted indexes operationalize the LLN by treating stock prices as random variables whose mean reveals underlying truths. This averaging process not only measures market health but also informs economic policy. Central banks like the Federal Reserve or Bank of Japan closely monitor these indexes. Stock prices, in aggregate, incorporate forward-looking information about corporate profitability, which ties into economic fundamentals like GDP growth, employment, and inflation. Price-weighted stock indexes are practical manifestations of LLN, where the aggregation of individual stock prices yields a cross-sectionally stable average.</p>
 <p>As a final note, in Asia’s premier financial center, Hong Kong’s flagship Hang Seng Index (HSI) differs from price-weighted indexes. HSI weights companies based on the market value of their publicly tradable shares. Similarly, in Mainland China the Shanghai Composite (SSE) and CSI300 are also weighted indices.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>投资有风险，入市需谨慎。以下个人观点，不构成投资建议。
 </pre></div>

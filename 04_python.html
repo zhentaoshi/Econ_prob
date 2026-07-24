@@ -1,12 +1,13 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="./" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Basic Programming &#8212; Lecture Notes</title>
   
@@ -28,37 +29,41 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=8c6b312c" />
-    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js?v=36754332"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '04_python';</script>
@@ -155,18 +160,7 @@
     <p class="title logo__title">Lecture Notes</p>
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -210,9 +204,9 @@
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -353,9 +347,9 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
       
     </div>
@@ -391,16 +385,12 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Example:</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statistics">Statistics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#user-defined-function">User-defined function</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Example:</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#user-defined-function">User-defined function</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Example:</a></li>
-</ul>
-</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-control">Flow Control</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Example</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Example</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-model">Statistical Model</a></li>
@@ -418,40 +408,30 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="basic-programming">
-<h1>Basic Programming<a class="headerlink" href="#basic-programming" title="Link to this heading">#</a></h1>
+<h1>Basic Programming<a class="headerlink" href="#basic-programming" title="Permalink to this heading">#</a></h1>
+<p><img alt="" src="_images/deng.png" /></p>
+<p>“计算机的普及要从娃娃抓起” (1984)</p>
 <section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
-<p>There are numerous ways to learn the programming language Python. One can find books</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://opensource.com/article/18/9/python-programming-book-list">https://opensource.com/article/18/9/python-programming-book-list</a></p></li>
-</ul>
-<p>Or web-based learning tutorials:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://www.kaggle.com/learn/python">https://www.kaggle.com/learn/python</a></p></li>
-</ul>
-<p>Or via Youtube:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://www.youtube.com/results?search_query=python+tutorial">https://www.youtube.com/results?search_query=python+tutorial</a></p></li>
-</ul>
-<p>This lecture quickly sketches some key points of the manual, while you should carefully go over Python-Introduction
-after today’s lecture.</p>
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<p>There are numerous ways to learn the programming language Python.
+This lecture quickly sketches some key points.</p>
 <section id="vector">
-<h3>Vector<a class="headerlink" href="#vector" title="Link to this heading">#</a></h3>
+<h3>Vector<a class="headerlink" href="#vector" title="Permalink to this heading">#</a></h3>
 <p>A <em>vector</em> is a collection of elements of the same type, say, integer, logical value, real number, complex number, characters or factor.
 Python does not require explicit type declaration. Although, if you want to save a strings, you need <code class="docutils literal notranslate"><span class="pre">&quot;</span> <span class="pre">&quot;</span></code> around your vector</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]</span></code> creates a list of vectors</p></li>
-<li><p>Binary arithmetic operations <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code> and <code class="docutils literal notranslate"><span class="pre">\</span></code> are performed element by element.</p></li>
+<li><p>Binary arithmetic operations <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">\</span></code> are performed element by element.</p></li>
 <li><p>Further arithmetic operators: exponends are expressed with <code class="docutils literal notranslate"><span class="pre">**</span></code>, and <code class="docutils literal notranslate"><span class="pre">%</span></code> is the reminder.</p></li>
 <li><p>So are the binary logical operations <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>, <code class="docutils literal notranslate"><span class="pre">|</span></code>, <code class="docutils literal notranslate"><span class="pre">!=</span></code>, <code class="docutils literal notranslate"><span class="pre">=</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>.</p></li>
 <li><p><em>Factor</em> is a categorical number. <em>Character</em> is text.</p></li>
 </ul>
 <section id="example">
-<h4>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h4>
+<h4>Example<a class="headerlink" href="#example" title="Permalink to this heading">#</a></h4>
 </section>
 </section>
 <section id="array-and-matrix">
-<h3>Array and Matrix<a class="headerlink" href="#array-and-matrix" title="Link to this heading">#</a></h3>
+<h3>Array and Matrix<a class="headerlink" href="#array-and-matrix" title="Permalink to this heading">#</a></h3>
 <p>To create arrays and matrices, we need to install the package “numpy” as the following:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -464,7 +444,7 @@ Python does not require explicit type declaration. Although, if you want to save
 <p>An array is a table of numbers.<br />
 A matrix is a 2-dimensional array.</p>
 <section id="id1">
-<h4>Example<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<h4>Example<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create an array</span>
@@ -496,7 +476,7 @@ A matrix is a 2-dimensional array.</p>
 </section>
 </section>
 <section id="example-ols">
-<h3>Example: OLS<a class="headerlink" href="#example-ols" title="Link to this heading">#</a></h3>
+<h3>Example: OLS<a class="headerlink" href="#example-ols" title="Permalink to this heading">#</a></h3>
 <p>OLS estimation with one <span class="math notranslate nohighlight">\(x\)</span> regressor and a constant.
 Graduate textbook expresses the OLS in matrix form
 <span class="math notranslate nohighlight">\(\hat{\beta} = (X' X)^{-1} X'y.\)</span>
@@ -521,8 +501,7 @@ To conduct OLS estimation in Python, we literally translate the mathematical exp
 <p><strong>Step 2:</strong> translate the formula to code</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># OLS estimator</span>
-<span class="n">bhat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span> <span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">X</span> <span class="p">)</span> <span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span> <span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">y</span> <span class="p">)</span> <span class="p">)</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bhat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">X</span><span class="p">)</span> <span class="o">@</span> <span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">y</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">bhat</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -530,14 +509,14 @@ To conduct OLS estimation in Python, we literally translate the mathematical exp
 </div>
 </section>
 <section id="package-module-library">
-<h3>Package/Module/Library<a class="headerlink" href="#package-module-library" title="Link to this heading">#</a></h3>
-<p>Similar to the packages in R, Python has numerous useful packages/modules/libraries. You have first install the targeted package into the environment (different IDEs have different installing procedures). Then to invoke a module in a certain scripts, use the function import(module_name) as abbr; every time the function of the module is called, use abbr.func_name().</p>
+<h3>Package/Module/Library<a class="headerlink" href="#package-module-library" title="Permalink to this heading">#</a></h3>
+<p>Similar to the packages in R, Python has numerous useful <code class="docutils literal notranslate"><span class="pre">packages/modules/libraries</span></code>. You have first install the targeted package into the environment (different IDEs have different installing procedures). Then to invoke a module in a certain scripts, use the function <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">module_name</span></code>; every time the function of the module is called, use <code class="docutils literal notranslate"><span class="pre">module_name.func_name()</span></code>.</p>
 </section>
 <section id="input-and-output">
-<h3>Input and Output<a class="headerlink" href="#input-and-output" title="Link to this heading">#</a></h3>
+<h3>Input and Output<a class="headerlink" href="#input-and-output" title="Permalink to this heading">#</a></h3>
 <p>To read and write csv files in Python, use the pandas library.</p>
 <section id="id2">
-<h4>Example:<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<h4>Example:<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 <span class="n">sample_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;source.csv&#39;</span><span class="p">)</span>
 <span class="n">sample_data</span> <span class="o">=</span> <span class="n">sample_data</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
@@ -546,52 +525,14 @@ To conduct OLS estimation in Python, we literally translate the mathematical exp
 </div>
 </section>
 </section>
-<section id="statistics">
-<h3>Statistics<a class="headerlink" href="#statistics" title="Link to this heading">#</a></h3>
-<p>To implement most of the statistical tasks, use the package <code class="docutils literal notranslate"><span class="pre">SciPy</span></code>. Commonly used probability distributions can be found in the subpackage SciPy.stats. If you hope to draw the kernel density plot for a given set of data, use the seaborn package.</p>
-<section id="id3">
-<h4>Example:<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import Packages</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">stats</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-
-
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">1600</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">chi2</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="n">z</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">chi2</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">hist</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;density&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">crit</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">chi2</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="n">q</span> <span class="o">=</span> <span class="mf">0.95</span><span class="p">,</span> <span class="n">df</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">([</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">z</span> <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="n">crit</span><span class="p">])</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-</section>
 <section id="user-defined-function">
-<h3>User-defined function<a class="headerlink" href="#user-defined-function" title="Link to this heading">#</a></h3>
+<h3>User-defined function<a class="headerlink" href="#user-defined-function" title="Permalink to this heading">#</a></h3>
 <p>The format of a user-defined function in Python is</p>
 <p><code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">function_name(input):</span>&#160;&#160;&#160;&#160; <span class="pre">expressions</span>&#160;&#160;&#160;&#160;&#160; <span class="pre">return</span> <span class="pre">output</span></code></p>
 <p>The beginning of the main function is written as follows:</p>
 <p><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">_name_</span> <span class="pre">==</span> <span class="pre">'_main_':</span>&#160;&#160;&#160;&#160; <span class="pre">expressions</span>&#160;&#160;&#160;&#160; <span class="pre">function_name</span></code></p>
-<section id="id4">
-<h4>Example:<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
+<section id="id3">
+<h4>Example:<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h4>
 <p>If the central limit theorem is applicable, then
 we can calculate the 95% two-sided asymptotic confidence interval as
 $<span class="math notranslate nohighlight">\(\left(\hat{\mu} - \frac{1.96}{\sqrt{n}} \hat{\sigma}, \hat{\mu} + \frac{1.96}{\sqrt{n}} \hat{\sigma} \right)\)</span>$
@@ -616,11 +557,11 @@ It is an easy job.</p>
 </section>
 </section>
 <section id="flow-control">
-<h3>Flow Control<a class="headerlink" href="#flow-control" title="Link to this heading">#</a></h3>
+<h3>Flow Control<a class="headerlink" href="#flow-control" title="Permalink to this heading">#</a></h3>
 <p>Flow control is common in all programming languages.
 <code class="docutils literal notranslate"><span class="pre">if</span></code> is used for choice, and <code class="docutils literal notranslate"><span class="pre">for</span></code> or <code class="docutils literal notranslate"><span class="pre">while</span></code> is used for loops.</p>
-<section id="id5">
-<h4>Example<a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
+<section id="id4">
+<h4>Example<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h4>
 <p>Calculate the empirical coverage probability of a Poisson distribution of degrees of freedom 2.
 We conduct this experiment for 1000 times.</p>
 <div class="cell docutils container">
@@ -649,7 +590,7 @@ We conduct this experiment for 1000 times.</p>
 </section>
 </section>
 <section id="statistical-model">
-<h3>Statistical Model<a class="headerlink" href="#statistical-model" title="Link to this heading">#</a></h3>
+<h3>Statistical Model<a class="headerlink" href="#statistical-model" title="Permalink to this heading">#</a></h3>
 <p>Statistical models are formulated as <code class="docutils literal notranslate"><span class="pre">y~x</span></code>, where <code class="docutils literal notranslate"><span class="pre">y</span></code> on the left-hand side is the dependent variable,
 and <code class="docutils literal notranslate"><span class="pre">x</span></code> on the right-hand side is the explanatory variable.
 The OLS function of the package <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> is <code class="docutils literal notranslate"><span class="pre">LinearRegression()</span></code>. It is called by <code class="docutils literal notranslate"><span class="pre">LinearRegression()</span></code>.</p>
@@ -678,7 +619,9 @@ The OLS function of the package <code class="docutils literal notranslate"><span
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">fittedvalues</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Fitted Value&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">fittedvalues</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Fitted Value&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">&#39;dashed&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;True Value&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Fitted Value&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
@@ -779,16 +722,12 @@ The OLS function of the package <code class="docutils literal notranslate"><span
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Example:</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statistics">Statistics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#user-defined-function">User-defined function</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Example:</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#user-defined-function">User-defined function</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Example:</a></li>
-</ul>
-</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-control">Flow Control</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Example</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Example</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-model">Statistical Model</a></li>
